@@ -7,6 +7,7 @@ import { getCountryDataWithDynamic, getCountryName, getCountryDescription, getCi
 import type { CountryData } from '@/data/countries';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { dataManager } from '@/services/dataManager';
+import { optimizeImageUrl, preloadImage } from '@/utils/imageUtils';
 
 export default function CountryDetail() {
   const { countryId } = useParams<{ countryId: string }>();
@@ -16,29 +17,59 @@ export default function CountryDetail() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [countryData, setCountryData] = useState<CountryData | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const { language, t } = useLanguage();
 
   useEffect(() => {
-    if (countryId) {
-      (async () => {
+    if (!countryId) {
+      setIsLoading(false);
+      return;
+    }
+
+    (async () => {
+      setIsLoading(true);
+      try {
         await dataManager.getCountriesAsync();
         const data = getCountryDataWithDynamic(countryId);
         setCountryData(data);
-      })();
-    }
+      } finally {
+        setIsLoading(false);
+      }
+    })();
   }, [countryId]);
 
   useEffect(() => {
-    if (countryData?.gallery?.length) {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % countryData.gallery.length);
-      }, 4000);
-      return () => clearInterval(interval);
-    }
-  }, [countryData?.gallery?.length]);
+    if (!countryData) return;
+    const images = countryData.gallery?.length
+      ? countryData.gallery
+      : countryData.mainImage
+        ? [countryData.mainImage]
+        : [];
+    if (!images.length) return;
+    preloadImage(images[0]);
+    if (images.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [countryData]);
 
-  // Show error message if country not found after loading
-  if (countryId && countryData === null) {
+  // Loading state
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin h-16 w-16 border-4 border-tarhal-orange border-t-transparent rounded-full mx-auto mb-4"></div>
+            <h1 className="text-2xl font-bold text-tarhal-blue-dark mb-4">جاري تحميل بيانات الدولة...</h1>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  // Country not found
+  if (!countryData) {
     return (
       <Layout>
         <div className="min-h-screen flex items-center justify-center">
@@ -59,6 +90,12 @@ export default function CountryDetail() {
     );
   }
 
+  const heroImages = countryData.gallery?.length
+    ? countryData.gallery
+    : countryData.mainImage
+      ? [countryData.mainImage]
+      : [];
+
   const toggleFavorite = (itemId: string) => {
     setFavorites(prev =>
       prev.includes(itemId)
@@ -67,40 +104,27 @@ export default function CountryDetail() {
     );
   };
 
-  // Loading state
-  if (!countryData) {
-    return (
-      <Layout>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <div className="animate-spin h-16 w-16 border-4 border-tarhal-orange border-t-transparent rounded-full mx-auto mb-4"></div>
-            <h1 className="text-2xl font-bold text-tarhal-blue-dark mb-4">جاري تحميل بيانات الدولة...</h1>
-            <Link to="/offices">
-              <Button className="bg-tarhal-orange hover:bg-tarhal-orange-dark text-white">
-                العودة للمكاتب السياحية
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </Layout>
-    );
-  }
-
   return (
     <Layout>
       {/* Hero Header */}
-      <section className="relative h-[70vh] overflow-hidden">
-        <div className="absolute inset-0">
-          {countryData.gallery.map((image, index) => (
-            <div
-              key={`gallery-${countryData.id}-${index}-${image || ''}`}
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{ backgroundImage: `url(${image})` }}
-            />
-          ))}
-          <div className="absolute inset-0 bg-gradient-to-r from-tarhal-navy/90 via-tarhal-blue-dark/70 to-transparent"></div>
+      <section className="relative h-[70vh] overflow-hidden pt-20">
+        <div className="absolute inset-0 bg-slate-900">
+          {heroImages.length > 0 ? (
+            heroImages.map((image, index) => (
+              <img
+                key={`gallery-${countryData.id}-${index}-${image}`}
+                src={optimizeImageUrl(image, 1920)}
+                alt=""
+                aria-hidden
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            ))
+          ) : null}
+          <div className="absolute inset-0 bg-gradient-to-r from-tarhal-navy/90 via-tarhal-blue-dark/80 to-tarhal-navy/40"></div>
         </div>
 
         <div className="relative z-10 h-full flex items-center">

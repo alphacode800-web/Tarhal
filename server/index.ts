@@ -3,14 +3,13 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import fs from "fs/promises";
-import { fileURLToPath } from "url";
 import { handleDemo } from "./routes/demo";
 import paymentsRouter from "./routes/payments";
 import adminDataRouter from "./routes/admin-data";
 import { handleImageUpload, handleMultipleImageUpload, handleVideoUpload } from "./routes/upload";
+import { resolveDir, uploadsDir } from "./utils/paths.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = resolveDir(import.meta.url, ["server"]);
 
 export function createServer() {
   const app = express();
@@ -26,7 +25,7 @@ export function createServer() {
   });
   app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 
-  const uploadsPath = path.join(__dirname, "../public/uploads");
+  const uploadsPath = uploadsDir();
   fs.mkdir(uploadsPath, { recursive: true }).catch(() => {});
   app.use("/uploads", express.static(uploadsPath));
 

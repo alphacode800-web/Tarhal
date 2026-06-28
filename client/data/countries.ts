@@ -7468,7 +7468,11 @@ export const convertAdminToCountryData = (adminCountry: AdminCountryData): Count
     transportation: adminCountry.transportation,
     safety: adminCountry.safety,
     cities: adminCountry.cities,
-    gallery: adminCountry.gallery,
+    gallery: adminCountry.gallery?.length
+      ? adminCountry.gallery
+      : adminCountry.mainImage
+        ? [adminCountry.mainImage]
+        : [],
     continent: adminCountry.continent
   };
 };

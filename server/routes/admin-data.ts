@@ -1,14 +1,10 @@
 import express, { RequestHandler } from 'express';
 import fs from 'fs/promises';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { getAdminData, setAdminData, ADMIN_KEYS } from '../database/admin-store.js';
+import { serverDataDir } from '../utils/paths.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Path to data directory (use server/data for better organization)
-const DATA_DIR = path.join(__dirname, '../data');
+const DATA_DIR = serverDataDir();
 const COUNTRIES_FILE = path.join(DATA_DIR, 'countries.json');
 const OFFICES_FILE = path.join(DATA_DIR, 'offices.json');
 const OFFERS_FILE = path.join(DATA_DIR, 'offers.json');

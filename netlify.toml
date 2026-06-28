@@ -5,8 +5,9 @@
 
 
 [functions]
-  external_node_modules = ["express"]
+  external_node_modules = ["express", "sqlite3", "sqlite"]
   node_bundler = "esbuild"
+  included_files = ["server/data/**", "server/database/schema.sql"]
   
 [[redirects]]
   force = true

@@ -2,14 +2,10 @@ import { RequestHandler } from "express";
 import express from "express";
 import path from "path";
 import fs from "fs/promises";
-import { fileURLToPath } from "url";
+import { uploadsDir as getUploadsDir } from "../utils/paths.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Ensure uploads directory exists
-const uploadsDir = path.join(__dirname, "../../public/uploads");
-fs.mkdir(uploadsDir, { recursive: true }).catch(console.error);
+const uploadsDirPath = getUploadsDir();
+fs.mkdir(uploadsDirPath, { recursive: true }).catch(console.error);
 
 // Middleware to handle file uploads
 const upload = express.raw({ limit: "10mb", type: "image/*" });
@@ -26,7 +22,7 @@ export const handleImageUpload: RequestHandler = async (req, res) => {
     const randomStr = Math.random().toString(36).substring(2, 15);
     const extension = req.headers["content-type"]?.split("/")[1] || "jpg";
     const filename = `image_${timestamp}_${randomStr}.${extension}`;
-    const filepath = path.join(uploadsDir, filename);
+    const filepath = path.join(uploadsDirPath, filename);
 
     // Save file
     await fs.writeFile(filepath, req.body);
@@ -67,7 +63,7 @@ export const handleMultipleImageUpload: RequestHandler = async (req, res) => {
         const timestamp = Date.now();
         const randomStr = Math.random().toString(36).substring(2, 15);
         const filename = `image_${timestamp}_${randomStr}.${extension}`;
-        const filepath = path.join(uploadsDir, filename);
+        const filepath = path.join(uploadsDirPath, filename);
 
         await fs.writeFile(filepath, buffer);
         uploadedUrls.push(`/uploads/${filename}`);
@@ -114,10 +110,10 @@ export const handleVideoUpload: RequestHandler = async (req, res) => {
     }
     
     const filename = `video_${timestamp}_${randomStr}.${extension}`;
-    const filepath = path.join(uploadsDir, filename);
+    const filepath = path.join(uploadsDirPath, filename);
 
     // Ensure directory exists
-    await fs.mkdir(uploadsDir, { recursive: true });
+    await fs.mkdir(uploadsDirPath, { recursive: true });
 
     // Save file
     await fs.writeFile(filepath, req.body);
