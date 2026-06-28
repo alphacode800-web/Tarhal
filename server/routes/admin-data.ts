@@ -5,6 +5,7 @@ import { getAdminData, setAdminData, ADMIN_KEYS } from '../database/admin-store.
 import { serverDataDir } from '../utils/paths.js';
 
 const DATA_DIR = serverDataDir();
+const SEED_DIR = path.join(process.cwd(), 'server', 'seed');
 const COUNTRIES_FILE = path.join(DATA_DIR, 'countries.json');
 const OFFICES_FILE = path.join(DATA_DIR, 'offices.json');
 const OFFERS_FILE = path.join(DATA_DIR, 'offers.json');
@@ -86,15 +87,25 @@ async function writeJsonFile(filePath: string, data: any) {
   }
 }
 
-/** قراءة من قاعدة البيانات أولاً ثم من ملف JSON؛ إن وُجدت بيانات في الملف فقط نملأ DB لمرة واحدة */
+/** قراءة من قاعدة البيانات أولاً ثم من ملف JSON ثم من seed */
 async function readFromDbOrFile(key: string, filePath: string, defaultValue: any) {
   const fromDb = await getAdminData(key);
-  if (fromDb !== null && fromDb !== undefined) return fromDb;
-  const fromFile = await readJsonFile(filePath, defaultValue);
-  if (fromFile !== null && fromFile !== undefined) {
-    setAdminData(key, fromFile).catch(() => {}); // تهجير لمرة واحدة من الملف إلى قاعدة البيانات
+  if (fromDb !== null && fromDb !== undefined && !(Array.isArray(fromDb) && fromDb.length === 0)) {
+    return fromDb;
   }
-  return fromFile;
+
+  const fromFile = await readJsonFile(filePath, null);
+  if (fromFile !== null && fromFile !== undefined && !(Array.isArray(fromFile) && fromFile.length === 0)) {
+    setAdminData(key, fromFile).catch(() => {});
+    return fromFile;
+  }
+
+  const seedPath = path.join(SEED_DIR, path.basename(filePath));
+  const fromSeed = await readJsonFile(seedPath, defaultValue);
+  if (fromSeed !== null && fromSeed !== undefined && !(Array.isArray(fromSeed) && fromSeed.length === 0)) {
+    setAdminData(key, fromSeed).catch(() => {});
+  }
+  return fromSeed;
 }
 
 /** حفظ في قاعدة البيانات ثم في ملف JSON كنسخة احتياطية */

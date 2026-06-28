@@ -1,5 +1,9 @@
 import type { CountryData, City } from '@/data/countries';
 
+function isNonEmptyList<T>(value: unknown): value is T[] {
+  return Array.isArray(value) && value.length > 0;
+}
+
 export interface AdminCountryData extends CountryData {
   createdAt: string;
   updatedAt: string;
@@ -421,7 +425,7 @@ class DataManager {
       const response = await fetch(`${this.API_BASE}/countries`);
       if (response.ok) {
         const result = await response.json();
-        if (result.success && result.data) {
+        if (result.success && isNonEmptyList<AdminCountryData>(result.data)) {
           return result.data;
         }
       }
@@ -453,7 +457,7 @@ class DataManager {
   async getCountriesAsync(): Promise<AdminCountryData[]> {
     if (this.useServerStorage) {
       const serverData = await this.loadCountriesFromServer();
-      if (serverData !== null && Array.isArray(serverData)) {
+      if (isNonEmptyList(serverData)) {
         try {
           localStorage.setItem(this.COUNTRIES_KEY, JSON.stringify(serverData));
         } catch (e) {
@@ -462,7 +466,24 @@ class DataManager {
         return serverData;
       }
     }
+
+    const staticCountries = await this.loadStaticCountriesAsAdmin();
+    if (isNonEmptyList(staticCountries)) {
+      return staticCountries;
+    }
+
     return this.getCountries();
+  }
+
+  private async loadStaticCountriesAsAdmin(): Promise<AdminCountryData[]> {
+    const { getAllCountries, convertCountryToAdminData } = await import('@/data/countries');
+    const now = new Date().toISOString();
+    return getAllCountries().map((country) => ({
+      ...convertCountryToAdminData(country),
+      isActive: true,
+      createdAt: now,
+      updatedAt: now,
+    }));
   }
 
   getCountries(): AdminCountryData[] {
@@ -710,7 +731,7 @@ class DataManager {
       const response = await fetch(`${this.API_BASE}/offices`);
       if (response.ok) {
         const result = await response.json();
-        if (result.success && result.data) {
+        if (result.success && isNonEmptyList<TravelOffice>(result.data)) {
           return result.data;
         }
       }
@@ -741,7 +762,7 @@ class DataManager {
   async getOfficesAsync(): Promise<TravelOffice[]> {
     if (this.useServerStorage) {
       const serverData = await this.loadOfficesFromServer();
-      if (serverData && serverData.length >= 0) {
+      if (isNonEmptyList(serverData)) {
         try {
           localStorage.setItem(this.OFFICES_KEY, JSON.stringify(serverData));
         } catch (e) {
@@ -968,7 +989,7 @@ class DataManager {
       const response = await fetch(`${this.API_BASE}/offers`);
       if (response.ok) {
         const result = await response.json();
-        if (result.success && result.data) {
+        if (result.success && isNonEmptyList<TourOffer>(result.data)) {
           return result.data;
         }
       }
@@ -999,7 +1020,7 @@ class DataManager {
   async getOffersAsync(): Promise<TourOffer[]> {
     if (this.useServerStorage) {
       const serverData = await this.loadOffersFromServer();
-      if (serverData && serverData.length >= 0) {
+      if (isNonEmptyList(serverData)) {
         try {
           localStorage.setItem(this.OFFERS_KEY, JSON.stringify(serverData));
         } catch (e) {
@@ -1622,7 +1643,7 @@ class DataManager {
       const response = await fetch(`${this.API_BASE}/hotels`);
       if (response.ok) {
         const result = await response.json();
-        if (result.success && result.data) {
+        if (result.success && isNonEmptyList<Hotel>(result.data)) {
           return result.data;
         }
       }
@@ -1653,7 +1674,7 @@ class DataManager {
   async getHotelsAsync(): Promise<Hotel[]> {
     if (this.useServerStorage) {
       const serverData = await this.loadHotelsFromServer();
-      if (serverData && serverData.length >= 0) {
+      if (isNonEmptyList(serverData)) {
         try {
           localStorage.setItem(this.HOTELS_KEY, JSON.stringify(serverData));
         } catch (e) {
@@ -1931,7 +1952,7 @@ class DataManager {
       const response = await fetch(`${this.API_BASE}/car-rentals`);
       if (response.ok) {
         const result = await response.json();
-        if (result.success && result.data) {
+        if (result.success && isNonEmptyList<CarRental>(result.data)) {
           return result.data;
         }
       }
@@ -1962,7 +1983,7 @@ class DataManager {
   async getCarRentalsAsync(): Promise<CarRental[]> {
     if (this.useServerStorage) {
       const serverData = await this.loadCarRentalsFromServer();
-      if (serverData && serverData.length >= 0) {
+      if (isNonEmptyList(serverData)) {
         try {
           localStorage.setItem(this.CARS_KEY, JSON.stringify(serverData));
         } catch (e) {
@@ -2267,7 +2288,7 @@ class DataManager {
       const response = await fetch(`${this.API_BASE}/car-vehicles`);
       if (response.ok) {
         const result = await response.json();
-        if (result.success && result.data) {
+        if (result.success && isNonEmptyList<CarVehicle>(result.data)) {
           return result.data;
         }
       }
@@ -2298,7 +2319,7 @@ class DataManager {
   async getCarVehiclesAsync(): Promise<CarVehicle[]> {
     if (this.useServerStorage) {
       const serverData = await this.loadCarVehiclesFromServer();
-      if (serverData && serverData.length >= 0) {
+      if (isNonEmptyList(serverData)) {
         try {
           localStorage.setItem(this.VEHICLES_KEY, JSON.stringify(serverData));
         } catch (e) {
@@ -3184,7 +3205,7 @@ class DataManager {
   async getTaxiDeliveryServicesAsync(): Promise<TaxiDeliveryService[]> {
     if (this.useServerStorage) {
       const serverData = await this.loadTaxiDeliveryFromServer();
-      if (serverData) {
+      if (isNonEmptyList(serverData)) {
         try {
           localStorage.setItem(this.TAXI_DELIVERY_KEY, JSON.stringify(serverData));
         } catch (e) {
@@ -3201,7 +3222,7 @@ class DataManager {
       const response = await fetch(`${this.API_BASE}/taxi-delivery`);
       if (response.ok) {
         const result = await response.json();
-        if (result.success && result.data) {
+        if (result.success && isNonEmptyList<TaxiDeliveryService>(result.data)) {
           return result.data;
         }
       }
@@ -3398,7 +3419,9 @@ class DataManager {
       const response = await fetch(`${this.API_BASE}/flight-tickets`);
       if (response.ok) {
         const result = await response.json();
-        if (result.success && result.data) return result.data;
+        if (result.success && isNonEmptyList<FlightTicket>(result.data)) {
+          return result.data;
+        }
       }
     } catch (error) {
       console.error('Error loading flight tickets from server:', error);
@@ -3501,7 +3524,9 @@ class DataManager {
       const response = await fetch(`${this.API_BASE}/travel-visas`);
       if (response.ok) {
         const result = await response.json();
-        if (result.success && result.data) return result.data;
+        if (result.success && isNonEmptyList<TravelVisa>(result.data)) {
+          return result.data;
+        }
       }
     } catch (error) {
       console.error('Error loading travel visas from server:', error);

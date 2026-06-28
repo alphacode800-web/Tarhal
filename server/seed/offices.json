@@ -1,0 +1,247 @@
+[
+  {
+    "countryId": "sudan",
+    "name": {
+      "ar": "مكتب السودان",
+      "en": "Sudan Office",
+      "fr": "Bureau Soudan"
+    },
+    "address": {
+      "ar": "الخرطوم",
+      "en": "Khartoum",
+      "fr": "Khartoum"
+    },
+    "phone": "+118852030",
+    "email": "office1@tarhal.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير السودان",
+      "en": "Sudan Manager",
+      "fr": "Gestionnaire Soudan"
+    },
+    "services": {
+      "ar": [
+        "حجوزات طيران",
+        "حجوزات فنادق",
+        "جولات سياحية"
+      ],
+      "en": [
+        "Flight bookings",
+        "Hotel bookings",
+        "Tour packages"
+      ],
+      "fr": [
+        "Réservations de vol",
+        "Réservations d'hôtel",
+        "Forfaits touristiques"
+      ]
+    },
+    "workingHours": {
+      "ar": "9:00 ص - 6:00 م",
+      "en": "9:00 AM - 6:00 PM",
+      "fr": "9h00 - 18h00"
+    },
+    "rating": 4.264144329425772,
+    "reviews": 42,
+    "isActive": true,
+    "id": "office_1771398444754_1mbr252rp",
+    "createdAt": "2026-02-18T07:07:24.754Z",
+    "updatedAt": "2026-02-18T07:07:24.754Z"
+  },
+  {
+    "countryId": "country_1769453246309_6xm9xfvto",
+    "name": {
+      "ar": "مكتب المملكة العربية السعودية",
+      "en": "Saudi Arabia Office",
+      "fr": "Bureau Arabie Saoudite"
+    },
+    "address": {
+      "ar": "الرياض",
+      "en": "Riyadh",
+      "fr": "Riyad"
+    },
+    "phone": "+828741069",
+    "email": "office2@tarhal.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير المملكة العربية السعودية",
+      "en": "Saudi Arabia Manager",
+      "fr": "Gestionnaire Arabie Saoudite"
+    },
+    "services": {
+      "ar": [
+        "حجوزات طيران",
+        "حجوزات فنادق",
+        "جولات سياحية"
+      ],
+      "en": [
+        "Flight bookings",
+        "Hotel bookings",
+        "Tour packages"
+      ],
+      "fr": [
+        "Réservations de vol",
+        "Réservations d'hôtel",
+        "Forfaits touristiques"
+      ]
+    },
+    "workingHours": {
+      "ar": "9:00 ص - 6:00 م",
+      "en": "9:00 AM - 6:00 PM",
+      "fr": "9h00 - 18h00"
+    },
+    "rating": 4.236812058392308,
+    "reviews": 69,
+    "isActive": true,
+    "id": "office_1771398444830_6gmhtwv4q",
+    "createdAt": "2026-02-18T07:07:24.830Z",
+    "updatedAt": "2026-02-18T07:07:24.830Z"
+  },
+  {
+    "countryId": "country_1769453246314_gg1a1gj8u",
+    "name": {
+      "ar": "مكتب الإمارات العربية المتحدة",
+      "en": "United Arab Emirates Office",
+      "fr": "Bureau Émirats Arabes Unis"
+    },
+    "address": {
+      "ar": "أبوظبي",
+      "en": "Abu Dhabi",
+      "fr": "Abu Dhabi"
+    },
+    "phone": "+374906981",
+    "email": "office3@tarhal.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير الإمارات العربية المتحدة",
+      "en": "United Arab Emirates Manager",
+      "fr": "Gestionnaire Émirats Arabes Unis"
+    },
+    "services": {
+      "ar": [
+        "حجوزات طيران",
+        "حجوزات فنادق",
+        "جولات سياحية"
+      ],
+      "en": [
+        "Flight bookings",
+        "Hotel bookings",
+        "Tour packages"
+      ],
+      "fr": [
+        "Réservations de vol",
+        "Réservations d'hôtel",
+        "Forfaits touristiques"
+      ]
+    },
+    "workingHours": {
+      "ar": "9:00 ص - 6:00 م",
+      "en": "9:00 AM - 6:00 PM",
+      "fr": "9h00 - 18h00"
+    },
+    "rating": 4.394203691124254,
+    "reviews": 87,
+    "isActive": true,
+    "id": "office_1771398444881_p94pxvsig",
+    "createdAt": "2026-02-18T07:07:24.881Z",
+    "updatedAt": "2026-02-18T07:07:24.881Z"
+  },
+  {
+    "countryId": "country_1769453246318_7fpbzya2v",
+    "name": {
+      "ar": "مكتب مصر",
+      "en": "Egypt Office",
+      "fr": "Bureau Égypte"
+    },
+    "address": {
+      "ar": "القاهرة",
+      "en": "Cairo",
+      "fr": "Le Caire"
+    },
+    "phone": "+253094365",
+    "email": "office4@tarhal.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مصر",
+      "en": "Egypt Manager",
+      "fr": "Gestionnaire Égypte"
+    },
+    "services": {
+      "ar": [
+        "حجوزات طيران",
+        "حجوزات فنادق",
+        "جولات سياحية"
+      ],
+      "en": [
+        "Flight bookings",
+        "Hotel bookings",
+        "Tour packages"
+      ],
+      "fr": [
+        "Réservations de vol",
+        "Réservations d'hôtel",
+        "Forfaits touristiques"
+      ]
+    },
+    "workingHours": {
+      "ar": "9:00 ص - 6:00 م",
+      "en": "9:00 AM - 6:00 PM",
+      "fr": "9h00 - 18h00"
+    },
+    "rating": 4.118212596302491,
+    "reviews": 71,
+    "isActive": true,
+    "id": "office_1771398444947_2u7zqg93c",
+    "createdAt": "2026-02-18T07:07:24.947Z",
+    "updatedAt": "2026-02-18T07:07:24.947Z"
+  },
+  {
+    "countryId": "country_1769453246324_2qoybss9l",
+    "name": {
+      "ar": "مكتب المغرب",
+      "en": "Morocco Office",
+      "fr": "Bureau Maroc"
+    },
+    "address": {
+      "ar": "الرباط",
+      "en": "Rabat",
+      "fr": "Rabat"
+    },
+    "phone": "+812317230",
+    "email": "office5@tarhal.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير المغرب",
+      "en": "Morocco Manager",
+      "fr": "Gestionnaire Maroc"
+    },
+    "services": {
+      "ar": [
+        "حجوزات طيران",
+        "حجوزات فنادق",
+        "جولات سياحية"
+      ],
+      "en": [
+        "Flight bookings",
+        "Hotel bookings",
+        "Tour packages"
+      ],
+      "fr": [
+        "Réservations de vol",
+        "Réservations d'hôtel",
+        "Forfaits touristiques"
+      ]
+    },
+    "workingHours": {
+      "ar": "9:00 ص - 6:00 م",
+      "en": "9:00 AM - 6:00 PM",
+      "fr": "9h00 - 18h00"
+    },
+    "rating": 4.988308700941355,
+    "reviews": 28,
+    "isActive": true,
+    "id": "office_1771398444997_ujwlghezt",
+    "createdAt": "2026-02-18T07:07:24.997Z",
+    "updatedAt": "2026-02-18T07:07:24.997Z"
+  }
+]

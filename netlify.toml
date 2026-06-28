@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build:client"
+  command = "npm run build:seed && npm run build:client"
   functions = "netlify/functions"
   publish = "dist/spa"
 
@@ -7,7 +7,7 @@
 [functions]
   external_node_modules = ["express", "sqlite3", "sqlite"]
   node_bundler = "esbuild"
-  included_files = ["server/data/**", "server/database/schema.sql"]
+  included_files = ["server/seed/**", "server/database/schema.sql"]
   
 [[redirects]]
   force = true
