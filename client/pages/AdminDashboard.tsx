@@ -11,6 +11,7 @@ import { dataManager, type AdminCountryData, type TravelOffice, type TourOffer, 
 import { supervisorManager } from '@/services/supervisorManager';
 import type { City } from '@/data/countries';
 import { useLanguage } from '../contexts/LanguageContext';
+import { SOCIAL_PLATFORMS, DEFAULT_CONTACT } from '@/data/socialPlatforms';
 import AdminSupervisorManagement from './AdminSupervisorManagement';
 import AdminPayments from './AdminPayments';
 
@@ -3371,9 +3372,9 @@ export default function AdminDashboard() {
                                 fr: 'Bienvenue à'
                               },
                               heroSubtitle: {
-                                ar: 'ciar',
-                                en: 'ciar',
-                                fr: 'ciar'
+                                ar: 'ciarTOU',
+                                en: 'ciarTOU',
+                                fr: 'ciarTOU'
                               },
                               heroDescription: {
                                 ar: 'رفيقكم المثالي لاستكشاف العالم. نقدم أفضل الخدمات السياحية عبر شبكة واسعة من المكاتب في أكثر من 50 دولة حول العالم',
@@ -3464,10 +3465,17 @@ export default function AdminDashboard() {
                         </p>
                       </div>
                       <Switch 
-                        checked={settings?.showTopAnnouncement || false}
+                        checked={settings?.showTopAnnouncement || settings?.announcementBar?.enabled || false}
                         onCheckedChange={(checked) => {
                           if (settings) {
-                            setSettings({ ...settings, showTopAnnouncement: checked });
+                            setSettings({
+                              ...settings,
+                              showTopAnnouncement: checked,
+                              announcementBar: {
+                                ...(settings.announcementBar || { texts: [], speed: 30 }),
+                                enabled: checked,
+                              },
+                            });
                           }
                         }}
                       />
@@ -3529,10 +3537,11 @@ export default function AdminDashboard() {
                           </p>
                         </div>
                         <Switch
-                          checked={settings.announcementBar?.enabled || false}
+                          checked={settings.announcementBar?.enabled ?? settings.showTopAnnouncement ?? false}
                           onCheckedChange={(checked) => {
                             setSettings({
                               ...settings,
+                              showTopAnnouncement: checked,
                               announcementBar: {
                                 ...(settings.announcementBar || {
                                   texts: [],
@@ -3571,6 +3580,188 @@ export default function AdminDashboard() {
                           }}
                           className="bg-slate-900/60 border-white/10 text-slate-100"
                         />
+                      </div>
+
+                      {/* Appearance Controls */}
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs font-medium text-slate-200 mb-2">
+                            {getLocalizedText('حجم الخط (بكسل)', 'Font Size (px)', 'Taille de Police (px)')}
+                          </label>
+                          <Input
+                            type="number"
+                            min="12"
+                            max="32"
+                            value={settings.announcementBar?.fontSize || 16}
+                            onChange={(e) => {
+                              const fontSize = parseInt(e.target.value) || 16;
+                              setSettings({
+                                ...settings,
+                                announcementBar: {
+                                  ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                  fontSize,
+                                },
+                              });
+                            }}
+                            className="bg-slate-900/60 border-white/10 text-slate-100"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-medium text-slate-200 mb-2">
+                            {getLocalizedText('لون النص', 'Text Color', 'Couleur du Texte')}
+                          </label>
+                          <div className="flex items-center gap-2">
+                            <input
+                              type="color"
+                              value={settings.announcementBar?.textColor || '#ffffff'}
+                              onChange={(e) => {
+                                setSettings({
+                                  ...settings,
+                                  announcementBar: {
+                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                    textColor: e.target.value,
+                                  },
+                                });
+                              }}
+                              className="h-10 w-14 rounded border border-white/10 bg-slate-900/60 cursor-pointer"
+                            />
+                            <Input
+                              value={settings.announcementBar?.textColor || '#ffffff'}
+                              onChange={(e) => {
+                                setSettings({
+                                  ...settings,
+                                  announcementBar: {
+                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                    textColor: e.target.value,
+                                  },
+                                });
+                              }}
+                              className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-xs font-medium text-slate-200 mb-2">
+                            {getLocalizedText('لون الخلفية (البداية)', 'Background Start', 'Fond (Début)')}
+                          </label>
+                          <div className="flex items-center gap-2">
+                            <input
+                              type="color"
+                              value={settings.announcementBar?.backgroundFrom || '#1e3a5f'}
+                              onChange={(e) => {
+                                setSettings({
+                                  ...settings,
+                                  announcementBar: {
+                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                    backgroundFrom: e.target.value,
+                                  },
+                                });
+                              }}
+                              className="h-10 w-14 rounded border border-white/10 bg-slate-900/60 cursor-pointer"
+                            />
+                            <Input
+                              value={settings.announcementBar?.backgroundFrom || '#1e3a5f'}
+                              onChange={(e) => {
+                                setSettings({
+                                  ...settings,
+                                  announcementBar: {
+                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                    backgroundFrom: e.target.value,
+                                  },
+                                });
+                              }}
+                              className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-xs font-medium text-slate-200 mb-2">
+                            {getLocalizedText('لون الخلفية (النهاية)', 'Background End', 'Fond (Fin)')}
+                          </label>
+                          <div className="flex items-center gap-2">
+                            <input
+                              type="color"
+                              value={settings.announcementBar?.backgroundTo || '#0f2744'}
+                              onChange={(e) => {
+                                setSettings({
+                                  ...settings,
+                                  announcementBar: {
+                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                    backgroundTo: e.target.value,
+                                  },
+                                });
+                              }}
+                              className="h-10 w-14 rounded border border-white/10 bg-slate-900/60 cursor-pointer"
+                            />
+                            <Input
+                              value={settings.announcementBar?.backgroundTo || '#0f2744'}
+                              onChange={(e) => {
+                                setSettings({
+                                  ...settings,
+                                  announcementBar: {
+                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                    backgroundTo: e.target.value,
+                                  },
+                                });
+                              }}
+                              className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-xs font-medium text-slate-200 mb-2">
+                            {getLocalizedText('لون الفاصل', 'Separator Color', 'Couleur du Séparateur')}
+                          </label>
+                          <div className="flex items-center gap-2">
+                            <input
+                              type="color"
+                              value={settings.announcementBar?.accentColor || '#f97316'}
+                              onChange={(e) => {
+                                setSettings({
+                                  ...settings,
+                                  announcementBar: {
+                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                    accentColor: e.target.value,
+                                  },
+                                });
+                              }}
+                              className="h-10 w-14 rounded border border-white/10 bg-slate-900/60 cursor-pointer"
+                            />
+                            <Input
+                              value={settings.announcementBar?.accentColor || '#f97316'}
+                              onChange={(e) => {
+                                setSettings({
+                                  ...settings,
+                                  announcementBar: {
+                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                    accentColor: e.target.value,
+                                  },
+                                });
+                              }}
+                              className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Live Preview */}
+                      <div>
+                        <label className="block text-xs font-medium text-slate-200 mb-2">
+                          {getLocalizedText('معاينة الشريط', 'Bar Preview', 'Aperçu de la Barre')}
+                        </label>
+                        <div
+                          className="rounded-lg py-3 px-4 overflow-hidden border border-white/10"
+                          style={{
+                            background: `linear-gradient(to right, ${settings.announcementBar?.backgroundFrom || '#1e3a5f'}, ${settings.announcementBar?.backgroundTo || '#0f2744'})`,
+                            color: settings.announcementBar?.textColor || '#ffffff',
+                            fontSize: `${settings.announcementBar?.fontSize || 16}px`,
+                          }}
+                        >
+                          {(settings.announcementBar?.texts || []).find((t) => t.text.ar || t.text.en || t.text.fr)?.text.ar
+                            || getLocalizedText('مرحباً بكم في منصة ciar للسياحة', 'Welcome to ciar Travel Platform', 'Bienvenue sur la Plateforme de Voyage ciar')}
+                          <span style={{ color: settings.announcementBar?.accentColor || '#f97316' }}> • </span>
+                          {getLocalizedText('احصل على أفضل العروض السياحية', 'Get the best travel offers', 'Obtenez les meilleures offres de voyage')}
+                        </div>
                       </div>
 
                       {/* Announcement Texts List */}
@@ -3841,130 +4032,72 @@ export default function AdminDashboard() {
                     </div>
                   </div>
                   <div className="space-y-3 text-xs text-slate-200">
-                    {/* Facebook */}
                     <div>
                       <label className="block font-medium mb-1 flex items-center gap-2">
-                        <span className="text-blue-400">📘</span>
-                        Facebook
+                        <Mail className="h-3.5 w-3.5 text-tarhal-orange" />
+                        {getLocalizedText('البريد الإلكتروني', 'Email', 'Email')}
                       </label>
                       <Input
-                        type="url"
-                        value={settings?.socialLinks?.facebook || ''}
-                        onChange={(e) => {
-                          if (settings) {
-                            setSettings({
-                              ...settings,
-                              socialLinks: {
-                                ...settings.socialLinks,
-                                facebook: e.target.value
-                              }
-                            });
-                          }
-                        }}
+                        type="email"
+                        value={settings?.contactEmail || ''}
+                        onChange={(e) => settings && setSettings({ ...settings, contactEmail: e.target.value })}
                         className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                        placeholder="https://facebook.com/yourpage"
+                        placeholder={DEFAULT_CONTACT.email}
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-medium mb-1 flex items-center gap-2">
+                        <Phone className="h-3.5 w-3.5 text-tarhal-orange" />
+                        {getLocalizedText('رقم التواصل', 'Phone', 'Téléphone')}
+                      </label>
+                      <Input
+                        value={settings?.contactPhone || ''}
+                        onChange={(e) => settings && setSettings({ ...settings, contactPhone: e.target.value })}
+                        className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
+                        placeholder={DEFAULT_CONTACT.phone}
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-medium mb-1 flex items-center gap-2">
+                        <MessageSquare className="h-3.5 w-3.5 text-green-400" />
+                        WhatsApp
+                      </label>
+                      <Input
+                        value={settings?.contactWhatsapp || settings?.socialLinks?.whatsapp || ''}
+                        onChange={(e) => settings && setSettings({
+                          ...settings,
+                          contactWhatsapp: e.target.value,
+                          socialLinks: { ...settings.socialLinks, whatsapp: e.target.value },
+                        })}
+                        className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
+                        placeholder={DEFAULT_CONTACT.whatsapp}
                       />
                     </div>
 
-                    {/* Twitter */}
-                    <div>
-                      <label className="block font-medium mb-1 flex items-center gap-2">
-                        <span className="text-sky-400">🐦</span>
-                        Twitter
-                      </label>
-                      <Input
-                        type="url"
-                        value={settings?.socialLinks?.twitter || ''}
-                        onChange={(e) => {
-                          if (settings) {
-                            setSettings({
-                              ...settings,
-                              socialLinks: {
-                                ...settings.socialLinks,
-                                twitter: e.target.value
-                              }
-                            });
-                          }
-                        }}
-                        className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                        placeholder="https://twitter.com/youraccount"
-                      />
-                    </div>
-
-                    {/* Instagram */}
-                    <div>
-                      <label className="block font-medium mb-1 flex items-center gap-2">
-                        <span className="text-pink-400">📷</span>
-                        Instagram
-                      </label>
-                      <Input
-                        type="url"
-                        value={settings?.socialLinks?.instagram || ''}
-                        onChange={(e) => {
-                          if (settings) {
-                            setSettings({
-                              ...settings,
-                              socialLinks: {
-                                ...settings.socialLinks,
-                                instagram: e.target.value
-                              }
-                            });
-                          }
-                        }}
-                        className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                        placeholder="https://instagram.com/youraccount"
-                      />
-                    </div>
-
-                    {/* LinkedIn */}
-                    <div>
-                      <label className="block font-medium mb-1 flex items-center gap-2">
-                        <span className="text-blue-600">💼</span>
-                        LinkedIn
-                      </label>
-                      <Input
-                        type="url"
-                        value={settings?.socialLinks?.linkedin || ''}
-                        onChange={(e) => {
-                          if (settings) {
-                            setSettings({
-                              ...settings,
-                              socialLinks: {
-                                ...settings.socialLinks,
-                                linkedin: e.target.value
-                              }
-                            });
-                          }
-                        }}
-                        className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                        placeholder="https://linkedin.com/company/yourcompany"
-                      />
-                    </div>
-
-                    {/* YouTube */}
-                    <div>
-                      <label className="block font-medium mb-1 flex items-center gap-2">
-                        <span className="text-red-500">▶️</span>
-                        YouTube
-                      </label>
-                      <Input
-                        type="url"
-                        value={settings?.socialLinks?.youtube || ''}
-                        onChange={(e) => {
-                          if (settings) {
-                            setSettings({
-                              ...settings,
-                              socialLinks: {
-                                ...settings.socialLinks,
-                                youtube: e.target.value
-                              }
-                            });
-                          }
-                        }}
-                        className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                        placeholder="https://youtube.com/c/yourchannel"
-                      />
-                    </div>
+                    {SOCIAL_PLATFORMS.filter((p) => p.key !== 'whatsapp').map((platform) => (
+                      <div key={platform.key}>
+                        <label className="block font-medium mb-1">
+                          {language === 'ar' ? platform.name.ar : language === 'fr' ? platform.name.fr : platform.name.en}
+                        </label>
+                        <Input
+                          type="url"
+                          value={settings?.socialLinks?.[platform.key] || ''}
+                          onChange={(e) => {
+                            if (settings) {
+                              setSettings({
+                                ...settings,
+                                socialLinks: {
+                                  ...settings.socialLinks,
+                                  [platform.key]: e.target.value,
+                                },
+                              });
+                            }
+                          }}
+                          className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
+                          placeholder={`https://${platform.key}.com/yourpage`}
+                        />
+                      </div>
+                    ))}
 
                     {/* Save Button */}
                     <div className="pt-3 border-t border-white/10">

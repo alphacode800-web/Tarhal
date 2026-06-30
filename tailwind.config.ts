@@ -74,6 +74,7 @@ export default {
             dark: "hsl(var(--tarhal-blue-dark))",
             navy: "hsl(var(--tarhal-navy))",
           },
+          navy: "hsl(var(--tarhal-navy))",
           gray: {
             light: "hsl(var(--tarhal-gray-light))",
             DEFAULT: "hsl(var(--tarhal-gray))",

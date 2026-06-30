@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Calendar, User, Building, Globe, MessageSquare, CheckCircle, AlertCircle, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Calendar, User, Building, Globe, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,6 +8,16 @@ import { Textarea } from '@/components/ui/textarea';
 import GoogleMap from '@/components/GoogleMap';
 import { dataManager } from '@/services/dataManager';
 import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  DEFAULT_CONTACT,
+  SOCIAL_PLATFORMS,
+  getContactFromSettings,
+  mergeSocialLinks,
+  resolveSocialUrl,
+  type SocialLinks,
+  type SiteContact,
+} from '@/data/socialPlatforms';
+import SocialBrandIcon from '@/components/SocialBrandIcon';
 
 interface ContactForm {
   name: string;
@@ -35,15 +45,8 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [socialLinks, setSocialLinks] = useState({
-    facebook: 'https://facebook.com',
-    twitter: 'https://twitter.com',
-    instagram: 'https://instagram.com',
-    linkedin: 'https://linkedin.com',
-    youtube: 'https://youtube.com',
-    whatsapp: '',
-    telegram: ''
-  });
+  const [socialLinks, setSocialLinks] = useState<SocialLinks>(mergeSocialLinks());
+  const [contact, setContact] = useState<SiteContact>(DEFAULT_CONTACT);
 
   const headerImages = [
     'https://images.pexels.com/photos/33337243/pexels-photo-33337243.jpeg',
@@ -65,17 +68,8 @@ export default function Contact() {
     const loadSocialLinks = async () => {
       try {
         const settings = await dataManager.getSettingsAsync();
-        if (settings.socialLinks) {
-          setSocialLinks({
-            facebook: settings.socialLinks.facebook || 'https://facebook.com',
-            twitter: settings.socialLinks.twitter || 'https://twitter.com',
-            instagram: settings.socialLinks.instagram || 'https://instagram.com',
-            linkedin: settings.socialLinks.linkedin || 'https://linkedin.com',
-            youtube: settings.socialLinks.youtube || 'https://youtube.com',
-            whatsapp: settings.socialLinks.whatsapp || '',
-            telegram: settings.socialLinks.telegram || ''
-          });
-        }
+        setContact(getContactFromSettings(settings));
+        setSocialLinks(mergeSocialLinks(settings.socialLinks));
       } catch (error) {
         console.error('Error loading social links:', error);
       }
@@ -128,19 +122,25 @@ export default function Contact() {
     {
       icon: <Phone className="h-6 w-6" />,
       title: 'اتصل بنا',
-      details: ['+249 123 456 789', '+966 11 234 5678', '+971 4 567 8901'],
+      details: [contact.phone],
       color: 'from-green-500 to-green-600'
+    },
+    {
+      icon: <MessageCircle className="h-6 w-6" />,
+      title: 'واتساب',
+      details: [contact.whatsapp],
+      color: 'from-emerald-500 to-emerald-600'
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: 'راسلنا',
-      details: ['info@ciar.com', 'booking@ciar.com', 'support@ciar.com'],
+      details: [contact.email],
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: 'زورنا',
-      details: ['الخرطوم، السودان', 'الرياض، السعودية', 'د��ي، الإمارات'],
+      details: ['الخرطوم، السودان'],
       color: 'from-red-500 to-red-600'
     },
     {
@@ -151,64 +151,10 @@ export default function Contact() {
     }
   ];
 
-  const socialPlatforms = [
-    { 
-      name: { ar: 'واتساب', en: 'WhatsApp', fr: 'WhatsApp' },
-      icon: <MessageCircle className="h-6 w-6" />, 
-      color: 'bg-gradient-to-br from-green-500 to-green-600 hover:from-green-400 hover:to-green-500',
-      hoverColor: 'shadow-green-500/50',
-      url: socialLinks.whatsapp || '#',
-      key: 'whatsapp'
-    },
-    { 
-      name: { ar: 'تيليجرام', en: 'Telegram', fr: 'Telegram' },
-      icon: <MessageSquare className="h-6 w-6" />, 
-      color: 'bg-gradient-to-br from-blue-400 to-blue-500 hover:from-blue-300 hover:to-blue-400',
-      hoverColor: 'shadow-blue-500/50',
-      url: socialLinks.telegram || '#',
-      key: 'telegram'
-    },
-    { 
-      name: { ar: 'فيسبوك', en: 'Facebook', fr: 'Facebook' },
-      icon: <Facebook className="h-6 w-6" />, 
-      color: 'bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600',
-      hoverColor: 'shadow-blue-600/50',
-      url: socialLinks.facebook,
-      key: 'facebook'
-    },
-    { 
-      name: { ar: 'إنستغرام', en: 'Instagram', fr: 'Instagram' },
-      icon: <Instagram className="h-6 w-6" />, 
-      color: 'bg-gradient-to-br from-pink-500 via-purple-500 to-orange-500 hover:from-pink-400 hover:via-purple-400 hover:to-orange-400',
-      hoverColor: 'shadow-pink-500/50',
-      url: socialLinks.instagram,
-      key: 'instagram'
-    },
-    { 
-      name: { ar: 'تويتر', en: 'Twitter', fr: 'Twitter' },
-      icon: <Twitter className="h-6 w-6" />, 
-      color: 'bg-gradient-to-br from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400',
-      hoverColor: 'shadow-sky-500/50',
-      url: socialLinks.twitter,
-      key: 'twitter'
-    },
-    { 
-      name: { ar: 'لينكد إن', en: 'LinkedIn', fr: 'LinkedIn' },
-      icon: <Linkedin className="h-6 w-6" />, 
-      color: 'bg-gradient-to-br from-blue-700 to-blue-800 hover:from-blue-600 hover:to-blue-700',
-      hoverColor: 'shadow-blue-700/50',
-      url: socialLinks.linkedin,
-      key: 'linkedin'
-    },
-    { 
-      name: { ar: 'يوتيوب', en: 'YouTube', fr: 'YouTube' },
-      icon: <Youtube className="h-6 w-6" />, 
-      color: 'bg-gradient-to-br from-red-500 to-red-600 hover:from-red-400 hover:to-red-500',
-      hoverColor: 'shadow-red-500/50',
-      url: socialLinks.youtube,
-      key: 'youtube'
-    }
-  ];
+  const socialPlatforms = SOCIAL_PLATFORMS.map((platform) => ({
+    ...platform,
+    url: resolveSocialUrl(platform.key, socialLinks, contact),
+  }));
 
   const officeLocations = [
     {
@@ -330,11 +276,15 @@ export default function Contact() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in" style={{ animationDelay: '600ms' }}>
               <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
                 <Phone className="h-5 w-5 text-tarhal-orange" />
-                <span className="text-white">+249 123 456 789</span>
+                <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="text-white hover:text-tarhal-orange transition-colors">
+                  {contact.phone}
+                </a>
               </div>
               <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
                 <Mail className="h-5 w-5 text-tarhal-orange" />
-                <span className="text-white">info@ciar.com</span>
+                <a href={`mailto:${contact.email}`} className="text-white hover:text-tarhal-orange transition-colors">
+                  {contact.email}
+                </a>
               </div>
             </div>
           </div>
@@ -353,7 +303,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
@@ -431,7 +381,7 @@ export default function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="+249 123 456 789"
+                        placeholder={contact.phone}
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:border-tarhal-orange backdrop-blur-sm"
                       />
                     </div>
@@ -602,36 +552,21 @@ export default function Contact() {
             {language === 'ar' ? 'ابقوا على اطلاع بأحدث العروض والوجهات السياحية' : language === 'fr' ? 'Restez informé des dernières offres et destinations touristiques' : 'Stay updated with the latest offers and tourist destinations'}
           </p>
           
-          <div className="flex justify-center gap-6 flex-wrap animate-scale-in max-w-5xl mx-auto">
+          <div className="flex justify-center gap-5 flex-wrap animate-scale-in max-w-5xl mx-auto">
             {socialPlatforms.map((platform, index) => (
               <a
                 key={platform.key}
                 href={platform.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`relative w-20 h-20 ${platform.color} rounded-2xl flex items-center justify-center text-white hover:shadow-2xl ${platform.hoverColor} transform hover:scale-110 hover:-translate-y-2 transition-all duration-300 group cursor-pointer overflow-hidden border-2 border-white/20 hover:border-white/40`}
+                className="group relative w-16 h-16 bg-white rounded-2xl shadow-md border border-gray-100 flex items-center justify-center hover:shadow-xl hover:border-tarhal-orange/30 transform hover:scale-110 hover:-translate-y-1 transition-all duration-300"
                 style={{ animationDelay: `${index * 100}ms` }}
                 title={language === 'ar' ? platform.name.ar : language === 'fr' ? platform.name.fr : platform.name.en}
               >
-                {/* Animated background gradient */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/0 via-white/0 to-white/0 group-hover:from-white/20 group-hover:via-white/10 group-hover:to-white/20 transition-all duration-500"></div>
-                
-                {/* Pulse effect on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
-                
-                {/* Icon with rotation and scale effect */}
-                <div className="relative z-10 transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
-                  {platform.icon}
-                </div>
-                
-                {/* Enhanced tooltip */}
-                <span className="absolute -bottom-14 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gray-900 to-gray-800 text-white text-xs font-semibold px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-2xl border border-white/10">
+                <SocialBrandIcon platform={platform.key} size={32} className="group-hover:scale-110 transition-transform" />
+                <span className="absolute -bottom-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-lg">
                   {language === 'ar' ? platform.name.ar : language === 'fr' ? platform.name.fr : platform.name.en}
-                  <span className="absolute -top-1.5 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gradient-to-br from-gray-900 to-gray-800 rotate-45 border-l border-t border-white/10"></span>
                 </span>
-                
-                {/* Shine effect on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </a>
             ))}
           </div>

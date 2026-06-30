@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Search, Globe, Phone, Mail, Settings, DollarSign, ChevronDown, Sun, Moon } from 'lucide-react';
+import { Menu, X, Search, Globe, DollarSign, ChevronDown, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from './ui/button';
 import SearchModal from './SearchModal';
@@ -14,13 +14,13 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const [isCurrencyMenuOpen, setIsCurrencyMenuOpen] = useState(false);
-  const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const [isOffersMenuOpen, setIsOffersMenuOpen] = useState(false);
+  const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const [themeMounted, setThemeMounted] = useState(false);
   const currencyMenuRef = useRef<HTMLDivElement>(null);
   const languageMenuRef = useRef<HTMLDivElement>(null);
-  const servicesMenuRef = useRef<HTMLDivElement>(null);
   const offersMenuRef = useRef<HTMLDivElement>(null);
+  const servicesMenuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { language, setLanguage, t } = useLanguage();
   const { currency, setCurrency } = useCurrency();
@@ -39,18 +39,50 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: '/', key: 'nav.home', icon: undefined },
-    { href: '/offices', key: 'nav.offices', icon: undefined },
-    { href: '/about', key: 'nav.about', icon: undefined },
-    { href: '/contact', key: 'nav.contact', icon: undefined },
-  ];
-
   const offersMenuItems = [
     { href: '/offers?type=local', key: 'nav.offers.local' },
     { href: '/offers?type=international', key: 'nav.offers.international' },
     { href: '/offers?type=all', key: 'nav.offers.all' },
   ];
+
+  const navLinkClass = (active: boolean) =>
+    `relative font-medium transition-colors duration-300 flex items-center gap-1 ${
+      active
+        ? 'text-tarhal-orange'
+        : isScrolled
+          ? 'text-tarhal-blue-dark hover:text-tarhal-orange dark:text-white'
+          : 'text-white hover:text-tarhal-orange'
+    }`;
+
+  const renderServicesMenu = (onNavigate?: () => void) => (
+    <div className="rounded-md bg-white dark:bg-slate-900 shadow-lg border border-gray-200 dark:border-slate-700 py-2 min-w-[250px] max-h-[400px] overflow-y-auto">
+      {services.map((service, index) => {
+        const content = (
+          <div className="w-full px-4 py-3 text-sm flex items-center gap-3 text-left hover:bg-tarhal-orange/10 hover:text-tarhal-orange transition-colors text-gray-700 dark:text-gray-200">
+            <span className="text-lg">{service.icon}</span>
+            <span className="font-medium">{getLocalizedText(service.label, service.labelEn, service.labelFr)}</span>
+          </div>
+        );
+
+        return service.href && service.href !== '#' ? (
+          <Link key={index} to={service.href} onClick={onNavigate}>
+            {content}
+          </Link>
+        ) : (
+          <a
+            key={index}
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate?.();
+            }}
+          >
+            {content}
+          </a>
+        );
+      })}
+    </div>
+  );
 
   const languages = [
     { code: 'ar' as Language, name: 'العربية', flag: '🇸🇦' },
@@ -91,11 +123,11 @@ export default function Header() {
       if (languageMenuRef.current && !languageMenuRef.current.contains(event.target as Node)) {
         setIsLanguageMenuOpen(false);
       }
-      if (servicesMenuRef.current && !servicesMenuRef.current.contains(event.target as Node)) {
-        setIsServicesMenuOpen(false);
-      }
       if (offersMenuRef.current && !offersMenuRef.current.contains(event.target as Node)) {
         setIsOffersMenuOpen(false);
+      }
+      if (servicesMenuRef.current && !servicesMenuRef.current.contains(event.target as Node)) {
+        setIsServicesMenuOpen(false);
       }
     };
 
@@ -164,23 +196,19 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`relative font-medium transition-colors duration-300 flex items-center gap-2 ${
-                  location.pathname === link.href || (link.href === '/admin' && location.pathname.startsWith('/admin'))
-                    ? 'text-tarhal-orange'
-                    : isScrolled ? 'text-tarhal-blue-dark hover:text-tarhal-orange dark:text-white' : 'text-white hover:text-tarhal-orange'
-                }`}
-              >
-                {link.icon && <link.icon size={16} />}
-                {t(link.key)}
-                {(location.pathname === link.href || (link.href === '/admin' && location.pathname.startsWith('/admin'))) && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-tarhal-orange animate-scale-in"></span>
-                )}
-              </Link>
-            ))}
+            <Link to="/" className={navLinkClass(location.pathname === '/')}>
+              {t('nav.home')}
+              {location.pathname === '/' && (
+                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-tarhal-orange animate-scale-in" />
+              )}
+            </Link>
+
+            <Link to="/offices" className={navLinkClass(location.pathname === '/offices' || location.pathname.startsWith('/offices/'))}>
+              {t('nav.offices')}
+              {(location.pathname === '/offices' || location.pathname.startsWith('/offices/')) && (
+                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-tarhal-orange animate-scale-in" />
+              )}
+            </Link>
 
             {/* Offers Dropdown */}
             <div
@@ -189,18 +217,11 @@ export default function Header() {
               onMouseEnter={() => setIsOffersMenuOpen(true)}
               onMouseLeave={() => setIsOffersMenuOpen(false)}
             >
-              <Link
-                to="/offers?type=all"
-                className={`relative font-medium transition-colors duration-300 flex items-center gap-1 ${
-                  location.pathname === '/offers'
-                    ? 'text-tarhal-orange'
-                    : isScrolled ? 'text-tarhal-blue-dark hover:text-tarhal-orange dark:text-white' : 'text-white hover:text-tarhal-orange'
-                }`}
-              >
+              <Link to="/offers?type=all" className={navLinkClass(location.pathname === '/offers')}>
                 {t('nav.offers')}
                 <ChevronDown size={14} className={`transition-transform duration-300 ${isOffersMenuOpen ? 'rotate-180' : ''}`} />
                 {location.pathname === '/offers' && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-tarhal-orange animate-scale-in"></span>
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-tarhal-orange animate-scale-in" />
                 )}
               </Link>
               {isOffersMenuOpen && (
@@ -220,6 +241,41 @@ export default function Header() {
                 </div>
               )}
             </div>
+
+            {/* Services Dropdown */}
+            <div
+              className="relative"
+              ref={servicesMenuRef}
+              onMouseEnter={() => setIsServicesMenuOpen(true)}
+              onMouseLeave={() => setIsServicesMenuOpen(false)}
+            >
+              <Link
+                to="/#services"
+                className={navLinkClass(location.pathname === '/' && location.hash === '#services')}
+              >
+                {t('nav.services')}
+                <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesMenuOpen ? 'rotate-180' : ''}`} />
+              </Link>
+              {isServicesMenuOpen && (
+                <div className="absolute top-full right-0 pt-2 z-50">
+                  {renderServicesMenu(() => setIsServicesMenuOpen(false))}
+                </div>
+              )}
+            </div>
+
+            <Link to="/contact" className={navLinkClass(location.pathname === '/contact')}>
+              {t('nav.contact')}
+              {location.pathname === '/contact' && (
+                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-tarhal-orange animate-scale-in" />
+              )}
+            </Link>
+
+            <Link to="/about" className={navLinkClass(location.pathname === '/about')}>
+              {t('nav.about')}
+              {location.pathname === '/about' && (
+                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-tarhal-orange animate-scale-in" />
+              )}
+            </Link>
           </div>
 
           {/* Search & Menu */}
@@ -241,60 +297,10 @@ export default function Header() {
               variant="ghost"
               size="sm"
               onClick={() => setIsSearchOpen(true)}
-              className={`p-2 ${isScrolled ? 'text-tarhal-blue-dark hover:text-tarhal-orange' : 'text-white hover:text-tarhal-orange'} transition-all duration-300 hover:scale-110`}
+              className={`p-2 ${isScrolled ? 'text-tarhal-blue-dark hover:text-tarhal-orange dark:text-white' : 'text-white hover:text-tarhal-orange'} transition-all duration-300 hover:scale-110`}
             >
               <Search size={20} />
             </Button>
-
-            {/* Services Dropdown */}
-            <div className="relative" ref={servicesMenuRef}>
-              <Button
-                variant="ghost"
-                size="sm"
-                className={`px-3 py-2 rounded-full border ${isScrolled ? 'border-tarhal-blue-dark text-tarhal-blue-dark hover:bg-tarhal-blue-dark hover:text-white' : 'border-white/60 text-white hover:bg-white hover:text-tarhal-blue-dark'} transition-all duration-300 text-xs font-semibold flex items-center gap-1`}
-                onClick={() => {
-                  setIsServicesMenuOpen((prev) => !prev);
-                  setIsLanguageMenuOpen(false);
-                  setIsCurrencyMenuOpen(false);
-                }}
-              >
-                <span>{getLocalizedText('خدماتنا', 'Services', 'Services')}</span>
-                <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesMenuOpen ? 'rotate-180' : ''}`} />
-              </Button>
-              {isServicesMenuOpen && (
-                <div className="absolute right-0 mt-2 min-w-[250px] max-h-[400px] overflow-y-auto rounded-md bg-white dark:bg-slate-900 shadow-lg border border-gray-200 dark:border-slate-700 py-2 z-50">
-                  {services.map((service, index) => {
-                    const content = (
-                      <div className="w-full px-4 py-3 text-sm flex items-center gap-3 text-left hover:bg-tarhal-orange/10 hover:text-tarhal-orange transition-colors text-gray-700 dark:text-gray-200">
-                        <span className="text-lg">{service.icon}</span>
-                        <span className="font-medium">{getLocalizedText(service.label, service.labelEn, service.labelFr)}</span>
-                      </div>
-                    );
-                    
-                    return service.href && service.href !== '#' ? (
-                      <Link
-                        key={index}
-                        to={service.href}
-                        onClick={() => setIsServicesMenuOpen(false)}
-                      >
-                        {content}
-                      </Link>
-                    ) : (
-                      <a
-                        key={index}
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setIsServicesMenuOpen(false);
-                        }}
-                      >
-                        {content}
-                      </a>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
 
             {/* Currency Dropdown */}
             <div className="relative" ref={currencyMenuRef}>
@@ -305,7 +311,6 @@ export default function Header() {
                 onClick={() => {
                   setIsCurrencyMenuOpen((prev) => !prev);
                   setIsLanguageMenuOpen(false);
-                  setIsServicesMenuOpen(false);
                 }}
               >
                 <DollarSign size={14} />
@@ -347,7 +352,6 @@ export default function Header() {
                 onClick={() => {
                   setIsLanguageMenuOpen((prev) => !prev);
                   setIsCurrencyMenuOpen(false);
-                  setIsServicesMenuOpen(false);
                 }}
               >
                 <span>{languages.find((l) => l.code === language)?.flag}</span>
@@ -392,18 +396,12 @@ export default function Header() {
         }`}>
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link, index) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`text-tarhal-blue-dark dark:text-white hover:text-tarhal-orange font-medium py-2 border-b border-tarhal-gray-light transition-all duration-300 animate-slide-in-left flex items-center gap-2`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {link.icon && <link.icon size={16} />}
-                  {t(link.key)}
-                </Link>
-              ))}
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-tarhal-blue-dark dark:text-white hover:text-tarhal-orange font-medium py-2 border-b border-tarhal-gray-light">
+                {t('nav.home')}
+              </Link>
+              <Link to="/offices" onClick={() => setIsMenuOpen(false)} className="text-tarhal-blue-dark dark:text-white hover:text-tarhal-orange font-medium py-2 border-b border-tarhal-gray-light">
+                {t('nav.offices')}
+              </Link>
 
               {/* Mobile Offers Submenu */}
               <div className="border-b border-tarhal-gray-light pb-2">
@@ -421,6 +419,32 @@ export default function Header() {
                   ))}
                 </div>
               </div>
+
+              {/* Mobile Services Submenu */}
+              <div className="border-b border-tarhal-gray-light pb-2">
+                <Link to="/#services" onClick={() => setIsMenuOpen(false)} className="text-tarhal-blue-dark dark:text-white hover:text-tarhal-orange font-medium py-2 block">
+                  {t('nav.services')}
+                </Link>
+                <div className="flex flex-col gap-1 pr-4 mt-1">
+                  {services.map((service, index) => (
+                    <Link
+                      key={index}
+                      to={service.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-sm text-tarhal-gray-dark dark:text-gray-300 hover:text-tarhal-orange py-1.5 flex items-center gap-2"
+                    >
+                      <span>{service.icon}</span>
+                      {getLocalizedText(service.label, service.labelEn, service.labelFr)}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-tarhal-blue-dark dark:text-white hover:text-tarhal-orange font-medium py-2 border-b border-tarhal-gray-light">
+                {t('nav.contact')}
+              </Link>
+              <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-tarhal-blue-dark dark:text-white hover:text-tarhal-orange font-medium py-2 border-b border-tarhal-gray-light">
+                {t('nav.about')}
+              </Link>
               
               {/* Mobile Theme Toggle */}
               <div className="pt-4 border-t border-tarhal-gray-light">

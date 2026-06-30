@@ -479,6 +479,8 @@ export default function CheckoutDemo() {
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         {[
                           { id: 'card', label: language === 'ar' ? 'بطاقة بنكية' : language === 'fr' ? 'Carte bancaire' : 'Card', icons: ['https://cdn.simpleicons.org/visa','https://cdn.simpleicons.org/mastercard'] },
+                          { id: 'whish', label: 'Whish Money', icons: ['/payments/whish-money.png'], local: true },
+                          { id: 'ciar_card', label: language === 'ar' ? 'بطاقة CIAR' : 'CIAR Card', icons: ['/payments/ciar-mastercard.png'], local: true },
                           { id: 'sepa_debit', label: 'SEPA Debit', icons: [] },
                           { id: 'sofort', label: 'SOFORT', icons: ['https://cdn.simpleicons.org/sofort'] },
                           { id: 'giropay', label: 'giropay', icons: ['https://cdn.simpleicons.org/giropay'] },
@@ -511,7 +513,7 @@ export default function CheckoutDemo() {
                                       <img src={m.icons[1]} alt="Mastercard" className="w-6 h-6" />
                                     </div>
                                   ) : m.icons.length ? (
-                                    <img src={m.icons[0]} alt={m.label} className="w-7 h-7" />
+                                    <img src={m.icons[0]} alt={m.label} className={`${'local' in m && m.local ? 'h-8 w-auto max-w-[72px] object-contain' : 'w-7 h-7'}`} />
                                   ) : (
                                     <div className="w-7 h-7 rounded bg-gray-100 flex items-center justify-center text-[10px] font-semibold text-gray-500">
                                       {m.label.split(' ')[0]}

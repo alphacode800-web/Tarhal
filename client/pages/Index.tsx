@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Star, Globe, Users, Award, Shield, MapPin, Mail, Phone, Send, Lock } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -17,16 +17,45 @@ export default function Index() {
   const [countries, setCountries] = useState(getAllCountriesWithDynamic());
   const [heroContent, setHeroContent] = useState(dataManager.getHeroContent());
   const [detectedCountryId, setDetectedCountryId] = useState<string | null>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#services') {
+      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     const mergeCountries = (dynamicCountries: Awaited<ReturnType<typeof dataManager.getCountriesAsync>>) => {
       const staticCountries = getAllCountriesWithDynamic();
+      const staticById = new Map(staticCountries.map((c) => [c.id, c]));
+      const staticByName = new Map(
+        staticCountries.map((c) => [(c.name.en || c.name.ar || '').trim().toLowerCase(), c])
+      );
       const countriesMap = new Map<string, ReturnType<typeof getAllCountriesWithDynamic>[number]>();
 
       staticCountries.forEach((c) => countriesMap.set(c.id, c));
       dynamicCountries.forEach((adminCountry) => {
-        if (adminCountry.isActive !== false) {
-          countriesMap.set(adminCountry.id, convertAdminToCountryData(adminCountry));
+        if (adminCountry.isActive === false) return;
+        const dynamic = convertAdminToCountryData(adminCountry);
+        const nameKey = (adminCountry.name.en || adminCountry.name.ar || '').trim().toLowerCase();
+        const staticMatch =
+          staticById.get(adminCountry.id) ||
+          staticByName.get(nameKey);
+        const targetId = staticMatch?.id ?? adminCountry.id;
+        const base = countriesMap.get(targetId) ?? staticMatch ?? dynamic;
+
+        countriesMap.set(targetId, {
+          ...base,
+          ...dynamic,
+          id: targetId,
+          mainImage: dynamic.mainImage?.trim() || staticMatch?.mainImage || base.mainImage || '',
+          gallery: dynamic.gallery?.length ? dynamic.gallery : staticMatch?.gallery ?? base.gallery ?? [],
+          flag: staticMatch?.flag ?? base.flag ?? dynamic.flag,
+        });
+
+        if (staticMatch && adminCountry.id !== targetId) {
+          countriesMap.delete(adminCountry.id);
         }
       });
 
@@ -214,7 +243,10 @@ export default function Index() {
             <div className="max-w-3xl animate-fade-in">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
                 {heroContent.heroTitle[language]}
-                <span className="block text-tarhal-orange">{heroContent.heroSubtitle[language]}</span>
+                <span className="block mt-2 font-brand leading-none">
+                  <span className="text-tarhal-orange text-3xl md:text-4xl tracking-wider">ciar</span>
+                  <span className="text-white text-2xl md:text-4xl uppercase tracking-[0.2em]">TOU</span>
+                </span>
               </h1>
               <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-slide-up" style={{ animationDelay: '300ms' }}>
                 {heroContent.heroDescription[language]}
@@ -732,7 +764,7 @@ export default function Index() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-gradient-to-br from-white to-slate-50">
+      <section id="services" className="py-20 bg-gradient-to-br from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-tarhal-blue-dark mb-6 animate-fade-in">
@@ -749,62 +781,75 @@ export default function Index() {
                 icon: '✈️',
                 title: 'حجز الطيران',
                 description: 'أفضل أسعار تذاكر الطيران مع جميع الخطوط الجوية العالمية',
-                color: 'from-blue-500 to-blue-600'
+                color: 'from-blue-500 to-blue-600',
+                href: '/flight-tickets',
               },
               {
                 icon: '🏨',
                 title: 'حجز الفنادق',
                 description: 'اختر من بين آلاف الفنادق المصنفة في جميع أنحاء العالم',
-                color: 'from-green-500 to-green-600'
+                color: 'from-green-500 to-green-600',
+                href: '/hotels',
               },
               {
                 icon: '🚗',
                 title: 'استئجار السيارات',
                 description: 'أحدث السيارات وأفضل الأسعار لرحلة مريحة وآمنة',
-                color: 'from-purple-500 to-purple-600'
+                color: 'from-purple-500 to-purple-600',
+                href: '/car-rentals',
               },
               {
                 icon: '🗺️',
                 title: 'الجولات السياحية',
                 description: 'برامج سياحية متنوعة مع مرشدين محليين خبراء',
-                color: 'from-orange-500 to-orange-600'
+                color: 'from-orange-500 to-orange-600',
+                href: '/offers',
               },
               {
                 icon: '📋',
                 title: 'استخراج التأشيرات',
                 description: 'نساعدك في استخراج جميع أنواع التأشيرات بسهولة ويسر',
-                color: 'from-red-500 to-red-600'
+                color: 'from-red-500 to-red-600',
+                href: '/travel-visa',
               },
               {
                 icon: '🛡️',
                 title: 'التأمين السياحي',
                 description: 'حماية شاملة لرحلتك ضد جميع المخاطر المحتملة',
-                color: 'from-indigo-500 to-indigo-600'
+                color: 'from-indigo-500 to-indigo-600',
+                href: '/travel-insurance',
               },
               {
                 icon: '💼',
                 title: 'السياحة العلاجية',
                 description: 'برامج متخصصة للسياحة العلاجية في أفضل المراكز الطبية',
-                color: 'from-pink-500 to-pink-600'
+                color: 'from-pink-500 to-pink-600',
+                href: '/contact',
               },
               {
                 icon: '🎓',
                 title: 'السياحة التعليمية',
                 description: 'رحلات تعليمية وثقافية للطلاب والمهتمين بالتعلم',
-                color: 'from-cyan-500 to-cyan-600'
-              }
+                color: 'from-cyan-500 to-cyan-600',
+                href: '/contact',
+              },
             ].map((service, index) => (
-              <div key={index} className="group bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 animate-scale-in hover:-translate-y-2" style={{ animationDelay: `${index * 100}ms` }}>
+              <Link
+                key={service.href}
+                to={service.href}
+                className="group bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 animate-scale-in hover:-translate-y-2 border border-transparent dark:border-slate-800"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-tarhal-blue-dark mb-4 text-center">
+                <h3 className="text-xl font-bold text-tarhal-blue-dark mb-4 text-center group-hover:text-tarhal-orange transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-tarhal-gray-dark text-center leading-relaxed">
                   {service.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -850,23 +895,23 @@ export default function Index() {
                   <input
                     type="text"
                     placeholder="الاسم الكامل"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:border-tarhal-orange"
+                    className="w-full px-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder:text-white/75 focus:outline-none focus:border-tarhal-orange focus:bg-white/25"
                   />
                   <input
                     type="email"
                     placeholder="البريد الإلكتروني"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:border-tarhal-orange"
+                    className="w-full px-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder:text-white/75 focus:outline-none focus:border-tarhal-orange focus:bg-white/25"
                   />
                 </div>
                 <input
                   type="text"
                   placeholder="الموضوع"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:border-tarhal-orange"
+                  className="w-full px-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder:text-white/75 focus:outline-none focus:border-tarhal-orange focus:bg-white/25"
                 />
                 <textarea
                   rows={5}
                   placeholder="رسالتك"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:border-tarhal-orange resize-none"
+                  className="w-full px-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder:text-white/75 focus:outline-none focus:border-tarhal-orange focus:bg-white/25 resize-none"
                 ></textarea>
                 <Button className="bg-gradient-to-r from-tarhal-orange to-tarhal-orange-dark text-white px-8 py-3 text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                   إرسال الرسالة
@@ -908,14 +953,32 @@ export default function Index() {
             </div>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
               {language === 'ar' 
-                ? 'نقبل جميع وسائل الدفع الآمنة والمشهورة عالمياً' 
+                ? 'نقبل وسائل الدفع العالمية و المحلية بما فيها Whish Money و بطاقة CIAR' 
                 : language === 'fr'
-                ? 'Nous acceptons tous les moyens de paiement sécurisés et reconnus mondialement'
-                : 'We accept all secure and globally recognized payment methods'}
+                ? 'Nous acceptons les moyens de paiement internationaux et locaux, dont Whish Money et la carte CIAR'
+                : 'We accept international and local payment methods including Whish Money and the CIAR card'}
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
+            {/* Whish Money */}
+            <div className="bg-white rounded-xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center min-h-[100px]">
+              <img
+                src="/payments/whish-money.png"
+                alt="Whish Money"
+                className="h-16 w-full max-w-[140px] object-contain"
+              />
+            </div>
+
+            {/* CIAR Prepaid Mastercard */}
+            <div className="bg-white rounded-xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center min-h-[100px]">
+              <img
+                src="/payments/ciar-mastercard.png"
+                alt="CIAR Prepaid Mastercard"
+                className="h-16 w-full max-w-[140px] object-contain rounded-md"
+              />
+            </div>
+
             {/* Mastercard */}
             <div className="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center min-h-[100px]">
               <div className="flex items-center gap-1">

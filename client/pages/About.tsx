@@ -2,10 +2,33 @@ import { useState, useEffect } from 'react';
 import { Users, Award, Globe, Heart, Target, Eye, Gem, Zap, Shield, Clock, CheckCircle, Star, ArrowRight, Quote, Calendar, TrendingUp, UserCheck } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
+import { dataManager } from '@/services/dataManager';
+import {
+  SOCIAL_PLATFORMS,
+  getContactFromSettings,
+  mergeSocialLinks,
+  resolveSocialUrl,
+  type SocialLinks,
+  type SiteContact,
+} from '@/data/socialPlatforms';
+import SocialBrandIcon from '@/components/SocialBrandIcon';
 
 export default function About() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [socialLinks, setSocialLinks] = useState<SocialLinks>(mergeSocialLinks());
+  const [contact, setContact] = useState<SiteContact>(getContactFromSettings());
+
+  useEffect(() => {
+    const loadSettings = async () => {
+      const settings = await dataManager.getSettingsAsync();
+      setContact(getContactFromSettings(settings));
+      setSocialLinks(mergeSocialLinks(settings.socialLinks));
+    };
+    loadSettings();
+    window.addEventListener('settingsUpdated', loadSettings);
+    return () => window.removeEventListener('settingsUpdated', loadSettings);
+  }, []);
 
   const headerImages = [
     'https://images.pexels.com/photos/33337243/pexels-photo-33337243.jpeg',
@@ -214,14 +237,11 @@ export default function About() {
     }
   ];
 
-  const socialLinks = [
-    { name: 'Facebook', url: '#', icon: '📘' },
-    { name: 'Instagram', url: '#', icon: '📷' },
-    { name: 'Twitter', url: '#', icon: '🐦' },
-    { name: 'LinkedIn', url: '#', icon: '💼' },
-    { name: 'YouTube', url: '#', icon: '📺' },
-    { name: 'TikTok', url: '#', icon: '🎵' }
-  ];
+  const socialLinksDisplay = SOCIAL_PLATFORMS.map((platform) => ({
+    key: platform.key,
+    name: platform.name.ar,
+    url: resolveSocialUrl(platform.key, socialLinks, contact),
+  }));
 
   return (
     <Layout>
@@ -558,15 +578,18 @@ export default function About() {
             ابقوا على اطلاع بأحدث العروض والوجهات
           </p>
           
-          <div className="flex justify-center gap-6 animate-scale-in">
-            {socialLinks.map((social, index) => (
+          <div className="flex justify-center gap-4 flex-wrap animate-scale-in max-w-4xl mx-auto">
+            {socialLinksDisplay.map((social, index) => (
               <a
-                key={index}
+                key={social.key}
                 href={social.url}
-                className="w-16 h-16 bg-gradient-to-br from-tarhal-orange to-tarhal-orange-dark rounded-full flex items-center justify-center text-white text-2xl hover:shadow-xl transform hover:scale-110 transition-all duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                title={social.name}
+                className="w-16 h-16 bg-white rounded-2xl shadow-md border border-gray-100 flex items-center justify-center hover:shadow-xl hover:border-tarhal-orange/30 transform hover:scale-110 transition-all duration-300"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {social.icon}
+                <SocialBrandIcon platform={social.key} size={32} />
               </a>
             ))}
           </div>

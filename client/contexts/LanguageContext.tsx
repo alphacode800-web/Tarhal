@@ -35,7 +35,8 @@ const translations = {
     'offers.filter.international': 'عروض سفر دولية من دولتك',
     'offers.filter.all': 'جميع العروض السياحية',
     'nav.about': 'من نحن',
-    'nav.contact': 'التواصل',
+    'nav.contact': 'تواصل معنا',
+    'nav.services': 'خدماتنا',
     'nav.admin': 'لوحة الإدارة',
     
     // Common
@@ -177,7 +178,8 @@ const translations = {
     'offers.filter.international': 'International travel from your country',
     'offers.filter.all': 'All tour offers',
     'nav.about': 'About Us',
-    'nav.contact': 'Contact',
+    'nav.contact': 'Contact Us',
+    'nav.services': 'Our Services',
     'nav.admin': 'Admin Dashboard',
     
     // Common
@@ -319,7 +321,8 @@ const translations = {
     'offers.filter.international': 'Voyages internationaux depuis votre pays',
     'offers.filter.all': 'Toutes les offres touristiques',
     'nav.about': 'À Propos',
-    'nav.contact': 'Contact',
+    'nav.contact': 'Contactez-nous',
+    'nav.services': 'Nos Services',
     'nav.admin': 'Tableau de Bord',
     
     // Common

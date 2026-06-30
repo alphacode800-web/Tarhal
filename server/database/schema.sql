@@ -358,7 +358,7 @@ INSERT OR IGNORE INTO system_settings (key, value, description, is_public) VALUE
 ('site_name', 'ترحال - Tarhal', 'Website name', 1),
 ('site_description', 'شركة ترحال للسياحة والسفر', 'Website description', 1),
 ('contact_email', 'info@tarhal.com', 'Main contact email', 1),
-('contact_phone', '+249 123 456 789', 'Main contact phone', 1),
+('contact_phone', '00963993153333', 'Main contact phone', 1),
 ('max_upload_size', '10485760', 'Maximum file upload size in bytes (10MB)', 0),
 ('default_language', 'ar', 'Default website language', 1),
 ('maintenance_mode', 'false', 'Website maintenance mode', 0),

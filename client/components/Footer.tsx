@@ -1,33 +1,31 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Clock, Send, Award, Shield, HeartHandshake, Facebook, Twitter, Instagram, Linkedin, Youtube, Star, ArrowRight, Globe2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, Award, Shield, HeartHandshake, Star, ArrowRight, Globe2, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { dataManager } from '@/services/dataManager';
+import {
+  DEFAULT_CONTACT,
+  SOCIAL_PLATFORMS,
+  getContactFromSettings,
+  mergeSocialLinks,
+  resolveSocialUrl,
+  type SocialLinks,
+  type SiteContact,
+} from '@/data/socialPlatforms';
+import SocialBrandIcon from '@/components/SocialBrandIcon';
 import { useState, useEffect } from 'react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { language, t } = useLanguage();
-  const [socialLinks, setSocialLinks] = useState({
-    facebook: 'https://facebook.com',
-    twitter: 'https://twitter.com',
-    instagram: 'https://instagram.com',
-    linkedin: 'https://linkedin.com',
-    youtube: 'https://youtube.com'
-  });
+  const [socialLinks, setSocialLinks] = useState<SocialLinks>(mergeSocialLinks());
+  const [contact, setContact] = useState<SiteContact>(DEFAULT_CONTACT);
 
   // Load social links from settings
   useEffect(() => {
     const loadSocialLinks = async () => {
       const settings = await dataManager.getSettingsAsync();
-      if (settings.socialLinks) {
-        setSocialLinks({
-          facebook: settings.socialLinks.facebook || 'https://facebook.com',
-          twitter: settings.socialLinks.twitter || 'https://twitter.com',
-          instagram: settings.socialLinks.instagram || 'https://instagram.com',
-          linkedin: settings.socialLinks.linkedin || 'https://linkedin.com',
-          youtube: settings.socialLinks.youtube || 'https://youtube.com'
-        });
-      }
+      setContact(getContactFromSettings(settings));
+      setSocialLinks(mergeSocialLinks(settings.socialLinks));
     };
     loadSocialLinks();
 
@@ -41,6 +39,15 @@ export default function Footer() {
       window.removeEventListener('settingsUpdated', handleSettingsUpdate);
     };
   }, []);
+
+  const getLocalizedText = (ar: string, en: string, fr: string) => {
+    switch (language) {
+      case 'ar': return ar;
+      case 'en': return en;
+      case 'fr': return fr;
+      default: return ar;
+    }
+  };
 
   const quickLinks = [
     { href: '/', label: 'الرئيسية', labelEn: 'Home', labelFr: 'Accueil' },
@@ -58,28 +65,17 @@ export default function Footer() {
     { name: 'المغرب', nameEn: 'Morocco', nameFr: 'Maroc', flag: '🇲' },
   ];
 
-  const socialLinksArray = [
-    { name: 'Facebook', icon: Facebook, href: socialLinks.facebook, color: 'hover:bg-blue-600' },
-    { name: 'Twitter', icon: Twitter, href: socialLinks.twitter, color: 'hover:bg-blue-400' },
-    { name: 'Instagram', icon: Instagram, href: socialLinks.instagram, color: 'hover:bg-pink-500' },
-    { name: 'LinkedIn', icon: Linkedin, href: socialLinks.linkedin, color: 'hover:bg-blue-700' },
-    { name: 'YouTube', icon: Youtube, href: socialLinks.youtube, color: 'hover:bg-red-600' },
-  ];
+  const socialLinksArray = SOCIAL_PLATFORMS.map((platform) => ({
+    ...platform,
+    href: resolveSocialUrl(platform.key, socialLinks, contact),
+    label: getLocalizedText(platform.name.ar, platform.name.en, platform.name.fr),
+  }));
 
   const certifications = [
     { name: 'ISO 9001', desc: 'ضمان الجودة', icon: Award },
     { name: 'IATA', desc: 'عضو معتمد', icon: Shield },
     { name: 'محفظة آمنة', desc: 'دفع آمن', icon: HeartHandshake },
   ];
-
-  const getLocalizedText = (ar: string, en: string, fr: string) => {
-    switch (language) {
-      case 'ar': return ar;
-      case 'en': return en;
-      case 'fr': return fr;
-      default: return ar;
-    }
-  };
 
   return (
     <footer className="bg-gradient-to-br from-tarhal-navy via-tarhal-blue-dark to-tarhal-blue text-white relative overflow-hidden">
@@ -106,13 +102,13 @@ export default function Footer() {
                     <span className="logo-ciar text-3xl">CIAR</span>
                     <span className="logo-tourism text-[10px] font-light uppercase text-white/85 mt-1">Tourism</span>
                   </div>
-                  <p className="text-xs text-tarhal-gray-light">
+                  <p className="text-xs text-white/70">
                     {getLocalizedText('سياحة وسفر', 'Travel & Tourism', 'Voyage & Tourisme')}
                   </p>
                 </div>
               </div>
               
-              <p className="text-tarhal-gray-light leading-relaxed text-sm">
+              <p className="text-sm text-white/80 leading-relaxed">
                 {getLocalizedText(
                   'شركة ciar للسياحة والسفر، رفيقك المثالي لاستكشاف العالم. نقدم أفضل الخدمات السياحية عبر شبكة واسعة من المكاتب حول العالم.',
                   'ciar Travel & Tourism Company, your perfect companion to explore the world. We offer the best tourism services through an extensive network of offices worldwide.',
@@ -127,25 +123,42 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-tarhal-orange/20 rounded-lg flex items-center justify-center group-hover:bg-tarhal-orange/30 transition-colors">
                   <MapPin size={16} className="text-tarhal-orange" />
                 </div>
-                <span className="text-sm">{getLocalizedText('الخرطوم، السودان', 'Khartoum, Sudan', 'Khartoum, Soudan')}</span>
+                <span className="text-sm text-white/90">{getLocalizedText('الخرطوم، السودان', 'Khartoum, Sudan', 'Khartoum, Soudan')}</span>
               </div>
               <div className="flex items-center gap-3 group">
                 <div className="w-8 h-8 bg-tarhal-orange/20 rounded-lg flex items-center justify-center group-hover:bg-tarhal-orange/30 transition-colors">
                   <Phone size={16} className="text-tarhal-orange" />
                 </div>
-                <span className="text-sm">+249 123 456 789</span>
+                <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="text-sm text-white/90 hover:text-tarhal-orange transition-colors">
+                  {contact.phone}
+                </a>
+              </div>
+              <div className="flex items-center gap-3 group">
+                <div className="w-8 h-8 bg-tarhal-orange/20 rounded-lg flex items-center justify-center group-hover:bg-tarhal-orange/30 transition-colors">
+                  <MessageCircle size={16} className="text-tarhal-orange" />
+                </div>
+                <a
+                  href={resolveSocialUrl('whatsapp', socialLinks, contact)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white/90 hover:text-tarhal-orange transition-colors"
+                >
+                  {contact.whatsapp}
+                </a>
               </div>
               <div className="flex items-center gap-3 group">
                 <div className="w-8 h-8 bg-tarhal-orange/20 rounded-lg flex items-center justify-center group-hover:bg-tarhal-orange/30 transition-colors">
                   <Mail size={16} className="text-tarhal-orange" />
                 </div>
-                <span className="text-sm">info@ciar.com</span>
+                <a href={`mailto:${contact.email}`} className="text-sm text-white/90 hover:text-tarhal-orange transition-colors">
+                  {contact.email}
+                </a>
               </div>
               <div className="flex items-center gap-3 group">
                 <div className="w-8 h-8 bg-tarhal-orange/20 rounded-lg flex items-center justify-center group-hover:bg-tarhal-orange/30 transition-colors">
                   <Clock size={16} className="text-tarhal-orange" />
                 </div>
-                <span className="text-sm">{getLocalizedText('24/7 خدمة العملاء', '24/7 Customer Service', '24/7 Service Client')}</span>
+                <span className="text-sm text-white/90">{getLocalizedText('24/7 خدمة العملاء', '24/7 Customer Service', '24/7 Service Client')}</span>
               </div>
             </div>
 
@@ -181,7 +194,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     to={link.href}
-                    className="text-tarhal-gray-light hover:text-tarhal-orange transition-all duration-300 text-sm flex items-center gap-3 group"
+                    className="text-white/80 hover:text-tarhal-orange transition-all duration-300 text-sm flex items-center gap-3 group"
                   >
                     <ArrowRight size={14} className="text-tarhal-orange group-hover:translate-x-1 transition-transform" />
                     {getLocalizedText(link.label, link.labelEn, link.labelFr)}
@@ -200,7 +213,7 @@ export default function Footer() {
                 </div>
                 <span className="text-sm font-semibold">4.9/5</span>
               </div>
-              <p className="text-xs text-tarhal-gray-light">
+              <p className="text-xs text-white/70">
                 {getLocalizedText('أكثر من 10,000 عميل راضٍ', 'Over 10,000 satisfied customers', 'Plus de 10 000 clients satisfaits')}
               </p>
             </div>
@@ -217,7 +230,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href="#"
-                    className="text-tarhal-gray-light hover:text-tarhal-orange transition-all duration-300 text-sm flex items-center gap-3 group"
+                    className="text-white/80 hover:text-tarhal-orange transition-all duration-300 text-sm flex items-center gap-3 group"
                   >
                     <span className="text-lg group-hover:scale-110 transition-transform">{destination.flag}</span>
                     <span>{getLocalizedText(destination.name, destination.nameEn, destination.nameFr)}</span>
@@ -232,7 +245,7 @@ export default function Footer() {
                 <span>{getLocalizedText('تواصل معنا', 'Follow Us', 'Suivez-nous')}</span>
                 <div className="flex-1 h-px bg-gradient-to-r from-white/20 to-transparent"></div>
               </h4>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 {socialLinksArray.map((social, index) => (
                   <a
                     key={index}
@@ -240,9 +253,11 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`w-11 h-11 bg-white/10 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 ${social.color} backdrop-blur-sm border border-white/10 group`}
-                    title={social.name}
+                    title={social.label}
                   >
-                    <social.icon size={18} className="group-hover:scale-110 transition-transform" />
+                    <span className="group-hover:scale-110 transition-transform">
+                      <SocialBrandIcon platform={social.key} size={22} variant="white" />
+                    </span>
                   </a>
                 ))}
               </div>
@@ -259,7 +274,7 @@ export default function Footer() {
               <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-tarhal-orange bg-clip-text text-transparent">
                 {getLocalizedText('اشترك في نشرتنا الإخبارية', 'Subscribe to Our Newsletter', 'Abonnez-vous à Notre Newsletter')}
               </h3>
-              <p className="text-tarhal-gray-light">
+              <p className="text-white/80">
                 {getLocalizedText('احصل على أحدث العروض والوجهات السياحية', 'Get the latest offers and travel destinations', 'Obtenez les dernières offres et destinations de voyage')}
               </p>
               <div className="flex items-center gap-2 justify-center lg:justify-start text-sm text-tarhal-orange">
@@ -272,9 +287,9 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder={getLocalizedText('أدخل بريدك الإلكتروني', 'Enter your email', 'Entrez votre email')}
-                  className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-tarhal-gray-light focus:outline-none focus:border-tarhal-orange focus:bg-white/15 transition-all duration-300 backdrop-blur-sm"
+                  className="w-full px-5 py-4 rounded-xl bg-white/15 border border-white/30 text-white placeholder:text-white/70 focus:outline-none focus:border-tarhal-orange focus:bg-white/20 transition-all duration-300 backdrop-blur-sm"
                 />
-                <Mail size={18} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-tarhal-gray-light" />
+                <Mail size={18} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60" />
               </div>
               <button className="px-8 py-4 bg-gradient-to-r from-tarhal-orange to-tarhal-orange-dark text-white rounded-xl font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 whitespace-nowrap">
                 <Send size={18} />
@@ -289,7 +304,7 @@ export default function Footer() {
       <div className="border-t border-white/10 bg-tarhal-navy">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div className="text-center lg:text-right text-tarhal-gray-light text-sm space-y-2">
+            <div className="text-center lg:text-right text-white/75 text-sm space-y-2">
               <p className="font-medium">
                 © {currentYear} {getLocalizedText('شركة ciar للسياحة والسفر', 'ciar Travel & Tourism Company', 'Société ciar Voyage & Tourisme')} - {getLocalizedText('جميع الحقوق محفوظة', 'All Rights Reserved', 'Tous Droits Réservés')}.
               </p>
@@ -297,7 +312,7 @@ export default function Footer() {
                 {getLocalizedText('مرخصة من وزارة السياحة والآثار', 'Licensed by Ministry of Tourism', 'Agréé par le Ministère du Tourisme')} | {getLocalizedText('رقم الترخيص', 'License No', 'N° de Licence')}: TR-2024-001
               </p>
             </div>
-            <div className="flex flex-wrap gap-6 text-sm text-tarhal-gray-light">
+            <div className="flex flex-wrap gap-6 text-sm text-white/75">
               <a href="#" className="hover:text-tarhal-orange transition-colors duration-300 relative group">
                 {getLocalizedText('سياسة الخصوصية', 'Privacy Policy', 'Politique de Confidentialité')}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-tarhal-orange group-hover:w-full transition-all duration-300"></span>

@@ -1,4 +1,10 @@
 import type { CountryData, City } from '@/data/countries';
+import {
+  DEFAULT_CONTACT,
+  DEFAULT_SOCIAL_LINKS,
+  mergeSocialLinks,
+  type SocialLinks,
+} from '@/data/socialPlatforms';
 
 function isNonEmptyList<T>(value: unknown): value is T[] {
   return Array.isArray(value) && value.length > 0;
@@ -39,15 +45,17 @@ export interface AdminSettings {
         fr: string;
       };
     }>;
-    speed?: number; // Animation speed in seconds (default: 30)
+    speed?: number;
+    fontSize?: number;
+    textColor?: string;
+    backgroundFrom?: string;
+    backgroundTo?: string;
+    accentColor?: string;
   };
-  socialLinks?: {
-    facebook?: string;
-    twitter?: string;
-    instagram?: string;
-    linkedin?: string;
-    youtube?: string;
-  };
+  contactEmail?: string;
+  contactPhone?: string;
+  contactWhatsapp?: string;
+  socialLinks?: SocialLinks;
   siteTitle: string;
   metaDescription: string;
   defaultLanguage: 'ar' | 'en' | 'fr';
@@ -1435,7 +1443,7 @@ class DataManager {
       maintenanceMode: false,
       showTopAnnouncement: true,
       announcementBar: {
-        enabled: false,
+        enabled: true,
         texts: [
           { id: '1', text: { ar: 'مرحباً بكم في منصة ciar للسياحة', en: 'Welcome to ciar Travel Platform', fr: 'Bienvenue sur la Plateforme de Voyage ciar' } },
           { id: '2', text: { ar: 'احصل على أفضل العروض السياحية', en: 'Get the best travel offers', fr: 'Obtenez les meilleures offres de voyage' } },
@@ -1458,15 +1466,17 @@ class DataManager {
           { id: '19', text: { ar: 'تذاكر طيران بأفضل الأسعار', en: 'Flight tickets at the best prices', fr: 'Billets d\'avion aux meilleurs prix' } },
           { id: '20', text: { ar: 'شاهد آراء عملائنا المميزة', en: 'See our distinguished customer reviews', fr: 'Découvrez les avis distingués de nos clients' } }
         ],
-        speed: 30
+        speed: 30,
+        fontSize: 16,
+        textColor: '#ffffff',
+        backgroundFrom: '#1e3a5f',
+        backgroundTo: '#0f2744',
+        accentColor: '#f97316',
       },
-      socialLinks: {
-        facebook: 'https://facebook.com',
-        twitter: 'https://twitter.com',
-        instagram: 'https://instagram.com',
-        linkedin: 'https://linkedin.com',
-        youtube: 'https://youtube.com'
-      },
+      contactEmail: DEFAULT_CONTACT.email,
+      contactPhone: DEFAULT_CONTACT.phone,
+      contactWhatsapp: DEFAULT_CONTACT.whatsapp,
+      socialLinks: { ...DEFAULT_SOCIAL_LINKS },
       siteTitle: 'منصة ciar للسياحة',
       metaDescription: '',
       defaultLanguage: 'ar',
@@ -1482,26 +1492,31 @@ class DataManager {
     };
   }
 
+  private mergeSettings(defaults: AdminSettings, saved: Partial<AdminSettings>): AdminSettings {
+    return {
+      ...defaults,
+      ...saved,
+      contactEmail: saved.contactEmail || defaults.contactEmail,
+      contactPhone: saved.contactPhone || defaults.contactPhone,
+      contactWhatsapp: saved.contactWhatsapp || defaults.contactWhatsapp,
+      socialLinks: mergeSocialLinks(saved.socialLinks),
+      announcementBar: {
+        ...defaults.announcementBar,
+        ...(saved.announcementBar || {}),
+        texts: saved.announcementBar?.texts && saved.announcementBar.texts.length > 0
+          ? saved.announcementBar.texts
+          : defaults.announcementBar?.texts || [],
+      },
+    };
+  }
+
   getSettings(): AdminSettings {
     try {
       const defaults = this.getDefaultSettings();
       const data = localStorage.getItem(this.SETTINGS_KEY);
       if (data) {
         const saved = JSON.parse(data);
-        // Deep merge announcementBar to ensure texts array is preserved
-        const merged: AdminSettings = {
-          ...defaults,
-          ...saved,
-          announcementBar: {
-            ...defaults.announcementBar,
-            ...(saved.announcementBar || {}),
-            // Preserve texts array if it exists, otherwise use defaults
-            texts: saved.announcementBar?.texts && saved.announcementBar.texts.length > 0
-              ? saved.announcementBar.texts
-              : defaults.announcementBar?.texts || []
-          }
-        };
-        return merged;
+        return this.mergeSettings(defaults, saved);
       }
       localStorage.setItem(this.SETTINGS_KEY, JSON.stringify(defaults));
       return defaults;
@@ -1546,15 +1561,17 @@ class DataManager {
   }
 
   async getSettingsAsync(): Promise<AdminSettings> {
+    const defaults = this.getDefaultSettings();
     if (this.useServerStorage) {
       const serverData = await this.loadSettingsFromServer();
       if (serverData) {
+        const merged = this.mergeSettings(defaults, serverData);
         try {
-          localStorage.setItem(this.SETTINGS_KEY, JSON.stringify(serverData));
+          localStorage.setItem(this.SETTINGS_KEY, JSON.stringify(merged));
         } catch (e) {
           console.warn('Failed to sync server data to localStorage:', e);
         }
-        return serverData;
+        return merged;
       }
     }
     return this.getSettings();
@@ -2673,9 +2690,9 @@ class DataManager {
         fr: 'Bienvenue à'
       },
       heroSubtitle: {
-        ar: 'ciar',
-        en: 'ciar',
-        fr: 'ciar'
+        ar: 'ciarTOU',
+        en: 'ciarTOU',
+        fr: 'ciarTOU'
       },
       heroDescription: {
         ar: 'رفيقكم المثالي لاستكشاف العالم. نقدم أفضل الخدمات السياحية عبر شبكة واسعة من المكاتب في أكثر من 50 دولة حول العالم',
