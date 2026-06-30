@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Cinzel:wght@500;600;700;800&family=Cinzel+Decorative:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -76,10 +76,10 @@
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 217.2 32.6% 11%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 217.2 32.6% 11%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 210 40% 98%;
@@ -97,7 +97,7 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
+    --border: 217.2 32.6% 22%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
     --sidebar-background: 240 5.9% 10%;
@@ -108,6 +108,12 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --page-surface: 222 47% 6%;
+    --page-card: 222 47% 10%;
+    --page-elevated: 217 33% 14%;
+
+    color-scheme: dark;
   }
 }
 
@@ -343,6 +349,28 @@
     background-clip: text;
   }
 
+  /* Brand logo – decorative CIAR wordmark */
+  .logo-ciar {
+    font-family: 'Cinzel Decorative', 'Cinzel', 'Amiri', serif;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    background: linear-gradient(
+      160deg,
+      hsl(var(--tarhal-orange-light)) 0%,
+      hsl(var(--tarhal-orange)) 45%,
+      hsl(var(--tarhal-orange-dark)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 8px hsl(var(--tarhal-orange) / 0.35));
+  }
+
+  .logo-tourism {
+    font-family: 'Inter', 'Cairo', sans-serif;
+    letter-spacing: 0.28em;
+  }
+
   /* Glass morphism effect */
   .glass {
     background: rgba(255, 255, 255, 0.1);
@@ -367,5 +395,124 @@
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--tarhal-orange-dark));
+  }
+}
+
+/* ─── Dark mode: global surface & text overrides ─── */
+@layer base {
+  .dark .bg-white {
+    background-color: hsl(var(--page-card));
+  }
+
+  .dark .bg-white\/95 {
+    background-color: hsl(var(--page-card) / 0.95);
+  }
+
+  .dark .bg-slate-50,
+  .dark .bg-gray-50 {
+    background-color: hsl(var(--page-surface));
+  }
+
+  .dark .bg-slate-100,
+  .dark .bg-gray-100 {
+    background-color: hsl(var(--page-elevated));
+  }
+
+  .dark .bg-slate-200,
+  .dark .bg-slate-200\/80 {
+    background-color: hsl(var(--page-elevated));
+  }
+
+  .dark .from-slate-50 {
+    --tw-gradient-from: hsl(var(--page-surface)) var(--tw-gradient-from-position);
+    --tw-gradient-to: hsl(var(--page-surface) / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+
+  .dark .to-white {
+    --tw-gradient-to: hsl(var(--page-card)) var(--tw-gradient-to-position);
+  }
+
+  .dark .from-gray-50,
+  .dark .from-white,
+  .dark .from-blue-50,
+  .dark .from-orange-50,
+  .dark .from-green-50 {
+    --tw-gradient-from: hsl(var(--page-surface)) var(--tw-gradient-from-position);
+    --tw-gradient-to: hsl(var(--page-surface) / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+
+  .dark .via-gray-50 {
+    --tw-gradient-via: hsl(var(--page-elevated)) var(--tw-gradient-via-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to);
+  }
+
+  .dark .to-gray-50 {
+    --tw-gradient-to: hsl(var(--page-surface)) var(--tw-gradient-to-position);
+  }
+
+  .dark .hover\:bg-gray-50:hover {
+    background-color: hsl(var(--page-elevated));
+  }
+
+  .dark .to-blue-50,
+  .dark .to-orange-50,
+  .dark .to-slate-50 {
+    --tw-gradient-to: hsl(var(--page-card)) var(--tw-gradient-to-position);
+  }
+
+  .dark .text-tarhal-blue-dark {
+    color: hsl(210 40% 95%);
+  }
+
+  .dark .text-tarhal-gray-dark {
+    color: hsl(220 15% 72%);
+  }
+
+  .dark .border-tarhal-gray-light {
+    border-color: hsl(217 33% 22%);
+  }
+
+  .dark .bg-tarhal-gray-light {
+    background-color: hsl(217 33% 18%);
+  }
+
+  .dark .border-gray-100,
+  .dark .border-gray-200,
+  .dark .border-gray-300 {
+    border-color: hsl(var(--border));
+  }
+
+  .dark .text-gray-900,
+  .dark .text-gray-800,
+  .dark .text-gray-700 {
+    color: hsl(var(--foreground));
+  }
+
+  .dark .text-gray-600,
+  .dark .text-gray-500 {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .dark .shadow-lg,
+  .dark .shadow-xl,
+  .dark .shadow-2xl {
+    --tw-shadow-color: rgb(0 0 0 / 0.45);
+  }
+
+  .dark select,
+  .dark input:not([type='checkbox']):not([type='radio']):not([type='range']),
+  .dark textarea {
+    color-scheme: dark;
+  }
+
+  .dark option {
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
+  }
+
+  .dark .ring-offset-2 {
+    --tw-ring-offset-color: hsl(var(--page-card));
   }
 }

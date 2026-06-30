@@ -45,11 +45,9 @@ export default function TravelOffices() {
     (async () => {
       setLoading(true);
       try {
-        await dataManager.getCountriesAsync();
-        await dataManager.ensureOfficesForAllCountries();
         const [officeList, countries] = await Promise.all([
-          dataManager.getOfficesAsync(),
-          Promise.resolve(getAllCountriesWithDynamic()),
+          dataManager.ensureOfficesForAllCountries(),
+          dataManager.getCountriesAsync().then(() => getAllCountriesWithDynamic()),
         ]);
 
         const countryMap = new Map(countries.map((c) => [c.id, c]));

@@ -82,7 +82,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-primary from-tarhal-navy via-tarhal-blue-dark to-tarhal-blue text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-tarhal-navy via-tarhal-blue-dark to-tarhal-blue text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-20 h-20 border border-white/20 rounded-full"></div>
@@ -102,7 +102,10 @@ export default function Footer() {
                   <Globe2 size={24} className="text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold">ciar</div>
+                  <div className="flex flex-col leading-none">
+                    <span className="logo-ciar text-3xl">CIAR</span>
+                    <span className="logo-tourism text-[10px] font-light uppercase text-white/85 mt-1">Tourism</span>
+                  </div>
                   <p className="text-xs text-tarhal-gray-light">
                     {getLocalizedText('سياحة وسفر', 'Travel & Tourism', 'Voyage & Tourisme')}
                   </p>

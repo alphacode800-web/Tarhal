@@ -1,18 +1,24 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Star, MapPin, Clock, ArrowRight, Filter, TrendingUp, DollarSign, Sparkles, Heart, Share2, Calendar, Users, Award, Zap, Globe } from 'lucide-react';
 import { dataManager, type AdminCountryData, type TourOffer } from '@/services/dataManager';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCurrency } from '@/contexts/CurrencyContext';
+import { detectUserCountry, mapCountryCodeToId } from '@/services/geoLocation';
 import { Switch } from '@/components/ui/switch';
+
+type TourFilterType = 'local' | 'international' | 'all';
 
 export default function TourOffers() {
   const { language, t } = useLanguage();
   const { formatPrice } = useCurrency();
+  const [searchParams] = useSearchParams();
+  const tourType = (searchParams.get('type') as TourFilterType) || 'all';
   const [countries, setCountries] = useState<AdminCountryData[]>([]);
   const [offers, setOffers] = useState<TourOffer[]>([]);
+  const [userCountryId, setUserCountryId] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string>('');
   const [sortBy, setSortBy] = useState<
     'recommended' | 'priceAsc' | 'priceDesc' | 'durationAsc' | 'durationDesc'
@@ -54,6 +60,24 @@ export default function TourOffers() {
     })();
   }, []);
 
+  useEffect(() => {
+    detectUserCountry()
+      .then((geo) => {
+        if (!geo) return;
+        const countryId = mapCountryCodeToId(geo.country);
+        if (countryId) setUserCountryId(countryId);
+      })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    if (tourType === 'local' && userCountryId) {
+      setSelectedCountry(userCountryId);
+    } else if (tourType === 'international' || tourType === 'all') {
+      setSelectedCountry('');
+    }
+  }, [tourType, userCountryId]);
+
   // تغيير الصور الخلفية تلقائياً
   useEffect(() => {
     const interval = setInterval(() => {
@@ -77,6 +101,12 @@ export default function TourOffers() {
 
   const visibleOffers = useMemo(() => {
     let result = offers.filter((offer) => (selectedCountry ? offer.countryId === selectedCountry : true));
+
+    if (tourType === 'local' && userCountryId) {
+      result = result.filter((offer) => offer.countryId === userCountryId);
+    } else if (tourType === 'international' && userCountryId) {
+      result = result.filter((offer) => offer.countryId !== userCountryId);
+    }
 
     result = result.filter((offer) => (onlyFeatured ? offer.isActive && offer.isFeatured : offer.isActive));
 
@@ -103,7 +133,13 @@ export default function TourOffers() {
     });
 
     return result;
-  }, [offers, selectedCountry, sortBy, maxPriceFilter, onlyFeatured]);
+  }, [offers, selectedCountry, sortBy, maxPriceFilter, onlyFeatured, tourType, userCountryId]);
+
+  const filterLabel = useMemo(() => {
+    if (tourType === 'local') return t('offers.filter.local');
+    if (tourType === 'international') return t('offers.filter.international');
+    return t('offers.filter.all');
+  }, [tourType, t]);
 
   const getCountryName = (countryId: string) => {
     const country = countries.find((c) => c.id === countryId);
@@ -168,7 +204,7 @@ export default function TourOffers() {
           <div className="text-center mb-12 animate-fade-in">
             <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
               <Sparkles className="h-5 w-5 text-yellow-300" />
-              <span className="text-sm font-medium">{t('offers.featured', 'عروض مميزة')}</span>
+              <span className="text-sm font-medium">{filterLabel}</span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight drop-shadow-2xl">
               {t('home.offices.title', 'العروض السياحية')}
@@ -181,6 +217,27 @@ export default function TourOffers() {
             </p>
           </div>
 
+          {/* Filter Type Tabs */}
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
+            {([
+              { type: 'local' as const, key: 'nav.offers.local' },
+              { type: 'international' as const, key: 'nav.offers.international' },
+              { type: 'all' as const, key: 'nav.offers.all' },
+            ]).map((item) => (
+              <Link
+                key={item.type}
+                to={`/offers?type=${item.type}`}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
+                  tourType === item.type
+                    ? 'bg-tarhal-orange text-white shadow-lg'
+                    : 'bg-white/15 text-white/90 border border-white/25 hover:bg-white/25'
+                }`}
+              >
+                {t(item.key)}
+              </Link>
+            ))}
+          </div>
+
           {/* Filters Section */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl mb-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -191,7 +248,8 @@ export default function TourOffers() {
                 <select
                   value={selectedCountry}
                   onChange={(e) => setSelectedCountry(e.target.value)}
-                  className="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-white/20 border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-tarhal-orange backdrop-blur-sm transition-all hover:bg-white/25"
+                  disabled={tourType === 'local' && !!userCountryId}
+                  className="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-white/20 border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-tarhal-orange backdrop-blur-sm transition-all hover:bg-white/25 disabled:opacity-60"
                 >
                   <option value="" className="text-gray-900">{t('countries.subtitle', 'جميع الدول')}</option>
                   {countries.map((country) => (

@@ -115,6 +115,22 @@ export interface CountryData {
   videos?: string[]; // Array of video URLs
 }
 
+/** صور معالم السودان لصفحة الهيدر (النيل، الأهرامات، جبل مرة، كردفان) */
+export const SUDAN_LANDMARK_GALLERY = [
+  'https://images.unsplash.com/photo-1620487792776-a257eb0c5f2c', // ملتقى النيل - جزيرة توتي، الخرطوم
+  'https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg', // أهرامات مروي
+  'https://images.pexels.com/photos/10546022/pexels-photo-10546022.jpeg', // أهرامات مروي - منظر آخر
+  'https://upload.wikimedia.org/wikipedia/commons/e/e0/Sudan_Jebel_Marra_Deriba_Lakes_edited.jpg', // جبل مرة - بحيرات دريبا
+  'https://images.pexels.com/photos/10546023/pexels-photo-10546023.jpeg', // شمال كردفان
+] as const;
+
+export const isSudanLegacyImage = (url?: string) =>
+  !!url &&
+  (url.includes('2868245') ||
+    url.includes('568026') ||
+    url.includes('1181519') ||
+    url.includes('2869066'));
+
 export const countries: Record<string, CountryData> = {
   sudan: {
     id: 'sudan',
@@ -133,7 +149,7 @@ export const countries: Record<string, CountryData> = {
       en: 'Sudan, land of ancient civilizations and stunning nature, where the Blue and White Niles meet to create an enchanting canvas of natural beauty.',
       fr: 'Le Soudan, terre des civilisations anciennes et de la nature époustouflante, où les Nils Bleu et Blanc se rencontrent pour créer une toile enchanteresse de beauté naturelle.'
     },
-    mainImage: 'https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg',
+    mainImage: SUDAN_LANDMARK_GALLERY[0],
     flag: '🇸🇩',
     currency: {
       ar: 'الجنيه السوداني (SDG)',
@@ -199,7 +215,7 @@ export const countries: Record<string, CountryData> = {
           en: 'The beautiful Sudanese capital where the Blue and White Niles meet to form the White Nile.',
           fr: 'La belle capitale soudanaise où les Nils Bleu et Blanc se rencontrent pour former le Nil Blanc.'
         },
-        image: 'https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg',
+        image: SUDAN_LANDMARK_GALLERY[0],
         attractions: {
           ar: ['التقاء النيلين', 'القصر الجمهوري', 'جامعة الخرطوم'],
           en: ['Nile Confluence', 'Republican Palace', 'University of Khartoum'],
@@ -222,7 +238,7 @@ export const countries: Record<string, CountryData> = {
           en: ['Nile confluence point', 'Colonial architecture'],
           fr: ['Point de confluence du Nil', 'Architecture coloniale']
         },
-        gallery: ['https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg']
+        gallery: [SUDAN_LANDMARK_GALLERY[0]]
       },
       {
         id: 'portsudan',
@@ -407,7 +423,7 @@ export const countries: Record<string, CountryData> = {
           en: 'Site of the famous Meroe pyramids, capital of the ancient Kingdom of Kush.',
           fr: 'Site des célèbres pyramides de Méroé, capitale de l\'ancien royaume de Kouch.'
         },
-        image: 'https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg',
+        image: 'https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg',
         attractions: {
           ar: ['أهرامات مروي الملكية', 'المعابد النوبية', 'المقابر الملكية', 'المتحف الأثري'],
           en: ['Royal Meroe Pyramids', 'Nubian temples', 'Royal tombs', 'Archaeological museum'],
@@ -422,7 +438,7 @@ export const countries: Record<string, CountryData> = {
           en: ['Nubian pyramids', 'World heritage', 'Ancient history'],
           fr: ['Pyramides nubiennes', 'Patrimoine mondial', 'Histoire ancienne']
         },
-        gallery: ['https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg']
+        gallery: ['https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg']
       },
       {
         id: 'shendi',
@@ -582,7 +598,7 @@ export const countries: Record<string, CountryData> = {
           en: 'Capital of Blue Nile State, a city on the banks of the Blue Nile.',
           fr: 'Capitale de l\'État du Nil Bleu, une ville sur les rives du Nil Bleu.'
         },
-        image: 'https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg',
+        image: 'https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg',
         attractions: {
           ar: ['النيل الأزرق', 'سد الروصيرص', 'المناطق الزراعية', 'الطبيعة'],
           en: ['Blue Nile', 'Roseires Dam', 'Agricultural areas', 'Nature'],
@@ -597,7 +613,7 @@ export const countries: Record<string, CountryData> = {
           en: ['Blue Nile', 'Dam', 'Agriculture'],
           fr: ['Nil Bleu', 'Barrage', 'Agriculture']
         },
-        gallery: ['https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg']
+        gallery: ['https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg']
       },
       {
         id: 'kosti',
@@ -700,7 +716,7 @@ export const countries: Record<string, CountryData> = {
         gallery: ['https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg']
       }
     ],
-    gallery: ['https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg']
+    gallery: [...SUDAN_LANDMARK_GALLERY],
   },
 
   saudi: {
@@ -5679,7 +5695,7 @@ export const countries: Record<string, CountryData> = {
           en: 'Capital of unified Germany, city of culture, art and modern history.',
           fr: 'Capitale de l\'Allemagne unifiée, ville de culture, d\'art et d\'histoire moderne.'
         },
-        image: 'https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg',
+        image: 'https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg',
         attractions: {
           ar: ['بوابة براندنبورغ', 'جدار برلين', 'متحف بيرغامون', 'جزيرة المتاحف'],
           en: ['Brandenburg Gate', 'Berlin Wall', 'Pergamon Museum', 'Museum Island'],
@@ -5690,7 +5706,7 @@ export const countries: Record<string, CountryData> = {
         rating: 4.7,
         reviews: 7800,
         highlights: { ar: ['التاريخ الحديث', 'المتاحف'], en: ['Modern history', 'Museums'], fr: ['Histoire moderne', 'Musées'] },
-        gallery: ['https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg']
+        gallery: ['https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg']
       }
     ],
     gallery: ['https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg']
@@ -7434,6 +7450,21 @@ export const getCountryDataWithDynamic = (countryId: string): CountryData | null
         // إذا لم توجد مدن ديناميكية، استخدم المدن الثابتة
         dynamicData.cities = staticCountry.cities;
       }
+    }
+
+    // دمج صور الهيدر: استبدال الصور القديمة (صور أشخاص) بمعالم السودان
+    const dynamicUsesLegacyHero =
+      isSudanLegacyImage(dynamicData.mainImage) ||
+      (dynamicData.gallery?.some((url) => isSudanLegacyImage(url)) ?? false);
+
+    if (countryId === 'sudan' && staticCountry?.gallery?.length && dynamicUsesLegacyHero) {
+      dynamicData.mainImage = staticCountry.mainImage;
+      dynamicData.gallery = staticCountry.gallery;
+    } else if (staticCountry?.gallery?.length && (dynamicUsesLegacyHero || !dynamicData.gallery?.length)) {
+      dynamicData.mainImage = staticCountry.mainImage;
+      dynamicData.gallery = staticCountry.gallery;
+    } else if (staticCountry?.mainImage && isSudanLegacyImage(dynamicData.mainImage)) {
+      dynamicData.mainImage = staticCountry.mainImage;
     }
     
     return dynamicData;

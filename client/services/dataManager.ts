@@ -455,24 +455,61 @@ class DataManager {
 
   // Get all countries (with server sync) - دائماً نفضّل بيانات السيرفر لظهورها على كل الأجهزة
   async getCountriesAsync(): Promise<AdminCountryData[]> {
+    let countries: AdminCountryData[];
+
     if (this.useServerStorage) {
       const serverData = await this.loadCountriesFromServer();
       if (isNonEmptyList(serverData)) {
-        try {
-          localStorage.setItem(this.COUNTRIES_KEY, JSON.stringify(serverData));
-        } catch (e) {
-          console.warn('Failed to sync server data to localStorage:', e);
-        }
-        return serverData;
+        countries = serverData;
+      } else {
+        const staticCountries = await this.loadStaticCountriesAsAdmin();
+        countries = isNonEmptyList(staticCountries) ? staticCountries : this.getCountries();
       }
+    } else {
+      const staticCountries = await this.loadStaticCountriesAsAdmin();
+      countries = isNonEmptyList(staticCountries) ? staticCountries : this.getCountries();
     }
 
-    const staticCountries = await this.loadStaticCountriesAsAdmin();
-    if (isNonEmptyList(staticCountries)) {
-      return staticCountries;
+    countries = this.migrateLegacyCountryImages(countries);
+
+    try {
+      localStorage.setItem(this.COUNTRIES_KEY, JSON.stringify(countries));
+    } catch (e) {
+      console.warn('Failed to sync countries to localStorage:', e);
     }
 
-    return this.getCountries();
+    return countries;
+  }
+
+  private migrateLegacyCountryImages(countries: AdminCountryData[]): AdminCountryData[] {
+    const sudanLandmarks = {
+      mainImage: 'https://images.unsplash.com/photo-1620487792776-a257eb0c5f2c',
+      gallery: [
+        'https://images.unsplash.com/photo-1620487792776-a257eb0c5f2c',
+        'https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg',
+        'https://images.pexels.com/photos/10546022/pexels-photo-10546022.jpeg',
+        'https://upload.wikimedia.org/wikipedia/commons/e/e0/Sudan_Jebel_Marra_Deriba_Lakes_edited.jpg',
+        'https://images.pexels.com/photos/10546023/pexels-photo-10546023.jpeg',
+      ],
+    };
+    const legacyPatterns = ['2868245', '568026', '1181519', '2869066'];
+
+    return countries.map((country) => {
+      if (country.id !== 'sudan') return country;
+
+      const usesLegacyImages =
+        legacyPatterns.some((id) => country.mainImage?.includes(id)) ||
+        country.gallery?.some((url) => legacyPatterns.some((id) => url.includes(id)));
+
+      if (!usesLegacyImages) return country;
+
+      return {
+        ...country,
+        mainImage: sudanLandmarks.mainImage,
+        gallery: sudanLandmarks.gallery,
+        updatedAt: new Date().toISOString(),
+      };
+    });
   }
 
   private async loadStaticCountriesAsAdmin(): Promise<AdminCountryData[]> {
@@ -2945,21 +2982,20 @@ class DataManager {
     }
   }
 
-  // Ensure each country has at least one office
-  async ensureOfficesForAllCountries(): Promise<void> {
+  // Ensure each country has at least one office; returns the full office list
+  async ensureOfficesForAllCountries(): Promise<TravelOffice[]> {
     try {
-      // Get all countries (static + dynamic) using dynamic import to avoid circular dependency
+      await this.getCountriesAsync();
       const { getAllCountriesWithDynamic } = await import('@/data/countries');
       const allCountries = getAllCountriesWithDynamic();
-      const offices = this.getOffices();
+      const offices = await this.getOfficesAsync();
       let changed = false;
       let addedCount = 0;
 
       allCountries.forEach((country) => {
         const existingOffice = offices.find((o) => o.countryId === country.id);
-        if (existingOffice) return; // Office already exists
+        if (existingOffice) return;
 
-        // Create default office for this country
         const defaultOffice: TravelOffice = {
           id: `office_${country.id}_${Date.now()}`,
           countryId: country.id,
@@ -3005,11 +3041,14 @@ class DataManager {
       });
 
       if (changed) {
-        this.saveOffices(offices);
+        await this.saveOfficesAsync(offices);
         console.log(`تم إضافة ${addedCount} مكتب جديد`);
       }
+
+      return offices;
     } catch (error) {
       console.error('Error ensuring default offices:', error);
+      return this.getOffices();
     }
   }
 
@@ -3133,10 +3172,13 @@ class DataManager {
         currency: { ar: 'جن��ه سوداني', en: 'Sudanese Pound', fr: 'Livre Soudanaise' },
         language: { ar: 'العربية', en: 'Arabic', fr: 'Arabe' },
         bestTimeToVisit: { ar: 'نوفمبر - مارس', en: 'November - March', fr: 'Novembre - Mars' },
-        mainImage: 'https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg',
+        mainImage: 'https://images.unsplash.com/photo-1620487792776-a257eb0c5f2c',
         gallery: [
-          'https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg',
-          'https://images.pexels.com/photos/2869066/pexels-photo-2869066.jpeg'
+          'https://images.unsplash.com/photo-1620487792776-a257eb0c5f2c',
+          'https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg',
+          'https://images.pexels.com/photos/10546022/pexels-photo-10546022.jpeg',
+          'https://upload.wikimedia.org/wikipedia/commons/e/e0/Sudan_Jebel_Marra_Deriba_Lakes_edited.jpg',
+          'https://images.pexels.com/photos/10546023/pexels-photo-10546023.jpeg',
         ],
         rating: 4.9,
         totalReviews: 2847,

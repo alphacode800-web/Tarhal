@@ -519,7 +519,7 @@ export default function Index() {
 
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-tarhal-blue-dark mb-6 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
               {t('home.statistics.title') || 'أرقامنا تتحدث عن نجاحنا'}
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto animate-slide-up">

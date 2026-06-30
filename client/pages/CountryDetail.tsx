@@ -201,7 +201,7 @@ export default function CountryDetail() {
       </section>
 
       {/* Quick Info Bar */}
-      <section className="py-6 bg-white shadow-lg">
+      <section className="py-6 bg-white dark:bg-slate-900 shadow-lg dark:shadow-black/20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 text-center">
             <div className="p-3">
@@ -244,13 +244,13 @@ export default function CountryDetail() {
       </section>
 
       {/* Navigation Tabs */}
-      <section className="sticky top-20 z-40 bg-white border-b border-tarhal-gray-light">
+      <section className="sticky top-20 z-40 bg-white dark:bg-slate-900 border-b border-tarhal-gray-light dark:border-slate-800">
         <div className="container mx-auto px-4">
           <nav className="flex overflow-x-auto">
             {[
               { id: 'overview', label: 'نظرة عامة', icon: <MapPin className="h-4 w-4" /> },
               { id: 'cities', label: 'المدن السياحية', icon: <Camera className="h-4 w-4" /> },
-              { id: 'culture', label: 'الثقافة والتر��ث', icon: <Users className="h-4 w-4" /> },
+              { id: 'culture', label: 'الثقافة والتراث', icon: <Users className="h-4 w-4" /> },
               { id: 'practical', label: 'معلومات عملية', icon: <Car className="h-4 w-4" /> }
             ].map((tab) => (
               <button
@@ -259,7 +259,7 @@ export default function CountryDetail() {
                 className={`flex items-center gap-2 px-6 py-4 border-b-2 transition-colors whitespace-nowrap ${
                   activeTab === tab.id
                     ? 'border-tarhal-orange text-tarhal-orange'
-                    : 'border-transparent text-tarhal-gray-dark hover:text-tarhal-blue-dark'
+                    : 'border-transparent text-tarhal-gray-dark dark:text-gray-300 hover:text-tarhal-blue-dark dark:hover:text-white'
                 }`}
               >
                 {tab.icon}
@@ -271,7 +271,7 @@ export default function CountryDetail() {
       </section>
 
       {/* Tab Content */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-slate-950">
         <div className="container mx-auto px-4">
           {activeTab === 'overview' && (
             <div className="space-y-16">
@@ -282,7 +282,7 @@ export default function CountryDetail() {
                   {countryData.highlights[language].map((highlight, index) => (
                     <div
                       key={`highlight-${countryData.id}-${index}-${highlight || ''}`}
-                      className="flex items-center gap-4 p-6 bg-gradient-to-br from-tarhal-orange/5 to-tarhal-blue/5 rounded-xl hover:shadow-lg transition-shadow duration-300 animate-scale-in"
+                      className="flex items-center gap-4 p-6 bg-gradient-to-br from-tarhal-orange/5 to-tarhal-blue/5 dark:from-slate-900 dark:to-slate-800 border border-transparent dark:border-slate-700 rounded-xl hover:shadow-lg dark:hover:shadow-black/20 transition-shadow duration-300 animate-scale-in"
                       style={{ animationDelay: `${index * 150}ms` }}
                     >
                       <div className="w-12 h-12 bg-tarhal-orange rounded-full flex items-center justify-center flex-shrink-0">
@@ -297,12 +297,12 @@ export default function CountryDetail() {
               {/* Weather Info */}
               <div className="animate-slide-up">
                 <h2 className="text-3xl font-bold text-tarhal-blue-dark mb-8">معلومات الطقس</h2>
-                <div className="bg-gradient-to-br from-blue-50 to-orange-50 rounded-2xl p-8">
+                <div className="bg-gradient-to-br from-blue-50 to-orange-50 dark:from-slate-900 dark:to-slate-800 border border-blue-100/50 dark:border-slate-700 rounded-2xl p-8">
                   <div className="grid md:grid-cols-4 gap-6">
                     <div className="text-center">
                       <Sun className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
                       <h3 className="font-bold text-tarhal-blue-dark mb-2">الصيف</h3>
-                      <p className="text-tarhal-gray-dark text-sm">��ار وجاف<br />35-45°م</p>
+                      <p className="text-tarhal-gray-dark text-sm">حار وجاف<br />35-45°م</p>
                     </div>
                     <div className="text-center">
                       <Cloud className="h-12 w-12 text-gray-500 mx-auto mb-4" />
@@ -332,12 +332,12 @@ export default function CountryDetail() {
                   {t('common.cities')} في {getCountryName(countryData, language)}
                 </h2>
                 <p className="text-xl text-tarhal-gray-dark max-w-3xl mx-auto">
-                  اكتشف جمال وتنوع المدن السو��انية من الشمال إلى الجنوب
+                  اكتشف جمال وتنوع المدن السودانية من الشمال إلى الجنوب
                 </p>
               </div>
 
               {(!countryData.cities || countryData.cities.length === 0) ? (
-                <div className="text-center py-16 bg-gradient-to-br from-gray-50 to-white rounded-3xl border-2 border-gray-200 p-12 shadow-lg">
+                <div className="text-center py-16 bg-gradient-to-br from-gray-50 to-white dark:from-slate-900 dark:to-slate-800 rounded-3xl border-2 border-gray-200 dark:border-slate-700 p-12 shadow-lg dark:shadow-black/20">
                   <div className="w-20 h-20 bg-gradient-to-br from-tarhal-orange/20 to-tarhal-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <MapPin className="h-10 w-10 text-tarhal-orange" />
                   </div>
@@ -365,7 +365,7 @@ export default function CountryDetail() {
                     return (
                     <div
                       key={cityId}
-                      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-scale-in"
+                      className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg dark:shadow-black/20 border border-transparent dark:border-slate-700 hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-scale-in"
                       style={{ animationDelay: `${index * 200}ms` }}
                     >
                     <div className="relative h-64 overflow-hidden">
@@ -468,22 +468,22 @@ export default function CountryDetail() {
               {/* Culture */}
               <div className="animate-fade-in">
                 <h2 className="text-3xl font-bold text-tarhal-blue-dark mb-8">الثقافة والتراث</h2>
-                <div className="bg-gradient-to-br from-tarhal-blue/5 to-tarhal-orange/5 rounded-2xl p-8">
+                <div className="bg-gradient-to-br from-tarhal-blue/5 to-tarhal-orange/5 dark:from-slate-900 dark:to-slate-800 border border-transparent dark:border-slate-700 rounded-2xl p-8">
                   <p className="text-lg text-tarhal-gray-dark leading-relaxed mb-6">
                     {countryData.culture[language]}
                   </p>
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                    <div className="text-center p-6 bg-white dark:bg-slate-900 border border-transparent dark:border-slate-700 rounded-xl shadow-sm">
                       <div className="text-4xl mb-4">🎭</div>
                       <h3 className="font-bold text-tarhal-blue-dark mb-2">الفنون الشعبية</h3>
                       <p className="text-sm text-tarhal-gray-dark">الرقص والموسيقى التقليدية</p>
                     </div>
-                    <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                    <div className="text-center p-6 bg-white dark:bg-slate-900 border border-transparent dark:border-slate-700 rounded-xl shadow-sm">
                       <div className="text-4xl mb-4">🏛���</div>
                       <h3 className="font-bold text-tarhal-blue-dark mb-2">التاريخ العريق</h3>
                       <p className="text-sm text-tarhal-gray-dark">حضارات قديمة وآثار</p>
                     </div>
-                    <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                    <div className="text-center p-6 bg-white dark:bg-slate-900 border border-transparent dark:border-slate-700 rounded-xl shadow-sm">
                       <div className="text-4xl mb-4">👥</div>
                       <h3 className="font-bold text-tarhal-blue-dark mb-2">التنوع الثقافي</h3>
                       <p className="text-sm text-tarhal-gray-dark">500+ قبيلة وثقافة</p>
@@ -499,7 +499,7 @@ export default function CountryDetail() {
                   {countryData.cuisine[language].map((dish, index) => (
                     <div
                       key={`cuisine-${countryData.id}-${index}-${dish || ''}`}
-                      className="flex items-center gap-4 p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-scale-in"
+                      className="flex items-center gap-4 p-6 bg-white dark:bg-slate-900 border border-transparent dark:border-slate-700 rounded-xl shadow-lg hover:shadow-xl dark:hover:shadow-black/20 transition-shadow duration-300 animate-scale-in"
                       style={{ animationDelay: `${index * 150}ms` }}
                     >
                       <div className="text-3xl">🍽️</div>
@@ -520,7 +520,7 @@ export default function CountryDetail() {
                   {countryData.transportation[language].map((transport, index) => (
                     <div
                       key={`transport-${countryData.id}-${index}-${transport || ''}`}
-                      className="flex items-center gap-4 p-6 bg-gradient-to-br from-tarhal-blue/5 to-tarhal-orange/5 rounded-xl animate-scale-in"
+                      className="flex items-center gap-4 p-6 bg-gradient-to-br from-tarhal-blue/5 to-tarhal-orange/5 dark:from-slate-900 dark:to-slate-800 border border-transparent dark:border-slate-700 rounded-xl animate-scale-in"
                       style={{ animationDelay: `${index * 150}ms` }}
                     >
                       <Car className="h-8 w-8 text-tarhal-orange" />
@@ -533,7 +533,7 @@ export default function CountryDetail() {
               {/* Safety */}
               <div className="animate-slide-up">
                 <h2 className="text-3xl font-bold text-tarhal-blue-dark mb-8">الأمان والسلامة</h2>
-                <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8">
+                <div className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 border border-green-100/50 dark:border-slate-700 rounded-2xl p-8">
                   <div className="flex items-start gap-4">
                     <Shield className="h-8 w-8 text-green-500 mt-1" />
                     <div>

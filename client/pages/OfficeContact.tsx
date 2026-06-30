@@ -246,7 +246,7 @@ export default function OfficeContact() {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-slate-950">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Contact Details */}
@@ -258,7 +258,7 @@ export default function OfficeContact() {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Phone */}
-                  <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300">
+                  <div className="rounded-2xl p-6 border border-green-100 dark:border-green-500/20 bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800 hover:shadow-lg dark:hover:shadow-black/20 transition-shadow duration-300">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
                         <Phone className="h-6 w-6 text-white" />
@@ -278,7 +278,7 @@ export default function OfficeContact() {
                   </div>
 
                   {/* Email */}
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300">
+                  <div className="rounded-2xl p-6 border border-blue-100 dark:border-blue-500/20 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-slate-900 dark:to-slate-800 hover:shadow-lg dark:hover:shadow-black/20 transition-shadow duration-300">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
                         <Mail className="h-6 w-6 text-white" />
@@ -298,7 +298,7 @@ export default function OfficeContact() {
                   </div>
 
                   {/* WhatsApp */}
-                  <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300">
+                  <div className="rounded-2xl p-6 border border-emerald-100 dark:border-emerald-500/20 bg-gradient-to-br from-green-50 to-emerald-100 dark:from-slate-900 dark:to-slate-800 hover:shadow-lg dark:hover:shadow-black/20 transition-shadow duration-300">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
                         <MessageSquare className="h-6 w-6 text-white" />
@@ -321,7 +321,7 @@ export default function OfficeContact() {
                   </div>
 
                   {/* Address */}
-                  <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300">
+                  <div className="rounded-2xl p-6 border border-red-100 dark:border-red-500/20 bg-gradient-to-br from-red-50 to-red-100 dark:from-slate-900 dark:to-slate-800 hover:shadow-lg dark:hover:shadow-black/20 transition-shadow duration-300">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
                         <MapPin className="h-6 w-6 text-white" />
@@ -338,7 +338,7 @@ export default function OfficeContact() {
                   </div>
 
                   {/* Manager */}
-                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300">
+                  <div className="rounded-2xl p-6 border border-purple-100 dark:border-purple-500/20 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 hover:shadow-lg dark:hover:shadow-black/20 transition-shadow duration-300">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
                         <User className="h-6 w-6 text-white" />
@@ -356,7 +356,7 @@ export default function OfficeContact() {
 
                   {/* Website */}
                   {office.website && (
-                    <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div className="rounded-2xl p-6 border border-cyan-100 dark:border-cyan-500/20 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-slate-900 dark:to-slate-800 hover:shadow-lg dark:hover:shadow-black/20 transition-shadow duration-300">
                       <div className="flex items-center gap-4 mb-4">
                         <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center">
                           <Globe className="h-6 w-6 text-white" />
@@ -379,7 +379,7 @@ export default function OfficeContact() {
                   )}
 
                   {/* Working Hours */}
-                  <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300">
+                  <div className="rounded-2xl p-6 border border-orange-100 dark:border-orange-500/20 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-slate-900 dark:to-slate-800 hover:shadow-lg dark:hover:shadow-black/20 transition-shadow duration-300">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-tarhal-orange rounded-full flex items-center justify-center">
                         <Clock className="h-6 w-6 text-white" />
@@ -407,7 +407,7 @@ export default function OfficeContact() {
                     {office.services[language].map((service, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-3 p-4 bg-gradient-to-br from-tarhal-blue/5 to-tarhal-orange/5 rounded-xl border border-tarhal-orange/20 hover:shadow-md transition-shadow duration-300"
+                        className="flex items-center gap-3 p-4 bg-gradient-to-br from-tarhal-blue/5 to-tarhal-orange/5 dark:from-slate-900 dark:to-slate-800 rounded-xl border border-tarhal-orange/20 dark:border-slate-700 hover:shadow-md transition-shadow duration-300"
                       >
                         <CheckCircle className="h-5 w-5 text-tarhal-orange flex-shrink-0" />
                         <span className="text-tarhal-blue-dark font-medium">{service}</span>

@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        brand: ['"Cinzel Decorative"', 'Cinzel', 'Amiri', 'serif'],
+        brandSans: ['Inter', 'Cairo', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

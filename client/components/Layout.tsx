@@ -41,7 +41,7 @@ function useHydrateFromServer() {
 export default function Layout({ children }: LayoutProps) {
   useHydrateFromServer();
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
         {children}

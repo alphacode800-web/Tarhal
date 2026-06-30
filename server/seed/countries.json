@@ -32,10 +32,13 @@
       "en": "November - March",
       "fr": "Novembre - Mars"
     },
-    "mainImage": "https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg",
+    "mainImage": "https://images.unsplash.com/photo-1620487792776-a257eb0c5f2c",
     "gallery": [
-      "https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg",
-      "https://images.pexels.com/photos/2869066/pexels-photo-2869066.jpeg"
+      "https://images.unsplash.com/photo-1620487792776-a257eb0c5f2c",
+      "https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg",
+      "https://images.pexels.com/photos/10546022/pexels-photo-10546022.jpeg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e0/Sudan_Jebel_Marra_Deriba_Lakes_edited.jpg",
+      "https://images.pexels.com/photos/10546023/pexels-photo-10546023.jpeg"
     ],
     "rating": 4.9,
     "totalReviews": 2847,

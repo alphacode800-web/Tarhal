@@ -119,7 +119,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-primary from-tarhal-navy via-tarhal-blue-dark to-tarhal-blue relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-tarhal-navy via-tarhal-blue-dark to-tarhal-blue relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-20">
