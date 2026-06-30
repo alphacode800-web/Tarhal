@@ -11,7 +11,15 @@ import { dataManager, type AdminCountryData, type TravelOffice, type TourOffer, 
 import { supervisorManager } from '@/services/supervisorManager';
 import type { City } from '@/data/countries';
 import { useLanguage } from '../contexts/LanguageContext';
-import { SOCIAL_PLATFORMS, DEFAULT_CONTACT } from '@/data/socialPlatforms';
+import { SOCIAL_PLATFORMS } from '@/data/socialPlatforms';
+import {
+  ANNOUNCEMENT_FONT_OPTIONS,
+  ANNOUNCEMENT_SPEED_OPTIONS,
+  ANNOUNCEMENT_THEMES,
+  SOCIAL_LINK_PLACEHOLDERS,
+  type AnnouncementThemeId,
+} from '@/data/announcementAdmin';
+import FriendlyColorPicker from '@/components/admin/FriendlyColorPicker';
 import AdminSupervisorManagement from './AdminSupervisorManagement';
 import AdminPayments from './AdminPayments';
 
@@ -3556,16 +3564,16 @@ export default function AdminDashboard() {
 
                       {/* Speed Control */}
                       <div>
-                        <label className="block text-xs font-medium text-slate-200 mb-2">
-                          {getLocalizedText('سرعة الحركة (بكسل/ثانية)', 'Animation Speed (pixels/second)', 'Vitesse d\'Animation (pixels/seconde)')}
+                        <label className="block text-sm font-medium text-slate-200 mb-2">
+                          {getLocalizedText('سرعة حركة الشريط', 'Ticker scroll speed', 'Vitesse du défilement')}
                         </label>
-                        <Input
-                          type="number"
-                          min="10"
-                          max="100"
+                        <p className="text-xs text-slate-400 mb-2">
+                          {getLocalizedText('اختر السرعة المناسبة لقراءة الزوار', 'Choose a speed that is easy to read', 'Choisissez une vitesse facile à lire')}
+                        </p>
+                        <select
                           value={settings.announcementBar?.speed || 30}
                           onChange={(e) => {
-                            const speed = parseInt(e.target.value) || 30;
+                            const speed = parseInt(e.target.value, 10) || 30;
                             setSettings({
                               ...settings,
                               announcementBar: {
@@ -3578,23 +3586,69 @@ export default function AdminDashboard() {
                               }
                             });
                           }}
-                          className="bg-slate-900/60 border-white/10 text-slate-100"
-                        />
+                          className="w-full bg-slate-900/60 border border-white/10 text-slate-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-400"
+                        >
+                          {ANNOUNCEMENT_SPEED_OPTIONS.map((option) => (
+                            <option key={option.value} value={option.value}>
+                              {getLocalizedText(option.label.ar, option.label.en, option.label.fr)}
+                            </option>
+                          ))}
+                        </select>
                       </div>
 
                       {/* Appearance Controls */}
-                      <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-4">
                         <div>
-                          <label className="block text-xs font-medium text-slate-200 mb-2">
-                            {getLocalizedText('حجم الخط (بكسل)', 'Font Size (px)', 'Taille de Police (px)')}
+                          <label className="block text-sm font-medium text-slate-200 mb-2">
+                            {getLocalizedText('مظهر الشريط', 'Bar appearance', 'Apparence de la barre')}
                           </label>
-                          <Input
-                            type="number"
-                            min="12"
-                            max="32"
+                          <p className="text-xs text-slate-400 mb-2">
+                            {getLocalizedText('اختر نمطاً جاهزاً بألوان متناسقة', 'Pick a ready-made color style', 'Choisissez un style prêt à l\'emploi')}
+                          </p>
+                          <select
+                            value={(() => {
+                              const bar = settings.announcementBar;
+                              const match = (Object.entries(ANNOUNCEMENT_THEMES) as [AnnouncementThemeId, typeof ANNOUNCEMENT_THEMES.ciar][]).find(
+                                ([, theme]) =>
+                                  (bar?.backgroundFrom || ANNOUNCEMENT_THEMES.ciar.backgroundFrom) === theme.backgroundFrom &&
+                                  (bar?.backgroundTo || ANNOUNCEMENT_THEMES.ciar.backgroundTo) === theme.backgroundTo &&
+                                  (bar?.textColor || ANNOUNCEMENT_THEMES.ciar.textColor) === theme.textColor &&
+                                  (bar?.accentColor || ANNOUNCEMENT_THEMES.ciar.accentColor) === theme.accentColor
+                              );
+                              return match?.[0] || 'ciar';
+                            })()}
+                            onChange={(e) => {
+                              const theme = ANNOUNCEMENT_THEMES[e.target.value as AnnouncementThemeId];
+                              if (!theme) return;
+                              setSettings({
+                                ...settings,
+                                announcementBar: {
+                                  ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                  backgroundFrom: theme.backgroundFrom,
+                                  backgroundTo: theme.backgroundTo,
+                                  textColor: theme.textColor,
+                                  accentColor: theme.accentColor,
+                                },
+                              });
+                            }}
+                            className="w-full bg-slate-900/60 border border-white/10 text-slate-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-400"
+                          >
+                            {(Object.entries(ANNOUNCEMENT_THEMES) as [AnnouncementThemeId, typeof ANNOUNCEMENT_THEMES.ciar][]).map(([id, theme]) => (
+                              <option key={id} value={id}>
+                                {getLocalizedText(theme.label.ar, theme.label.en, theme.label.fr)}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-slate-200 mb-2">
+                            {getLocalizedText('حجم خط الشريط', 'Ticker font size', 'Taille du texte')}
+                          </label>
+                          <select
                             value={settings.announcementBar?.fontSize || 16}
                             onChange={(e) => {
-                              const fontSize = parseInt(e.target.value) || 16;
+                              const fontSize = parseInt(e.target.value, 10) || 16;
                               setSettings({
                                 ...settings,
                                 announcementBar: {
@@ -3603,142 +3657,68 @@ export default function AdminDashboard() {
                                 },
                               });
                             }}
-                            className="bg-slate-900/60 border-white/10 text-slate-100"
-                          />
+                            className="w-full bg-slate-900/60 border border-white/10 text-slate-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-400"
+                          >
+                            {ANNOUNCEMENT_FONT_OPTIONS.map((option) => (
+                              <option key={option.value} value={option.value}>
+                                {getLocalizedText(option.label.ar, option.label.en, option.label.fr)}
+                              </option>
+                            ))}
+                          </select>
                         </div>
-                        <div>
-                          <label className="block text-xs font-medium text-slate-200 mb-2">
-                            {getLocalizedText('لون النص', 'Text Color', 'Couleur du Texte')}
-                          </label>
-                          <div className="flex items-center gap-2">
-                            <input
-                              type="color"
+
+                        <div className="rounded-2xl border border-white/10 bg-slate-900/30 p-4 space-y-3">
+                          <p className="text-sm font-medium text-slate-100">
+                            {getLocalizedText('تعديل الألوان يدوياً (اختياري)', 'Custom colors (optional)', 'Couleurs personnalisées (optionnel)')}
+                          </p>
+                          <p className="text-xs text-slate-400">
+                            {getLocalizedText('اضغط على المربع الملوّن واختر اللون الذي تريده', 'Tap the colored box to pick a color', 'Appuyez sur la case colorée pour choisir')}
+                          </p>
+                          <div className="grid md:grid-cols-2 gap-3">
+                            <FriendlyColorPicker
+                              label={getLocalizedText('لون النص', 'Text color', 'Couleur du texte')}
+                              hint={getLocalizedText('لون كتابة العبارات', 'Color of the messages', 'Couleur des messages')}
                               value={settings.announcementBar?.textColor || '#ffffff'}
-                              onChange={(e) => {
-                                setSettings({
-                                  ...settings,
-                                  announcementBar: {
-                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
-                                    textColor: e.target.value,
-                                  },
-                                });
-                              }}
-                              className="h-10 w-14 rounded border border-white/10 bg-slate-900/60 cursor-pointer"
+                              onChange={(textColor) => setSettings({
+                                ...settings,
+                                announcementBar: {
+                                  ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                  textColor,
+                                },
+                              })}
                             />
-                            <Input
-                              value={settings.announcementBar?.textColor || '#ffffff'}
-                              onChange={(e) => {
-                                setSettings({
-                                  ...settings,
-                                  announcementBar: {
-                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
-                                    textColor: e.target.value,
-                                  },
-                                });
-                              }}
-                              className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <label className="block text-xs font-medium text-slate-200 mb-2">
-                            {getLocalizedText('لون الخلفية (البداية)', 'Background Start', 'Fond (Début)')}
-                          </label>
-                          <div className="flex items-center gap-2">
-                            <input
-                              type="color"
+                            <FriendlyColorPicker
+                              label={getLocalizedText('لون الخلفية الأول', 'First background color', 'Première couleur de fond')}
                               value={settings.announcementBar?.backgroundFrom || '#1e3a5f'}
-                              onChange={(e) => {
-                                setSettings({
-                                  ...settings,
-                                  announcementBar: {
-                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
-                                    backgroundFrom: e.target.value,
-                                  },
-                                });
-                              }}
-                              className="h-10 w-14 rounded border border-white/10 bg-slate-900/60 cursor-pointer"
+                              onChange={(backgroundFrom) => setSettings({
+                                ...settings,
+                                announcementBar: {
+                                  ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                  backgroundFrom,
+                                },
+                              })}
                             />
-                            <Input
-                              value={settings.announcementBar?.backgroundFrom || '#1e3a5f'}
-                              onChange={(e) => {
-                                setSettings({
-                                  ...settings,
-                                  announcementBar: {
-                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
-                                    backgroundFrom: e.target.value,
-                                  },
-                                });
-                              }}
-                              className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <label className="block text-xs font-medium text-slate-200 mb-2">
-                            {getLocalizedText('لون الخلفية (النهاية)', 'Background End', 'Fond (Fin)')}
-                          </label>
-                          <div className="flex items-center gap-2">
-                            <input
-                              type="color"
+                            <FriendlyColorPicker
+                              label={getLocalizedText('لون الخلفية الثاني', 'Second background color', 'Deuxième couleur de fond')}
                               value={settings.announcementBar?.backgroundTo || '#0f2744'}
-                              onChange={(e) => {
-                                setSettings({
-                                  ...settings,
-                                  announcementBar: {
-                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
-                                    backgroundTo: e.target.value,
-                                  },
-                                });
-                              }}
-                              className="h-10 w-14 rounded border border-white/10 bg-slate-900/60 cursor-pointer"
+                              onChange={(backgroundTo) => setSettings({
+                                ...settings,
+                                announcementBar: {
+                                  ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                  backgroundTo,
+                                },
+                              })}
                             />
-                            <Input
-                              value={settings.announcementBar?.backgroundTo || '#0f2744'}
-                              onChange={(e) => {
-                                setSettings({
-                                  ...settings,
-                                  announcementBar: {
-                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
-                                    backgroundTo: e.target.value,
-                                  },
-                                });
-                              }}
-                              className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <label className="block text-xs font-medium text-slate-200 mb-2">
-                            {getLocalizedText('لون الفاصل', 'Separator Color', 'Couleur du Séparateur')}
-                          </label>
-                          <div className="flex items-center gap-2">
-                            <input
-                              type="color"
+                            <FriendlyColorPicker
+                              label={getLocalizedText('لون النقطة بين العبارات', 'Dot between messages', 'Point entre les messages')}
                               value={settings.announcementBar?.accentColor || '#f97316'}
-                              onChange={(e) => {
-                                setSettings({
-                                  ...settings,
-                                  announcementBar: {
-                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
-                                    accentColor: e.target.value,
-                                  },
-                                });
-                              }}
-                              className="h-10 w-14 rounded border border-white/10 bg-slate-900/60 cursor-pointer"
-                            />
-                            <Input
-                              value={settings.announcementBar?.accentColor || '#f97316'}
-                              onChange={(e) => {
-                                setSettings({
-                                  ...settings,
-                                  announcementBar: {
-                                    ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
-                                    accentColor: e.target.value,
-                                  },
-                                });
-                              }}
-                              className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
+                              onChange={(accentColor) => setSettings({
+                                ...settings,
+                                announcementBar: {
+                                  ...(settings.announcementBar || { enabled: false, texts: [], speed: 30 }),
+                                  accentColor,
+                                },
+                              })}
                             />
                           </div>
                         </div>
@@ -4027,7 +4007,11 @@ export default function AdminDashboard() {
                         {getLocalizedText('روابط وسائل التواصل', 'Social Media Links', 'Liens des Réseaux Sociaux')}
                       </h3>
                       <p className="text-xs text-slate-400">
-                        {getLocalizedText('إضافة روابط حسابات السوشيال ميديا', 'Add your social media account links', 'Ajoutez les liens de vos comptes de réseaux sociaux')}
+                        {getLocalizedText(
+                          'أدخل بيانات التواصل وروابط حساباتك فقط — بدون رموز تقنية',
+                          'Enter contact details and account links only — no technical codes',
+                          'Saisissez les coordonnées et liens — sans codes techniques'
+                        )}
                       </p>
                     </div>
                   </div>
@@ -4042,7 +4026,7 @@ export default function AdminDashboard() {
                         value={settings?.contactEmail || ''}
                         onChange={(e) => settings && setSettings({ ...settings, contactEmail: e.target.value })}
                         className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                        placeholder={DEFAULT_CONTACT.email}
+                        placeholder={getLocalizedText('مثال: azasnaa628@gmail.com', 'e.g. your@email.com', 'ex. votre@email.com')}
                       />
                     </div>
                     <div>
@@ -4054,13 +4038,13 @@ export default function AdminDashboard() {
                         value={settings?.contactPhone || ''}
                         onChange={(e) => settings && setSettings({ ...settings, contactPhone: e.target.value })}
                         className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                        placeholder={DEFAULT_CONTACT.phone}
+                        placeholder={getLocalizedText('مثال: 00963993153333', 'e.g. 00963993153333', 'ex. 00963993153333')}
                       />
                     </div>
                     <div>
                       <label className="block font-medium mb-1 flex items-center gap-2">
                         <MessageSquare className="h-3.5 w-3.5 text-green-400" />
-                        WhatsApp
+                        {getLocalizedText('واتساب', 'WhatsApp', 'WhatsApp')}
                       </label>
                       <Input
                         value={settings?.contactWhatsapp || settings?.socialLinks?.whatsapp || ''}
@@ -4070,7 +4054,7 @@ export default function AdminDashboard() {
                           socialLinks: { ...settings.socialLinks, whatsapp: e.target.value },
                         })}
                         className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                        placeholder={DEFAULT_CONTACT.whatsapp}
+                        placeholder={getLocalizedText('نفس رقم الهاتف أو رقم واتساب آخر', 'Same as phone or another WhatsApp number', 'Même numéro ou autre numéro WhatsApp')}
                       />
                     </div>
 
@@ -4080,7 +4064,7 @@ export default function AdminDashboard() {
                           {language === 'ar' ? platform.name.ar : language === 'fr' ? platform.name.fr : platform.name.en}
                         </label>
                         <Input
-                          type="url"
+                          type="text"
                           value={settings?.socialLinks?.[platform.key] || ''}
                           onChange={(e) => {
                             if (settings) {
@@ -4094,7 +4078,11 @@ export default function AdminDashboard() {
                             }
                           }}
                           className="bg-slate-900/60 border-white/10 text-slate-100 text-xs"
-                          placeholder={`https://${platform.key}.com/yourpage`}
+                          placeholder={getLocalizedText(
+                            SOCIAL_LINK_PLACEHOLDERS[platform.key]?.ar || 'الصق رابط الحساب هنا',
+                            SOCIAL_LINK_PLACEHOLDERS[platform.key]?.en || 'Paste account link here',
+                            SOCIAL_LINK_PLACEHOLDERS[platform.key]?.fr || 'Collez le lien ici'
+                          )}
                         />
                       </div>
                     ))}

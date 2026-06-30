@@ -18,6 +18,9 @@ const TRAVEL_VISAS_FILE = path.join(DATA_DIR, 'travel-visas.json');
 const SETTINGS_FILE = path.join(DATA_DIR, 'settings.json');
 const HERO_CONTENT_FILE = path.join(DATA_DIR, 'hero-content.json');
 const SUPERVISORS_FILE = path.join(DATA_DIR, 'supervisors.json');
+const VISITOR_STATS_FILE = path.join(DATA_DIR, 'visitor-stats.json');
+
+const DEFAULT_VISITOR_STATS = { baseCount: 10000, visits: 0 };
 
 // Ensure data directory exists
 async function ensureDataDir() {
@@ -312,6 +315,44 @@ export const saveSupervisors: RequestHandler = async (req, res) => {
   }
 };
 
+async function readVisitorStats() {
+  const stats = await readFromDbOrFile(
+    ADMIN_KEYS.visitorStats,
+    VISITOR_STATS_FILE,
+    DEFAULT_VISITOR_STATS
+  );
+  return {
+    baseCount: Number(stats?.baseCount) || DEFAULT_VISITOR_STATS.baseCount,
+    visits: Number(stats?.visits) || 0,
+  };
+}
+
+export const getVisitorCount: RequestHandler = async (_req, res) => {
+  try {
+    const data = await readVisitorStats();
+    res.json({ success: true, data });
+  } catch (error) {
+    console.error('Error fetching visitor count:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch visitor count' });
+  }
+};
+
+export const recordVisitor: RequestHandler = async (_req, res) => {
+  try {
+    const stats = await readVisitorStats();
+    stats.visits += 1;
+    const success = await saveToDbAndFile(ADMIN_KEYS.visitorStats, VISITOR_STATS_FILE, stats);
+    if (success) {
+      res.json({ success: true, data: stats });
+    } else {
+      res.status(500).json({ success: false, error: 'Failed to record visit' });
+    }
+  } catch (error) {
+    console.error('Error recording visit:', error);
+    res.status(500).json({ success: false, error: 'Failed to record visit' });
+  }
+};
+
 // Router setup
 const router = express.Router();
 
@@ -502,6 +543,10 @@ router.post('/hero-content', saveHeroContent);
 // Supervisors routes
 router.get('/supervisors', getSupervisors);
 router.post('/supervisors', saveSupervisors);
+
+// Visitor statistics
+router.get('/visitor-count', getVisitorCount);
+router.post('/visitor-count/record', recordVisitor);
 
 export default router;
 

@@ -141,38 +141,6 @@ export default function Header() {
         ? 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-lg border-b border-tarhal-gray-light dark:border-slate-800' 
         : 'bg-transparent border-b border-white/10 dark:border-slate-800/40'
     }`}>
-      {/* Top Bar */}
-      {/* <div className="bg-tarhal-navy text-white py-2 px-4 text-sm hidden md:block">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <Phone size={14} />
-              <span>+249 123 456 789</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail size={14} />
-              <span>info@ciar.com</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Globe size={14} />
-              <select
-                value={language}
-                onChange={(e) => handleLanguageChange(e.target.value as Language)}
-                className="bg-transparent border-none text-white text-sm focus:outline-none"
-              >
-                {languages.map((lang) => (
-                  <option key={lang.code} value={lang.code} className="bg-tarhal-navy">
-                    {lang.flag} {lang.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Main Navigation */}
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
@@ -484,11 +452,11 @@ export default function Header() {
         </div>
       </nav>
 
+      {/* Announcement Bar - Below navigation */}
+      <AnnouncementBar />
+
       {/* Search Modal */}
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
-      
-      {/* Announcement Bar - Below Navigation */}
-      <AnnouncementBar />
     </header>
   );
 }

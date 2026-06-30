@@ -16,7 +16,7 @@ type BarStyle = {
 };
 
 const DEFAULT_STYLE: BarStyle = {
-  fontSize: 16,
+  fontSize: 15,
   textColor: '#ffffff',
   backgroundFrom: '#1e3a5f',
   backgroundTo: '#0f2744',
@@ -48,9 +48,8 @@ export default function AnnouncementBar() {
 
     const defaultTexts = defaults?.texts || [];
     const effectiveTexts = bar?.texts && bar.texts.length > 0 ? bar.texts : defaultTexts;
-    const isEnabled = bar?.enabled ?? settings.showTopAnnouncement ?? false;
 
-    if (isEnabled && effectiveTexts.length > 0) {
+    if (effectiveTexts.length > 0) {
       setAnnouncements(effectiveTexts);
       setIsVisible(true);
     } else {
@@ -122,13 +121,13 @@ export default function AnnouncementBar() {
 
   return (
     <div
-      className="py-3 overflow-hidden relative w-full border-t border-white/10"
+      className="py-2 overflow-hidden relative w-full border-t border-white/10"
       style={{
         background: `linear-gradient(to right, ${barStyle.backgroundFrom}, ${barStyle.backgroundTo})`,
         color: barStyle.textColor,
       }}
     >
-      <div className="relative w-full h-full flex items-center">
+      <div className="relative w-full min-h-[1.75rem] flex items-center">
         <div
           ref={containerRef}
           className="flex items-center gap-8 whitespace-nowrap"
@@ -137,15 +136,15 @@ export default function AnnouncementBar() {
           {[...announcements, ...announcements].map((announcement, index) => (
             <div
               key={`${announcement.id}-${index}`}
-              className="flex items-center gap-4 px-4 flex-shrink-0"
+              className="flex items-center gap-3 px-3 flex-shrink-0"
             >
               <span
                 className="font-medium"
-                style={{ fontSize: `${barStyle.fontSize}px`, color: barStyle.textColor }}
+                style={{ fontSize: `${Math.max(barStyle.fontSize, 14)}px`, color: barStyle.textColor }}
               >
                 {announcement.text[language] || announcement.text.ar}
               </span>
-              <span className="text-lg" style={{ color: barStyle.accentColor }}>•</span>
+              <span className="text-sm" style={{ color: barStyle.accentColor }}>•</span>
             </div>
           ))}
         </div>

@@ -162,6 +162,11 @@ const translations = {
     // Statistics
     'home.statistics.title': 'أرقامنا تتحدث عن نجاحنا',
     'home.statistics.subtitle': 'نفخر بثقة عملائنا وخبرتنا العريقة في مجال السياحة',
+    'home.statistics.happyCustomers': 'عميل سعيد',
+    'home.statistics.destinations': 'دولة ووجهة',
+    'home.statistics.yearsExperience': 'سنة خبرة',
+    'home.statistics.rating': 'تقييم العملاء',
+    'home.statistics.visitors': 'زائر للموقع',
   },
   
   en: {
@@ -305,6 +310,11 @@ const translations = {
     // Statistics
     'home.statistics.title': 'Our Numbers Speak for Our Success',
     'home.statistics.subtitle': 'We take pride in our customers\' trust and our extensive experience in tourism',
+    'home.statistics.happyCustomers': 'Happy Customers',
+    'home.statistics.destinations': 'Destinations',
+    'home.statistics.yearsExperience': 'Years of Experience',
+    'home.statistics.rating': 'Customer Rating',
+    'home.statistics.visitors': 'Site Visitors',
   },
   
   fr: {
@@ -448,6 +458,11 @@ const translations = {
     // Statistics
     'home.statistics.title': 'Nos Chiffres Parlent de Notre Succès',
     'home.statistics.subtitle': 'Nous sommes fiers de la confiance de nos clients et de notre vaste expérience en tourisme',
+    'home.statistics.happyCustomers': 'Clients Satisfaits',
+    'home.statistics.destinations': 'Destinations',
+    'home.statistics.yearsExperience': 'Années d\'Expérience',
+    'home.statistics.rating': 'Note Clients',
+    'home.statistics.visitors': 'Visiteurs du Site',
   }
 };
 

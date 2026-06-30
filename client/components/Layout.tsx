@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { dataManager } from '@/services/dataManager';
+import { recordVisitIfNeeded } from '@/services/visitorStats';
 
 interface LayoutProps {
   children: ReactNode;
@@ -30,6 +31,7 @@ function useHydrateFromServer() {
     };
 
     loadCritical();
+    recordVisitIfNeeded().catch(() => {});
     if ('requestIdleCallback' in window) {
       requestIdleCallback(() => loadSecondary());
     } else {

@@ -107,7 +107,7 @@ export default function CountryDetail() {
   return (
     <Layout>
       {/* Hero Header */}
-      <section className="relative h-[70vh] overflow-hidden pt-20">
+      <section className="relative h-[70vh] overflow-hidden pt-28 md:pt-32">
         <div className="absolute inset-0 bg-slate-900">
           {heroImages.length > 0 ? (
             heroImages.map((image, index) => (

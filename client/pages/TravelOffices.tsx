@@ -217,7 +217,7 @@ export default function TravelOffices() {
 
   return (
     <Layout>
-      <section className="relative h-[60vh] overflow-hidden pt-20">
+      <section className="relative h-[60vh] overflow-hidden pt-28 md:pt-32">
         <div className="absolute inset-0 bg-slate-900">
           {headerImages.map((image, index) => (
             <img

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowRight, Star, Globe, Users, Award, Shield, MapPin, Mail, Phone, Send, Lock } from 'lucide-react';
+import { ArrowRight, Star, Globe, Users, Award, Shield, MapPin, Mail, Phone, Send, Lock, Eye } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { getAllCountriesWithDynamic, getCountryName, getCountryDescription, syncStaticWithDynamic, convertAdminToCountryData } from '@/data/countries';
@@ -9,6 +9,9 @@ import { dataManager } from '@/services/dataManager';
 import { detectUserCountry, mapCountryCodeToId } from '@/services/geoLocation';
 import { optimizeImageUrl, preloadImage } from '@/utils/imageUtils';
 import OptimizedImage from '@/components/OptimizedImage';
+import GoogleMap from '@/components/GoogleMap';
+import { resolveOfficeCoordinates } from '@/data/countryCoordinates';
+import { fetchVisitorCount } from '@/services/visitorStats';
 
 export default function Index() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -17,6 +20,13 @@ export default function Index() {
   const [countries, setCountries] = useState(getAllCountriesWithDynamic());
   const [heroContent, setHeroContent] = useState(dataManager.getHeroContent());
   const [detectedCountryId, setDetectedCountryId] = useState<string | null>(null);
+  const [officeMapMarkers, setOfficeMapMarkers] = useState<Array<{
+    position: { lat: number; lng: number };
+    title: string;
+    info: string;
+  }>>([]);
+  const [mapCenter, setMapCenter] = useState({ lat: 24, lng: 45 });
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -93,6 +103,48 @@ export default function Index() {
         console.error('[Index] Error detecting country:', error);
       });
   }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    const loadVisitorCount = () => {
+      fetchVisitorCount().then((count) => {
+        if (!cancelled) setVisitorCount(count);
+      });
+    };
+    loadVisitorCount();
+    const timer = setTimeout(loadVisitorCount, 800);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    dataManager.getOfficesAsync()
+      .then((offices) => {
+        const activeOffices = offices.filter((office) => office.isActive !== false);
+        const markers = activeOffices.map((office) => {
+          const position = resolveOfficeCoordinates(office.countryId, office.coordinates);
+          const title = office.name[language] || office.name.ar;
+          const info = office.address[language] || office.address.ar;
+          return { position, title, info };
+        });
+
+        const finalMarkers = markers.length > 0 ? markers : [{
+          position: resolveOfficeCoordinates('sudan'),
+          title: language === 'ar' ? 'مكتب الخرطوم' : 'Khartoum Office',
+          info: language === 'ar' ? 'الخرطوم، السودان' : 'Khartoum, Sudan',
+        }];
+
+        setOfficeMapMarkers(finalMarkers);
+        const avgLat = finalMarkers.reduce((sum, m) => sum + m.position.lat, 0) / finalMarkers.length;
+        const avgLng = finalMarkers.reduce((sum, m) => sum + m.position.lng, 0) / finalMarkers.length;
+        setMapCenter({ lat: avgLat, lng: avgLng });
+      })
+      .catch((error) => {
+        console.error('[Index] Error loading offices for map:', error);
+      });
+  }, [language]);
 
   // Update image index when images change
   useEffect(() => {
@@ -217,7 +269,7 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Header */}
-      <section className="relative h-[75vh] overflow-hidden pt-20 md:pt-20">
+      <section className="relative h-[75vh] overflow-hidden pt-28 md:pt-32">
         {/* Background Images */}
         <div className="absolute inset-0 bg-slate-900">
           {heroSlideIndices.map((index) => (
@@ -241,25 +293,25 @@ export default function Index() {
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl animate-fade-in">
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
+              <h1 className="text-4xl sm:text-2xl md:text-3xl font-bold text-white mb-3 leading-tight animate-slide-up">
                 {heroContent.heroTitle[language]}
-                <span className="block mt-2 font-brand leading-none">
-                  <span className="text-tarhal-orange text-3xl md:text-4xl tracking-wider">ciar</span>
-                  <span className="text-white text-2xl md:text-4xl uppercase tracking-[0.2em]">TOU</span>
-                </span>
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-slide-up" style={{ animationDelay: '300ms' }}>
+              <p className="mb-5 leading-none animate-slide-up" style={{ animationDelay: '150ms' }}>
+                <span className="logo-ciar text-2xl sm:text-3xl md:text-4xl">ciar</span>
+                <span className="logo-tourism text-white text-xl sm:text-2xl md:text-3xl font-semibold uppercase ml-1">TOU</span>
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl animate-slide-up" style={{ animationDelay: '300ms' }}>
                 {heroContent.heroDescription[language]}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '600ms' }}>
+              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '450ms' }}>
                 <Link to="/offices">
-                  <Button className="bg-gradient-to-r from-tarhal-orange to-tarhal-orange-dark text-white px-8 py-6 text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                  <Button className="bg-gradient-to-r from-tarhal-orange to-tarhal-orange-dark text-white px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                     {heroContent.primaryButtonText[language]}
                     <ArrowRight className="mr-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-tarhal-blue-dark px-8 py-6 text-lg font-semibold transition-all duration-300">
+                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-tarhal-blue-dark px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold transition-all duration-300">
                     {heroContent.secondaryButtonText[language]}
                   </Button>
                 </Link>
@@ -554,42 +606,54 @@ export default function Index() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
               {t('home.statistics.title') || 'أرقامنا تتحدث عن نجاحنا'}
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto animate-slide-up">
+            <p className="text-lg md:text-xl text-white/90 font-medium max-w-3xl mx-auto animate-slide-up">
               {t('home.statistics.subtitle') || 'نفخر بثقة عملائنا وخبرتنا العريقة في مجال السياحة'}
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
             <div className="text-center group">
-              <div className="w-24 h-24 bg-gradient-to-br from-tarhal-orange to-tarhal-orange-dark rounded-full flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                <Users className="h-12 w-12 text-white" />
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-tarhal-orange to-tarhal-orange-dark rounded-full flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                <Users className="h-10 w-10 md:h-12 md:w-12 text-white" />
               </div>
-              <div className="text-4xl font-bold text-black mb-2 animate-scale-in">50,000+</div>
-              <div className="text-tarhal-gray-dark">عميل سعيد</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2 animate-scale-in drop-shadow-sm">50,000+</div>
+              <div className="text-base md:text-lg font-semibold text-white/90">{t('home.statistics.happyCustomers')}</div>
             </div>
 
             <div className="text-center group">
-              <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                <Globe className="h-12 w-12 text-white" />
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                <Globe className="h-10 w-10 md:h-12 md:w-12 text-white" />
               </div>
-              <div className="text-4xl font-bold text-black mb-2 animate-scale-in">{countries.length}</div>
-              <div className="text-tarhal-gray-dark">دولة ووجهة</div>
-            </div> 
-
-            <div className="text-center group">
-              <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                <Award className="h-12 w-12 text-white" />
-              </div>
-              <div className="text-4xl font-bold text-black mb-2 animate-scale-in">15</div>
-              <div className="text-tarhal-gray-dark">سنة خبرة</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2 animate-scale-in drop-shadow-sm">{countries.length}</div>
+              <div className="text-base md:text-lg font-semibold text-white/90">{t('home.statistics.destinations')}</div>
             </div>
 
             <div className="text-center group">
-              <div className="w-24 h-24 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                <Star className="h-12 w-12 text-white" />
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                <Award className="h-10 w-10 md:h-12 md:w-12 text-white" />
               </div>
-              <div className="text-4xl font-bold text-black mb-2 animate-scale-in">4.9</div>
-              <div className="text-tarhal-gray-dark">تقييم العملاء</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2 animate-scale-in drop-shadow-sm">15</div>
+              <div className="text-base md:text-lg font-semibold text-white/90">{t('home.statistics.yearsExperience')}</div>
+            </div>
+
+            <div className="text-center group">
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                <Star className="h-10 w-10 md:h-12 md:w-12 text-white" />
+              </div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2 animate-scale-in drop-shadow-sm">4.9</div>
+              <div className="text-base md:text-lg font-semibold text-white/90">{t('home.statistics.rating')}</div>
+            </div>
+
+            <div className="text-center group col-span-2 sm:col-span-1">
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                <Eye className="h-10 w-10 md:h-12 md:w-12 text-white" />
+              </div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2 animate-scale-in drop-shadow-sm">
+                {visitorCount !== null
+                  ? visitorCount.toLocaleString(language === 'ar' ? 'ar-SA' : language === 'fr' ? 'fr-FR' : 'en-US')
+                  : '—'}
+              </div>
+              <div className="text-base md:text-lg font-semibold text-white/90">{t('home.statistics.visitors')}</div>
             </div>
           </div>
         </div>
@@ -867,13 +931,20 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="bg-tarhal-gray-light rounded-2xl p-8 h-96 flex items-center justify-center shadow-xl animate-scale-in">
-            <div className="text-center">
-              <MapPin className="h-16 w-16 text-tarhal-orange mx-auto mb-4 animate-bounce-slow" />
-              <h3 className="text-2xl font-bold text-tarhal-blue-dark mb-2">خرائط جوجل التفاعلية</h3>
-              <p className="text-tarhal-gray-dark">قريباً... خريطة تفاعلية تظهر جميع مواقع مكاتبنا</p>
-            </div>
-          </div>
+          <GoogleMap
+            center={mapCenter}
+            zoom={officeMapMarkers.length > 1 ? 4 : 12}
+            markers={officeMapMarkers}
+            height="500px"
+            className="shadow-xl animate-scale-in"
+          />
+          {officeMapMarkers.length > 0 && (
+            <p className="text-center text-sm text-tarhal-gray-dark mt-4">
+              {language === 'ar'
+                ? `${officeMapMarkers.length} موقع مكتب على الخريطة — اضغط على العلامة لعرض التفاصيل`
+                : `${officeMapMarkers.length} office locations on the map — click a pin for details`}
+            </p>
+          )}
         </div>
       </section>
 

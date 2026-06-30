@@ -122,19 +122,19 @@ export default function Contact() {
     {
       icon: <Phone className="h-6 w-6" />,
       title: 'اتصل بنا',
-      details: [contact.phone],
+      href: `tel:${contact.phone.replace(/\s/g, '')}`,
       color: 'from-green-500 to-green-600'
     },
     {
       icon: <MessageCircle className="h-6 w-6" />,
       title: 'واتساب',
-      details: [contact.whatsapp],
+      href: resolveSocialUrl('whatsapp', socialLinks, contact),
       color: 'from-emerald-500 to-emerald-600'
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: 'راسلنا',
-      details: [contact.email],
+      href: `mailto:${contact.email}`,
       color: 'from-blue-500 to-blue-600'
     },
     {
@@ -273,19 +273,21 @@ export default function Contact() {
               فريقنا المتخصص جاهز للإجابة على جميع استفساراتكم ومساعدتكم في تخطيط رحلتكم المثالية
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in" style={{ animationDelay: '600ms' }}>
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
-                <Phone className="h-5 w-5 text-tarhal-orange" />
-                <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="text-white hover:text-tarhal-orange transition-colors">
-                  {contact.phone}
-                </a>
-              </div>
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
-                <Mail className="h-5 w-5 text-tarhal-orange" />
-                <a href={`mailto:${contact.email}`} className="text-white hover:text-tarhal-orange transition-colors">
-                  {contact.email}
-                </a>
-              </div>
+            <div className="flex gap-4 justify-center animate-scale-in" style={{ animationDelay: '600ms' }}>
+              <a
+                href={`tel:${contact.phone.replace(/\s/g, '')}`}
+                aria-label={language === 'ar' ? 'اتصل بنا' : language === 'fr' ? 'Appelez-nous' : 'Call us'}
+                className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-300 shadow-lg"
+              >
+                <Phone className="h-7 w-7 text-tarhal-orange" />
+              </a>
+              <a
+                href={`mailto:${contact.email}`}
+                aria-label={language === 'ar' ? 'راسلنا بالبريد' : language === 'fr' ? 'Envoyez un e-mail' : 'Email us'}
+                className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-300 shadow-lg"
+              >
+                <Mail className="h-7 w-7 text-tarhal-orange" />
+              </a>
             </div>
           </div>
         </div>
@@ -304,23 +306,48 @@ export default function Contact() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-            {contactInfo.map((info, index) => (
-              <div
-                key={index}
-                className="group text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-scale-in border border-tarhal-gray-light/50"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className={`w-16 h-16 bg-gradient-to-br ${info.color} rounded-full flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-300`}>
-                  {info.icon}
+            {contactInfo.map((info, index) => {
+              const cardContent = (
+                <>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${info.color} rounded-full flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-300`}>
+                    {info.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-tarhal-blue-dark mb-2">{info.title}</h3>
+                  {'details' in info && info.details ? (
+                    <div className="space-y-2">
+                      {info.details.map((detail, idx) => (
+                        <p key={idx} className="text-tarhal-gray-dark text-sm">{detail}</p>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-tarhal-gray-dark text-sm">
+                      {language === 'ar' ? 'اضغط للتواصل' : language === 'fr' ? 'Cliquez pour contacter' : 'Click to contact'}
+                    </p>
+                  )}
+                </>
+              );
+
+              return 'href' in info && info.href ? (
+                <a
+                  key={index}
+                  href={info.href}
+                  target={info.href.startsWith('http') ? '_blank' : undefined}
+                  rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="group text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-scale-in border border-tarhal-gray-light/50 block"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <div
+                  key={index}
+                  className="group text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-scale-in border border-tarhal-gray-light/50"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  {cardContent}
                 </div>
-                <h3 className="text-xl font-bold text-tarhal-blue-dark mb-4">{info.title}</h3>
-                <div className="space-y-2">
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-tarhal-gray-dark text-sm">{detail}</p>
-                  ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

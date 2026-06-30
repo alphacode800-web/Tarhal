@@ -75,14 +75,21 @@ const AdminSupervisorManagement: React.FC = () => {
   }, []);
 
   const loadData = async () => {
-    // تحميل المشرفين والدول من السيرفر لظهور التعديلات على كل الأجهزة
-    const [supervisorData, countryData] = await Promise.all([
-      supervisorManager.getSupervisorsAsync(),
-      dataManager.getCountriesAsync()
-    ]);
+    const countryData = await dataManager.getCountriesAsync();
+    const countriesList = countryData.length > 0 ? countryData : dataManager.getCountries();
+
+    let supervisorData = await supervisorManager.getSupervisorsAsync();
+    if (supervisorData.length === 0 && countriesList.length > 0) {
+      supervisorManager.ensureSupervisorsForAllCountries(countriesList);
+      supervisorData = supervisorManager.getSupervisors();
+      if (supervisorData.length > 0) {
+        await supervisorManager.saveSupervisorsAsync(supervisorData);
+      }
+    }
+
     setSupervisors(supervisorData);
-    setCountries(countryData.length > 0 ? countryData : dataManager.getCountries());
-    setStats(supervisorManager.getStatistics());
+    setCountries(countriesList);
+    setStats(supervisorManager.getStatistics(supervisorData));
   };
 
   const content = {
@@ -139,7 +146,10 @@ const AdminSupervisorManagement: React.FC = () => {
       canEditOffices: 'تعديل المكاتب',
       canDeleteOffices: 'حذف المكاتب',
       canViewReports: 'عرض التقارير',
-      canManageReviews: 'إدارة المراجعات'
+      canManageReviews: 'إدارة المراجعات',
+      listDescription: 'إدارة حسابات المشرفين وصلاحياتهم لكل دولة',
+      noSupervisorsFound: 'لا يوجد مشرفون حالياً — اضغط «إضافة مشرف جديد» لإنشاء أول مشرف',
+      unknownCountry: 'دولة غير معروفة',
     },
     en: {
       supervisorManagement: 'Supervisor Management',
@@ -194,7 +204,10 @@ const AdminSupervisorManagement: React.FC = () => {
       canEditOffices: 'Edit Offices',
       canDeleteOffices: 'Delete Offices',
       canViewReports: 'View Reports',
-      canManageReviews: 'Manage Reviews'
+      canManageReviews: 'Manage Reviews',
+      listDescription: 'Manage supervisor accounts and permissions for each country',
+      noSupervisorsFound: 'No supervisors yet — click "Add New Supervisor" to create one',
+      unknownCountry: 'Unknown country',
     },
     fr: {
       supervisorManagement: 'Gestion des Superviseurs',
@@ -249,7 +262,10 @@ const AdminSupervisorManagement: React.FC = () => {
       canEditOffices: 'Modifier Bureaux',
       canDeleteOffices: 'Supprimer Bureaux',
       canViewReports: 'Voir Rapports',
-      canManageReviews: 'Gérer Avis'
+      canManageReviews: 'Gérer Avis',
+      listDescription: 'Gérer les comptes superviseurs et leurs permissions par pays',
+      noSupervisorsFound: 'Aucun superviseur — cliquez sur « Ajouter » pour en créer un',
+      unknownCountry: 'Pays inconnu',
     }
   };
 
@@ -634,7 +650,7 @@ const AdminSupervisorManagement: React.FC = () => {
         <CardHeader>
           <CardTitle>{text.supervisors}</CardTitle>
           <CardDescription>
-            Manage supervisors and their permissions for each country.
+            {text.listDescription}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -642,7 +658,7 @@ const AdminSupervisorManagement: React.FC = () => {
             {filteredSupervisors.length === 0 ? (
               <div className="text-center py-12">
                 <Users className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500">No supervisors found</p>
+                <p className="text-gray-500">{text.noSupervisorsFound}</p>
               </div>
             ) : (
               <div className="space-y-4">
@@ -664,7 +680,7 @@ const AdminSupervisorManagement: React.FC = () => {
                             <div className="flex items-center space-x-2 mt-1">
                               <MapPin className="w-3 h-3 text-gray-400" />
                               <span className="text-xs text-gray-500">
-                                {country?.name[language] || 'Unknown Country'}
+                                {country?.name[language] || text.unknownCountry}
                               </span>
                               <Badge variant={supervisor.isActive ? "default" : "secondary"}>
                                 {supervisor.isActive ? text.active : text.inactive}
@@ -743,7 +759,7 @@ const AdminSupervisorManagement: React.FC = () => {
                   <div>
                     <span className="font-medium">{text.country}:</span>
                     <span className="ml-2">
-                      {countries.find(c => c.id === viewingSupervisor.countryId)?.name[language] || 'Unknown'}
+                      {countries.find(c => c.id === viewingSupervisor.countryId)?.name[language] || text.unknownCountry}
                     </span>
                   </div>
                   <div>

@@ -93,8 +93,10 @@ class SupervisorManager {
             ...sup,
             permissions: this.mergePermissions(sup.permissions)
           }));
-          this.saveSupervisors(normalized);
-          return normalized;
+          if (normalized.length > 0) {
+            this.saveSupervisors(normalized);
+            return normalized;
+          }
         }
       }
     } catch (error) {
@@ -411,8 +413,8 @@ class SupervisorManager {
   }
 
   // Get statistics
-  getStatistics() {
-    const supervisors = this.getSupervisors();
+  getStatistics(supervisorsInput?: Supervisor[]) {
+    const supervisors = supervisorsInput ?? this.getSupervisors();
     const activities = this.getActivities();
     
     const totalSupervisors = supervisors.length;
