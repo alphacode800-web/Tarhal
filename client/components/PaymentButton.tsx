@@ -12,14 +12,16 @@ interface PaymentButtonProps {
   paymentMethodTypes?: string[];
   className?: string;
   children?: React.ReactNode;
+  beforePay?: () => boolean;
 }
 
-export default function PaymentButton({ amount, currency = 'USD', description = 'ciar Payment', metadata = {}, customerEmail = null, paymentMethodTypes, className, children }: PaymentButtonProps) {
+export default function PaymentButton({ amount, currency = 'USD', description = 'ciar Payment', metadata = {}, customerEmail = null, paymentMethodTypes, className, children, beforePay }: PaymentButtonProps) {
   const [loading, setLoading] = useState(false);
   const publishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string | undefined;
 
   const handlePay = async () => {
     try {
+      if (beforePay && !beforePay()) return;
       setLoading(true);
 
       const { sessionId, url } = await createCheckoutSession({ amount, currency, description, metadata, customer_email: customerEmail || undefined, payment_method_types: paymentMethodTypes });

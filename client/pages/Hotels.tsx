@@ -268,15 +268,16 @@ export default function Hotels() {
               {filteredHotels.map((hotel) => (
                 <div
                   key={hotel.id}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
                 >
+                  <Link to={`/offices/${countryId}/hotels/${hotel.id}`} className="block">
                   {/* Image */}
                   {hotel.imageUrl && (
                     <div className="relative h-48 overflow-hidden">
                       <img
                         src={hotel.imageUrl}
                         alt={getLocalizedText(hotel.name)}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       {hotel.isFeatured && (
                         <div className="absolute top-4 right-4 bg-yellow-400 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
@@ -325,7 +326,7 @@ export default function Hotels() {
                     </div>
 
                     {/* Amenities */}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2">
                       {hotel.amenities?.[language]?.slice(0, 4).map((amenity, idx) => (
                         <span
                           key={idx}
@@ -335,38 +336,22 @@ export default function Hotels() {
                         </span>
                       ))}
                     </div>
+                  </div>
+                  </Link>
 
-                    {/* Contact Info */}
-                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                      {hotel.phone && (
-                        <div className="flex items-center gap-1">
-                          <Phone className="h-4 w-4" />
-                          <span className="truncate">{hotel.phone}</span>
-                        </div>
-                      )}
-                      {hotel.email && (
-                        <div className="flex items-center gap-1">
-                          <Mail className="h-4 w-4" />
-                          <span className="truncate">{hotel.email}</span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Actions */}
-                    <div className="flex gap-2">
-                      <Link to={`/offices/${countryId}/hotels/${hotel.id}/booking`} className="flex-1">
-                        <Button className="w-full bg-tarhal-orange hover:bg-tarhal-orange-dark text-white">
-                          {language === 'ar' ? 'احجز الآن' : language === 'fr' ? 'Réserver maintenant' : 'Book Now'}
-                        </Button>
-                      </Link>
-                      {hotel.website && (
-                        <Button variant="outline" size="sm" asChild>
-                          <a href={hotel.website} target="_blank" rel="noopener noreferrer">
-                            <Globe className="h-4 w-4" />
-                          </a>
-                        </Button>
-                      )}
-                    </div>
+                  {/* Actions */}
+                  <div className="flex gap-2 px-6 pb-6">
+                    <Link to={`/offices/${countryId}/hotels/${hotel.id}/booking`} className="flex-1">
+                      <Button className="w-full bg-tarhal-orange hover:bg-tarhal-orange-dark text-white">
+                        {language === 'ar' ? 'احجز الآن' : language === 'fr' ? 'Réserver maintenant' : 'Book Now'}
+                      </Button>
+                    </Link>
+                    <Link to={`/offices/${countryId}/hotels/${hotel.id}`}>
+                      <Button variant="outline" size="sm">
+                        {language === 'ar' ? 'التفاصيل' : language === 'fr' ? 'Détails' : 'Details'}
+                        <ArrowRight className="h-4 w-4 mr-2" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               ))}

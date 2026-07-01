@@ -5,10 +5,14 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowLeft, Calendar, Users, CreditCard, ShieldCheck, CheckCircle, AlertCircle, Hotel as HotelIcon, Star, MapPin, Phone, Mail, Globe, User, Clock } from 'lucide-react';
+import PaymentCheckoutPanel from '@/components/PaymentCheckoutPanel';
 import { dataManager, type Hotel, type AdminCountryData } from '@/services/dataManager';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useCurrency } from '@/contexts/CurrencyContext';
+import { useCurrency, type Currency } from '@/contexts/CurrencyContext';
 import { getCountryName } from '@/data/countries';
+
+const MAX_STAY_NIGHTS = 30;
+const MAX_ROOMS = 5;
 
 interface BookingFormData {
   fullName: string;
@@ -96,14 +100,29 @@ export default function HotelBooking() {
       errors.checkOut = language === 'ar' ? 'تاريخ المغادرة مطلوب' : language === 'fr' ? 'La date de départ est requise' : 'Check-out date is required';
     } else if (formData.checkIn && formData.checkOut <= formData.checkIn) {
       errors.checkOut = language === 'ar' ? 'تاريخ المغادرة يجب أن يكون بعد تاريخ الوصول' : language === 'fr' ? 'La date de départ doit être après la date d\'arrivée' : 'Check-out date must be after check-in date';
-    }
-    
-    if (formData.adults < 1) {
-      errors.adults = language === 'ar' ? 'يجب أن يكون عدد البالغين على الأقل 1' : language === 'fr' ? 'Le nombre d\'adultes doit être au moins 1' : 'Adults must be at least 1';
+    } else if (formData.checkIn && formData.checkOut) {
+      const nights = calculateNights();
+      if (nights > MAX_STAY_NIGHTS) {
+        errors.checkOut = language === 'ar'
+          ? `الحد الأقصى للإقامة ${MAX_STAY_NIGHTS} ليلة`
+          : language === 'fr'
+            ? `Séjour maximum de ${MAX_STAY_NIGHTS} nuits`
+            : `Maximum stay is ${MAX_STAY_NIGHTS} nights`;
+      }
     }
     
     if (formData.rooms < 1) {
       errors.rooms = language === 'ar' ? 'يجب أن يكون عدد الغرف على الأقل 1' : language === 'fr' ? 'Le nombre de chambres doit être au moins 1' : 'Rooms must be at least 1';
+    } else if (formData.rooms > MAX_ROOMS) {
+      errors.rooms = language === 'ar'
+        ? `الحد الأقصى ${MAX_ROOMS} غرف`
+        : language === 'fr'
+          ? `Maximum ${MAX_ROOMS} chambres`
+          : `Maximum ${MAX_ROOMS} rooms`;
+    }
+
+    if (formData.adults < 1) {
+      errors.adults = language === 'ar' ? 'يجب أن يكون عدد البالغين على الأقل 1' : language === 'fr' ? 'Le nombre d\'adultes doit être au moins 1' : 'Adults must be at least 1';
     }
 
     setFormErrors(errors);
@@ -119,11 +138,17 @@ export default function HotelBooking() {
 
   const calculateNights = (): number => {
     if (!formData.checkIn || !formData.checkOut) return 0;
-    const checkIn = new Date(formData.checkIn);
-    const checkOut = new Date(formData.checkOut);
-    const diffTime = Math.abs(checkOut.getTime() - checkIn.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays;
+    const checkIn = new Date(`${formData.checkIn}T12:00:00`);
+    const checkOut = new Date(`${formData.checkOut}T12:00:00`);
+    if (checkOut <= checkIn) return 0;
+    return Math.round((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
+  };
+
+  const getMaxCheckOutDate = (): string | undefined => {
+    if (!formData.checkIn) return undefined;
+    const max = new Date(`${formData.checkIn}T12:00:00`);
+    max.setDate(max.getDate() + MAX_STAY_NIGHTS);
+    return max.toISOString().split('T')[0];
   };
 
   const calculateTotal = (): number => {
@@ -135,18 +160,12 @@ export default function HotelBooking() {
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
+      if (calculateTotal() <= 0) {
+        return;
+      }
       setCurrentStep('payment');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  };
-
-  const handlePayment = async () => {
-    // Here you would integrate with payment gateway
-    // For now, just simulate success
-    setSubmitted(true);
-    setTimeout(() => {
-      navigate(`/offices/${countryId}/hotels`);
-    }, 3000);
   };
 
   const getLocalizedText = (obj?: { ar: string; en: string; fr: string }) => {
@@ -202,10 +221,11 @@ export default function HotelBooking() {
 
   const nights = calculateNights();
   const total = calculateTotal();
+  const hotelCurrency = (hotel?.currency || 'USD') as Currency;
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 dark:bg-slate-950 pt-24">
         {/* Header */}
         <div className="bg-gradient-to-r from-tarhal-navy to-tarhal-blue-dark text-white py-8">
           <div className="container mx-auto px-4">
@@ -326,6 +346,7 @@ export default function HotelBooking() {
                           value={formData.checkOut}
                           onChange={(e) => handleInputChange('checkOut', e.target.value)}
                           min={formData.checkIn || new Date().toISOString().split('T')[0]}
+                          max={getMaxCheckOutDate()}
                           className={`w-full ${formErrors.checkOut ? 'border-red-500' : ''}`}
                           required
                         />
@@ -372,7 +393,7 @@ export default function HotelBooking() {
                           value={formData.rooms}
                           onChange={(e) => handleInputChange('rooms', parseInt(e.target.value) || 1)}
                           min={1}
-                          max={10}
+                          max={MAX_ROOMS}
                           className={`w-full ${formErrors.rooms ? 'border-red-500' : ''}`}
                           required
                         />
@@ -403,104 +424,87 @@ export default function HotelBooking() {
                     <CreditCard className="mr-2 h-5 w-5" />
                   </Button>
                 </form>
-              ) : (
+              ) : submitted ? (
                 <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                  {submitted ? (
-                    <div className="text-center py-12">
-                      <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                      <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                        {language === 'ar' ? 'تم الحجز بنجاح!' : language === 'fr' ? 'Réservation réussie!' : 'Booking Successful!'}
-                      </h2>
-                      <p className="text-gray-600 mb-6">
-                        {language === 'ar' ? 'سيتم إرسال تأكيد الحجز إلى بريدك الإلكتروني' : language === 'fr' ? 'Une confirmation de réservation sera envoyée à votre email' : 'A booking confirmation will be sent to your email'}
-                      </p>
-                      <Link to={`/offices/${countryId}/hotels`}>
-                        <Button className="bg-tarhal-orange hover:bg-tarhal-orange-dark text-white">
-                          {language === 'ar' ? 'العودة إلى الفنادق' : language === 'fr' ? 'Retour aux hôtels' : 'Back to Hotels'}
-                        </Button>
-                      </Link>
-                    </div>
-                  ) : (
-                    <>
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="flex items-center gap-3">
-                          <CreditCard className="w-6 h-6 text-tarhal-blue-dark" />
-                          <h2 className="text-2xl font-bold text-gray-900">
-                            {language === 'ar' ? 'تفاصيل الدفع' : language === 'fr' ? 'Détails du paiement' : 'Payment Details'}
-                          </h2>
-                        </div>
-                        <Button
-                          variant="outline"
-                          onClick={() => setCurrentStep('details')}
-                          className="text-sm"
-                        >
-                          {language === 'ar' ? 'العودة' : language === 'fr' ? 'Retour' : 'Back'}
-                        </Button>
-                      </div>
-
-                      {/* Booking Summary */}
-                      <div className="bg-gray-50 rounded-xl p-4 mb-6 border border-gray-200">
-                        <h3 className="font-semibold text-gray-800 mb-3">
-                          {language === 'ar' ? 'ملخص الحجز' : language === 'fr' ? 'Résumé de la réservation' : 'Booking Summary'}
-                        </h3>
-                        <div className="space-y-2 text-sm">
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">{language === 'ar' ? 'الاسم:' : language === 'fr' ? 'Nom:' : 'Name:'}</span>
-                            <span className="font-medium text-gray-900">{formData.fullName}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">{language === 'ar' ? 'البريد:' : language === 'fr' ? 'Email:' : 'Email:'}</span>
-                            <span className="font-medium text-gray-900">{formData.email}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">{language === 'ar' ? 'الوصول:' : language === 'fr' ? 'Arrivée:' : 'Check-in:'}</span>
-                            <span className="font-medium text-gray-900">{formData.checkIn}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">{language === 'ar' ? 'المغادرة:' : language === 'fr' ? 'Départ:' : 'Check-out:'}</span>
-                            <span className="font-medium text-gray-900">{formData.checkOut}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">{language === 'ar' ? 'الليالي:' : language === 'fr' ? 'Nuits:' : 'Nights:'}</span>
-                            <span className="font-medium text-gray-900">{nights}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">{language === 'ar' ? 'الغرف:' : language === 'fr' ? 'Chambres:' : 'Rooms:'}</span>
-                            <span className="font-medium text-gray-900">{formData.rooms}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">{language === 'ar' ? 'البالغين:' : language === 'fr' ? 'Adultes:' : 'Adults:'}</span>
-                            <span className="font-medium text-gray-900">{formData.adults}</span>
-                          </div>
-                          {formData.children > 0 && (
-                            <div className="flex justify-between">
-                              <span className="text-gray-600">{language === 'ar' ? 'الأطفال:' : language === 'fr' ? 'Enfants:' : 'Children:'}</span>
-                              <span className="font-medium text-gray-900">{formData.children}</span>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-
-                      <Button
-                        onClick={handlePayment}
-                        className="w-full bg-gradient-to-r from-tarhal-orange to-tarhal-orange-dark text-white font-semibold py-6 text-lg hover:shadow-xl transition-all duration-300"
-                      >
-                        {language === 'ar' ? 'تأكيد الحجز والدفع' : language === 'fr' ? 'Confirmer la réservation et payer' : 'Confirm Booking & Pay'}
+                  <div className="text-center py-12">
+                    <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                      {language === 'ar' ? 'تم الحجز بنجاح!' : language === 'fr' ? 'Réservation réussie!' : 'Booking Successful!'}
+                    </h2>
+                    <p className="text-gray-600 mb-6">
+                      {language === 'ar' ? 'سيتم إرسال تأكيد الحجز إلى بريدك الإلكتروني' : language === 'fr' ? 'Une confirmation de réservation sera envoyée à votre email' : 'A booking confirmation will be sent to your email'}
+                    </p>
+                    <Link to={`/offices/${countryId}/hotels`}>
+                      <Button className="bg-tarhal-orange hover:bg-tarhal-orange-dark text-white">
+                        {language === 'ar' ? 'العودة إلى الفنادق' : language === 'fr' ? 'Retour aux hôtels' : 'Back to Hotels'}
                       </Button>
-
-                      <div className="flex items-center justify-center gap-2 mt-4 text-xs text-gray-500">
-                        <ShieldCheck className="w-4 h-4 text-green-600" />
-                        <span>{language === 'ar' ? 'دفع آمن ومشفّر' : language === 'fr' ? 'Paiement sécurisé et crypté' : 'Secure and encrypted payment'}</span>
-                      </div>
-                    </>
-                  )}
+                    </Link>
+                  </div>
                 </div>
+              ) : (
+                <PaymentCheckoutPanel
+                  amount={total}
+                  currency={hotelCurrency}
+                  description={`${getLocalizedText(hotel.name)} - ${nights} ${language === 'ar' ? 'ليلة' : 'nights'}`}
+                  customerEmail={formData.email}
+                  customerName={formData.fullName}
+                  onBack={() => setCurrentStep('details')}
+                  onLocalPaymentSuccess={() => {
+                    setSubmitted(true);
+                    setTimeout(() => navigate(`/offices/${countryId}/hotels`), 4000);
+                  }}
+                  metadata={{
+                    source: 'hotel_booking',
+                    hotelId: hotel.id,
+                    countryId: hotel.countryId,
+                    booking: formData,
+                    nights,
+                    rooms: formData.rooms,
+                  }}
+                  bookingSummary={
+                    <div className="bg-gray-50 dark:bg-slate-900/60 rounded-xl p-4 mb-6 border border-gray-200 dark:border-slate-700">
+                      <h3 className="font-semibold text-gray-800 dark:text-gray-100 mb-3">
+                        {language === 'ar' ? 'ملخص الحجز' : language === 'fr' ? 'Résumé de la réservation' : 'Booking Summary'}
+                      </h3>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">{language === 'ar' ? 'الفندق:' : 'Hotel:'}</span>
+                          <span className="font-medium text-gray-900">{getLocalizedText(hotel.name)}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">{language === 'ar' ? 'الاسم:' : 'Name:'}</span>
+                          <span className="font-medium text-gray-900">{formData.fullName}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">{language === 'ar' ? 'البريد:' : 'Email:'}</span>
+                          <span className="font-medium text-gray-900">{formData.email}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">{language === 'ar' ? 'الوصول:' : 'Check-in:'}</span>
+                          <span className="font-medium text-gray-900">{formData.checkIn}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">{language === 'ar' ? 'المغادرة:' : 'Check-out:'}</span>
+                          <span className="font-medium text-gray-900">{formData.checkOut}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">{language === 'ar' ? 'الليالي:' : 'Nights:'}</span>
+                          <span className="font-medium text-gray-900">{nights}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-600">{language === 'ar' ? 'الغرف:' : 'Rooms:'}</span>
+                          <span className="font-medium text-gray-900">{formData.rooms}</span>
+                        </div>
+                      </div>
+                    </div>
+                  }
+                />
               )}
             </div>
 
             {/* Sidebar - Hotel Info & Summary */}
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-8">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 sticky top-28 border border-gray-100 dark:border-slate-700">
                 {/* Hotel Info */}
                 <div className="mb-6">
                   {hotel.imageUrl && (

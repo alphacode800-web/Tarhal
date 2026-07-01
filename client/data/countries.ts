@@ -7379,6 +7379,42 @@ export const getAllCountries = (): CountryData[] => {
   return Object.values(countries);
 };
 
+/** يطابق معرّف دولة ثابت (مثل syria) مع معرّف السيرفر (مثل country_1769...) عبر الاسم */
+export const resolveCountryIdInCatalog = (
+  catalog: Pick<AdminCountryData, 'id' | 'name'>[],
+  countryIdOrLegacy: string,
+): string => {
+  if (!countryIdOrLegacy) return countryIdOrLegacy;
+  if (catalog.some((c) => c.id === countryIdOrLegacy)) return countryIdOrLegacy;
+
+  const staticCountry = countries[countryIdOrLegacy];
+  if (!staticCountry) return countryIdOrLegacy;
+
+  const byName = catalog.find(
+    (c) =>
+      c.name.en?.toLowerCase() === staticCountry.name.en?.toLowerCase() ||
+      c.name.ar === staticCountry.name.ar,
+  );
+  return byName?.id ?? countryIdOrLegacy;
+};
+
+export const countryIdsEquivalent = (
+  catalog: Pick<AdminCountryData, 'id' | 'name'>[],
+  idA: string,
+  idB: string,
+): boolean => {
+  if (!idA || !idB) return false;
+  return (
+    resolveCountryIdInCatalog(catalog, idA) === resolveCountryIdInCatalog(catalog, idB)
+  );
+};
+
+export const offerMatchesCountry = (
+  catalog: Pick<AdminCountryData, 'id' | 'name'>[],
+  offerCountryId: string,
+  targetCountryId: string,
+): boolean => countryIdsEquivalent(catalog, offerCountryId, targetCountryId);
+
 // دالة للحصول على اسم المدينة بناءً على اللغة
 export const getCityName = (city: City, language: 'ar' | 'en' | 'fr' = 'ar'): string => {
   return city.name[language] || city.name.ar;

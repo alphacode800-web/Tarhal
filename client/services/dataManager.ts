@@ -1467,7 +1467,7 @@ class DataManager {
           { id: '20', text: { ar: 'شاهد آراء عملائنا المميزة', en: 'See our distinguished customer reviews', fr: 'Découvrez les avis distingués de nos clients' } }
         ],
         speed: 30,
-        fontSize: 15,
+        fontSize: 13,
         textColor: '#ffffff',
         backgroundFrom: '#1e3a5f',
         backgroundTo: '#0f2744',

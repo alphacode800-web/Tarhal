@@ -33,3 +33,10 @@ export function resolveOfficeCoordinates(
   }
   return getCountryCoordinates(countryId);
 }
+
+export function resolveHotelCoordinates(
+  countryId: string,
+  coordinates?: { lat: number; lng: number } | null,
+): { lat: number; lng: number } {
+  return resolveOfficeCoordinates(countryId, coordinates);
+}

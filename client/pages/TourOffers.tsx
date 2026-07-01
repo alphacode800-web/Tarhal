@@ -7,6 +7,7 @@ import { dataManager, type AdminCountryData, type TourOffer } from '@/services/d
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCurrency } from '@/contexts/CurrencyContext';
 import { detectUserCountry, mapCountryCodeToId } from '@/services/geoLocation';
+import { offerMatchesCountry, resolveCountryIdInCatalog } from '@/data/countries';
 import { Switch } from '@/components/ui/switch';
 
 type TourFilterType = 'local' | 'international' | 'all';
@@ -70,13 +71,18 @@ export default function TourOffers() {
       .catch(() => {});
   }, []);
 
+  const resolvedUserCountryId = useMemo(() => {
+    if (!userCountryId || countries.length === 0) return userCountryId;
+    return resolveCountryIdInCatalog(countries, userCountryId);
+  }, [userCountryId, countries]);
+
   useEffect(() => {
-    if (tourType === 'local' && userCountryId) {
-      setSelectedCountry(userCountryId);
+    if (tourType === 'local' && resolvedUserCountryId) {
+      setSelectedCountry(resolvedUserCountryId);
     } else if (tourType === 'international' || tourType === 'all') {
       setSelectedCountry('');
     }
-  }, [tourType, userCountryId]);
+  }, [tourType, resolvedUserCountryId]);
 
   // تغيير الصور الخلفية تلقائياً
   useEffect(() => {
@@ -86,29 +92,44 @@ export default function TourOffers() {
     return () => clearInterval(interval);
   }, []);
 
+  const activeOffers = useMemo(
+    () => offers.filter((offer) => offer.isActive !== false),
+    [offers],
+  );
+
   const stats = useMemo(() => {
-    const totalOffers = offers.length;
-    const countriesWithOffers = new Set(offers.map((o) => o.countryId)).size;
-    const featuredCount = offers.filter((o) => o.isFeatured).length;
+    const totalOffers = activeOffers.length;
+    const countriesWithOffers = new Set(activeOffers.map((o) => o.countryId)).size;
+    const featuredCount = activeOffers.filter((o) => o.isFeatured).length;
     const avgPrice =
       totalOffers > 0
         ? Math.round(
-            (offers.reduce((sum, o) => sum + (o.price || 0), 0) / totalOffers) * 10,
+            (activeOffers.reduce((sum, o) => sum + (o.price || 0), 0) / totalOffers) * 10,
           ) / 10
         : 0;
     return { totalOffers, countriesWithOffers, featuredCount, avgPrice };
-  }, [offers]);
+  }, [activeOffers]);
 
   const visibleOffers = useMemo(() => {
-    let result = offers.filter((offer) => (selectedCountry ? offer.countryId === selectedCountry : true));
+    let result = [...activeOffers];
 
-    if (tourType === 'local' && userCountryId) {
-      result = result.filter((offer) => offer.countryId === userCountryId);
-    } else if (tourType === 'international' && userCountryId) {
-      result = result.filter((offer) => offer.countryId !== userCountryId);
+    if (selectedCountry) {
+      result = result.filter((offer) =>
+        offerMatchesCountry(countries, offer.countryId, selectedCountry),
+      );
+    } else if (tourType === 'local' && resolvedUserCountryId) {
+      result = result.filter((offer) =>
+        offerMatchesCountry(countries, offer.countryId, resolvedUserCountryId),
+      );
+    } else if (tourType === 'international' && resolvedUserCountryId) {
+      result = result.filter(
+        (offer) => !offerMatchesCountry(countries, offer.countryId, resolvedUserCountryId),
+      );
     }
 
-    result = result.filter((offer) => (onlyFeatured ? offer.isActive && offer.isFeatured : offer.isActive));
+    if (onlyFeatured) {
+      result = result.filter((offer) => offer.isFeatured);
+    }
 
     if (maxPriceFilter) {
       const max = Number(maxPriceFilter);
@@ -133,7 +154,16 @@ export default function TourOffers() {
     });
 
     return result;
-  }, [offers, selectedCountry, sortBy, maxPriceFilter, onlyFeatured, tourType, userCountryId]);
+  }, [
+    activeOffers,
+    countries,
+    selectedCountry,
+    sortBy,
+    maxPriceFilter,
+    onlyFeatured,
+    tourType,
+    resolvedUserCountryId,
+  ]);
 
   const filterLabel = useMemo(() => {
     if (tourType === 'local') return t('offers.filter.local');
@@ -248,7 +278,7 @@ export default function TourOffers() {
                 <select
                   value={selectedCountry}
                   onChange={(e) => setSelectedCountry(e.target.value)}
-                  disabled={tourType === 'local' && !!userCountryId}
+                  disabled={tourType === 'local' && !!resolvedUserCountryId}
                   className="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-white/20 border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-tarhal-orange backdrop-blur-sm transition-all hover:bg-white/25 disabled:opacity-60"
                 >
                   <option value="" className="text-gray-900">{t('countries.subtitle', 'جميع الدول')}</option>
@@ -373,21 +403,25 @@ export default function TourOffers() {
               <select
                 value={selectedCountry}
                 onChange={(e) => setSelectedCountry(e.target.value)}
-                className="w-full px-4 py-4 rounded-xl border-2 border-gray-300 focus:border-tarhal-orange focus:ring-4 focus:ring-tarhal-orange/20 text-gray-800 font-semibold text-lg bg-white hover:border-tarhal-orange/50 transition-all duration-300 cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23f97316%22%20d%3D%22M6%209L1%204h10z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_1rem_center] bg-no-repeat pr-12"
+                disabled={tourType === 'local' && !!resolvedUserCountryId}
+                className="w-full px-4 py-4 rounded-xl border-2 border-gray-300 focus:border-tarhal-orange focus:ring-4 focus:ring-tarhal-orange/20 text-gray-800 font-semibold text-lg bg-white hover:border-tarhal-orange/50 transition-all duration-300 cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23f97316%22%20d%3D%22M6%209L1%204h10z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_1rem_center] bg-no-repeat pr-12 disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23f97316' d='M8 11L3 6h10z'/%3E%3C/svg%3E")`,
                 }}
               >
                 <option value="" className="text-gray-900 font-semibold py-2">
-                  {t('countries.subtitle', 'جميع الدول')} ({offers.length} {t('offers.offers', 'عرض')})
+                  {t('countries.subtitle', 'جميع الدول')} ({activeOffers.length} {t('offers.offers', 'عرض')})
                 </option>
                 {countries
-                  .filter(country => {
-                    // Show only countries that have offers
-                    return offers.some(offer => offer.countryId === country.id);
-                  })
+                  .filter((country) =>
+                    activeOffers.some((offer) =>
+                      offerMatchesCountry(countries, offer.countryId, country.id),
+                    ),
+                  )
                   .map((country) => {
-                    const countryOffersCount = offers.filter(o => o.countryId === country.id).length;
+                    const countryOffersCount = activeOffers.filter((o) =>
+                      offerMatchesCountry(countries, o.countryId, country.id),
+                    ).length;
                     return (
                       <option key={country.id} value={country.id} className="text-gray-900 py-2">
                         {getCountryName(country.id)} ({countryOffersCount} {t('offers.offers', 'عرض')})

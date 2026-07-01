@@ -30,6 +30,7 @@ import TravelInsurance from "./pages/TravelInsurance";
 import TaxiDelivery from "./pages/TaxiDelivery";
 import TaxiDeliveryBooking from "./pages/TaxiDeliveryBooking";
 import HotelBooking from "./pages/HotelBooking";
+import HotelDetails from "./pages/HotelDetails";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import SupervisorLogin from "./pages/SupervisorLogin";
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="/offices" element={<TravelOffices />} />
             <Route path="/offers" element={<TourOffers />} />
             <Route path="/hotels" element={<AllHotels />} />
+            <Route path="/hotels/:hotelId" element={<HotelDetails />} />
             <Route path="/car-rentals" element={<CarRentals />} />
             <Route path="/car-rentals/:id" element={<CarRentalDetails />} />
             <Route path="/car-rentals/:rentalId/booking/:vehicleId" element={<CarRentalBooking />} />
@@ -70,6 +72,7 @@ const App = () => (
             <Route path="/taxi-delivery/book/:serviceId" element={<TaxiDeliveryBooking />} />
             <Route path="/offices/:countryId" element={<CountryDetail />} />
             <Route path="/offices/:countryId/hotels" element={<Hotels />} />
+            <Route path="/offices/:countryId/hotels/:hotelId" element={<HotelDetails />} />
             <Route path="/offices/:countryId/hotels/:hotelId/booking" element={<HotelBooking />} />
             <Route path="/offices/:countryId/city/:cityId" element={<CityDetail />} />
             <Route path="/offices/:countryId/contact" element={<OfficeContact />} />

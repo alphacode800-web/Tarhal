@@ -16,7 +16,7 @@ type BarStyle = {
 };
 
 const DEFAULT_STYLE: BarStyle = {
-  fontSize: 15,
+  fontSize: 13,
   textColor: '#ffffff',
   backgroundFrom: '#1e3a5f',
   backgroundTo: '#0f2744',
@@ -121,30 +121,30 @@ export default function AnnouncementBar() {
 
   return (
     <div
-      className="py-2 overflow-hidden relative w-full border-t border-white/10"
+      className="py-1 overflow-hidden relative w-full border-t border-white/10"
       style={{
         background: `linear-gradient(to right, ${barStyle.backgroundFrom}, ${barStyle.backgroundTo})`,
         color: barStyle.textColor,
       }}
     >
-      <div className="relative w-full min-h-[1.75rem] flex items-center">
+      <div className="relative w-full min-h-[1.25rem] flex items-center">
         <div
           ref={containerRef}
-          className="flex items-center gap-8 whitespace-nowrap"
+          className="flex items-center gap-6 whitespace-nowrap"
           style={{ willChange: 'transform' }}
         >
           {[...announcements, ...announcements].map((announcement, index) => (
             <div
               key={`${announcement.id}-${index}`}
-              className="flex items-center gap-3 px-3 flex-shrink-0"
+              className="flex items-center gap-2 px-2 flex-shrink-0"
             >
               <span
-                className="font-medium"
-                style={{ fontSize: `${Math.max(barStyle.fontSize, 14)}px`, color: barStyle.textColor }}
+                className="font-normal leading-tight"
+                style={{ fontSize: `${Math.max(barStyle.fontSize, 12)}px`, color: barStyle.textColor }}
               >
                 {announcement.text[language] || announcement.text.ar}
               </span>
-              <span className="text-sm" style={{ color: barStyle.accentColor }}>•</span>
+              <span className="text-xs" style={{ color: barStyle.accentColor }}>•</span>
             </div>
           ))}
         </div>
