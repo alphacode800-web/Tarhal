@@ -7,6 +7,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { getAllCountriesWithDynamic, getCountriesStatistics, syncStaticWithDynamic } from '@/data/countries';
+import HeroTypographyEditor from '@/components/HeroTypographyEditor';
+import { normalizeHeroContent } from '@/data/heroTypography';
 import { dataManager, type AdminCountryData, type TravelOffice, type TourOffer, type Hotel, type AdminUser, type AdminSettings, type HeroContent, type FlightTicket, type TravelVisa } from '@/services/dataManager';
 import { supervisorManager } from '@/services/supervisorManager';
 import type { City } from '@/data/countries';
@@ -3209,39 +3211,126 @@ export default function AdminDashboard() {
                         </div>
                       </div>
 
-                      {/* Hero Subtitle */}
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div>
-                          <label className="block text-sm font-medium text-slate-200 mb-2">
-                            {getLocalizedText('العنوان الفرعي (عربي)', 'Subtitle (Arabic)', 'Sous-titre (Arabe)')}
-                          </label>
-                          <Input
-                            value={heroContent.heroSubtitle.ar}
-                            onChange={(e) => setHeroContent({ ...heroContent, heroSubtitle: { ...heroContent.heroSubtitle, ar: e.target.value } })}
-                            className="bg-slate-900/60 border-white/10 text-slate-100"
-                          />
+                      {/* Hero Subtitle / Brand */}
+                      {heroContent.typography?.useBrandSplit ? (
+                        <>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                              <label className="block text-sm font-medium text-slate-200 mb-2">
+                                {getLocalizedText('نص الجزء الأول من الشعار (عربي)', 'Brand part 1 (Arabic)', 'Partie 1 de la marque (Arabe)')}
+                              </label>
+                              <Input
+                                value={heroContent.heroBrandPrimary?.ar || 'ciar'}
+                                onChange={(e) => setHeroContent({
+                                  ...heroContent,
+                                  heroBrandPrimary: { ...(heroContent.heroBrandPrimary || { ar: 'ciar', en: 'ciar', fr: 'ciar' }), ar: e.target.value },
+                                })}
+                                className="bg-slate-900/60 border-white/10 text-slate-100"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium text-slate-200 mb-2">
+                                {getLocalizedText('نص الجزء الأول من الشعار (إنجليزي)', 'Brand part 1 (English)', 'Partie 1 (Anglais)')}
+                              </label>
+                              <Input
+                                value={heroContent.heroBrandPrimary?.en || 'ciar'}
+                                onChange={(e) => setHeroContent({
+                                  ...heroContent,
+                                  heroBrandPrimary: { ...(heroContent.heroBrandPrimary || { ar: 'ciar', en: 'ciar', fr: 'ciar' }), en: e.target.value },
+                                })}
+                                className="bg-slate-900/60 border-white/10 text-slate-100"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium text-slate-200 mb-2">
+                                {getLocalizedText('نص الجزء الأول من الشعار (فرنسي)', 'Brand part 1 (French)', 'Partie 1 (Français)')}
+                              </label>
+                              <Input
+                                value={heroContent.heroBrandPrimary?.fr || 'ciar'}
+                                onChange={(e) => setHeroContent({
+                                  ...heroContent,
+                                  heroBrandPrimary: { ...(heroContent.heroBrandPrimary || { ar: 'ciar', en: 'ciar', fr: 'ciar' }), fr: e.target.value },
+                                })}
+                                className="bg-slate-900/60 border-white/10 text-slate-100"
+                              />
+                            </div>
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                              <label className="block text-sm font-medium text-slate-200 mb-2">
+                                {getLocalizedText('نص الجزء الثاني من الشعار (عربي)', 'Brand part 2 (Arabic)', 'Partie 2 (Arabe)')}
+                              </label>
+                              <Input
+                                value={heroContent.heroBrandSecondary?.ar || 'TOU'}
+                                onChange={(e) => setHeroContent({
+                                  ...heroContent,
+                                  heroBrandSecondary: { ...(heroContent.heroBrandSecondary || { ar: 'TOU', en: 'TOU', fr: 'TOU' }), ar: e.target.value },
+                                })}
+                                className="bg-slate-900/60 border-white/10 text-slate-100"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium text-slate-200 mb-2">
+                                {getLocalizedText('نص الجزء الثاني من الشعار (إنجليزي)', 'Brand part 2 (English)', 'Partie 2 (Anglais)')}
+                              </label>
+                              <Input
+                                value={heroContent.heroBrandSecondary?.en || 'TOU'}
+                                onChange={(e) => setHeroContent({
+                                  ...heroContent,
+                                  heroBrandSecondary: { ...(heroContent.heroBrandSecondary || { ar: 'TOU', en: 'TOU', fr: 'TOU' }), en: e.target.value },
+                                })}
+                                className="bg-slate-900/60 border-white/10 text-slate-100"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium text-slate-200 mb-2">
+                                {getLocalizedText('نص الجزء الثاني من الشعار (فرنسي)', 'Brand part 2 (French)', 'Partie 2 (Français)')}
+                              </label>
+                              <Input
+                                value={heroContent.heroBrandSecondary?.fr || 'TOU'}
+                                onChange={(e) => setHeroContent({
+                                  ...heroContent,
+                                  heroBrandSecondary: { ...(heroContent.heroBrandSecondary || { ar: 'TOU', en: 'TOU', fr: 'TOU' }), fr: e.target.value },
+                                })}
+                                className="bg-slate-900/60 border-white/10 text-slate-100"
+                              />
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          <div>
+                            <label className="block text-sm font-medium text-slate-200 mb-2">
+                              {getLocalizedText('العنوان الفرعي (عربي)', 'Subtitle (Arabic)', 'Sous-titre (Arabe)')}
+                            </label>
+                            <Input
+                              value={heroContent.heroSubtitle.ar}
+                              onChange={(e) => setHeroContent({ ...heroContent, heroSubtitle: { ...heroContent.heroSubtitle, ar: e.target.value } })}
+                              className="bg-slate-900/60 border-white/10 text-slate-100"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-slate-200 mb-2">
+                              {getLocalizedText('العنوان الفرعي (إنجليزي)', 'Subtitle (English)', 'Sous-titre (Anglais)')}
+                            </label>
+                            <Input
+                              value={heroContent.heroSubtitle.en}
+                              onChange={(e) => setHeroContent({ ...heroContent, heroSubtitle: { ...heroContent.heroSubtitle, en: e.target.value } })}
+                              className="bg-slate-900/60 border-white/10 text-slate-100"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-slate-200 mb-2">
+                              {getLocalizedText('العنوان الفرعي (فرنسي)', 'Subtitle (French)', 'Sous-titre (Français)')}
+                            </label>
+                            <Input
+                              value={heroContent.heroSubtitle.fr}
+                              onChange={(e) => setHeroContent({ ...heroContent, heroSubtitle: { ...heroContent.heroSubtitle, fr: e.target.value } })}
+                              className="bg-slate-900/60 border-white/10 text-slate-100"
+                            />
+                          </div>
                         </div>
-                        <div>
-                          <label className="block text-sm font-medium text-slate-200 mb-2">
-                            {getLocalizedText('العنوان الفرعي (إنجليزي)', 'Subtitle (English)', 'Sous-titre (Anglais)')}
-                          </label>
-                          <Input
-                            value={heroContent.heroSubtitle.en}
-                            onChange={(e) => setHeroContent({ ...heroContent, heroSubtitle: { ...heroContent.heroSubtitle, en: e.target.value } })}
-                            className="bg-slate-900/60 border-white/10 text-slate-100"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium text-slate-200 mb-2">
-                            {getLocalizedText('العنوان الفرعي (فرنسي)', 'Subtitle (French)', 'Sous-titre (Français)')}
-                          </label>
-                          <Input
-                            value={heroContent.heroSubtitle.fr}
-                            onChange={(e) => setHeroContent({ ...heroContent, heroSubtitle: { ...heroContent.heroSubtitle, fr: e.target.value } })}
-                            className="bg-slate-900/60 border-white/10 text-slate-100"
-                          />
-                        </div>
-                      </div>
+                      )}
 
                       {/* Hero Description */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -3354,6 +3443,15 @@ export default function AdminDashboard() {
                           </div>
                         </div>
                       </div>
+
+                      {heroContent.typography && (
+                        <HeroTypographyEditor
+                          typography={heroContent.typography}
+                          onChange={(typography) => setHeroContent({ ...heroContent, typography })}
+                          getLocalizedText={getLocalizedText}
+                        />
+                      )}
+
                     </div>
 
                     {/* Action Buttons */}
@@ -3366,42 +3464,7 @@ export default function AdminDashboard() {
                             'Are you sure you want to reset hero content to default values?',
                             'Êtes-vous sûr de vouloir réinitialiser le contenu hero aux valeurs par défaut?'
                           ))) {
-                            const defaultHeroContent: HeroContent = {
-                              headerImages: [
-                                'https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg',
-                                'https://images.pexels.com/photos/5117917/pexels-photo-5117917.jpeg',
-                                'https://images.pexels.com/photos/4669408/pexels-photo-4669408.jpeg',
-                                'https://images.pexels.com/photos/11542516/pexels-photo-11542516.jpeg',
-                                'https://images.pexels.com/photos/33388483/pexels-photo-33388483.jpeg',
-                              ],
-                              heroTitle: {
-                                ar: 'مرحباً بكم في',
-                                en: 'Welcome to',
-                                fr: 'Bienvenue à'
-                              },
-                              heroSubtitle: {
-                                ar: 'ciarTOU',
-                                en: 'ciarTOU',
-                                fr: 'ciarTOU'
-                              },
-                              heroDescription: {
-                                ar: 'رفيقكم المثالي لاستكشاف العالم. نقدم أفضل الخدمات السياحية عبر شبكة واسعة من المكاتب في أكثر من 50 دولة حول العالم',
-                                en: 'Your perfect companion to explore the world. We provide top tourism services through an extensive network of offices in more than 50 countries worldwide',
-                                fr: 'Votre compagnon idéal pour explorer le monde. Nous fournissons les meilleurs services touristiques grâce à un vaste réseau de bureaux dans plus de 50 pays dans le monde'
-                              },
-                              primaryButtonText: {
-                                ar: 'استكشف المكاتب السياحية',
-                                en: 'Explore Travel Offices',
-                                fr: 'Explorer les Bureaux de Voyage'
-                              },
-                              secondaryButtonText: {
-                                ar: 'اتصل بنا',
-                                en: 'Contact Us',
-                                fr: 'Contactez-nous'
-                              },
-                              updatedAt: new Date().toISOString()
-                            };
-                            setHeroContent(defaultHeroContent);
+                            setHeroContent(normalizeHeroContent(null));
                           }
                         }}
                         className="border-white/20 text-slate-300 hover:bg-white/10"

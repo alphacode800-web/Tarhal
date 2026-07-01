@@ -945,6 +945,7 @@ export const countries: Record<string, CountryData> = {
 
   egypt: {
     id: 'egypt',
+    continent: 'africa',
     name: {
       ar: 'مصر',
       en: 'Egypt',
@@ -7550,7 +7551,7 @@ export const convertCountryToAdminData = (country: CountryData): Omit<AdminCount
     name: country.name,
     capital: country.capital,
     description: country.description,
-    continent: country.continent || 'asia',
+    continent: country.continent || resolveCountryContinent(country.id, country.name),
     mainImage: country.mainImage,
     gallery: country.gallery,
     currency: country.currency,

@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import FloatingWhatsApp from './FloatingWhatsApp';
 import { dataManager } from '@/services/dataManager';
 import { recordVisitIfNeeded } from '@/services/visitorStats';
 
@@ -49,6 +50,7 @@ export default function Layout({ children }: LayoutProps) {
         {children}
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }

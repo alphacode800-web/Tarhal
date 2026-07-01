@@ -12,6 +12,11 @@ import OptimizedImage from '@/components/OptimizedImage';
 import GoogleMap from '@/components/GoogleMap';
 import { resolveOfficeCoordinates } from '@/data/countryCoordinates';
 import { fetchVisitorCount } from '@/services/visitorStats';
+import {
+  heroButtonStyleToCss,
+  heroTextStyleToCss,
+  normalizeHeroTypography,
+} from '@/data/heroTypography';
 
 export default function Index() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -164,6 +169,8 @@ export default function Index() {
         'https://images.pexels.com/photos/4669408/pexels-photo-4669408.jpeg?auto=compress&cs=tinysrgb&w=1920',
       ];
 
+  const heroTypography = normalizeHeroTypography(heroContent.typography);
+
   const tourismImages = [
     'https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg?auto=compress&cs=tinysrgb&w=1200',
     'https://images.pexels.com/photos/4669408/pexels-photo-4669408.jpeg?auto=compress&cs=tinysrgb&w=1200',
@@ -286,32 +293,80 @@ export default function Index() {
               fetchPriority={index === 0 ? 'high' : 'auto'}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-r from-tarhal-navy/80 via-tarhal-blue-dark/60 to-transparent"></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(to right, ${heroTypography.overlay.fromColor}, ${heroTypography.overlay.viaColor}, ${heroTypography.overlay.toColor})`,
+              opacity: heroTypography.overlay.opacity / 100,
+            }}
+          />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl animate-fade-in">
-              <h1 className="text-4xl sm:text-2xl md:text-3xl font-bold text-white mb-3 leading-tight animate-slide-up">
+              <h1
+                className="mb-3 animate-slide-up"
+                style={heroTextStyleToCss(heroTypography.heroTitle)}
+              >
                 {heroContent.heroTitle[language]}
               </h1>
-              <p className="mb-5 leading-none animate-slide-up" style={{ animationDelay: '150ms' }}>
-                <span className="logo-ciar text-2xl sm:text-3xl md:text-4xl">ciar</span>
-                <span className="logo-tourism text-white text-xl sm:text-2xl md:text-3xl font-semibold uppercase ml-1">TOU</span>
-              </p>
-              <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl animate-slide-up" style={{ animationDelay: '300ms' }}>
+              {heroTypography.useBrandSplit ? (
+                <p className="mb-5 leading-none animate-slide-up" style={{ animationDelay: '150ms' }}>
+                  <span style={heroTextStyleToCss(heroTypography.heroBrandPrimary)}>
+                    {heroContent.heroBrandPrimary?.[language] || 'ciar'}
+                  </span>
+                  <span className="ml-1" style={heroTextStyleToCss(heroTypography.heroBrandSecondary)}>
+                    {heroContent.heroBrandSecondary?.[language] || 'TOU'}
+                  </span>
+                </p>
+              ) : (
+                <p
+                  className="mb-5 animate-slide-up"
+                  style={{ ...heroTextStyleToCss(heroTypography.heroSubtitle), animationDelay: '150ms' }}
+                >
+                  {heroContent.heroSubtitle[language]}
+                </p>
+              )}
+              <p
+                className="mb-8 max-w-2xl animate-slide-up"
+                style={{ ...heroTextStyleToCss(heroTypography.heroDescription), animationDelay: '300ms' }}
+              >
                 {heroContent.heroDescription[language]}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '450ms' }}>
                 <Link to="/offices">
-                  <Button className="bg-gradient-to-r from-tarhal-orange to-tarhal-orange-dark text-white px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                  <Button
+                    className="px-6 py-3 md:px-8 md:py-4 hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                    style={heroButtonStyleToCss(heroTypography.primaryButton)}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = heroTypography.primaryButton.hoverBackgroundColor;
+                      e.currentTarget.style.color = heroTypography.primaryButton.hoverTextColor;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = heroTypography.primaryButton.backgroundColor;
+                      e.currentTarget.style.color = heroTypography.primaryButton.color;
+                    }}
+                  >
                     {heroContent.primaryButtonText[language]}
                     <ArrowRight className="mr-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-tarhal-blue-dark px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold transition-all duration-300">
+                  <Button
+                    variant="outline"
+                    className="px-6 py-3 md:px-8 md:py-4 transition-all duration-300"
+                    style={heroButtonStyleToCss(heroTypography.secondaryButton)}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = heroTypography.secondaryButton.hoverBackgroundColor;
+                      e.currentTarget.style.color = heroTypography.secondaryButton.hoverTextColor;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = heroTypography.secondaryButton.backgroundColor;
+                      e.currentTarget.style.color = heroTypography.secondaryButton.color;
+                    }}
+                  >
                     {heroContent.secondaryButtonText[language]}
                   </Button>
                 </Link>

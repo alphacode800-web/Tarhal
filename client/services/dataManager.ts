@@ -1,4 +1,6 @@
 import type { CountryData, City } from '@/data/countries';
+import { resolveCountryContinent } from '@/data/countryContinents';
+import { normalizeHeroContent } from '@/data/heroTypography';
 import {
   DEFAULT_CONTACT,
   DEFAULT_SOCIAL_LINKS,
@@ -82,6 +84,16 @@ export interface HeroContent {
     en: string;
     fr: string;
   };
+  heroBrandPrimary?: {
+    ar: string;
+    en: string;
+    fr: string;
+  };
+  heroBrandSecondary?: {
+    ar: string;
+    en: string;
+    fr: string;
+  };
   heroDescription: {
     ar: string;
     en: string;
@@ -97,6 +109,7 @@ export interface HeroContent {
     en: string;
     fr: string;
   };
+  typography?: import('@/data/heroTypography').HeroTypography;
   updatedAt: string;
 }
 
@@ -479,6 +492,10 @@ class DataManager {
     }
 
     countries = this.migrateLegacyCountryImages(countries);
+    countries = countries.map((country) => ({
+      ...country,
+      continent: resolveCountryContinent(country.id, country.name, country.continent),
+    }));
 
     try {
       localStorage.setItem(this.COUNTRIES_KEY, JSON.stringify(countries));
@@ -1637,16 +1654,15 @@ class DataManager {
     if (this.useServerStorage) {
       const serverData = await this.loadHeroContentFromServer();
       if (serverData) {
-        // Sync to localStorage as backup
+        const normalized = normalizeHeroContent(serverData);
         try {
-          localStorage.setItem(this.HERO_CONTENT_KEY, JSON.stringify(serverData));
+          localStorage.setItem(this.HERO_CONTENT_KEY, JSON.stringify(normalized));
         } catch (e) {
           console.warn('Failed to sync hero content to localStorage:', e);
         }
-        return serverData;
+        return normalized;
       }
     }
-    // Fallback to localStorage
     return this.getHeroContent();
   }
 
@@ -1654,7 +1670,7 @@ class DataManager {
     try {
       const data = localStorage.getItem(this.HERO_CONTENT_KEY);
       if (data) {
-        return JSON.parse(data);
+        return normalizeHeroContent(JSON.parse(data));
       }
       return this.getDefaultHeroContent();
     } catch (error) {
@@ -2678,39 +2694,7 @@ class DataManager {
   }
 
   private getDefaultHeroContent(): HeroContent {
-    return {
-      headerImages: [
-        'https://images.pexels.com/photos/2868245/pexels-photo-2868245.jpeg?auto=compress&cs=tinysrgb&w=1920',
-        'https://images.pexels.com/photos/5117917/pexels-photo-5117917.jpeg?auto=compress&cs=tinysrgb&w=1920',
-        'https://images.pexels.com/photos/4669408/pexels-photo-4669408.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      ],
-      heroTitle: {
-        ar: 'مرحباً بكم في',
-        en: 'Welcome to',
-        fr: 'Bienvenue à'
-      },
-      heroSubtitle: {
-        ar: 'ciarTOU',
-        en: 'ciarTOU',
-        fr: 'ciarTOU'
-      },
-      heroDescription: {
-        ar: 'رفيقكم المثالي لاستكشاف العالم. نقدم أفضل الخدمات السياحية عبر شبكة واسعة من المكاتب في أكثر من 50 دولة حول العالم',
-        en: 'Your perfect companion to explore the world. We provide top tourism services through an extensive network of offices in more than 50 countries worldwide',
-        fr: 'Votre compagnon idéal pour explorer le monde. Nous fournissons les meilleurs services touristiques grâce à un vaste réseau de bureaux dans plus de 50 pays dans le monde'
-      },
-      primaryButtonText: {
-        ar: 'استكشف المكاتب السياحية',
-        en: 'Explore Travel Offices',
-        fr: 'Explorer les Bureaux de Voyage'
-      },
-      secondaryButtonText: {
-        ar: 'اتصل بنا',
-        en: 'Contact Us',
-        fr: 'Contactez-nous'
-      },
-      updatedAt: new Date().toISOString()
-    };
+    return normalizeHeroContent(null);
   }
 
   /**
