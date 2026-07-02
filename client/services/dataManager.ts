@@ -1,4 +1,6 @@
 import type { CountryData, City } from '@/data/countries';
+import { convertCountryToAdminData, getAllCountries } from '@/data/countries';
+import type { TourOfferDetails } from '@/data/offerDetails';
 import { resolveCountryContinent } from '@/data/countryContinents';
 import { normalizeHeroContent } from '@/data/heroTypography';
 import {
@@ -177,6 +179,7 @@ export interface TourOffer {
   isFeatured: boolean;
   imageUrl?: string;
   videos?: string[];
+  details?: TourOfferDetails;
   createdAt: string;
   updatedAt: string;
   isActive: boolean;
@@ -3159,77 +3162,21 @@ class DataManager {
 
   // Default countries data (fallback)
   private getDefaultCountries(): AdminCountryData[] {
+    const sudan = getAllCountries().find((country) => country.id === 'sudan');
+    if (!sudan) return [];
+
+    const now = new Date().toISOString();
+    const adminFields = convertCountryToAdminData(sudan);
+
     return [
       {
-        id: 'sudan',
-        name: { ar: 'السودان', en: 'Sudan', fr: 'Soudan' },
-        description: {
-          ar: 'أرض الحضارات القديمة والطبيعة الخلابة، حيث التقاء النيلين الأزرق والأبيض',
-          en: 'Land of ancient civilizations and stunning nature, where the Blue and White Niles meet',
-          fr: 'Terre des civilisations anciennes et de la nature époustouflante, où se rencontrent les Nils Bleu et Blanc'
-        },
-        continent: 'africa',
-        capital: { ar: 'الخرطوم', en: 'Khartoum', fr: 'Khartoum' },
-        currency: { ar: 'جن��ه سوداني', en: 'Sudanese Pound', fr: 'Livre Soudanaise' },
-        language: { ar: 'العربية', en: 'Arabic', fr: 'Arabe' },
-        bestTimeToVisit: { ar: 'نوفمبر - مارس', en: 'November - March', fr: 'Novembre - Mars' },
-        mainImage: 'https://images.unsplash.com/photo-1620487792776-a257eb0c5f2c',
-        gallery: [
-          'https://images.unsplash.com/photo-1620487792776-a257eb0c5f2c',
-          'https://images.pexels.com/photos/10546025/pexels-photo-10546025.jpeg',
-          'https://images.pexels.com/photos/10546022/pexels-photo-10546022.jpeg',
-          'https://upload.wikimedia.org/wikipedia/commons/e/e0/Sudan_Jebel_Marra_Deriba_Lakes_edited.jpg',
-          'https://images.pexels.com/photos/10546023/pexels-photo-10546023.jpeg',
-        ],
-        rating: 4.9,
-        totalReviews: 2847,
-        totalTours: 25,
-        highlights: {
-          ar: ['ملتقى النيلين', 'أهرامات مروي', 'جزيرة مقرن', 'النيل الأزرق', 'السوق الشعبي'],
-          en: ['Blue and White Nile Confluence', 'Meroe Pyramids', 'Mogran Island', 'Blue Nile', 'Traditional Souq'],
-          fr: ['Confluence des Nils Bleu et Blanc', 'Pyramides de Méroé', 'Île de Mogran', 'Nil Bleu', 'Souk Traditionnel']
-        },
-        culture: {
-          ar: ['الضيافة السودانية', 'الموسيقى التراثية', 'الحرف اليدوية', 'المأكولات الشعبية'],
-          en: ['Sudanese Hospitality', 'Traditional Music', 'Handicrafts', 'Local Cuisine'],
-          fr: ['Hospitalité Soudanaise', 'Musique Traditionnelle', 'Artisanat', 'Cuisine Locale']
-        },
-        cuisine: {
-          ar: ['الملاح', 'الكسرة', 'المولح', 'عصيدة الذرة'],
-          en: ['Mullah', 'Kisra', 'Mulah', 'Asida'],
-          fr: ['Mullah', 'Kisra', 'Mulah', 'Asida']
-        },
-        transportation: {
-          ar: ['الطيران المحلي', 'الحافلات', 'القطارات', 'التاكسي'],
-          en: ['Domestic Flights', 'Buses', 'Trains', 'Taxis'],
-          fr: ['Vols Domestiques', 'Bus', 'Trains', 'Taxis']
-        },
-        safety: {
-          ar: ['آمن للسياح', 'مرشدين محليين متاحين', 'خدمات طوارئ 24/7'],
-          en: ['Safe for Tourists', 'Local Guides Available', '24/7 Emergency Services'],
-          fr: ['Sûr pour les Touristes', 'Guides Locaux Disponibles', 'Services d\'Urgence 24/7']
-        },
-        cities: [
-          {
-            name: { ar: 'الخرطوم', en: 'Khartoum', fr: 'Khartoum' },
-            description: {
-              ar: 'عاصمة السودان وأكبر مدنه',
-              en: 'Capital and largest city of Sudan',
-              fr: 'Capitale et plus grande ville du Soudan'
-            },
-            attractions: {
-              ar: ['ملتقى النيلين', 'المتحف القومي', 'جسر النيل الأزرق'],
-              en: ['Blue and White Nile Confluence', 'National Museum', 'Blue Nile Bridge'],
-              fr: ['Confluence des Nils', 'Musée National', 'Pont du Nil Bleu']
-            },
-            bestTime: { ar: 'طوال العام', en: 'Year Round', fr: 'Toute l\'Année' },
-            duration: { ar: '3-4 أيام', en: '3-4 Days', fr: '3-4 Jours' }
-          }
-        ],
+        ...sudan,
+        ...adminFields,
+        bestTime: sudan.bestTime,
         isActive: true,
-        createdAt: '2024-01-15T00:00:00.000Z',
-        updatedAt: '2024-01-15T00:00:00.000Z'
-      }
+        createdAt: now,
+        updatedAt: now,
+      },
     ];
   }
 

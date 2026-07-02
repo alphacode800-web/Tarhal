@@ -22,6 +22,8 @@ import {
   type AnnouncementThemeId,
 } from '@/data/announcementAdmin';
 import FriendlyColorPicker from '@/components/admin/FriendlyColorPicker';
+import VideoUploadField from '@/components/VideoUploadField';
+import OfferDetailsEditor from '@/components/OfferDetailsEditor';
 import AdminSupervisorManagement from './AdminSupervisorManagement';
 import AdminPayments from './AdminPayments';
 
@@ -128,10 +130,9 @@ export default function AdminDashboard() {
     isFeatured: false,
     imageUrl: '',
     videos: [],
+    details: {},
     isActive: true,
   });
-  const [newOfferVideoUrl, setNewOfferVideoUrl] = useState('');
-  const [editingOfferVideoUrl, setEditingOfferVideoUrl] = useState('');
   const [newFlightTicket, setNewFlightTicket] = useState<Partial<FlightTicket>>({
     countryId: '',
     from: '',
@@ -814,6 +815,7 @@ export default function AdminDashboard() {
         isFeatured: false,
         imageUrl: '',
         videos: [],
+        details: {},
         isActive: true,
       });
       setIsAddingOffer(false);
@@ -1690,6 +1692,23 @@ export default function AdminDashboard() {
 
           {activeTab === 'offers' && (
             <div className="space-y-6">
+              <div className="rounded-2xl border-2 border-pink-200 bg-pink-50 p-5 flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-pink-600 flex items-center justify-center flex-shrink-0">
+                  <Film className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">
+                    {getLocalizedText('إضافة فيديو للعروض السياحية', 'Add videos to tour offers', 'Ajouter des vidéos aux offres')}
+                  </h3>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    {getLocalizedText(
+                      'اضغط «إضافة عرض» أو «تعديل» على أي عرض، ثم انتقل لقسم «فيديوهات العرض» الوردي — يمكنك رفع فيديو من جهازك أو لصق رابط يوتيوب. تظهر الصور والنصوص والفيديوهات في تبويب «الجولات والعروض» داخل صفحة كل دولة.',
+                      'Click Add Offer or Edit on any offer, then use the pink Videos section — upload from device or paste a YouTube link. Content appears in the Tours & Offers tab on each country page.',
+                      'Cliquez Ajouter ou Modifier, puis utilisez la section vidéos rose — téléversez ou collez un lien YouTube. Le contenu apparaît dans l\'onglet Circuits de chaque pays.',
+                    )}
+                  </p>
+                </div>
+              </div>
               {/* Header Actions */}
               <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
@@ -6014,89 +6033,27 @@ export default function AdminDashboard() {
                 )}
               </div>
 
-              {/* Videos Section */}
-              <div className="space-y-3">
-                <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
-                  <Film className="h-4 w-4 text-pink-600" />
-                  {getLocalizedText('روابط الفيديو', 'Video Links', 'Liens vidéo')}
-                </label>
-                <div className="flex gap-3">
-                  <Input
-                    type="url"
-                    value={newOfferVideoUrl}
-                    onChange={(e) => setNewOfferVideoUrl(e.target.value)}
-                    placeholder={getLocalizedText('أدخل رابط فيديو', 'Enter video URL', 'Entrez l\'URL de la vidéo')}
-                    className="flex-1 rounded-xl"
-                  />
-                  <Button
-                    type="button"
-                    onClick={() => {
-                      if (!newOfferVideoUrl) return;
-                      setNewOffer({
-                        ...newOffer,
-                        videos: [...(newOffer.videos || []), newOfferVideoUrl],
-                      });
-                      setNewOfferVideoUrl('');
-                    }}
-                  >
-                    {getLocalizedText('إضافة', 'Add', 'Ajouter')}
-                  </Button>
-                  <label className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-xl cursor-pointer flex items-center gap-2">
-                    <Upload className="h-4 w-4" />
-                    {getLocalizedText('رفع فيديو', 'Upload Video', 'Téléverser une vidéo')}
-                    <input
-                      type="file"
-                      accept="video/*"
-                      className="hidden"
-                      onChange={async (e) => {
-                        const file = e.target.files?.[0];
-                        if (!file) return;
-                        try {
-                          const { isValidVideoFile, getFileSizeMB, uploadVideoToServer } = await import('@/utils/videoUtils');
-                          if (!isValidVideoFile(file)) {
-                            alert(getLocalizedText('صيغة فيديو غير مدعومة', 'Unsupported video format', 'Format vidéo non pris en charge'));
-                            return;
-                          }
-                          if (getFileSizeMB(file) > 180) {
-                            alert(getLocalizedText('حجم الفيديو كبير جداً (أقصى 180MB)', 'Video too large (max 180MB)', 'Vidéo trop volumineuse (max 180MB)'));
-                            return;
-                          }
-                          const url = await uploadVideoToServer(file);
-                          setNewOffer({
-                            ...newOffer,
-                            videos: [...(newOffer.videos || []), url],
-                          });
-                        } catch (error) {
-                          console.error('Video upload error', error);
-                          alert(getLocalizedText('فشل رفع الفيديو', 'Failed to upload video', 'Échec du téléchargement de la vidéo'));
-                        } finally {
-                          e.target.value = '';
-                        }
-                      }}
-                    />
-                  </label>
-                </div>
-
-                {newOffer.videos && newOffer.videos.length > 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {newOffer.videos.map((video, index) => (
-                      <div key={index} className="relative border rounded-xl p-2 bg-gray-50">
-                        <video src={video} controls className="w-full h-40 rounded-lg bg-black" />
-                        <button
-                          onClick={() => {
-                            const updated = newOffer.videos?.filter((_, i) => i !== index) || [];
-                            setNewOffer({ ...newOffer, videos: updated });
-                          }}
-                          className="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full p-1"
-                          title={getLocalizedText('حذف الفيديو', 'Delete video', 'Supprimer la vidéo')}
-                        >
-                          <X className="h-4 w-4" />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
+              <VideoUploadField
+                label={getLocalizedText('فيديوهات العرض', 'Offer videos', 'Vidéos de l\'offre')}
+                hint={getLocalizedText(
+                  'ارفع فيديو من جهازك أو ألصق رابط يوتيوب / فيميو. يظهر الفيديو في صفحة الدولة ضمن تبويب الجولات والعروض.',
+                  'Upload from your device or paste YouTube/Vimeo link. Video appears on the country page under Tours & Offers.',
+                  'Téléversez ou collez un lien YouTube/Vimeo. La vidéo apparaît sur la page du pays.',
                 )}
-              </div>
+                videos={newOffer.videos || []}
+                onChange={(videos) => setNewOffer({ ...newOffer, videos })}
+                addUrlLabel={getLocalizedText('إضافة الرابط', 'Add link', 'Ajouter le lien')}
+                uploadLabel={getLocalizedText('رفع فيديو من الجهاز', 'Upload from device', 'Téléverser')}
+                unsupportedFormat={getLocalizedText('صيغة فيديو غير مدعومة', 'Unsupported video format', 'Format non pris en charge')}
+                tooLarge={getLocalizedText('حجم الفيديو كبير جداً (أقصى 180 ميجا)', 'Video too large (max 180MB)', 'Vidéo trop volumineuse (max 180 Mo)')}
+                uploadFailed={getLocalizedText('فشل رفع الفيديو، جرّب رابط يوتيوب', 'Upload failed, try a YouTube link', 'Échec du téléchargement')}
+              />
+
+              <OfferDetailsEditor
+                details={newOffer.details || {}}
+                onChange={(details) => setNewOffer({ ...newOffer, details })}
+                label={getLocalizedText}
+              />
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div>
@@ -6315,89 +6272,27 @@ export default function AdminDashboard() {
                 )}
               </div>
 
-              {/* Videos Section for Edit */}
-              <div className="space-y-3">
-                <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
-                  <Film className="h-4 w-4 text-pink-600" />
-                  {getLocalizedText('روابط الفيديو', 'Video Links', 'Liens vidéo')}
-                </label>
-                <div className="flex gap-3">
-                  <Input
-                    type="url"
-                    value={editingOfferVideoUrl}
-                    onChange={(e) => setEditingOfferVideoUrl(e.target.value)}
-                    placeholder={getLocalizedText('أدخل رابط فيديو', 'Enter video URL', 'Entrez l\'URL de la vidéo')}
-                    className="flex-1 rounded-xl"
-                  />
-                  <Button
-                    type="button"
-                    onClick={() => {
-                      if (!editingOfferVideoUrl) return;
-                      setEditingOffer({
-                        ...editingOffer,
-                        videos: [...(editingOffer.videos || []), editingOfferVideoUrl],
-                      });
-                      setEditingOfferVideoUrl('');
-                    }}
-                  >
-                    {getLocalizedText('إضافة', 'Add', 'Ajouter')}
-                  </Button>
-                  <label className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-xl cursor-pointer flex items-center gap-2">
-                    <Upload className="h-4 w-4" />
-                    {getLocalizedText('رفع فيديو', 'Upload Video', 'Téléverser une vidéo')}
-                    <input
-                      type="file"
-                      accept="video/*"
-                      className="hidden"
-                      onChange={async (e) => {
-                        const file = e.target.files?.[0];
-                        if (!file) return;
-                        try {
-                          const { isValidVideoFile, getFileSizeMB, uploadVideoToServer } = await import('@/utils/videoUtils');
-                          if (!isValidVideoFile(file)) {
-                            alert(getLocalizedText('صيغة فيديو غير مدعومة', 'Unsupported video format', 'Format vidéo non pris en charge'));
-                            return;
-                          }
-                          if (getFileSizeMB(file) > 180) {
-                            alert(getLocalizedText('حجم الفيديو كبير جداً (أقصى 180MB)', 'Video too large (max 180MB)', 'Vidéo trop volumineuse (max 180MB)'));
-                            return;
-                          }
-                          const url = await uploadVideoToServer(file);
-                          setEditingOffer({
-                            ...editingOffer,
-                            videos: [...(editingOffer.videos || []), url],
-                          });
-                        } catch (error) {
-                          console.error('Video upload error', error);
-                          alert(getLocalizedText('فشل رفع الفيديو', 'Failed to upload video', 'Échec du téléchargement de la vidéo'));
-                        } finally {
-                          e.target.value = '';
-                        }
-                      }}
-                    />
-                  </label>
-                </div>
-
-                {editingOffer.videos && editingOffer.videos.length > 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {editingOffer.videos.map((video, index) => (
-                      <div key={index} className="relative border rounded-xl p-2 bg-gray-50">
-                        <video src={video} controls className="w-full h-40 rounded-lg bg-black" />
-                        <button
-                          onClick={() => {
-                            const updated = editingOffer.videos?.filter((_, i) => i !== index) || [];
-                            setEditingOffer({ ...editingOffer, videos: updated });
-                          }}
-                          className="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full p-1"
-                          title={getLocalizedText('حذف الفيديو', 'Delete video', 'Supprimer la vidéo')}
-                        >
-                          <X className="h-4 w-4" />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
+              <VideoUploadField
+                label={getLocalizedText('فيديوهات العرض', 'Offer videos', 'Vidéos de l\'offre')}
+                hint={getLocalizedText(
+                  'ارفع فيديو من جهازك أو ألصق رابط يوتيوب / فيميو. يظهر الفيديو في صفحة الدولة ضمن تبويب الجولات والعروض.',
+                  'Upload from your device or paste YouTube/Vimeo link. Video appears on the country page under Tours & Offers.',
+                  'Téléversez ou collez un lien YouTube/Vimeo. La vidéo apparaît sur la page du pays.',
                 )}
-              </div>
+                videos={editingOffer.videos || []}
+                onChange={(videos) => setEditingOffer({ ...editingOffer, videos })}
+                addUrlLabel={getLocalizedText('إضافة الرابط', 'Add link', 'Ajouter le lien')}
+                uploadLabel={getLocalizedText('رفع فيديو من الجهاز', 'Upload from device', 'Téléverser')}
+                unsupportedFormat={getLocalizedText('صيغة فيديو غير مدعومة', 'Unsupported video format', 'Format non pris en charge')}
+                tooLarge={getLocalizedText('حجم الفيديو كبير جداً (أقصى 180 ميجا)', 'Video too large (max 180MB)', 'Vidéo trop volumineuse (max 180 Mo)')}
+                uploadFailed={getLocalizedText('فشل رفع الفيديو، جرّب رابط يوتيوب', 'Upload failed, try a YouTube link', 'Échec du téléchargement')}
+              />
+
+              <OfferDetailsEditor
+                details={editingOffer.details || {}}
+                onChange={(details) => setEditingOffer({ ...editingOffer, details })}
+                label={getLocalizedText}
+              />
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div>

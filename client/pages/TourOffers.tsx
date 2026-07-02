@@ -9,6 +9,7 @@ import { useCurrency } from '@/contexts/CurrencyContext';
 import { detectUserCountry, mapCountryCodeToId } from '@/services/geoLocation';
 import { offerMatchesCountry, resolveCountryIdInCatalog } from '@/data/countries';
 import { Switch } from '@/components/ui/switch';
+import OfferVideo from '@/components/OfferVideo';
 
 type TourFilterType = 'local' | 'international' | 'all';
 
@@ -554,11 +555,7 @@ export default function TourOffers() {
                   <div className="p-6 bg-gradient-to-b from-white to-gray-50/50">
                     {offer.videos && offer.videos.length > 0 && (
                       <div className="mb-4 rounded-2xl overflow-hidden border border-gray-200 bg-black">
-                        <video
-                          src={offer.videos[0]}
-                          controls
-                          className="w-full h-48 object-cover"
-                        />
+                        <OfferVideo src={offer.videos[0]} className="w-full h-48 object-cover" />
                       </div>
                     )}
                     <div className="flex items-start justify-between mb-3">
@@ -601,7 +598,7 @@ export default function TourOffers() {
 
                     {/* Action Buttons */}
                     <div className="flex items-center gap-3">
-                      <Link to={`/offices/${offer.countryId}`} className="flex-1">
+                      <Link to={`/offers/${offer.id}`} className="flex-1">
                         <Button
                           className="w-full bg-gradient-to-r from-tarhal-orange to-tarhal-orange-dark hover:from-tarhal-orange-dark hover:to-tarhal-orange text-white font-semibold rounded-xl py-2.5 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
                         >

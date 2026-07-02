@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Star, MapPin, Calendar, Camera, Users, Plane, Hotel, Car, Shield, Clock, Sun, Cloud, Droplets, Wind, Heart, Share2, Download, Play } from 'lucide-react';
+import { ArrowLeft, Star, MapPin, Calendar, Camera, Users, Plane, Hotel, Car, Shield, Clock, Sun, Cloud, Droplets, Wind, Heart, Share2, Download, Play, Sparkles } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
-import { getCountryDataWithDynamic, getCountryName, getCountryDescription, getCityName } from '@/data/countries';
+import CountryOffersSection from '@/components/CountryOffersSection';
+import { getCountryDataWithDynamic, getCountryName, getCountryDescription, getCityName, offerMatchesCountry } from '@/data/countries';
 import type { CountryData } from '@/data/countries';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { dataManager } from '@/services/dataManager';
+import { dataManager, type AdminCountryData, type TourOffer } from '@/services/dataManager';
 import { optimizeImageUrl, preloadImage } from '@/utils/imageUtils';
 
 export default function CountryDetail() {
@@ -17,6 +18,7 @@ export default function CountryDetail() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [countryData, setCountryData] = useState<CountryData | null>(null);
+  const [countryOffers, setCountryOffers] = useState<TourOffer[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const { language, t } = useLanguage();
 
@@ -29,9 +31,17 @@ export default function CountryDetail() {
     (async () => {
       setIsLoading(true);
       try {
-        await dataManager.getCountriesAsync();
+        const countries = await dataManager.getCountriesAsync();
         const data = getCountryDataWithDynamic(countryId);
         setCountryData(data);
+
+        const offers = await dataManager.getOffersAsync();
+        const activeOffers = offers.filter((offer) => offer.isActive !== false);
+        setCountryOffers(
+          activeOffers.filter((offer) =>
+            offerMatchesCountry(countries, offer.countryId, countryId),
+          ),
+        );
       } finally {
         setIsLoading(false);
       }
@@ -248,10 +258,11 @@ export default function CountryDetail() {
         <div className="container mx-auto px-4">
           <nav className="flex overflow-x-auto">
             {[
-              { id: 'overview', label: 'نظرة عامة', icon: <MapPin className="h-4 w-4" /> },
-              { id: 'cities', label: 'المدن السياحية', icon: <Camera className="h-4 w-4" /> },
-              { id: 'culture', label: 'الثقافة والتراث', icon: <Users className="h-4 w-4" /> },
-              { id: 'practical', label: 'معلومات عملية', icon: <Car className="h-4 w-4" /> }
+              { id: 'overview', label: language === 'ar' ? 'نظرة عامة' : language === 'fr' ? 'Aperçu' : 'Overview', icon: <MapPin className="h-4 w-4" /> },
+              { id: 'offers', label: language === 'ar' ? 'الجولات والعروض' : language === 'fr' ? 'Circuits et offres' : 'Tours & Offers', icon: <Sparkles className="h-4 w-4" /> },
+              { id: 'cities', label: language === 'ar' ? 'المدن السياحية' : language === 'fr' ? 'Villes touristiques' : 'Cities', icon: <Camera className="h-4 w-4" /> },
+              { id: 'culture', label: language === 'ar' ? 'الثقافة والتراث' : language === 'fr' ? 'Culture' : 'Culture', icon: <Users className="h-4 w-4" /> },
+              { id: 'practical', label: language === 'ar' ? 'معلومات عملية' : language === 'fr' ? 'Infos pratiques' : 'Practical', icon: <Car className="h-4 w-4" /> }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -323,6 +334,15 @@ export default function CountryDetail() {
                 </div>
               </div>
             </div>
+          )}
+
+          {activeTab === 'offers' && countryId && (
+            <CountryOffersSection
+              offers={countryOffers}
+              countryName={getCountryName(countryData, language)}
+              countryId={countryId}
+              language={language}
+            />
           )}
 
           {activeTab === 'cities' && (
