@@ -15,6 +15,9 @@ import CountryDetail from "./pages/CountryDetail";
 import CityDetail from "./pages/CityDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import Sitemap from "./pages/Sitemap";
 import OfficeContact from "./pages/OfficeContact";
 import TourOffers from "./pages/TourOffers";
 import OfferDetail from "./pages/OfferDetail";
@@ -81,6 +84,9 @@ const App = () => (
             <Route path="/offices/:countryId/contact/:officeId" element={<OfficeContact />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
+            <Route path="/sitemap" element={<Sitemap />} />
             <Route path="/checkout" element={<CheckoutDemo />} />
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />

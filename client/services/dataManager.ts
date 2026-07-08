@@ -1513,6 +1513,12 @@ class DataManager {
   }
 
   private mergeSettings(defaults: AdminSettings, saved: Partial<AdminSettings>): AdminSettings {
+    const hasAnnouncementContent = (item: { text: { ar?: string; en?: string; fr?: string } }) =>
+      Boolean(item.text.ar?.trim() || item.text.en?.trim() || item.text.fr?.trim());
+
+    const defaultTexts = (defaults.announcementBar?.texts || []).filter(hasAnnouncementContent);
+    const savedTexts = (saved.announcementBar?.texts || []).filter(hasAnnouncementContent);
+
     return {
       ...defaults,
       ...saved,
@@ -1523,9 +1529,7 @@ class DataManager {
       announcementBar: {
         ...defaults.announcementBar,
         ...(saved.announcementBar || {}),
-        texts: saved.announcementBar?.texts && saved.announcementBar.texts.length > 0
-          ? saved.announcementBar.texts
-          : defaults.announcementBar?.texts || [],
+        texts: savedTexts.length > 0 ? savedTexts : defaultTexts,
       },
     };
   }

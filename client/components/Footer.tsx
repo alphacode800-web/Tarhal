@@ -313,22 +313,22 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex flex-wrap gap-6 text-sm text-white/75">
-              <a href="#" className="hover:text-tarhal-orange transition-colors duration-300 relative group">
+              <Link to="/privacy" className="hover:text-tarhal-orange transition-colors duration-300 relative group">
                 {getLocalizedText('سياسة الخصوصية', 'Privacy Policy', 'Politique de Confidentialité')}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-tarhal-orange group-hover:w-full transition-all duration-300"></span>
-              </a>
-              <a href="#" className="hover:text-tarhal-orange transition-colors duration-300 relative group">
+              </Link>
+              <Link to="/terms" className="hover:text-tarhal-orange transition-colors duration-300 relative group">
                 {getLocalizedText('الشروط والأحكام', 'Terms & Conditions', 'Conditions Générales')}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-tarhal-orange group-hover:w-full transition-all duration-300"></span>
-              </a>
-              <a href="#" className="hover:text-tarhal-orange transition-colors duration-300 relative group">
+              </Link>
+              <Link to="/sitemap" className="hover:text-tarhal-orange transition-colors duration-300 relative group">
                 {getLocalizedText('خريطة الموقع', 'Sitemap', 'Plan du Site')}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-tarhal-orange group-hover:w-full transition-all duration-300"></span>
-              </a>
-              <a href="#" className="hover:text-tarhal-orange transition-colors duration-300 relative group">
+              </Link>
+              <Link to="/contact" className="hover:text-tarhal-orange transition-colors duration-300 relative group">
                 {getLocalizedText('اتصل بنا', 'Contact Us', 'Contactez-nous')}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-tarhal-orange group-hover:w-full transition-all duration-300"></span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
