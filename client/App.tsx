@@ -45,11 +45,13 @@ import SupervisorOfferManager from "./pages/SupervisorOfferManager";
 import AdminSupervisorManagement from "./pages/AdminSupervisorManagement";
 import NotFound from "./pages/NotFound";
 import CheckoutDemo from "./pages/CheckoutDemo";
+import ErrorBoundary from "./components/ErrorBoundary";
 import './services/supervisorInitialData';
 
 const queryClient = new QueryClient();
 
 const App = () => (
+  <ErrorBoundary>
   <QueryClientProvider client={queryClient}>
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem storageKey="tarhal-theme" disableTransitionOnChange>
     <TooltipProvider>
@@ -107,6 +109,7 @@ const App = () => (
     </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
+  </ErrorBoundary>
 );
 
 createRoot(document.getElementById("root")!).render(<App />);

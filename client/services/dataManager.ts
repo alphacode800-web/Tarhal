@@ -1,5 +1,4 @@
 import type { CountryData, City } from '@/data/countries';
-import { convertCountryToAdminData, getAllCountries } from '@/data/countries';
 import type { TourOfferDetails } from '@/data/offerDetails';
 import { resolveCountryContinent } from '@/data/countryContinents';
 import { normalizeHeroContent } from '@/data/heroTypography';
@@ -3164,24 +3163,9 @@ class DataManager {
     };
   }
 
-  // Default countries data (fallback)
+  // Default countries data (fallback — keep sync; server/async fills real data)
   private getDefaultCountries(): AdminCountryData[] {
-    const sudan = getAllCountries().find((country) => country.id === 'sudan');
-    if (!sudan) return [];
-
-    const now = new Date().toISOString();
-    const adminFields = convertCountryToAdminData(sudan);
-
-    return [
-      {
-        ...sudan,
-        ...adminFields,
-        bestTime: sudan.bestTime,
-        isActive: true,
-        createdAt: now,
-        updatedAt: now,
-      },
-    ];
+    return [];
   }
 
   // ==================== Taxi & Delivery Services ====================

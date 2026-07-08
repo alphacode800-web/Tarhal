@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Star, Globe, Users, Award, Shield, MapPin, Mail, Phone, Send, Lock, Eye } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
-import { getAllCountriesWithDynamic, getCountryName, getCountryDescription, syncStaticWithDynamic, convertAdminToCountryData } from '@/data/countries';
+import { getAllCountries, getAllCountriesWithDynamic, getCountryName, getCountryDescription, syncStaticWithDynamic, convertAdminToCountryData } from '@/data/countries';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { dataManager } from '@/services/dataManager';
 import { detectUserCountry, mapCountryCodeToId } from '@/services/geoLocation';
@@ -22,7 +22,7 @@ export default function Index() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [tourismImageIndex, setTourismImageIndex] = useState(0);
   const { language, t } = useLanguage();
-  const [countries, setCountries] = useState(getAllCountriesWithDynamic());
+  const [countries, setCountries] = useState<ReturnType<typeof getAllCountriesWithDynamic>>([]);
   const [heroContent, setHeroContent] = useState(dataManager.getHeroContent());
   const [detectedCountryId, setDetectedCountryId] = useState<string | null>(null);
   const [officeMapMarkers, setOfficeMapMarkers] = useState<Array<{
@@ -41,6 +41,13 @@ export default function Index() {
   }, [location.hash]);
 
   useEffect(() => {
+    try {
+      setCountries(getAllCountriesWithDynamic());
+    } catch (error) {
+      console.error('[Index] Failed to load initial countries:', error);
+      setCountries(getAllCountries());
+    }
+
     const mergeCountries = (dynamicCountries: Awaited<ReturnType<typeof dataManager.getCountriesAsync>>) => {
       const staticCountries = getAllCountriesWithDynamic();
       const staticById = new Map(staticCountries.map((c) => [c.id, c]));
