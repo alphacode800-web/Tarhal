@@ -1,0 +1,1771 @@
+[
+  {
+    "name": {
+      "ar": "أحمد محمد علي",
+      "en": "Ahmed Mohamed Ali",
+      "fr": "Ahmed Mohamed Ali"
+    },
+    "email": "supervisor@sudan.com",
+    "password": "123456",
+    "phone": "+249123456789",
+    "countryId": "sudan",
+    "permissions": {
+      "canEditCountryInfo": true,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": true,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": true,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782663669970_9yg9kqify",
+    "createdAt": "2026-06-28T16:21:09.971Z",
+    "updatedAt": "2026-06-28T16:21:09.971Z"
+  },
+  {
+    "email": "supervisor@supervisor.ciar.com",
+    "name": {
+      "ar": "مشرف المملكة العربية السعودية",
+      "en": "Saudi Arabia Supervisor",
+      "fr": "Superviseur Arabie Saoudite"
+    },
+    "countryId": "country_1769453246309_6xm9xfvto",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782811180603_6oo08mioa",
+    "createdAt": "2026-06-30T09:19:40.603Z",
+    "updatedAt": "2026-06-30T09:19:40.603Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246314_gg1a1gj8u.ciar.com",
+    "name": {
+      "ar": "مشرف الإمارات العربية المتحدة",
+      "en": "United Arab Emirates Supervisor",
+      "fr": "Superviseur Émirats Arabes Unis"
+    },
+    "countryId": "country_1769453246314_gg1a1gj8u",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063056_5ogl8v0uu",
+    "createdAt": "2026-06-30T12:37:43.056Z",
+    "updatedAt": "2026-06-30T12:37:43.056Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246318_7fpbzya2v.ciar.com",
+    "name": {
+      "ar": "مشرف مصر",
+      "en": "Egypt Supervisor",
+      "fr": "Superviseur Égypte"
+    },
+    "countryId": "country_1769453246318_7fpbzya2v",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063065_ddp11khvd",
+    "createdAt": "2026-06-30T12:37:43.065Z",
+    "updatedAt": "2026-06-30T12:37:43.065Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246324_2qoybss9l.ciar.com",
+    "name": {
+      "ar": "مشرف المغرب",
+      "en": "Morocco Supervisor",
+      "fr": "Superviseur Maroc"
+    },
+    "countryId": "country_1769453246324_2qoybss9l",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063075_mztj9iut4",
+    "createdAt": "2026-06-30T12:37:43.075Z",
+    "updatedAt": "2026-06-30T12:37:43.075Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246327_6woeptmoi.ciar.com",
+    "name": {
+      "ar": "مشرف الأردن",
+      "en": "Jordan Supervisor",
+      "fr": "Superviseur Jordanie"
+    },
+    "countryId": "country_1769453246327_6woeptmoi",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063077_r0dx2igwq",
+    "createdAt": "2026-06-30T12:37:43.077Z",
+    "updatedAt": "2026-06-30T12:37:43.077Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246334_uwa8gaqai.ciar.com",
+    "name": {
+      "ar": "مشرف لبنان",
+      "en": "Lebanon Supervisor",
+      "fr": "Superviseur Liban"
+    },
+    "countryId": "country_1769453246334_uwa8gaqai",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063086_by1ktjqw9",
+    "createdAt": "2026-06-30T12:37:43.086Z",
+    "updatedAt": "2026-06-30T12:37:43.086Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246342_zdhswztak.ciar.com",
+    "name": {
+      "ar": "مشرف سوريا",
+      "en": "Syria Supervisor",
+      "fr": "Superviseur Syrie"
+    },
+    "countryId": "country_1769453246342_zdhswztak",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063091_dxny8bj3c",
+    "createdAt": "2026-06-30T12:37:43.091Z",
+    "updatedAt": "2026-06-30T12:37:43.091Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246346_ypmaz059j.ciar.com",
+    "name": {
+      "ar": "مشرف العراق",
+      "en": "Iraq Supervisor",
+      "fr": "Superviseur Irak"
+    },
+    "countryId": "country_1769453246346_ypmaz059j",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063095_izetg1hfv",
+    "createdAt": "2026-06-30T12:37:43.095Z",
+    "updatedAt": "2026-06-30T12:37:43.095Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246357_5spgi247g.ciar.com",
+    "name": {
+      "ar": "مشرف الكويت",
+      "en": "Kuwait Supervisor",
+      "fr": "Superviseur Koweït"
+    },
+    "countryId": "country_1769453246357_5spgi247g",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063102_7zb9maosd",
+    "createdAt": "2026-06-30T12:37:43.102Z",
+    "updatedAt": "2026-06-30T12:37:43.102Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246365_f64ktw1ro.ciar.com",
+    "name": {
+      "ar": "مشرف البحرين",
+      "en": "Bahrain Supervisor",
+      "fr": "Superviseur Bahreïn"
+    },
+    "countryId": "country_1769453246365_f64ktw1ro",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063104_1qr9zuk5m",
+    "createdAt": "2026-06-30T12:37:43.104Z",
+    "updatedAt": "2026-06-30T12:37:43.104Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246371_qjcancmyg.ciar.com",
+    "name": {
+      "ar": "مشرف قطر",
+      "en": "Qatar Supervisor",
+      "fr": "Superviseur Qatar"
+    },
+    "countryId": "country_1769453246371_qjcancmyg",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063110_d7ctfgeca",
+    "createdAt": "2026-06-30T12:37:43.110Z",
+    "updatedAt": "2026-06-30T12:37:43.110Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246389_s1pxjs59h.ciar.com",
+    "name": {
+      "ar": "مشرف عُمان",
+      "en": "Oman Supervisor",
+      "fr": "Superviseur Oman"
+    },
+    "countryId": "country_1769453246389_s1pxjs59h",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063113_659cj2069",
+    "createdAt": "2026-06-30T12:37:43.113Z",
+    "updatedAt": "2026-06-30T12:37:43.113Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246397_ys9pdyo5o.ciar.com",
+    "name": {
+      "ar": "مشرف اليمن",
+      "en": "Yemen Supervisor",
+      "fr": "Superviseur Yémen"
+    },
+    "countryId": "country_1769453246397_ys9pdyo5o",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063115_cp5r15vdj",
+    "createdAt": "2026-06-30T12:37:43.115Z",
+    "updatedAt": "2026-06-30T12:37:43.115Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246410_kk5tubo06.ciar.com",
+    "name": {
+      "ar": "مشرف فلسطين",
+      "en": "Palestine Supervisor",
+      "fr": "Superviseur Palestine"
+    },
+    "countryId": "country_1769453246410_kk5tubo06",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063118_bclq6l0vu",
+    "createdAt": "2026-06-30T12:37:43.118Z",
+    "updatedAt": "2026-06-30T12:37:43.118Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246426_wvb0zd9x6.ciar.com",
+    "name": {
+      "ar": "مشرف تونس",
+      "en": "Tunisia Supervisor",
+      "fr": "Superviseur Tunisie"
+    },
+    "countryId": "country_1769453246426_wvb0zd9x6",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063127_kzq9yyc57",
+    "createdAt": "2026-06-30T12:37:43.127Z",
+    "updatedAt": "2026-06-30T12:37:43.127Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246441_2vddsebrn.ciar.com",
+    "name": {
+      "ar": "مشرف الجزائر",
+      "en": "Algeria Supervisor",
+      "fr": "Superviseur Algérie"
+    },
+    "countryId": "country_1769453246441_2vddsebrn",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063137_q5b2gwz97",
+    "createdAt": "2026-06-30T12:37:43.137Z",
+    "updatedAt": "2026-06-30T12:37:43.137Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246452_lgbqer9eg.ciar.com",
+    "name": {
+      "ar": "مشرف ليبيا",
+      "en": "Libya Supervisor",
+      "fr": "Superviseur Libye"
+    },
+    "countryId": "country_1769453246452_lgbqer9eg",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063144_cihaswg7x",
+    "createdAt": "2026-06-30T12:37:43.144Z",
+    "updatedAt": "2026-06-30T12:37:43.144Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246460_qf39vo8ab.ciar.com",
+    "name": {
+      "ar": "مشرف موريتانيا",
+      "en": "Mauritania Supervisor",
+      "fr": "Superviseur Mauritanie"
+    },
+    "countryId": "country_1769453246460_qf39vo8ab",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063158_9drd34xan",
+    "createdAt": "2026-06-30T12:37:43.158Z",
+    "updatedAt": "2026-06-30T12:37:43.158Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246480_th6x5x91b.ciar.com",
+    "name": {
+      "ar": "مشرف الصومال",
+      "en": "Somalia Supervisor",
+      "fr": "Superviseur Somalie"
+    },
+    "countryId": "country_1769453246480_th6x5x91b",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063164_a6brac6lg",
+    "createdAt": "2026-06-30T12:37:43.164Z",
+    "updatedAt": "2026-06-30T12:37:43.164Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246495_ksaezo0k0.ciar.com",
+    "name": {
+      "ar": "مشرف جيبوتي",
+      "en": "Djibouti Supervisor",
+      "fr": "Superviseur Djibouti"
+    },
+    "countryId": "country_1769453246495_ksaezo0k0",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063170_luwb1hdzg",
+    "createdAt": "2026-06-30T12:37:43.170Z",
+    "updatedAt": "2026-06-30T12:37:43.170Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246519_zbf4eyrby.ciar.com",
+    "name": {
+      "ar": "مشرف جزر القمر",
+      "en": "Comoros Supervisor",
+      "fr": "Superviseur Comores"
+    },
+    "countryId": "country_1769453246519_zbf4eyrby",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063176_bf7kc7i9m",
+    "createdAt": "2026-06-30T12:37:43.176Z",
+    "updatedAt": "2026-06-30T12:37:43.176Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246549_h6pz7u4tg.ciar.com",
+    "name": {
+      "ar": "مشرف تركيا",
+      "en": "Turkey Supervisor",
+      "fr": "Superviseur Turquie"
+    },
+    "countryId": "country_1769453246549_h6pz7u4tg",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063183_5a55ett1l",
+    "createdAt": "2026-06-30T12:37:43.183Z",
+    "updatedAt": "2026-06-30T12:37:43.183Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246563_h0jwkxasp.ciar.com",
+    "name": {
+      "ar": "مشرف إيران",
+      "en": "Iran Supervisor",
+      "fr": "Superviseur Iran"
+    },
+    "countryId": "country_1769453246563_h0jwkxasp",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063189_jmsi7dtn9",
+    "createdAt": "2026-06-30T12:37:43.189Z",
+    "updatedAt": "2026-06-30T12:37:43.189Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246578_i5bgodfn6.ciar.com",
+    "name": {
+      "ar": "مشرف أفغانستان",
+      "en": "Afghanistan Supervisor",
+      "fr": "Superviseur Afghanistan"
+    },
+    "countryId": "country_1769453246578_i5bgodfn6",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063192_afjhnrkb0",
+    "createdAt": "2026-06-30T12:37:43.192Z",
+    "updatedAt": "2026-06-30T12:37:43.192Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246612_i9tqgftyu.ciar.com",
+    "name": {
+      "ar": "مشرف باكستان",
+      "en": "Pakistan Supervisor",
+      "fr": "Superviseur Pakistan"
+    },
+    "countryId": "country_1769453246612_i9tqgftyu",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063196_v0qtiwf68",
+    "createdAt": "2026-06-30T12:37:43.196Z",
+    "updatedAt": "2026-06-30T12:37:43.196Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246629_dfbkrcaud.ciar.com",
+    "name": {
+      "ar": "مشرف بنغلاديش",
+      "en": "Bangladesh Supervisor",
+      "fr": "Superviseur Bangladesh"
+    },
+    "countryId": "country_1769453246629_dfbkrcaud",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063205_ls923dmv5",
+    "createdAt": "2026-06-30T12:37:43.205Z",
+    "updatedAt": "2026-06-30T12:37:43.205Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246645_rnkphbccd.ciar.com",
+    "name": {
+      "ar": "مشرف جزر المالديف",
+      "en": "Maldives Supervisor",
+      "fr": "Superviseur Maldives"
+    },
+    "countryId": "country_1769453246645_rnkphbccd",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063209_vs65vbjvi",
+    "createdAt": "2026-06-30T12:37:43.209Z",
+    "updatedAt": "2026-06-30T12:37:43.209Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246661_1rqja8qkz.ciar.com",
+    "name": {
+      "ar": "مشرف إندونيسيا",
+      "en": "Indonesia Supervisor",
+      "fr": "Superviseur Indonésie"
+    },
+    "countryId": "country_1769453246661_1rqja8qkz",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063213_z45erbjvz",
+    "createdAt": "2026-06-30T12:37:43.213Z",
+    "updatedAt": "2026-06-30T12:37:43.213Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246679_z75rhed3i.ciar.com",
+    "name": {
+      "ar": "مشرف ماليزيا",
+      "en": "Malaysia Supervisor",
+      "fr": "Superviseur Malaisie"
+    },
+    "countryId": "country_1769453246679_z75rhed3i",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063217_as763ztsm",
+    "createdAt": "2026-06-30T12:37:43.218Z",
+    "updatedAt": "2026-06-30T12:37:43.218Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246695_95apoqonp.ciar.com",
+    "name": {
+      "ar": "مشرف بروناي",
+      "en": "Brunei Supervisor",
+      "fr": "Superviseur Brunei"
+    },
+    "countryId": "country_1769453246695_95apoqonp",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063222_hljg739ja",
+    "createdAt": "2026-06-30T12:37:43.222Z",
+    "updatedAt": "2026-06-30T12:37:43.223Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246711_ur8uda4ul.ciar.com",
+    "name": {
+      "ar": "مشرف فرنسا",
+      "en": "France Supervisor",
+      "fr": "Superviseur France"
+    },
+    "countryId": "country_1769453246711_ur8uda4ul",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063229_hagy3avz1",
+    "createdAt": "2026-06-30T12:37:43.229Z",
+    "updatedAt": "2026-06-30T12:37:43.229Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246739_rpfhugxeg.ciar.com",
+    "name": {
+      "ar": "مشرف إسبانيا",
+      "en": "Spain Supervisor",
+      "fr": "Superviseur Espagne"
+    },
+    "countryId": "country_1769453246739_rpfhugxeg",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063237_z50ig3rbo",
+    "createdAt": "2026-06-30T12:37:43.237Z",
+    "updatedAt": "2026-06-30T12:37:43.237Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246764_614yfrmtl.ciar.com",
+    "name": {
+      "ar": "مشرف إيطاليا",
+      "en": "Italy Supervisor",
+      "fr": "Superviseur Italie"
+    },
+    "countryId": "country_1769453246764_614yfrmtl",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063244_c01ot1ufh",
+    "createdAt": "2026-06-30T12:37:43.244Z",
+    "updatedAt": "2026-06-30T12:37:43.244Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246808_ezawth9hy.ciar.com",
+    "name": {
+      "ar": "مشرف ألمانيا",
+      "en": "Germany Supervisor",
+      "fr": "Superviseur Allemagne"
+    },
+    "countryId": "country_1769453246808_ezawth9hy",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063253_rrdjwv3au",
+    "createdAt": "2026-06-30T12:37:43.253Z",
+    "updatedAt": "2026-06-30T12:37:43.253Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246843_pqi2or72z.ciar.com",
+    "name": {
+      "ar": "مشرف اليونان",
+      "en": "Greece Supervisor",
+      "fr": "Superviseur Grèce"
+    },
+    "countryId": "country_1769453246843_pqi2or72z",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063262_63qq5ywr3",
+    "createdAt": "2026-06-30T12:37:43.262Z",
+    "updatedAt": "2026-06-30T12:37:43.262Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246875_upf4movah.ciar.com",
+    "name": {
+      "ar": "مشرف البرتغال",
+      "en": "Portugal Supervisor",
+      "fr": "Superviseur Portugal"
+    },
+    "countryId": "country_1769453246875_upf4movah",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063272_5p5dxgkb9",
+    "createdAt": "2026-06-30T12:37:43.272Z",
+    "updatedAt": "2026-06-30T12:37:43.272Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246910_eec0o70oa.ciar.com",
+    "name": {
+      "ar": "مشرف هولندا",
+      "en": "Netherlands Supervisor",
+      "fr": "Superviseur Pays-Bas"
+    },
+    "countryId": "country_1769453246910_eec0o70oa",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063279_muzlr0qsl",
+    "createdAt": "2026-06-30T12:37:43.279Z",
+    "updatedAt": "2026-06-30T12:37:43.279Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246942_gbk87n5w2.ciar.com",
+    "name": {
+      "ar": "مشرف بلجيكا",
+      "en": "Belgium Supervisor",
+      "fr": "Superviseur Belgique"
+    },
+    "countryId": "country_1769453246942_gbk87n5w2",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063298_ijrsmat1j",
+    "createdAt": "2026-06-30T12:37:43.298Z",
+    "updatedAt": "2026-06-30T12:37:43.298Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246973_rc1jysgf2.ciar.com",
+    "name": {
+      "ar": "مشرف سويسرا",
+      "en": "Switzerland Supervisor",
+      "fr": "Superviseur Suisse"
+    },
+    "countryId": "country_1769453246973_rc1jysgf2",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063320_jpi1n0hxz",
+    "createdAt": "2026-06-30T12:37:43.322Z",
+    "updatedAt": "2026-06-30T12:37:43.322Z"
+  },
+  {
+    "email": "supervisor1@country_1769453246996_hie9trq8d.ciar.com",
+    "name": {
+      "ar": "مشرف النمسا",
+      "en": "Austria Supervisor",
+      "fr": "Superviseur Autriche"
+    },
+    "countryId": "country_1769453246996_hie9trq8d",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063344_8qazowrex",
+    "createdAt": "2026-06-30T12:37:43.344Z",
+    "updatedAt": "2026-06-30T12:37:43.344Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247034_ypsawk3br.ciar.com",
+    "name": {
+      "ar": "مشرف المملكة المتحدة",
+      "en": "United Kingdom Supervisor",
+      "fr": "Superviseur Royaume-Uni"
+    },
+    "countryId": "country_1769453247034_ypsawk3br",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063364_4vbjgt2po",
+    "createdAt": "2026-06-30T12:37:43.364Z",
+    "updatedAt": "2026-06-30T12:37:43.364Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247062_l3o4uqpng.ciar.com",
+    "name": {
+      "ar": "مشرف أيرلندا",
+      "en": "Ireland Supervisor",
+      "fr": "Superviseur Irlande"
+    },
+    "countryId": "country_1769453247062_l3o4uqpng",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063379_x2g3yyq4k",
+    "createdAt": "2026-06-30T12:37:43.379Z",
+    "updatedAt": "2026-06-30T12:37:43.379Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247093_c17go899e.ciar.com",
+    "name": {
+      "ar": "مشرف بولندا",
+      "en": "Poland Supervisor",
+      "fr": "Superviseur Pologne"
+    },
+    "countryId": "country_1769453247093_c17go899e",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063387_vpnuarhky",
+    "createdAt": "2026-06-30T12:37:43.387Z",
+    "updatedAt": "2026-06-30T12:37:43.387Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247128_c69bxkctz.ciar.com",
+    "name": {
+      "ar": "مشرف جمهورية التشيك",
+      "en": "Czech Republic Supervisor",
+      "fr": "Superviseur République tchèque"
+    },
+    "countryId": "country_1769453247128_c69bxkctz",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063403_c5cya6d2h",
+    "createdAt": "2026-06-30T12:37:43.403Z",
+    "updatedAt": "2026-06-30T12:37:43.403Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247163_fxu3a4ueo.ciar.com",
+    "name": {
+      "ar": "مشرف المجر",
+      "en": "Hungary Supervisor",
+      "fr": "Superviseur Hongrie"
+    },
+    "countryId": "country_1769453247163_fxu3a4ueo",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063427_q2aat0hjb",
+    "createdAt": "2026-06-30T12:37:43.427Z",
+    "updatedAt": "2026-06-30T12:37:43.427Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247207_dtb4sa9k1.ciar.com",
+    "name": {
+      "ar": "مشرف رومانيا",
+      "en": "Romania Supervisor",
+      "fr": "Superviseur Roumanie"
+    },
+    "countryId": "country_1769453247207_dtb4sa9k1",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063458_czr5x8ffx",
+    "createdAt": "2026-06-30T12:37:43.458Z",
+    "updatedAt": "2026-06-30T12:37:43.458Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247278_99e1sgom5.ciar.com",
+    "name": {
+      "ar": "مشرف بلغاريا",
+      "en": "Bulgaria Supervisor",
+      "fr": "Superviseur Bulgarie"
+    },
+    "countryId": "country_1769453247278_99e1sgom5",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063489_t560rp8ri",
+    "createdAt": "2026-06-30T12:37:43.489Z",
+    "updatedAt": "2026-06-30T12:37:43.489Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247312_fo6sr0vrh.ciar.com",
+    "name": {
+      "ar": "مشرف كرواتيا",
+      "en": "Croatia Supervisor",
+      "fr": "Superviseur Croatie"
+    },
+    "countryId": "country_1769453247312_fo6sr0vrh",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063494_5bopx1zra",
+    "createdAt": "2026-06-30T12:37:43.494Z",
+    "updatedAt": "2026-06-30T12:37:43.494Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247348_9nuaj6b3m.ciar.com",
+    "name": {
+      "ar": "مشرف النرويج",
+      "en": "Norway Supervisor",
+      "fr": "Superviseur Norvège"
+    },
+    "countryId": "country_1769453247348_9nuaj6b3m",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063505_0brhkxqxi",
+    "createdAt": "2026-06-30T12:37:43.506Z",
+    "updatedAt": "2026-06-30T12:37:43.506Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247394_iajryb0rw.ciar.com",
+    "name": {
+      "ar": "مشرف السويد",
+      "en": "Sweden Supervisor",
+      "fr": "Superviseur Suède"
+    },
+    "countryId": "country_1769453247394_iajryb0rw",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063517_ybnnhb1vk",
+    "createdAt": "2026-06-30T12:37:43.517Z",
+    "updatedAt": "2026-06-30T12:37:43.517Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247427_ncwinbi7b.ciar.com",
+    "name": {
+      "ar": "مشرف الدنمارك",
+      "en": "Denmark Supervisor",
+      "fr": "Superviseur Danemark"
+    },
+    "countryId": "country_1769453247427_ncwinbi7b",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063528_ae40kopym",
+    "createdAt": "2026-06-30T12:37:43.529Z",
+    "updatedAt": "2026-06-30T12:37:43.529Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247454_f9dn3kwjy.ciar.com",
+    "name": {
+      "ar": "مشرف فنلندا",
+      "en": "Finland Supervisor",
+      "fr": "Superviseur Finlande"
+    },
+    "countryId": "country_1769453247454_f9dn3kwjy",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063540_uxiwgp5iq",
+    "createdAt": "2026-06-30T12:37:43.540Z",
+    "updatedAt": "2026-06-30T12:37:43.540Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247479_9vem0lpry.ciar.com",
+    "name": {
+      "ar": "مشرف آيسلندا",
+      "en": "Iceland Supervisor",
+      "fr": "Superviseur Islande"
+    },
+    "countryId": "country_1769453247479_9vem0lpry",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063548_am944cwys",
+    "createdAt": "2026-06-30T12:37:43.548Z",
+    "updatedAt": "2026-06-30T12:37:43.548Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247509_ylfc1osq7.ciar.com",
+    "name": {
+      "ar": "مشرف روسيا",
+      "en": "Russia Supervisor",
+      "fr": "Superviseur Russie"
+    },
+    "countryId": "country_1769453247509_ylfc1osq7",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063564_2ctqifnb5",
+    "createdAt": "2026-06-30T12:37:43.564Z",
+    "updatedAt": "2026-06-30T12:37:43.564Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247540_muw79gowe.ciar.com",
+    "name": {
+      "ar": "مشرف أوكرانيا",
+      "en": "Ukraine Supervisor",
+      "fr": "Superviseur Ukraine"
+    },
+    "countryId": "country_1769453247540_muw79gowe",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063577_dp4u53osa",
+    "createdAt": "2026-06-30T12:37:43.577Z",
+    "updatedAt": "2026-06-30T12:37:43.577Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247563_zxighxaw6.ciar.com",
+    "name": {
+      "ar": "مشرف صربيا",
+      "en": "Serbia Supervisor",
+      "fr": "Superviseur Serbie"
+    },
+    "countryId": "country_1769453247563_zxighxaw6",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063582_zp35s1qbd",
+    "createdAt": "2026-06-30T12:37:43.582Z",
+    "updatedAt": "2026-06-30T12:37:43.582Z"
+  },
+  {
+    "email": "supervisor1@country_1769453247590_dbii4e8wn.ciar.com",
+    "name": {
+      "ar": "مشرف سلوفينيا",
+      "en": "Slovenia Supervisor",
+      "fr": "Superviseur Slovénie"
+    },
+    "countryId": "country_1769453247590_dbii4e8wn",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063587_vchxtoys6",
+    "createdAt": "2026-06-30T12:37:43.587Z",
+    "updatedAt": "2026-06-30T12:37:43.587Z"
+  },
+  {
+    "email": "supervisor1@country_1769453262536_0kdimrlhf.ciar.com",
+    "name": {
+      "ar": "مشرف سلوفينيا",
+      "en": "Slovenia Supervisor",
+      "fr": "Superviseur Slovénie"
+    },
+    "countryId": "country_1769453262536_0kdimrlhf",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063614_qectbagct",
+    "createdAt": "2026-06-30T12:37:43.614Z",
+    "updatedAt": "2026-06-30T12:37:43.614Z"
+  },
+  {
+    "email": "supervisor1@country_1782663703528_xkke4gduc.ciar.com",
+    "name": {
+      "ar": "مشرف آيسلندا",
+      "en": "Iceland Supervisor",
+      "fr": "Superviseur Islande"
+    },
+    "countryId": "country_1782663703528_xkke4gduc",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823063656_gqftqplj1",
+    "createdAt": "2026-06-30T12:37:43.656Z",
+    "updatedAt": "2026-06-30T12:37:43.656Z"
+  },
+  {
+    "email": "supervisor1@country_1782737390505_hz84pinyz.ciar.com",
+    "name": {
+      "ar": "مشرف سلوفينيا",
+      "en": "Slovenia Supervisor",
+      "fr": "Superviseur Slovénie"
+    },
+    "countryId": "country_1782737390505_hz84pinyz",
+    "password": "supervisor123",
+    "phone": "+1 234 567 8900",
+    "permissions": {
+      "canEditCountryInfo": false,
+      "canAddCities": true,
+      "canEditCities": true,
+      "canDeleteCities": false,
+      "canAddOffices": true,
+      "canEditOffices": true,
+      "canDeleteOffices": false,
+      "canViewReports": true,
+      "canManageReviews": true,
+      "canAddOffers": true,
+      "canEditOffers": true,
+      "canDeleteOffers": false
+    },
+    "isActive": true,
+    "id": "supervisor_1782823113803_w50hv61ki",
+    "createdAt": "2026-06-30T12:38:33.804Z",
+    "updatedAt": "2026-06-30T12:38:33.804Z"
+  }
+]

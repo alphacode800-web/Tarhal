@@ -1,0 +1,5797 @@
+[
+  {
+    "id": "flight_sudan_1_1771406457726_0",
+    "countryId": "sudan",
+    "from": "Khartoum",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 375,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من السودان إلى Dubai",
+      "en": "Flight from Sudan to Dubai",
+      "fr": "Vol de Soudan à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_sudan_2_1771406457726_1",
+    "countryId": "sudan",
+    "from": "Khartoum",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 395,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من السودان إلى Riyadh",
+      "en": "Flight from Sudan to Riyadh",
+      "fr": "Vol de Soudan à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_sudan_3_1771406457726_2",
+    "countryId": "sudan",
+    "from": "Khartoum",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 415,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من السودان إلى Doha",
+      "en": "Flight from Sudan to Doha",
+      "fr": "Vol de Soudan à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_sudan_4_1771406457726_3",
+    "countryId": "sudan",
+    "from": "Khartoum",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 435,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من السودان إلى Cairo",
+      "en": "Flight from Sudan to Cairo",
+      "fr": "Vol de Soudan à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_sudan_5_1771406457726_4",
+    "countryId": "sudan",
+    "from": "Khartoum",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 455,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من السودان إلى Istanbul",
+      "en": "Flight from Sudan to Istanbul",
+      "fr": "Vol de Soudan à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_country_1769453246309_6xm9xfvto_1_1771406457726_0",
+    "countryId": "country_1769453246309_6xm9xfvto",
+    "from": "Riyadh",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 425,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المملكة العربية السعودية إلى Dubai",
+      "en": "Flight from Saudi Arabia to Dubai",
+      "fr": "Vol de Arabie Saoudite à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_country_1769453246309_6xm9xfvto_2_1771406457726_1",
+    "countryId": "country_1769453246309_6xm9xfvto",
+    "from": "Riyadh",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 445,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من المملكة العربية السعودية إلى Riyadh",
+      "en": "Flight from Saudi Arabia to Riyadh",
+      "fr": "Vol de Arabie Saoudite à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_country_1769453246309_6xm9xfvto_3_1771406457726_2",
+    "countryId": "country_1769453246309_6xm9xfvto",
+    "from": "Riyadh",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 465,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المملكة العربية السعودية إلى Doha",
+      "en": "Flight from Saudi Arabia to Doha",
+      "fr": "Vol de Arabie Saoudite à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_country_1769453246309_6xm9xfvto_4_1771406457726_3",
+    "countryId": "country_1769453246309_6xm9xfvto",
+    "from": "Riyadh",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 485,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من المملكة العربية السعودية إلى Cairo",
+      "en": "Flight from Saudi Arabia to Cairo",
+      "fr": "Vol de Arabie Saoudite à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_country_1769453246309_6xm9xfvto_5_1771406457726_4",
+    "countryId": "country_1769453246309_6xm9xfvto",
+    "from": "Riyadh",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 505,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المملكة العربية السعودية إلى Istanbul",
+      "en": "Flight from Saudi Arabia to Istanbul",
+      "fr": "Vol de Arabie Saoudite à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_country_1769453246314_gg1a1gj8u_1_1771406457726_0",
+    "countryId": "country_1769453246314_gg1a1gj8u",
+    "from": "Dubai",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 450,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الإمارات العربية المتحدة إلى Dubai",
+      "en": "Flight from United Arab Emirates to Dubai",
+      "fr": "Vol de Émirats Arabes Unis à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.726Z",
+    "updatedAt": "2026-02-18T09:20:57.726Z"
+  },
+  {
+    "id": "flight_country_1769453246314_gg1a1gj8u_2_1771406457727_1",
+    "countryId": "country_1769453246314_gg1a1gj8u",
+    "from": "Dubai",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 470,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الإمارات العربية المتحدة إلى Riyadh",
+      "en": "Flight from United Arab Emirates to Riyadh",
+      "fr": "Vol de Émirats Arabes Unis à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246314_gg1a1gj8u_3_1771406457727_2",
+    "countryId": "country_1769453246314_gg1a1gj8u",
+    "from": "Dubai",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 490,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الإمارات العربية المتحدة إلى Doha",
+      "en": "Flight from United Arab Emirates to Doha",
+      "fr": "Vol de Émirats Arabes Unis à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246314_gg1a1gj8u_4_1771406457727_3",
+    "countryId": "country_1769453246314_gg1a1gj8u",
+    "from": "Dubai",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 510,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الإمارات العربية المتحدة إلى Cairo",
+      "en": "Flight from United Arab Emirates to Cairo",
+      "fr": "Vol de Émirats Arabes Unis à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246314_gg1a1gj8u_5_1771406457727_4",
+    "countryId": "country_1769453246314_gg1a1gj8u",
+    "from": "Dubai",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 530,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الإمارات العربية المتحدة إلى Istanbul",
+      "en": "Flight from United Arab Emirates to Istanbul",
+      "fr": "Vol de Émirats Arabes Unis à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246318_7fpbzya2v_1_1771406457727_0",
+    "countryId": "country_1769453246318_7fpbzya2v",
+    "from": "Cairo",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 550,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من مصر إلى Dubai",
+      "en": "Flight from Egypt to Dubai",
+      "fr": "Vol de Égypte à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246318_7fpbzya2v_2_1771406457727_1",
+    "countryId": "country_1769453246318_7fpbzya2v",
+    "from": "Cairo",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 570,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من مصر إلى Riyadh",
+      "en": "Flight from Egypt to Riyadh",
+      "fr": "Vol de Égypte à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246318_7fpbzya2v_3_1771406457727_2",
+    "countryId": "country_1769453246318_7fpbzya2v",
+    "from": "Cairo",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 590,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من مصر إلى Doha",
+      "en": "Flight from Egypt to Doha",
+      "fr": "Vol de Égypte à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246318_7fpbzya2v_4_1771406457727_3",
+    "countryId": "country_1769453246318_7fpbzya2v",
+    "from": "Cairo",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 610,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من مصر إلى Cairo",
+      "en": "Flight from Egypt to Cairo",
+      "fr": "Vol de Égypte à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246318_7fpbzya2v_5_1771406457727_4",
+    "countryId": "country_1769453246318_7fpbzya2v",
+    "from": "Cairo",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 630,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من مصر إلى Istanbul",
+      "en": "Flight from Egypt to Istanbul",
+      "fr": "Vol de Égypte à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246324_2qoybss9l_1_1771406457727_0",
+    "countryId": "country_1769453246324_2qoybss9l",
+    "from": "Marrakech",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 475,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المغرب إلى Dubai",
+      "en": "Flight from Morocco to Dubai",
+      "fr": "Vol de Maroc à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246324_2qoybss9l_2_1771406457727_1",
+    "countryId": "country_1769453246324_2qoybss9l",
+    "from": "Marrakech",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 495,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من المغرب إلى Riyadh",
+      "en": "Flight from Morocco to Riyadh",
+      "fr": "Vol de Maroc à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246324_2qoybss9l_3_1771406457727_2",
+    "countryId": "country_1769453246324_2qoybss9l",
+    "from": "Marrakech",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 515,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المغرب إلى Doha",
+      "en": "Flight from Morocco to Doha",
+      "fr": "Vol de Maroc à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246324_2qoybss9l_4_1771406457727_3",
+    "countryId": "country_1769453246324_2qoybss9l",
+    "from": "Marrakech",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 535,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من المغرب إلى Cairo",
+      "en": "Flight from Morocco to Cairo",
+      "fr": "Vol de Maroc à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246324_2qoybss9l_5_1771406457727_4",
+    "countryId": "country_1769453246324_2qoybss9l",
+    "from": "Marrakech",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 555,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المغرب إلى Istanbul",
+      "en": "Flight from Morocco to Istanbul",
+      "fr": "Vol de Maroc à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246327_6woeptmoi_1_1771406457727_0",
+    "countryId": "country_1769453246327_6woeptmoi",
+    "from": "Petra",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 400,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الأردن إلى Dubai",
+      "en": "Flight from Jordan to Dubai",
+      "fr": "Vol de Jordanie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246327_6woeptmoi_2_1771406457727_1",
+    "countryId": "country_1769453246327_6woeptmoi",
+    "from": "Petra",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 420,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الأردن إلى Riyadh",
+      "en": "Flight from Jordan to Riyadh",
+      "fr": "Vol de Jordanie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246327_6woeptmoi_3_1771406457727_2",
+    "countryId": "country_1769453246327_6woeptmoi",
+    "from": "Petra",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 440,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الأردن إلى Doha",
+      "en": "Flight from Jordan to Doha",
+      "fr": "Vol de Jordanie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246327_6woeptmoi_4_1771406457727_3",
+    "countryId": "country_1769453246327_6woeptmoi",
+    "from": "Petra",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 460,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الأردن إلى Cairo",
+      "en": "Flight from Jordan to Cairo",
+      "fr": "Vol de Jordanie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246327_6woeptmoi_5_1771406457727_4",
+    "countryId": "country_1769453246327_6woeptmoi",
+    "from": "Petra",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 480,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الأردن إلى Istanbul",
+      "en": "Flight from Jordan to Istanbul",
+      "fr": "Vol de Jordanie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246334_uwa8gaqai_1_1771406457727_0",
+    "countryId": "country_1769453246334_uwa8gaqai",
+    "from": "Beirut",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 375,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من لبنان إلى Dubai",
+      "en": "Flight from Lebanon to Dubai",
+      "fr": "Vol de Liban à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246334_uwa8gaqai_2_1771406457727_1",
+    "countryId": "country_1769453246334_uwa8gaqai",
+    "from": "Beirut",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 395,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من لبنان إلى Riyadh",
+      "en": "Flight from Lebanon to Riyadh",
+      "fr": "Vol de Liban à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246334_uwa8gaqai_3_1771406457727_2",
+    "countryId": "country_1769453246334_uwa8gaqai",
+    "from": "Beirut",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 415,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من لبنان إلى Doha",
+      "en": "Flight from Lebanon to Doha",
+      "fr": "Vol de Liban à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246334_uwa8gaqai_4_1771406457727_3",
+    "countryId": "country_1769453246334_uwa8gaqai",
+    "from": "Beirut",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 435,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من لبنان إلى Cairo",
+      "en": "Flight from Lebanon to Cairo",
+      "fr": "Vol de Liban à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246334_uwa8gaqai_5_1771406457727_4",
+    "countryId": "country_1769453246334_uwa8gaqai",
+    "from": "Beirut",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 455,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من لبنان إلى Istanbul",
+      "en": "Flight from Lebanon to Istanbul",
+      "fr": "Vol de Liban à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246342_zdhswztak_1_1771406457727_0",
+    "countryId": "country_1769453246342_zdhswztak",
+    "from": "Damascus",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 325,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سوريا إلى Dubai",
+      "en": "Flight from Syria to Dubai",
+      "fr": "Vol de Syrie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246342_zdhswztak_2_1771406457727_1",
+    "countryId": "country_1769453246342_zdhswztak",
+    "from": "Damascus",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 345,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من سوريا إلى Riyadh",
+      "en": "Flight from Syria to Riyadh",
+      "fr": "Vol de Syrie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246342_zdhswztak_3_1771406457727_2",
+    "countryId": "country_1769453246342_zdhswztak",
+    "from": "Damascus",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 365,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سوريا إلى Doha",
+      "en": "Flight from Syria to Doha",
+      "fr": "Vol de Syrie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246342_zdhswztak_4_1771406457727_3",
+    "countryId": "country_1769453246342_zdhswztak",
+    "from": "Damascus",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 385,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من سوريا إلى Cairo",
+      "en": "Flight from Syria to Cairo",
+      "fr": "Vol de Syrie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246342_zdhswztak_5_1771406457727_4",
+    "countryId": "country_1769453246342_zdhswztak",
+    "from": "Damascus",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 405,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سوريا إلى Istanbul",
+      "en": "Flight from Syria to Istanbul",
+      "fr": "Vol de Syrie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246346_ypmaz059j_1_1771406457727_0",
+    "countryId": "country_1769453246346_ypmaz059j",
+    "from": "Baghdad",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 310,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من العراق إلى Dubai",
+      "en": "Flight from Iraq to Dubai",
+      "fr": "Vol de Irak à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246346_ypmaz059j_2_1771406457727_1",
+    "countryId": "country_1769453246346_ypmaz059j",
+    "from": "Baghdad",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 330,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من العراق إلى Riyadh",
+      "en": "Flight from Iraq to Riyadh",
+      "fr": "Vol de Irak à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246346_ypmaz059j_3_1771406457727_2",
+    "countryId": "country_1769453246346_ypmaz059j",
+    "from": "Baghdad",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 350,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من العراق إلى Doha",
+      "en": "Flight from Iraq to Doha",
+      "fr": "Vol de Irak à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246346_ypmaz059j_4_1771406457727_3",
+    "countryId": "country_1769453246346_ypmaz059j",
+    "from": "Baghdad",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 370,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من العراق إلى Cairo",
+      "en": "Flight from Iraq to Cairo",
+      "fr": "Vol de Irak à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246346_ypmaz059j_5_1771406457727_4",
+    "countryId": "country_1769453246346_ypmaz059j",
+    "from": "Baghdad",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 390,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من العراق إلى Istanbul",
+      "en": "Flight from Iraq to Istanbul",
+      "fr": "Vol de Irak à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246357_5spgi247g_1_1771406457727_0",
+    "countryId": "country_1769453246357_5spgi247g",
+    "from": "Kuwait City",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 340,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الكويت إلى Dubai",
+      "en": "Flight from Kuwait to Dubai",
+      "fr": "Vol de Koweït à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246357_5spgi247g_2_1771406457727_1",
+    "countryId": "country_1769453246357_5spgi247g",
+    "from": "Kuwait City",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 360,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الكويت إلى Riyadh",
+      "en": "Flight from Kuwait to Riyadh",
+      "fr": "Vol de Koweït à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246357_5spgi247g_3_1771406457727_2",
+    "countryId": "country_1769453246357_5spgi247g",
+    "from": "Kuwait City",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 380,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الكويت إلى Doha",
+      "en": "Flight from Kuwait to Doha",
+      "fr": "Vol de Koweït à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246357_5spgi247g_4_1771406457727_3",
+    "countryId": "country_1769453246357_5spgi247g",
+    "from": "Kuwait City",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 400,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الكويت إلى Cairo",
+      "en": "Flight from Kuwait to Cairo",
+      "fr": "Vol de Koweït à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246357_5spgi247g_5_1771406457727_4",
+    "countryId": "country_1769453246357_5spgi247g",
+    "from": "Kuwait City",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 420,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الكويت إلى Istanbul",
+      "en": "Flight from Kuwait to Istanbul",
+      "fr": "Vol de Koweït à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246365_f64ktw1ro_1_1771406457727_0",
+    "countryId": "country_1769453246365_f64ktw1ro",
+    "from": "Manama",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 350,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من البحرين إلى Dubai",
+      "en": "Flight from Bahrain to Dubai",
+      "fr": "Vol de Bahreïn à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246365_f64ktw1ro_2_1771406457727_1",
+    "countryId": "country_1769453246365_f64ktw1ro",
+    "from": "Manama",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 370,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من البحرين إلى Riyadh",
+      "en": "Flight from Bahrain to Riyadh",
+      "fr": "Vol de Bahreïn à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246365_f64ktw1ro_3_1771406457727_2",
+    "countryId": "country_1769453246365_f64ktw1ro",
+    "from": "Manama",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 390,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من البحرين إلى Doha",
+      "en": "Flight from Bahrain to Doha",
+      "fr": "Vol de Bahreïn à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246365_f64ktw1ro_4_1771406457727_3",
+    "countryId": "country_1769453246365_f64ktw1ro",
+    "from": "Manama",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 410,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من البحرين إلى Cairo",
+      "en": "Flight from Bahrain to Cairo",
+      "fr": "Vol de Bahreïn à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246365_f64ktw1ro_5_1771406457727_4",
+    "countryId": "country_1769453246365_f64ktw1ro",
+    "from": "Manama",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 430,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من البحرين إلى Istanbul",
+      "en": "Flight from Bahrain to Istanbul",
+      "fr": "Vol de Bahreïn à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246371_qjcancmyg_1_1771406457727_0",
+    "countryId": "country_1769453246371_qjcancmyg",
+    "from": "Doha",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 375,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من قطر إلى Dubai",
+      "en": "Flight from Qatar to Dubai",
+      "fr": "Vol de Qatar à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246371_qjcancmyg_2_1771406457727_1",
+    "countryId": "country_1769453246371_qjcancmyg",
+    "from": "Doha",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 395,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من قطر إلى Riyadh",
+      "en": "Flight from Qatar to Riyadh",
+      "fr": "Vol de Qatar à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246371_qjcancmyg_3_1771406457727_2",
+    "countryId": "country_1769453246371_qjcancmyg",
+    "from": "Doha",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 415,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من قطر إلى Doha",
+      "en": "Flight from Qatar to Doha",
+      "fr": "Vol de Qatar à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246371_qjcancmyg_4_1771406457727_3",
+    "countryId": "country_1769453246371_qjcancmyg",
+    "from": "Doha",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 435,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من قطر إلى Cairo",
+      "en": "Flight from Qatar to Cairo",
+      "fr": "Vol de Qatar à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246371_qjcancmyg_5_1771406457727_4",
+    "countryId": "country_1769453246371_qjcancmyg",
+    "from": "Doha",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 455,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من قطر إلى Istanbul",
+      "en": "Flight from Qatar to Istanbul",
+      "fr": "Vol de Qatar à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246389_s1pxjs59h_1_1771406457727_0",
+    "countryId": "country_1769453246389_s1pxjs59h",
+    "from": "Muscat",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 425,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من عُمان إلى Dubai",
+      "en": "Flight from Oman to Dubai",
+      "fr": "Vol de Oman à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246389_s1pxjs59h_2_1771406457727_1",
+    "countryId": "country_1769453246389_s1pxjs59h",
+    "from": "Muscat",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 445,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من عُمان إلى Riyadh",
+      "en": "Flight from Oman to Riyadh",
+      "fr": "Vol de Oman à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246389_s1pxjs59h_3_1771406457727_2",
+    "countryId": "country_1769453246389_s1pxjs59h",
+    "from": "Muscat",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 465,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من عُمان إلى Doha",
+      "en": "Flight from Oman to Doha",
+      "fr": "Vol de Oman à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246389_s1pxjs59h_4_1771406457727_3",
+    "countryId": "country_1769453246389_s1pxjs59h",
+    "from": "Muscat",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 485,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من عُمان إلى Cairo",
+      "en": "Flight from Oman to Cairo",
+      "fr": "Vol de Oman à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246389_s1pxjs59h_5_1771406457727_4",
+    "countryId": "country_1769453246389_s1pxjs59h",
+    "from": "Muscat",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 505,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من عُمان إلى Istanbul",
+      "en": "Flight from Oman to Istanbul",
+      "fr": "Vol de Oman à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246397_ys9pdyo5o_1_1771406457727_0",
+    "countryId": "country_1769453246397_ys9pdyo5o",
+    "from": "Sanaa",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 300,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من اليمن إلى Dubai",
+      "en": "Flight from Yemen to Dubai",
+      "fr": "Vol de Yémen à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246397_ys9pdyo5o_2_1771406457727_1",
+    "countryId": "country_1769453246397_ys9pdyo5o",
+    "from": "Sanaa",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 320,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من اليمن إلى Riyadh",
+      "en": "Flight from Yemen to Riyadh",
+      "fr": "Vol de Yémen à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246397_ys9pdyo5o_3_1771406457727_2",
+    "countryId": "country_1769453246397_ys9pdyo5o",
+    "from": "Sanaa",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 340,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من اليمن إلى Doha",
+      "en": "Flight from Yemen to Doha",
+      "fr": "Vol de Yémen à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246397_ys9pdyo5o_4_1771406457727_3",
+    "countryId": "country_1769453246397_ys9pdyo5o",
+    "from": "Sanaa",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 360,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من اليمن إلى Cairo",
+      "en": "Flight from Yemen to Cairo",
+      "fr": "Vol de Yémen à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246397_ys9pdyo5o_5_1771406457727_4",
+    "countryId": "country_1769453246397_ys9pdyo5o",
+    "from": "Sanaa",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 380,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من اليمن إلى Istanbul",
+      "en": "Flight from Yemen to Istanbul",
+      "fr": "Vol de Yémen à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246410_kk5tubo06_1_1771406457727_0",
+    "countryId": "country_1769453246410_kk5tubo06",
+    "from": "Jerusalem",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 400,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من فلسطين إلى Dubai",
+      "en": "Flight from Palestine to Dubai",
+      "fr": "Vol de Palestine à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246410_kk5tubo06_2_1771406457727_1",
+    "countryId": "country_1769453246410_kk5tubo06",
+    "from": "Jerusalem",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 420,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من فلسطين إلى Riyadh",
+      "en": "Flight from Palestine to Riyadh",
+      "fr": "Vol de Palestine à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246410_kk5tubo06_3_1771406457727_2",
+    "countryId": "country_1769453246410_kk5tubo06",
+    "from": "Jerusalem",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 440,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من فلسطين إلى Doha",
+      "en": "Flight from Palestine to Doha",
+      "fr": "Vol de Palestine à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246410_kk5tubo06_4_1771406457727_3",
+    "countryId": "country_1769453246410_kk5tubo06",
+    "from": "Jerusalem",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 460,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من فلسطين إلى Cairo",
+      "en": "Flight from Palestine to Cairo",
+      "fr": "Vol de Palestine à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246410_kk5tubo06_5_1771406457727_4",
+    "countryId": "country_1769453246410_kk5tubo06",
+    "from": "Jerusalem",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 480,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من فلسطين إلى Istanbul",
+      "en": "Flight from Palestine to Istanbul",
+      "fr": "Vol de Palestine à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246426_wvb0zd9x6_1_1771406457727_0",
+    "countryId": "country_1769453246426_wvb0zd9x6",
+    "from": "Tunis",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 450,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من تونس إلى Dubai",
+      "en": "Flight from Tunisia to Dubai",
+      "fr": "Vol de Tunisie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246426_wvb0zd9x6_2_1771406457727_1",
+    "countryId": "country_1769453246426_wvb0zd9x6",
+    "from": "Tunis",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 470,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من تونس إلى Riyadh",
+      "en": "Flight from Tunisia to Riyadh",
+      "fr": "Vol de Tunisie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246426_wvb0zd9x6_3_1771406457727_2",
+    "countryId": "country_1769453246426_wvb0zd9x6",
+    "from": "Tunis",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 490,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من تونس إلى Doha",
+      "en": "Flight from Tunisia to Doha",
+      "fr": "Vol de Tunisie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246426_wvb0zd9x6_4_1771406457727_3",
+    "countryId": "country_1769453246426_wvb0zd9x6",
+    "from": "Tunis",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 510,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من تونس إلى Cairo",
+      "en": "Flight from Tunisia to Cairo",
+      "fr": "Vol de Tunisie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246426_wvb0zd9x6_5_1771406457727_4",
+    "countryId": "country_1769453246426_wvb0zd9x6",
+    "from": "Tunis",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 530,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من تونس إلى Istanbul",
+      "en": "Flight from Tunisia to Istanbul",
+      "fr": "Vol de Tunisie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246441_2vddsebrn_1_1771406457727_0",
+    "countryId": "country_1769453246441_2vddsebrn",
+    "from": "Algiers",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 375,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الجزائر إلى Dubai",
+      "en": "Flight from Algeria to Dubai",
+      "fr": "Vol de Algérie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246441_2vddsebrn_2_1771406457727_1",
+    "countryId": "country_1769453246441_2vddsebrn",
+    "from": "Algiers",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 395,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الجزائر إلى Riyadh",
+      "en": "Flight from Algeria to Riyadh",
+      "fr": "Vol de Algérie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246441_2vddsebrn_3_1771406457727_2",
+    "countryId": "country_1769453246441_2vddsebrn",
+    "from": "Algiers",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 415,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الجزائر إلى Doha",
+      "en": "Flight from Algeria to Doha",
+      "fr": "Vol de Algérie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246441_2vddsebrn_4_1771406457727_3",
+    "countryId": "country_1769453246441_2vddsebrn",
+    "from": "Algiers",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 435,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الجزائر إلى Cairo",
+      "en": "Flight from Algeria to Cairo",
+      "fr": "Vol de Algérie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246441_2vddsebrn_5_1771406457727_4",
+    "countryId": "country_1769453246441_2vddsebrn",
+    "from": "Algiers",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 455,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الجزائر إلى Istanbul",
+      "en": "Flight from Algeria to Istanbul",
+      "fr": "Vol de Algérie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246452_lgbqer9eg_1_1771406457727_0",
+    "countryId": "country_1769453246452_lgbqer9eg",
+    "from": "Tripoli",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 290,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من ليبيا إلى Dubai",
+      "en": "Flight from Libya to Dubai",
+      "fr": "Vol de Libye à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246452_lgbqer9eg_2_1771406457727_1",
+    "countryId": "country_1769453246452_lgbqer9eg",
+    "from": "Tripoli",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 310,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من ليبيا إلى Riyadh",
+      "en": "Flight from Libya to Riyadh",
+      "fr": "Vol de Libye à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246452_lgbqer9eg_3_1771406457727_2",
+    "countryId": "country_1769453246452_lgbqer9eg",
+    "from": "Tripoli",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 330,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من ليبيا إلى Doha",
+      "en": "Flight from Libya to Doha",
+      "fr": "Vol de Libye à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246452_lgbqer9eg_4_1771406457727_3",
+    "countryId": "country_1769453246452_lgbqer9eg",
+    "from": "Tripoli",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 350,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من ليبيا إلى Cairo",
+      "en": "Flight from Libya to Cairo",
+      "fr": "Vol de Libye à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246452_lgbqer9eg_5_1771406457727_4",
+    "countryId": "country_1769453246452_lgbqer9eg",
+    "from": "Tripoli",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 370,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من ليبيا إلى Istanbul",
+      "en": "Flight from Libya to Istanbul",
+      "fr": "Vol de Libye à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246460_qf39vo8ab_1_1771406457727_0",
+    "countryId": "country_1769453246460_qf39vo8ab",
+    "from": "Nouakchott",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 310,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من موريتانيا إلى Dubai",
+      "en": "Flight from Mauritania to Dubai",
+      "fr": "Vol de Mauritanie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246460_qf39vo8ab_2_1771406457727_1",
+    "countryId": "country_1769453246460_qf39vo8ab",
+    "from": "Nouakchott",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 330,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من موريتانيا إلى Riyadh",
+      "en": "Flight from Mauritania to Riyadh",
+      "fr": "Vol de Mauritanie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.727Z",
+    "updatedAt": "2026-02-18T09:20:57.727Z"
+  },
+  {
+    "id": "flight_country_1769453246460_qf39vo8ab_3_1771406457728_2",
+    "countryId": "country_1769453246460_qf39vo8ab",
+    "from": "Nouakchott",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 350,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من موريتانيا إلى Doha",
+      "en": "Flight from Mauritania to Doha",
+      "fr": "Vol de Mauritanie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246460_qf39vo8ab_4_1771406457728_3",
+    "countryId": "country_1769453246460_qf39vo8ab",
+    "from": "Nouakchott",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 370,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من موريتانيا إلى Cairo",
+      "en": "Flight from Mauritania to Cairo",
+      "fr": "Vol de Mauritanie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246460_qf39vo8ab_5_1771406457728_4",
+    "countryId": "country_1769453246460_qf39vo8ab",
+    "from": "Nouakchott",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 390,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من موريتانيا إلى Istanbul",
+      "en": "Flight from Mauritania to Istanbul",
+      "fr": "Vol de Mauritanie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246480_th6x5x91b_1_1771406457728_0",
+    "countryId": "country_1769453246480_th6x5x91b",
+    "from": "Mogadishu",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 280,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الصومال إلى Dubai",
+      "en": "Flight from Somalia to Dubai",
+      "fr": "Vol de Somalie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246480_th6x5x91b_2_1771406457728_1",
+    "countryId": "country_1769453246480_th6x5x91b",
+    "from": "Mogadishu",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 300,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الصومال إلى Riyadh",
+      "en": "Flight from Somalia to Riyadh",
+      "fr": "Vol de Somalie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246480_th6x5x91b_3_1771406457728_2",
+    "countryId": "country_1769453246480_th6x5x91b",
+    "from": "Mogadishu",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 320,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الصومال إلى Doha",
+      "en": "Flight from Somalia to Doha",
+      "fr": "Vol de Somalie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246480_th6x5x91b_4_1771406457728_3",
+    "countryId": "country_1769453246480_th6x5x91b",
+    "from": "Mogadishu",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 340,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الصومال إلى Cairo",
+      "en": "Flight from Somalia to Cairo",
+      "fr": "Vol de Somalie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246480_th6x5x91b_5_1771406457728_4",
+    "countryId": "country_1769453246480_th6x5x91b",
+    "from": "Mogadishu",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 360,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الصومال إلى Istanbul",
+      "en": "Flight from Somalia to Istanbul",
+      "fr": "Vol de Somalie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246495_ksaezo0k0_1_1771406457728_0",
+    "countryId": "country_1769453246495_ksaezo0k0",
+    "from": "Djibouti City",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 290,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جيبوتي إلى Dubai",
+      "en": "Flight from Djibouti to Dubai",
+      "fr": "Vol de Djibouti à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246495_ksaezo0k0_2_1771406457728_1",
+    "countryId": "country_1769453246495_ksaezo0k0",
+    "from": "Djibouti City",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 310,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من جيبوتي إلى Riyadh",
+      "en": "Flight from Djibouti to Riyadh",
+      "fr": "Vol de Djibouti à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246495_ksaezo0k0_3_1771406457728_2",
+    "countryId": "country_1769453246495_ksaezo0k0",
+    "from": "Djibouti City",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 330,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جيبوتي إلى Doha",
+      "en": "Flight from Djibouti to Doha",
+      "fr": "Vol de Djibouti à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246495_ksaezo0k0_4_1771406457728_3",
+    "countryId": "country_1769453246495_ksaezo0k0",
+    "from": "Djibouti City",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 350,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من جيبوتي إلى Cairo",
+      "en": "Flight from Djibouti to Cairo",
+      "fr": "Vol de Djibouti à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246495_ksaezo0k0_5_1771406457728_4",
+    "countryId": "country_1769453246495_ksaezo0k0",
+    "from": "Djibouti City",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 370,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جيبوتي إلى Istanbul",
+      "en": "Flight from Djibouti to Istanbul",
+      "fr": "Vol de Djibouti à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246519_zbf4eyrby_1_1771406457728_0",
+    "countryId": "country_1769453246519_zbf4eyrby",
+    "from": "Moroni",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 300,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جزر القمر إلى Dubai",
+      "en": "Flight from Comoros to Dubai",
+      "fr": "Vol de Comores à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246519_zbf4eyrby_2_1771406457728_1",
+    "countryId": "country_1769453246519_zbf4eyrby",
+    "from": "Moroni",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 320,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من جزر القمر إلى Riyadh",
+      "en": "Flight from Comoros to Riyadh",
+      "fr": "Vol de Comores à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246519_zbf4eyrby_3_1771406457728_2",
+    "countryId": "country_1769453246519_zbf4eyrby",
+    "from": "Moroni",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 340,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جزر القمر إلى Doha",
+      "en": "Flight from Comoros to Doha",
+      "fr": "Vol de Comores à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246519_zbf4eyrby_4_1771406457728_3",
+    "countryId": "country_1769453246519_zbf4eyrby",
+    "from": "Moroni",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 360,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من جزر القمر إلى Cairo",
+      "en": "Flight from Comoros to Cairo",
+      "fr": "Vol de Comores à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246519_zbf4eyrby_5_1771406457728_4",
+    "countryId": "country_1769453246519_zbf4eyrby",
+    "from": "Moroni",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 380,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جزر القمر إلى Istanbul",
+      "en": "Flight from Comoros to Istanbul",
+      "fr": "Vol de Comores à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246549_h6pz7u4tg_1_1771406457728_0",
+    "countryId": "country_1769453246549_h6pz7u4tg",
+    "from": "Istanbul",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 650,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من تركيا إلى Dubai",
+      "en": "Flight from Turkey to Dubai",
+      "fr": "Vol de Turquie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246549_h6pz7u4tg_2_1771406457728_1",
+    "countryId": "country_1769453246549_h6pz7u4tg",
+    "from": "Istanbul",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 670,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من تركيا إلى Riyadh",
+      "en": "Flight from Turkey to Riyadh",
+      "fr": "Vol de Turquie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246549_h6pz7u4tg_3_1771406457728_2",
+    "countryId": "country_1769453246549_h6pz7u4tg",
+    "from": "Istanbul",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 690,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من تركيا إلى Doha",
+      "en": "Flight from Turkey to Doha",
+      "fr": "Vol de Turquie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246549_h6pz7u4tg_4_1771406457728_3",
+    "countryId": "country_1769453246549_h6pz7u4tg",
+    "from": "Istanbul",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 710,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من تركيا إلى Cairo",
+      "en": "Flight from Turkey to Cairo",
+      "fr": "Vol de Turquie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246549_h6pz7u4tg_5_1771406457728_4",
+    "countryId": "country_1769453246549_h6pz7u4tg",
+    "from": "Istanbul",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 730,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من تركيا إلى Istanbul",
+      "en": "Flight from Turkey to Istanbul",
+      "fr": "Vol de Turquie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246563_h0jwkxasp_1_1771406457728_0",
+    "countryId": "country_1769453246563_h0jwkxasp",
+    "from": "Isfahan",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 425,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إيران إلى Dubai",
+      "en": "Flight from Iran to Dubai",
+      "fr": "Vol de Iran à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246563_h0jwkxasp_2_1771406457728_1",
+    "countryId": "country_1769453246563_h0jwkxasp",
+    "from": "Isfahan",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 445,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من إيران إلى Riyadh",
+      "en": "Flight from Iran to Riyadh",
+      "fr": "Vol de Iran à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246563_h0jwkxasp_3_1771406457728_2",
+    "countryId": "country_1769453246563_h0jwkxasp",
+    "from": "Isfahan",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 465,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إيران إلى Doha",
+      "en": "Flight from Iran to Doha",
+      "fr": "Vol de Iran à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246563_h0jwkxasp_4_1771406457728_3",
+    "countryId": "country_1769453246563_h0jwkxasp",
+    "from": "Isfahan",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 485,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من إيران إلى Cairo",
+      "en": "Flight from Iran to Cairo",
+      "fr": "Vol de Iran à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246563_h0jwkxasp_5_1771406457728_4",
+    "countryId": "country_1769453246563_h0jwkxasp",
+    "from": "Isfahan",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 505,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إيران إلى Istanbul",
+      "en": "Flight from Iran to Istanbul",
+      "fr": "Vol de Iran à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246578_i5bgodfn6_1_1771406457728_0",
+    "countryId": "country_1769453246578_i5bgodfn6",
+    "from": "Kabul",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 265,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من أفغانستان إلى Dubai",
+      "en": "Flight from Afghanistan to Dubai",
+      "fr": "Vol de Afghanistan à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246578_i5bgodfn6_2_1771406457728_1",
+    "countryId": "country_1769453246578_i5bgodfn6",
+    "from": "Kabul",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 285,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من أفغانستان إلى Riyadh",
+      "en": "Flight from Afghanistan to Riyadh",
+      "fr": "Vol de Afghanistan à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246578_i5bgodfn6_3_1771406457728_2",
+    "countryId": "country_1769453246578_i5bgodfn6",
+    "from": "Kabul",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 305,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من أفغانستان إلى Doha",
+      "en": "Flight from Afghanistan to Doha",
+      "fr": "Vol de Afghanistan à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246578_i5bgodfn6_4_1771406457728_3",
+    "countryId": "country_1769453246578_i5bgodfn6",
+    "from": "Kabul",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 325,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من أفغانستان إلى Cairo",
+      "en": "Flight from Afghanistan to Cairo",
+      "fr": "Vol de Afghanistan à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246578_i5bgodfn6_5_1771406457728_4",
+    "countryId": "country_1769453246578_i5bgodfn6",
+    "from": "Kabul",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 345,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من أفغانستان إلى Istanbul",
+      "en": "Flight from Afghanistan to Istanbul",
+      "fr": "Vol de Afghanistan à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246612_i9tqgftyu_1_1771406457728_0",
+    "countryId": "country_1769453246612_i9tqgftyu",
+    "from": "Islamabad",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 375,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من باكستان إلى Dubai",
+      "en": "Flight from Pakistan to Dubai",
+      "fr": "Vol de Pakistan à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246612_i9tqgftyu_2_1771406457728_1",
+    "countryId": "country_1769453246612_i9tqgftyu",
+    "from": "Islamabad",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 395,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من باكستان إلى Riyadh",
+      "en": "Flight from Pakistan to Riyadh",
+      "fr": "Vol de Pakistan à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246612_i9tqgftyu_3_1771406457728_2",
+    "countryId": "country_1769453246612_i9tqgftyu",
+    "from": "Islamabad",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 415,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من باكستان إلى Doha",
+      "en": "Flight from Pakistan to Doha",
+      "fr": "Vol de Pakistan à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246612_i9tqgftyu_4_1771406457728_3",
+    "countryId": "country_1769453246612_i9tqgftyu",
+    "from": "Islamabad",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 435,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من باكستان إلى Cairo",
+      "en": "Flight from Pakistan to Cairo",
+      "fr": "Vol de Pakistan à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246612_i9tqgftyu_5_1771406457728_4",
+    "countryId": "country_1769453246612_i9tqgftyu",
+    "from": "Islamabad",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 455,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من باكستان إلى Istanbul",
+      "en": "Flight from Pakistan to Istanbul",
+      "fr": "Vol de Pakistan à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246629_dfbkrcaud_1_1771406457728_0",
+    "countryId": "country_1769453246629_dfbkrcaud",
+    "from": "Dhaka",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 325,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بنغلاديش إلى Dubai",
+      "en": "Flight from Bangladesh to Dubai",
+      "fr": "Vol de Bangladesh à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246629_dfbkrcaud_2_1771406457728_1",
+    "countryId": "country_1769453246629_dfbkrcaud",
+    "from": "Dhaka",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 345,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من بنغلاديش إلى Riyadh",
+      "en": "Flight from Bangladesh to Riyadh",
+      "fr": "Vol de Bangladesh à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246629_dfbkrcaud_3_1771406457728_2",
+    "countryId": "country_1769453246629_dfbkrcaud",
+    "from": "Dhaka",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 365,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بنغلاديش إلى Doha",
+      "en": "Flight from Bangladesh to Doha",
+      "fr": "Vol de Bangladesh à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246629_dfbkrcaud_4_1771406457728_3",
+    "countryId": "country_1769453246629_dfbkrcaud",
+    "from": "Dhaka",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 385,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من بنغلاديش إلى Cairo",
+      "en": "Flight from Bangladesh to Cairo",
+      "fr": "Vol de Bangladesh à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246629_dfbkrcaud_5_1771406457728_4",
+    "countryId": "country_1769453246629_dfbkrcaud",
+    "from": "Dhaka",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 405,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بنغلاديش إلى Istanbul",
+      "en": "Flight from Bangladesh to Istanbul",
+      "fr": "Vol de Bangladesh à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246645_rnkphbccd_1_1771406457728_0",
+    "countryId": "country_1769453246645_rnkphbccd",
+    "from": "Male",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 400,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جزر المالديف إلى Dubai",
+      "en": "Flight from Maldives to Dubai",
+      "fr": "Vol de Maldives à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246645_rnkphbccd_2_1771406457728_1",
+    "countryId": "country_1769453246645_rnkphbccd",
+    "from": "Male",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 420,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من جزر المالديف إلى Riyadh",
+      "en": "Flight from Maldives to Riyadh",
+      "fr": "Vol de Maldives à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246645_rnkphbccd_3_1771406457728_2",
+    "countryId": "country_1769453246645_rnkphbccd",
+    "from": "Male",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 440,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جزر المالديف إلى Doha",
+      "en": "Flight from Maldives to Doha",
+      "fr": "Vol de Maldives à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246645_rnkphbccd_4_1771406457728_3",
+    "countryId": "country_1769453246645_rnkphbccd",
+    "from": "Male",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 460,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من جزر المالديف إلى Cairo",
+      "en": "Flight from Maldives to Cairo",
+      "fr": "Vol de Maldives à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246645_rnkphbccd_5_1771406457728_4",
+    "countryId": "country_1769453246645_rnkphbccd",
+    "from": "Male",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 480,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جزر المالديف إلى Istanbul",
+      "en": "Flight from Maldives to Istanbul",
+      "fr": "Vol de Maldives à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246661_1rqja8qkz_1_1771406457728_0",
+    "countryId": "country_1769453246661_1rqja8qkz",
+    "from": "Bali",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 550,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إندونيسيا إلى Dubai",
+      "en": "Flight from Indonesia to Dubai",
+      "fr": "Vol de Indonésie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246661_1rqja8qkz_2_1771406457728_1",
+    "countryId": "country_1769453246661_1rqja8qkz",
+    "from": "Bali",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 570,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من إندونيسيا إلى Riyadh",
+      "en": "Flight from Indonesia to Riyadh",
+      "fr": "Vol de Indonésie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246661_1rqja8qkz_3_1771406457728_2",
+    "countryId": "country_1769453246661_1rqja8qkz",
+    "from": "Bali",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 590,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إندونيسيا إلى Doha",
+      "en": "Flight from Indonesia to Doha",
+      "fr": "Vol de Indonésie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246661_1rqja8qkz_4_1771406457728_3",
+    "countryId": "country_1769453246661_1rqja8qkz",
+    "from": "Bali",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 610,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من إندونيسيا إلى Cairo",
+      "en": "Flight from Indonesia to Cairo",
+      "fr": "Vol de Indonésie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246661_1rqja8qkz_5_1771406457728_4",
+    "countryId": "country_1769453246661_1rqja8qkz",
+    "from": "Bali",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 630,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إندونيسيا إلى Istanbul",
+      "en": "Flight from Indonesia to Istanbul",
+      "fr": "Vol de Indonésie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246679_z75rhed3i_1_1771406457728_0",
+    "countryId": "country_1769453246679_z75rhed3i",
+    "from": "Kuala Lumpur",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 475,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من ماليزيا إلى Dubai",
+      "en": "Flight from Malaysia to Dubai",
+      "fr": "Vol de Malaisie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246679_z75rhed3i_2_1771406457728_1",
+    "countryId": "country_1769453246679_z75rhed3i",
+    "from": "Kuala Lumpur",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 495,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من ماليزيا إلى Riyadh",
+      "en": "Flight from Malaysia to Riyadh",
+      "fr": "Vol de Malaisie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246679_z75rhed3i_3_1771406457728_2",
+    "countryId": "country_1769453246679_z75rhed3i",
+    "from": "Kuala Lumpur",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 515,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من ماليزيا إلى Doha",
+      "en": "Flight from Malaysia to Doha",
+      "fr": "Vol de Malaisie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246679_z75rhed3i_4_1771406457728_3",
+    "countryId": "country_1769453246679_z75rhed3i",
+    "from": "Kuala Lumpur",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 535,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من ماليزيا إلى Cairo",
+      "en": "Flight from Malaysia to Cairo",
+      "fr": "Vol de Malaisie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246679_z75rhed3i_5_1771406457728_4",
+    "countryId": "country_1769453246679_z75rhed3i",
+    "from": "Kuala Lumpur",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 555,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من ماليزيا إلى Istanbul",
+      "en": "Flight from Malaysia to Istanbul",
+      "fr": "Vol de Malaisie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246695_95apoqonp_1_1771406457728_0",
+    "countryId": "country_1769453246695_95apoqonp",
+    "from": "Bandar Seri Begawan",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 310,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بروناي إلى Dubai",
+      "en": "Flight from Brunei to Dubai",
+      "fr": "Vol de Brunei à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246695_95apoqonp_2_1771406457728_1",
+    "countryId": "country_1769453246695_95apoqonp",
+    "from": "Bandar Seri Begawan",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 330,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من بروناي إلى Riyadh",
+      "en": "Flight from Brunei to Riyadh",
+      "fr": "Vol de Brunei à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246695_95apoqonp_3_1771406457728_2",
+    "countryId": "country_1769453246695_95apoqonp",
+    "from": "Bandar Seri Begawan",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 350,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بروناي إلى Doha",
+      "en": "Flight from Brunei to Doha",
+      "fr": "Vol de Brunei à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246695_95apoqonp_4_1771406457728_3",
+    "countryId": "country_1769453246695_95apoqonp",
+    "from": "Bandar Seri Begawan",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 370,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من بروناي إلى Cairo",
+      "en": "Flight from Brunei to Cairo",
+      "fr": "Vol de Brunei à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246695_95apoqonp_5_1771406457728_4",
+    "countryId": "country_1769453246695_95apoqonp",
+    "from": "Bandar Seri Begawan",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 390,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بروناي إلى Istanbul",
+      "en": "Flight from Brunei to Istanbul",
+      "fr": "Vol de Brunei à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246711_ur8uda4ul_1_1771406457728_0",
+    "countryId": "country_1769453246711_ur8uda4ul",
+    "from": "Paris",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 675,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من فرنسا إلى Dubai",
+      "en": "Flight from France to Dubai",
+      "fr": "Vol de France à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246711_ur8uda4ul_2_1771406457728_1",
+    "countryId": "country_1769453246711_ur8uda4ul",
+    "from": "Paris",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 695,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من فرنسا إلى Riyadh",
+      "en": "Flight from France to Riyadh",
+      "fr": "Vol de France à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246711_ur8uda4ul_3_1771406457728_2",
+    "countryId": "country_1769453246711_ur8uda4ul",
+    "from": "Paris",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 715,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من فرنسا إلى Doha",
+      "en": "Flight from France to Doha",
+      "fr": "Vol de France à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246711_ur8uda4ul_4_1771406457728_3",
+    "countryId": "country_1769453246711_ur8uda4ul",
+    "from": "Paris",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 735,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من فرنسا إلى Cairo",
+      "en": "Flight from France to Cairo",
+      "fr": "Vol de France à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246711_ur8uda4ul_5_1771406457728_4",
+    "countryId": "country_1769453246711_ur8uda4ul",
+    "from": "Paris",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 755,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من فرنسا إلى Istanbul",
+      "en": "Flight from France to Istanbul",
+      "fr": "Vol de France à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246739_rpfhugxeg_1_1771406457728_0",
+    "countryId": "country_1769453246739_rpfhugxeg",
+    "from": "Madrid",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 610,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إسبانيا إلى Dubai",
+      "en": "Flight from Spain to Dubai",
+      "fr": "Vol de Espagne à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246739_rpfhugxeg_2_1771406457728_1",
+    "countryId": "country_1769453246739_rpfhugxeg",
+    "from": "Madrid",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 630,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من إسبانيا إلى Riyadh",
+      "en": "Flight from Spain to Riyadh",
+      "fr": "Vol de Espagne à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246739_rpfhugxeg_3_1771406457728_2",
+    "countryId": "country_1769453246739_rpfhugxeg",
+    "from": "Madrid",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 650,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إسبانيا إلى Doha",
+      "en": "Flight from Spain to Doha",
+      "fr": "Vol de Espagne à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246739_rpfhugxeg_4_1771406457728_3",
+    "countryId": "country_1769453246739_rpfhugxeg",
+    "from": "Madrid",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 670,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من إسبانيا إلى Cairo",
+      "en": "Flight from Spain to Cairo",
+      "fr": "Vol de Espagne à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246739_rpfhugxeg_5_1771406457728_4",
+    "countryId": "country_1769453246739_rpfhugxeg",
+    "from": "Madrid",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 690,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إسبانيا إلى Istanbul",
+      "en": "Flight from Spain to Istanbul",
+      "fr": "Vol de Espagne à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246764_614yfrmtl_1_1771406457728_0",
+    "countryId": "country_1769453246764_614yfrmtl",
+    "from": "Rome",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 725,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إيطاليا إلى Dubai",
+      "en": "Flight from Italy to Dubai",
+      "fr": "Vol de Italie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246764_614yfrmtl_2_1771406457728_1",
+    "countryId": "country_1769453246764_614yfrmtl",
+    "from": "Rome",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 745,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من إيطاليا إلى Riyadh",
+      "en": "Flight from Italy to Riyadh",
+      "fr": "Vol de Italie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246764_614yfrmtl_3_1771406457728_2",
+    "countryId": "country_1769453246764_614yfrmtl",
+    "from": "Rome",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 765,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إيطاليا إلى Doha",
+      "en": "Flight from Italy to Doha",
+      "fr": "Vol de Italie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246764_614yfrmtl_4_1771406457728_3",
+    "countryId": "country_1769453246764_614yfrmtl",
+    "from": "Rome",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 785,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من إيطاليا إلى Cairo",
+      "en": "Flight from Italy to Cairo",
+      "fr": "Vol de Italie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246764_614yfrmtl_5_1771406457728_4",
+    "countryId": "country_1769453246764_614yfrmtl",
+    "from": "Rome",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 805,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من إيطاليا إلى Istanbul",
+      "en": "Flight from Italy to Istanbul",
+      "fr": "Vol de Italie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246808_ezawth9hy_1_1771406457728_0",
+    "countryId": "country_1769453246808_ezawth9hy",
+    "from": "Berlin",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 590,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من ألمانيا إلى Dubai",
+      "en": "Flight from Germany to Dubai",
+      "fr": "Vol de Allemagne à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246808_ezawth9hy_2_1771406457728_1",
+    "countryId": "country_1769453246808_ezawth9hy",
+    "from": "Berlin",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 610,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من ألمانيا إلى Riyadh",
+      "en": "Flight from Germany to Riyadh",
+      "fr": "Vol de Allemagne à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246808_ezawth9hy_3_1771406457728_2",
+    "countryId": "country_1769453246808_ezawth9hy",
+    "from": "Berlin",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 630,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من ألمانيا إلى Doha",
+      "en": "Flight from Germany to Doha",
+      "fr": "Vol de Allemagne à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246808_ezawth9hy_4_1771406457728_3",
+    "countryId": "country_1769453246808_ezawth9hy",
+    "from": "Berlin",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 650,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من ألمانيا إلى Cairo",
+      "en": "Flight from Germany to Cairo",
+      "fr": "Vol de Allemagne à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246808_ezawth9hy_5_1771406457728_4",
+    "countryId": "country_1769453246808_ezawth9hy",
+    "from": "Berlin",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 670,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من ألمانيا إلى Istanbul",
+      "en": "Flight from Germany to Istanbul",
+      "fr": "Vol de Allemagne à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246843_pqi2or72z_1_1771406457728_0",
+    "countryId": "country_1769453246843_pqi2or72z",
+    "from": "Athens",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 640,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من اليونان إلى Dubai",
+      "en": "Flight from Greece to Dubai",
+      "fr": "Vol de Grèce à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246843_pqi2or72z_2_1771406457728_1",
+    "countryId": "country_1769453246843_pqi2or72z",
+    "from": "Athens",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 660,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من اليونان إلى Riyadh",
+      "en": "Flight from Greece to Riyadh",
+      "fr": "Vol de Grèce à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246843_pqi2or72z_3_1771406457728_2",
+    "countryId": "country_1769453246843_pqi2or72z",
+    "from": "Athens",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 680,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من اليونان إلى Doha",
+      "en": "Flight from Greece to Doha",
+      "fr": "Vol de Grèce à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246843_pqi2or72z_4_1771406457728_3",
+    "countryId": "country_1769453246843_pqi2or72z",
+    "from": "Athens",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 700,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من اليونان إلى Cairo",
+      "en": "Flight from Greece to Cairo",
+      "fr": "Vol de Grèce à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246843_pqi2or72z_5_1771406457728_4",
+    "countryId": "country_1769453246843_pqi2or72z",
+    "from": "Athens",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 720,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من اليونان إلى Istanbul",
+      "en": "Flight from Greece to Istanbul",
+      "fr": "Vol de Grèce à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246875_upf4movah_1_1771406457728_0",
+    "countryId": "country_1769453246875_upf4movah",
+    "from": "Lisbon",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 540,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من البرتغال إلى Dubai",
+      "en": "Flight from Portugal to Dubai",
+      "fr": "Vol de Portugal à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246875_upf4movah_2_1771406457728_1",
+    "countryId": "country_1769453246875_upf4movah",
+    "from": "Lisbon",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 560,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من البرتغال إلى Riyadh",
+      "en": "Flight from Portugal to Riyadh",
+      "fr": "Vol de Portugal à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246875_upf4movah_3_1771406457728_2",
+    "countryId": "country_1769453246875_upf4movah",
+    "from": "Lisbon",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 580,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من البرتغال إلى Doha",
+      "en": "Flight from Portugal to Doha",
+      "fr": "Vol de Portugal à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246875_upf4movah_4_1771406457728_3",
+    "countryId": "country_1769453246875_upf4movah",
+    "from": "Lisbon",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 600,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من البرتغال إلى Cairo",
+      "en": "Flight from Portugal to Cairo",
+      "fr": "Vol de Portugal à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246875_upf4movah_5_1771406457728_4",
+    "countryId": "country_1769453246875_upf4movah",
+    "from": "Lisbon",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 620,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من البرتغال إلى Istanbul",
+      "en": "Flight from Portugal to Istanbul",
+      "fr": "Vol de Portugal à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246910_eec0o70oa_1_1771406457728_0",
+    "countryId": "country_1769453246910_eec0o70oa",
+    "from": "Amsterdam",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 510,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من هولندا إلى Dubai",
+      "en": "Flight from Netherlands to Dubai",
+      "fr": "Vol de Pays-Bas à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246910_eec0o70oa_2_1771406457728_1",
+    "countryId": "country_1769453246910_eec0o70oa",
+    "from": "Amsterdam",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 530,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من هولندا إلى Riyadh",
+      "en": "Flight from Netherlands to Riyadh",
+      "fr": "Vol de Pays-Bas à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246910_eec0o70oa_3_1771406457728_2",
+    "countryId": "country_1769453246910_eec0o70oa",
+    "from": "Amsterdam",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 550,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من هولندا إلى Doha",
+      "en": "Flight from Netherlands to Doha",
+      "fr": "Vol de Pays-Bas à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246910_eec0o70oa_4_1771406457728_3",
+    "countryId": "country_1769453246910_eec0o70oa",
+    "from": "Amsterdam",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 570,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من هولندا إلى Cairo",
+      "en": "Flight from Netherlands to Cairo",
+      "fr": "Vol de Pays-Bas à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246910_eec0o70oa_5_1771406457728_4",
+    "countryId": "country_1769453246910_eec0o70oa",
+    "from": "Amsterdam",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 590,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من هولندا إلى Istanbul",
+      "en": "Flight from Netherlands to Istanbul",
+      "fr": "Vol de Pays-Bas à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246942_gbk87n5w2_1_1771406457728_0",
+    "countryId": "country_1769453246942_gbk87n5w2",
+    "from": "Brussels",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 460,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بلجيكا إلى Dubai",
+      "en": "Flight from Belgium to Dubai",
+      "fr": "Vol de Belgique à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246942_gbk87n5w2_2_1771406457728_1",
+    "countryId": "country_1769453246942_gbk87n5w2",
+    "from": "Brussels",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 480,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من بلجيكا إلى Riyadh",
+      "en": "Flight from Belgium to Riyadh",
+      "fr": "Vol de Belgique à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246942_gbk87n5w2_3_1771406457728_2",
+    "countryId": "country_1769453246942_gbk87n5w2",
+    "from": "Brussels",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 500,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بلجيكا إلى Doha",
+      "en": "Flight from Belgium to Doha",
+      "fr": "Vol de Belgique à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246942_gbk87n5w2_4_1771406457728_3",
+    "countryId": "country_1769453246942_gbk87n5w2",
+    "from": "Brussels",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 520,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من بلجيكا إلى Cairo",
+      "en": "Flight from Belgium to Cairo",
+      "fr": "Vol de Belgique à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246942_gbk87n5w2_5_1771406457728_4",
+    "countryId": "country_1769453246942_gbk87n5w2",
+    "from": "Brussels",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 540,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بلجيكا إلى Istanbul",
+      "en": "Flight from Belgium to Istanbul",
+      "fr": "Vol de Belgique à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246973_rc1jysgf2_1_1771406457728_0",
+    "countryId": "country_1769453246973_rc1jysgf2",
+    "from": "Zurich",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 575,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سويسرا إلى Dubai",
+      "en": "Flight from Switzerland to Dubai",
+      "fr": "Vol de Suisse à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246973_rc1jysgf2_2_1771406457728_1",
+    "countryId": "country_1769453246973_rc1jysgf2",
+    "from": "Zurich",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 595,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من سويسرا إلى Riyadh",
+      "en": "Flight from Switzerland to Riyadh",
+      "fr": "Vol de Suisse à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246973_rc1jysgf2_3_1771406457728_2",
+    "countryId": "country_1769453246973_rc1jysgf2",
+    "from": "Zurich",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 615,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سويسرا إلى Doha",
+      "en": "Flight from Switzerland to Doha",
+      "fr": "Vol de Suisse à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246973_rc1jysgf2_4_1771406457728_3",
+    "countryId": "country_1769453246973_rc1jysgf2",
+    "from": "Zurich",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 635,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من سويسرا إلى Cairo",
+      "en": "Flight from Switzerland to Cairo",
+      "fr": "Vol de Suisse à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246973_rc1jysgf2_5_1771406457728_4",
+    "countryId": "country_1769453246973_rc1jysgf2",
+    "from": "Zurich",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 655,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سويسرا إلى Istanbul",
+      "en": "Flight from Switzerland to Istanbul",
+      "fr": "Vol de Suisse à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246996_hie9trq8d_1_1771406457728_0",
+    "countryId": "country_1769453246996_hie9trq8d",
+    "from": "Vienna",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 525,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من النمسا إلى Dubai",
+      "en": "Flight from Austria to Dubai",
+      "fr": "Vol de Autriche à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246996_hie9trq8d_2_1771406457728_1",
+    "countryId": "country_1769453246996_hie9trq8d",
+    "from": "Vienna",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 545,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من النمسا إلى Riyadh",
+      "en": "Flight from Austria to Riyadh",
+      "fr": "Vol de Autriche à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246996_hie9trq8d_3_1771406457728_2",
+    "countryId": "country_1769453246996_hie9trq8d",
+    "from": "Vienna",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 565,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من النمسا إلى Doha",
+      "en": "Flight from Austria to Doha",
+      "fr": "Vol de Autriche à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246996_hie9trq8d_4_1771406457728_3",
+    "countryId": "country_1769453246996_hie9trq8d",
+    "from": "Vienna",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 585,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من النمسا إلى Cairo",
+      "en": "Flight from Austria to Cairo",
+      "fr": "Vol de Autriche à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453246996_hie9trq8d_5_1771406457728_4",
+    "countryId": "country_1769453246996_hie9trq8d",
+    "from": "Vienna",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 605,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من النمسا إلى Istanbul",
+      "en": "Flight from Austria to Istanbul",
+      "fr": "Vol de Autriche à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247034_ypsawk3br_1_1771406457728_0",
+    "countryId": "country_1769453247034_ypsawk3br",
+    "from": "London",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 660,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المملكة المتحدة إلى Dubai",
+      "en": "Flight from United Kingdom to Dubai",
+      "fr": "Vol de Royaume-Uni à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247034_ypsawk3br_2_1771406457728_1",
+    "countryId": "country_1769453247034_ypsawk3br",
+    "from": "London",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 680,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من المملكة المتحدة إلى Riyadh",
+      "en": "Flight from United Kingdom to Riyadh",
+      "fr": "Vol de Royaume-Uni à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247034_ypsawk3br_3_1771406457728_2",
+    "countryId": "country_1769453247034_ypsawk3br",
+    "from": "London",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 700,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المملكة المتحدة إلى Doha",
+      "en": "Flight from United Kingdom to Doha",
+      "fr": "Vol de Royaume-Uni à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247034_ypsawk3br_4_1771406457728_3",
+    "countryId": "country_1769453247034_ypsawk3br",
+    "from": "London",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 720,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من المملكة المتحدة إلى Cairo",
+      "en": "Flight from United Kingdom to Cairo",
+      "fr": "Vol de Royaume-Uni à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247034_ypsawk3br_5_1771406457728_4",
+    "countryId": "country_1769453247034_ypsawk3br",
+    "from": "London",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 740,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المملكة المتحدة إلى Istanbul",
+      "en": "Flight from United Kingdom to Istanbul",
+      "fr": "Vol de Royaume-Uni à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247062_l3o4uqpng_1_1771406457728_0",
+    "countryId": "country_1769453247062_l3o4uqpng",
+    "from": "Dublin",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 475,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من أيرلندا إلى Dubai",
+      "en": "Flight from Ireland to Dubai",
+      "fr": "Vol de Irlande à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247062_l3o4uqpng_2_1771406457728_1",
+    "countryId": "country_1769453247062_l3o4uqpng",
+    "from": "Dublin",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 495,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من أيرلندا إلى Riyadh",
+      "en": "Flight from Ireland to Riyadh",
+      "fr": "Vol de Irlande à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247062_l3o4uqpng_3_1771406457728_2",
+    "countryId": "country_1769453247062_l3o4uqpng",
+    "from": "Dublin",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 515,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من أيرلندا إلى Doha",
+      "en": "Flight from Ireland to Doha",
+      "fr": "Vol de Irlande à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247062_l3o4uqpng_4_1771406457728_3",
+    "countryId": "country_1769453247062_l3o4uqpng",
+    "from": "Dublin",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 535,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من أيرلندا إلى Cairo",
+      "en": "Flight from Ireland to Cairo",
+      "fr": "Vol de Irlande à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247062_l3o4uqpng_5_1771406457728_4",
+    "countryId": "country_1769453247062_l3o4uqpng",
+    "from": "Dublin",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 555,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من أيرلندا إلى Istanbul",
+      "en": "Flight from Ireland to Istanbul",
+      "fr": "Vol de Irlande à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247093_c17go899e_1_1771406457728_0",
+    "countryId": "country_1769453247093_c17go899e",
+    "from": "Warsaw",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 490,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بولندا إلى Dubai",
+      "en": "Flight from Poland to Dubai",
+      "fr": "Vol de Pologne à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247093_c17go899e_2_1771406457728_1",
+    "countryId": "country_1769453247093_c17go899e",
+    "from": "Warsaw",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 510,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من بولندا إلى Riyadh",
+      "en": "Flight from Poland to Riyadh",
+      "fr": "Vol de Pologne à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247093_c17go899e_3_1771406457728_2",
+    "countryId": "country_1769453247093_c17go899e",
+    "from": "Warsaw",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 530,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بولندا إلى Doha",
+      "en": "Flight from Poland to Doha",
+      "fr": "Vol de Pologne à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247093_c17go899e_4_1771406457728_3",
+    "countryId": "country_1769453247093_c17go899e",
+    "from": "Warsaw",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 550,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من بولندا إلى Cairo",
+      "en": "Flight from Poland to Cairo",
+      "fr": "Vol de Pologne à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247093_c17go899e_5_1771406457728_4",
+    "countryId": "country_1769453247093_c17go899e",
+    "from": "Warsaw",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 570,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بولندا إلى Istanbul",
+      "en": "Flight from Poland to Istanbul",
+      "fr": "Vol de Pologne à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247128_c69bxkctz_1_1771406457728_0",
+    "countryId": "country_1769453247128_c69bxkctz",
+    "from": "Prague",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 525,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جمهورية التشيك إلى Dubai",
+      "en": "Flight from Czech Republic to Dubai",
+      "fr": "Vol de République tchèque à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247128_c69bxkctz_2_1771406457728_1",
+    "countryId": "country_1769453247128_c69bxkctz",
+    "from": "Prague",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 545,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من جمهورية التشيك إلى Riyadh",
+      "en": "Flight from Czech Republic to Riyadh",
+      "fr": "Vol de République tchèque à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247128_c69bxkctz_3_1771406457728_2",
+    "countryId": "country_1769453247128_c69bxkctz",
+    "from": "Prague",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 565,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جمهورية التشيك إلى Doha",
+      "en": "Flight from Czech Republic to Doha",
+      "fr": "Vol de République tchèque à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247128_c69bxkctz_4_1771406457728_3",
+    "countryId": "country_1769453247128_c69bxkctz",
+    "from": "Prague",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 585,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من جمهورية التشيك إلى Cairo",
+      "en": "Flight from Czech Republic to Cairo",
+      "fr": "Vol de République tchèque à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247128_c69bxkctz_5_1771406457728_4",
+    "countryId": "country_1769453247128_c69bxkctz",
+    "from": "Prague",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 605,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من جمهورية التشيك إلى Istanbul",
+      "en": "Flight from Czech Republic to Istanbul",
+      "fr": "Vol de République tchèque à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247163_fxu3a4ueo_1_1771406457728_0",
+    "countryId": "country_1769453247163_fxu3a4ueo",
+    "from": "Budapest",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 460,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المجر إلى Dubai",
+      "en": "Flight from Hungary to Dubai",
+      "fr": "Vol de Hongrie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247163_fxu3a4ueo_2_1771406457728_1",
+    "countryId": "country_1769453247163_fxu3a4ueo",
+    "from": "Budapest",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 480,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من المجر إلى Riyadh",
+      "en": "Flight from Hungary to Riyadh",
+      "fr": "Vol de Hongrie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247163_fxu3a4ueo_3_1771406457728_2",
+    "countryId": "country_1769453247163_fxu3a4ueo",
+    "from": "Budapest",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 500,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المجر إلى Doha",
+      "en": "Flight from Hungary to Doha",
+      "fr": "Vol de Hongrie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247163_fxu3a4ueo_4_1771406457728_3",
+    "countryId": "country_1769453247163_fxu3a4ueo",
+    "from": "Budapest",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 520,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من المجر إلى Cairo",
+      "en": "Flight from Hungary to Cairo",
+      "fr": "Vol de Hongrie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247163_fxu3a4ueo_5_1771406457728_4",
+    "countryId": "country_1769453247163_fxu3a4ueo",
+    "from": "Budapest",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 540,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من المجر إلى Istanbul",
+      "en": "Flight from Hungary to Istanbul",
+      "fr": "Vol de Hongrie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247207_dtb4sa9k1_1_1771406457728_0",
+    "countryId": "country_1769453247207_dtb4sa9k1",
+    "from": "Bucharest",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 440,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من رومانيا إلى Dubai",
+      "en": "Flight from Romania to Dubai",
+      "fr": "Vol de Roumanie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247207_dtb4sa9k1_2_1771406457728_1",
+    "countryId": "country_1769453247207_dtb4sa9k1",
+    "from": "Bucharest",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 460,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من رومانيا إلى Riyadh",
+      "en": "Flight from Romania to Riyadh",
+      "fr": "Vol de Roumanie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247207_dtb4sa9k1_3_1771406457728_2",
+    "countryId": "country_1769453247207_dtb4sa9k1",
+    "from": "Bucharest",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 480,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من رومانيا إلى Doha",
+      "en": "Flight from Romania to Doha",
+      "fr": "Vol de Roumanie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247207_dtb4sa9k1_4_1771406457728_3",
+    "countryId": "country_1769453247207_dtb4sa9k1",
+    "from": "Bucharest",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 500,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من رومانيا إلى Cairo",
+      "en": "Flight from Romania to Cairo",
+      "fr": "Vol de Roumanie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247207_dtb4sa9k1_5_1771406457728_4",
+    "countryId": "country_1769453247207_dtb4sa9k1",
+    "from": "Bucharest",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 520,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من رومانيا إلى Istanbul",
+      "en": "Flight from Romania to Istanbul",
+      "fr": "Vol de Roumanie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247278_99e1sgom5_1_1771406457728_0",
+    "countryId": "country_1769453247278_99e1sgom5",
+    "from": "Sofia",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 425,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بلغاريا إلى Dubai",
+      "en": "Flight from Bulgaria to Dubai",
+      "fr": "Vol de Bulgarie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247278_99e1sgom5_2_1771406457728_1",
+    "countryId": "country_1769453247278_99e1sgom5",
+    "from": "Sofia",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 445,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من بلغاريا إلى Riyadh",
+      "en": "Flight from Bulgaria to Riyadh",
+      "fr": "Vol de Bulgarie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247278_99e1sgom5_3_1771406457728_2",
+    "countryId": "country_1769453247278_99e1sgom5",
+    "from": "Sofia",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 465,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بلغاريا إلى Doha",
+      "en": "Flight from Bulgaria to Doha",
+      "fr": "Vol de Bulgarie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247278_99e1sgom5_4_1771406457728_3",
+    "countryId": "country_1769453247278_99e1sgom5",
+    "from": "Sofia",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 485,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من بلغاريا إلى Cairo",
+      "en": "Flight from Bulgaria to Cairo",
+      "fr": "Vol de Bulgarie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247278_99e1sgom5_5_1771406457728_4",
+    "countryId": "country_1769453247278_99e1sgom5",
+    "from": "Sofia",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 505,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من بلغاريا إلى Istanbul",
+      "en": "Flight from Bulgaria to Istanbul",
+      "fr": "Vol de Bulgarie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247312_fo6sr0vrh_1_1771406457728_0",
+    "countryId": "country_1769453247312_fo6sr0vrh",
+    "from": "Dubrovnik",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 560,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من كرواتيا إلى Dubai",
+      "en": "Flight from Croatia to Dubai",
+      "fr": "Vol de Croatie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247312_fo6sr0vrh_2_1771406457728_1",
+    "countryId": "country_1769453247312_fo6sr0vrh",
+    "from": "Dubrovnik",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 580,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من كرواتيا إلى Riyadh",
+      "en": "Flight from Croatia to Riyadh",
+      "fr": "Vol de Croatie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247312_fo6sr0vrh_3_1771406457728_2",
+    "countryId": "country_1769453247312_fo6sr0vrh",
+    "from": "Dubrovnik",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 600,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من كرواتيا إلى Doha",
+      "en": "Flight from Croatia to Doha",
+      "fr": "Vol de Croatie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247312_fo6sr0vrh_4_1771406457728_3",
+    "countryId": "country_1769453247312_fo6sr0vrh",
+    "from": "Dubrovnik",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 620,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من كرواتيا إلى Cairo",
+      "en": "Flight from Croatia to Cairo",
+      "fr": "Vol de Croatie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247312_fo6sr0vrh_5_1771406457728_4",
+    "countryId": "country_1769453247312_fo6sr0vrh",
+    "from": "Dubrovnik",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 640,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من كرواتيا إلى Istanbul",
+      "en": "Flight from Croatia to Istanbul",
+      "fr": "Vol de Croatie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247348_9nuaj6b3m_1_1771406457728_0",
+    "countryId": "country_1769453247348_9nuaj6b3m",
+    "from": "Oslo",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 540,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من النرويج إلى Dubai",
+      "en": "Flight from Norway to Dubai",
+      "fr": "Vol de Norvège à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247348_9nuaj6b3m_2_1771406457728_1",
+    "countryId": "country_1769453247348_9nuaj6b3m",
+    "from": "Oslo",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 560,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من النرويج إلى Riyadh",
+      "en": "Flight from Norway to Riyadh",
+      "fr": "Vol de Norvège à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247348_9nuaj6b3m_3_1771406457728_2",
+    "countryId": "country_1769453247348_9nuaj6b3m",
+    "from": "Oslo",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 580,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من النرويج إلى Doha",
+      "en": "Flight from Norway to Doha",
+      "fr": "Vol de Norvège à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247348_9nuaj6b3m_4_1771406457728_3",
+    "countryId": "country_1769453247348_9nuaj6b3m",
+    "from": "Oslo",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 600,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من النرويج إلى Cairo",
+      "en": "Flight from Norway to Cairo",
+      "fr": "Vol de Norvège à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247348_9nuaj6b3m_5_1771406457728_4",
+    "countryId": "country_1769453247348_9nuaj6b3m",
+    "from": "Oslo",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 620,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من النرويج إلى Istanbul",
+      "en": "Flight from Norway to Istanbul",
+      "fr": "Vol de Norvège à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247394_iajryb0rw_1_1771406457728_0",
+    "countryId": "country_1769453247394_iajryb0rw",
+    "from": "Stockholm",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 510,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من السويد إلى Dubai",
+      "en": "Flight from Sweden to Dubai",
+      "fr": "Vol de Suède à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247394_iajryb0rw_2_1771406457728_1",
+    "countryId": "country_1769453247394_iajryb0rw",
+    "from": "Stockholm",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 530,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من السويد إلى Riyadh",
+      "en": "Flight from Sweden to Riyadh",
+      "fr": "Vol de Suède à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247394_iajryb0rw_3_1771406457728_2",
+    "countryId": "country_1769453247394_iajryb0rw",
+    "from": "Stockholm",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 550,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من السويد إلى Doha",
+      "en": "Flight from Sweden to Doha",
+      "fr": "Vol de Suède à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247394_iajryb0rw_4_1771406457728_3",
+    "countryId": "country_1769453247394_iajryb0rw",
+    "from": "Stockholm",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 570,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من السويد إلى Cairo",
+      "en": "Flight from Sweden to Cairo",
+      "fr": "Vol de Suède à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247394_iajryb0rw_5_1771406457728_4",
+    "countryId": "country_1769453247394_iajryb0rw",
+    "from": "Stockholm",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 590,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من السويد إلى Istanbul",
+      "en": "Flight from Sweden to Istanbul",
+      "fr": "Vol de Suède à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247427_ncwinbi7b_1_1771406457728_0",
+    "countryId": "country_1769453247427_ncwinbi7b",
+    "from": "Copenhagen",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 490,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الدنمارك إلى Dubai",
+      "en": "Flight from Denmark to Dubai",
+      "fr": "Vol de Danemark à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247427_ncwinbi7b_2_1771406457728_1",
+    "countryId": "country_1769453247427_ncwinbi7b",
+    "from": "Copenhagen",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 510,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الدنمارك إلى Riyadh",
+      "en": "Flight from Denmark to Riyadh",
+      "fr": "Vol de Danemark à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247427_ncwinbi7b_3_1771406457728_2",
+    "countryId": "country_1769453247427_ncwinbi7b",
+    "from": "Copenhagen",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 530,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الدنمارك إلى Doha",
+      "en": "Flight from Denmark to Doha",
+      "fr": "Vol de Danemark à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247427_ncwinbi7b_4_1771406457728_3",
+    "countryId": "country_1769453247427_ncwinbi7b",
+    "from": "Copenhagen",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 550,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من الدنمارك إلى Cairo",
+      "en": "Flight from Denmark to Cairo",
+      "fr": "Vol de Danemark à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247427_ncwinbi7b_5_1771406457728_4",
+    "countryId": "country_1769453247427_ncwinbi7b",
+    "from": "Copenhagen",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 570,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من الدنمارك إلى Istanbul",
+      "en": "Flight from Denmark to Istanbul",
+      "fr": "Vol de Danemark à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247454_f9dn3kwjy_1_1771406457728_0",
+    "countryId": "country_1769453247454_f9dn3kwjy",
+    "from": "Helsinki",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 475,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من فنلندا إلى Dubai",
+      "en": "Flight from Finland to Dubai",
+      "fr": "Vol de Finlande à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247454_f9dn3kwjy_2_1771406457728_1",
+    "countryId": "country_1769453247454_f9dn3kwjy",
+    "from": "Helsinki",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 495,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من فنلندا إلى Riyadh",
+      "en": "Flight from Finland to Riyadh",
+      "fr": "Vol de Finlande à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247454_f9dn3kwjy_3_1771406457728_2",
+    "countryId": "country_1769453247454_f9dn3kwjy",
+    "from": "Helsinki",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 515,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من فنلندا إلى Doha",
+      "en": "Flight from Finland to Doha",
+      "fr": "Vol de Finlande à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247454_f9dn3kwjy_4_1771406457728_3",
+    "countryId": "country_1769453247454_f9dn3kwjy",
+    "from": "Helsinki",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 535,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من فنلندا إلى Cairo",
+      "en": "Flight from Finland to Cairo",
+      "fr": "Vol de Finlande à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247454_f9dn3kwjy_5_1771406457728_4",
+    "countryId": "country_1769453247454_f9dn3kwjy",
+    "from": "Helsinki",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 555,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من فنلندا إلى Istanbul",
+      "en": "Flight from Finland to Istanbul",
+      "fr": "Vol de Finlande à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247479_9vem0lpry_1_1771406457728_0",
+    "countryId": "country_1769453247479_9vem0lpry",
+    "from": "Reykjavik",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 525,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من آيسلندا إلى Dubai",
+      "en": "Flight from Iceland to Dubai",
+      "fr": "Vol de Islande à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247479_9vem0lpry_2_1771406457728_1",
+    "countryId": "country_1769453247479_9vem0lpry",
+    "from": "Reykjavik",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 545,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من آيسلندا إلى Riyadh",
+      "en": "Flight from Iceland to Riyadh",
+      "fr": "Vol de Islande à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247479_9vem0lpry_3_1771406457728_2",
+    "countryId": "country_1769453247479_9vem0lpry",
+    "from": "Reykjavik",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 565,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من آيسلندا إلى Doha",
+      "en": "Flight from Iceland to Doha",
+      "fr": "Vol de Islande à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247479_9vem0lpry_4_1771406457728_3",
+    "countryId": "country_1769453247479_9vem0lpry",
+    "from": "Reykjavik",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 585,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من آيسلندا إلى Cairo",
+      "en": "Flight from Iceland to Cairo",
+      "fr": "Vol de Islande à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247479_9vem0lpry_5_1771406457728_4",
+    "countryId": "country_1769453247479_9vem0lpry",
+    "from": "Reykjavik",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 605,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من آيسلندا إلى Istanbul",
+      "en": "Flight from Iceland to Istanbul",
+      "fr": "Vol de Islande à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247509_ylfc1osq7_1_1771406457728_0",
+    "countryId": "country_1769453247509_ylfc1osq7",
+    "from": "Moscow",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 610,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من روسيا إلى Dubai",
+      "en": "Flight from Russia to Dubai",
+      "fr": "Vol de Russie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247509_ylfc1osq7_2_1771406457728_1",
+    "countryId": "country_1769453247509_ylfc1osq7",
+    "from": "Moscow",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 630,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من روسيا إلى Riyadh",
+      "en": "Flight from Russia to Riyadh",
+      "fr": "Vol de Russie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247509_ylfc1osq7_3_1771406457728_2",
+    "countryId": "country_1769453247509_ylfc1osq7",
+    "from": "Moscow",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 650,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من روسيا إلى Doha",
+      "en": "Flight from Russia to Doha",
+      "fr": "Vol de Russie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247509_ylfc1osq7_4_1771406457728_3",
+    "countryId": "country_1769453247509_ylfc1osq7",
+    "from": "Moscow",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 670,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من روسيا إلى Cairo",
+      "en": "Flight from Russia to Cairo",
+      "fr": "Vol de Russie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247509_ylfc1osq7_5_1771406457728_4",
+    "countryId": "country_1769453247509_ylfc1osq7",
+    "from": "Moscow",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 690,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من روسيا إلى Istanbul",
+      "en": "Flight from Russia to Istanbul",
+      "fr": "Vol de Russie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247540_muw79gowe_1_1771406457728_0",
+    "countryId": "country_1769453247540_muw79gowe",
+    "from": "Kyiv",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 460,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من أوكرانيا إلى Dubai",
+      "en": "Flight from Ukraine to Dubai",
+      "fr": "Vol de Ukraine à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247540_muw79gowe_2_1771406457728_1",
+    "countryId": "country_1769453247540_muw79gowe",
+    "from": "Kyiv",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 480,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من أوكرانيا إلى Riyadh",
+      "en": "Flight from Ukraine to Riyadh",
+      "fr": "Vol de Ukraine à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247540_muw79gowe_3_1771406457728_2",
+    "countryId": "country_1769453247540_muw79gowe",
+    "from": "Kyiv",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 500,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من أوكرانيا إلى Doha",
+      "en": "Flight from Ukraine to Doha",
+      "fr": "Vol de Ukraine à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.728Z",
+    "updatedAt": "2026-02-18T09:20:57.728Z"
+  },
+  {
+    "id": "flight_country_1769453247540_muw79gowe_4_1771406457729_3",
+    "countryId": "country_1769453247540_muw79gowe",
+    "from": "Kyiv",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 520,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من أوكرانيا إلى Cairo",
+      "en": "Flight from Ukraine to Cairo",
+      "fr": "Vol de Ukraine à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247540_muw79gowe_5_1771406457729_4",
+    "countryId": "country_1769453247540_muw79gowe",
+    "from": "Kyiv",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 540,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من أوكرانيا إلى Istanbul",
+      "en": "Flight from Ukraine to Istanbul",
+      "fr": "Vol de Ukraine à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247563_zxighxaw6_1_1771406457729_0",
+    "countryId": "country_1769453247563_zxighxaw6",
+    "from": "Belgrade",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 425,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من صربيا إلى Dubai",
+      "en": "Flight from Serbia to Dubai",
+      "fr": "Vol de Serbie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247563_zxighxaw6_2_1771406457729_1",
+    "countryId": "country_1769453247563_zxighxaw6",
+    "from": "Belgrade",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 445,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من صربيا إلى Riyadh",
+      "en": "Flight from Serbia to Riyadh",
+      "fr": "Vol de Serbie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247563_zxighxaw6_3_1771406457729_2",
+    "countryId": "country_1769453247563_zxighxaw6",
+    "from": "Belgrade",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 465,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من صربيا إلى Doha",
+      "en": "Flight from Serbia to Doha",
+      "fr": "Vol de Serbie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247563_zxighxaw6_4_1771406457729_3",
+    "countryId": "country_1769453247563_zxighxaw6",
+    "from": "Belgrade",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 485,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من صربيا إلى Cairo",
+      "en": "Flight from Serbia to Cairo",
+      "fr": "Vol de Serbie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247563_zxighxaw6_5_1771406457729_4",
+    "countryId": "country_1769453247563_zxighxaw6",
+    "from": "Belgrade",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 505,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من صربيا إلى Istanbul",
+      "en": "Flight from Serbia to Istanbul",
+      "fr": "Vol de Serbie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247590_dbii4e8wn_1_1771406457729_0",
+    "countryId": "country_1769453247590_dbii4e8wn",
+    "from": "Ljubljana",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 440,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Dubai",
+      "en": "Flight from Slovenia to Dubai",
+      "fr": "Vol de Slovénie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247590_dbii4e8wn_2_1771406457729_1",
+    "countryId": "country_1769453247590_dbii4e8wn",
+    "from": "Ljubljana",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 460,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Riyadh",
+      "en": "Flight from Slovenia to Riyadh",
+      "fr": "Vol de Slovénie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247590_dbii4e8wn_3_1771406457729_2",
+    "countryId": "country_1769453247590_dbii4e8wn",
+    "from": "Ljubljana",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 480,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Doha",
+      "en": "Flight from Slovenia to Doha",
+      "fr": "Vol de Slovénie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247590_dbii4e8wn_4_1771406457729_3",
+    "countryId": "country_1769453247590_dbii4e8wn",
+    "from": "Ljubljana",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 500,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Cairo",
+      "en": "Flight from Slovenia to Cairo",
+      "fr": "Vol de Slovénie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453247590_dbii4e8wn_5_1771406457729_4",
+    "countryId": "country_1769453247590_dbii4e8wn",
+    "from": "Ljubljana",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 520,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Istanbul",
+      "en": "Flight from Slovenia to Istanbul",
+      "fr": "Vol de Slovénie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453262536_0kdimrlhf_1_1771406457729_0",
+    "countryId": "country_1769453262536_0kdimrlhf",
+    "from": "Ljubljana",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 440,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Dubai",
+      "en": "Flight from Slovenia to Dubai",
+      "fr": "Vol de Slovénie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453262536_0kdimrlhf_2_1771406457729_1",
+    "countryId": "country_1769453262536_0kdimrlhf",
+    "from": "Ljubljana",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 460,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Riyadh",
+      "en": "Flight from Slovenia to Riyadh",
+      "fr": "Vol de Slovénie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453262536_0kdimrlhf_3_1771406457729_2",
+    "countryId": "country_1769453262536_0kdimrlhf",
+    "from": "Ljubljana",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 480,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Doha",
+      "en": "Flight from Slovenia to Doha",
+      "fr": "Vol de Slovénie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453262536_0kdimrlhf_4_1771406457729_3",
+    "countryId": "country_1769453262536_0kdimrlhf",
+    "from": "Ljubljana",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 500,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Cairo",
+      "en": "Flight from Slovenia to Cairo",
+      "fr": "Vol de Slovénie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1769453262536_0kdimrlhf_5_1771406457729_4",
+    "countryId": "country_1769453262536_0kdimrlhf",
+    "from": "Ljubljana",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 520,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Istanbul",
+      "en": "Flight from Slovenia to Istanbul",
+      "fr": "Vol de Slovénie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-02-18T09:20:57.729Z",
+    "updatedAt": "2026-02-18T09:20:57.729Z"
+  },
+  {
+    "id": "flight_country_1782663703528_xkke4gduc_1_1782811181108_0",
+    "countryId": "country_1782663703528_xkke4gduc",
+    "from": "Reykjavik",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 525,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من آيسلندا إلى Dubai",
+      "en": "Flight from Iceland to Dubai",
+      "fr": "Vol de Islande à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-06-30T09:19:41.108Z",
+    "updatedAt": "2026-06-30T09:19:41.108Z"
+  },
+  {
+    "id": "flight_country_1782663703528_xkke4gduc_2_1782811181108_1",
+    "countryId": "country_1782663703528_xkke4gduc",
+    "from": "Reykjavik",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 545,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من آيسلندا إلى Riyadh",
+      "en": "Flight from Iceland to Riyadh",
+      "fr": "Vol de Islande à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-06-30T09:19:41.108Z",
+    "updatedAt": "2026-06-30T09:19:41.108Z"
+  },
+  {
+    "id": "flight_country_1782663703528_xkke4gduc_3_1782811181108_2",
+    "countryId": "country_1782663703528_xkke4gduc",
+    "from": "Reykjavik",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 565,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من آيسلندا إلى Doha",
+      "en": "Flight from Iceland to Doha",
+      "fr": "Vol de Islande à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-06-30T09:19:41.108Z",
+    "updatedAt": "2026-06-30T09:19:41.108Z"
+  },
+  {
+    "id": "flight_country_1782663703528_xkke4gduc_4_1782811181108_3",
+    "countryId": "country_1782663703528_xkke4gduc",
+    "from": "Reykjavik",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 585,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من آيسلندا إلى Cairo",
+      "en": "Flight from Iceland to Cairo",
+      "fr": "Vol de Islande à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-06-30T09:19:41.108Z",
+    "updatedAt": "2026-06-30T09:19:41.108Z"
+  },
+  {
+    "id": "flight_country_1782663703528_xkke4gduc_5_1782811181108_4",
+    "countryId": "country_1782663703528_xkke4gduc",
+    "from": "Reykjavik",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 605,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من آيسلندا إلى Istanbul",
+      "en": "Flight from Iceland to Istanbul",
+      "fr": "Vol de Islande à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-06-30T09:19:41.108Z",
+    "updatedAt": "2026-06-30T09:19:41.108Z"
+  },
+  {
+    "id": "flight_country_1782737390505_hz84pinyz_1_1782811181109_0",
+    "countryId": "country_1782737390505_hz84pinyz",
+    "from": "Ljubljana",
+    "to": "Dubai",
+    "airline": "Tarhal Air",
+    "classType": "economy",
+    "price": 440,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Dubai",
+      "en": "Flight from Slovenia to Dubai",
+      "fr": "Vol de Slovénie à Dubai"
+    },
+    "isActive": true,
+    "createdAt": "2026-06-30T09:19:41.109Z",
+    "updatedAt": "2026-06-30T09:19:41.109Z"
+  },
+  {
+    "id": "flight_country_1782737390505_hz84pinyz_2_1782811181109_1",
+    "countryId": "country_1782737390505_hz84pinyz",
+    "from": "Ljubljana",
+    "to": "Riyadh",
+    "airline": "SkyWays",
+    "classType": "business",
+    "price": 460,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Riyadh",
+      "en": "Flight from Slovenia to Riyadh",
+      "fr": "Vol de Slovénie à Riyadh"
+    },
+    "isActive": true,
+    "createdAt": "2026-06-30T09:19:41.109Z",
+    "updatedAt": "2026-06-30T09:19:41.109Z"
+  },
+  {
+    "id": "flight_country_1782737390505_hz84pinyz_3_1782811181109_2",
+    "countryId": "country_1782737390505_hz84pinyz",
+    "from": "Ljubljana",
+    "to": "Doha",
+    "airline": "Global Wings",
+    "classType": "first",
+    "price": 480,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Doha",
+      "en": "Flight from Slovenia to Doha",
+      "fr": "Vol de Slovénie à Doha"
+    },
+    "isActive": true,
+    "createdAt": "2026-06-30T09:19:41.109Z",
+    "updatedAt": "2026-06-30T09:19:41.109Z"
+  },
+  {
+    "id": "flight_country_1782737390505_hz84pinyz_4_1782811181109_3",
+    "countryId": "country_1782737390505_hz84pinyz",
+    "from": "Ljubljana",
+    "to": "Cairo",
+    "airline": "AirLink",
+    "classType": "economy",
+    "price": 500,
+    "currency": "USD",
+    "refundable": false,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Cairo",
+      "en": "Flight from Slovenia to Cairo",
+      "fr": "Vol de Slovénie à Cairo"
+    },
+    "isActive": true,
+    "createdAt": "2026-06-30T09:19:41.109Z",
+    "updatedAt": "2026-06-30T09:19:41.109Z"
+  },
+  {
+    "id": "flight_country_1782737390505_hz84pinyz_5_1782811181109_4",
+    "countryId": "country_1782737390505_hz84pinyz",
+    "from": "Ljubljana",
+    "to": "Istanbul",
+    "airline": "Tarhal Air",
+    "classType": "business",
+    "price": 520,
+    "currency": "USD",
+    "refundable": true,
+    "description": {
+      "ar": "رحلة جوية من سلوفينيا إلى Istanbul",
+      "en": "Flight from Slovenia to Istanbul",
+      "fr": "Vol de Slovénie à Istanbul"
+    },
+    "isActive": true,
+    "createdAt": "2026-06-30T09:19:41.109Z",
+    "updatedAt": "2026-06-30T09:19:41.109Z"
+  }
+]

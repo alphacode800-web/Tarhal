@@ -1,0 +1,203 @@
+{
+  "maintenanceMode": false,
+  "showTopAnnouncement": true,
+  "announcementBar": {
+    "enabled": true,
+    "texts": [
+      {
+        "id": "1",
+        "text": {
+          "ar": "مرحباً بكم في منصة ciar للسياحة",
+          "en": "Welcome to ciar Travel Platform",
+          "fr": "Bienvenue sur la Plateforme de Voyage ciar"
+        }
+      },
+      {
+        "id": "2",
+        "text": {
+          "ar": "احصل على أفضل العروض السياحية",
+          "en": "Get the best travel offers",
+          "fr": "Obtenez les meilleures offres de voyage"
+        }
+      },
+      {
+        "id": "3",
+        "text": {
+          "ar": "استكشف أجمل الوجهات حول العالم",
+          "en": "Explore the most beautiful destinations around the world",
+          "fr": "Explorez les plus belles destinations du monde"
+        }
+      },
+      {
+        "id": "4",
+        "text": {
+          "ar": "خدمات سياحية متميزة بأسعار منافسة",
+          "en": "Premium travel services at competitive prices",
+          "fr": "Services de voyage premium à des prix compétitifs"
+        }
+      },
+      {
+        "id": "5",
+        "text": {
+          "ar": "حجز الفنادق والطيران بسهولة",
+          "en": "Easy hotel and flight booking",
+          "fr": "Réservation facile d'hôtels et de vols"
+        }
+      },
+      {
+        "id": "6",
+        "text": {
+          "ar": "جولات سياحية منظمة ومميزة",
+          "en": "Organized and unique tourist tours",
+          "fr": "Circuits touristiques organisés et uniques"
+        }
+      },
+      {
+        "id": "7",
+        "text": {
+          "ar": "دعم عملاء متاح 24/7",
+          "en": "24/7 customer support available",
+          "fr": "Support client disponible 24/7"
+        }
+      },
+      {
+        "id": "8",
+        "text": {
+          "ar": "تأشيرات السفر بسرعة وسهولة",
+          "en": "Fast and easy travel visas",
+          "fr": "Visas de voyage rapides et faciles"
+        }
+      },
+      {
+        "id": "9",
+        "text": {
+          "ar": "تأمين سفر شامل لرحلتك",
+          "en": "Comprehensive travel insurance for your trip",
+          "fr": "Assurance voyage complète pour votre voyage"
+        }
+      },
+      {
+        "id": "10",
+        "text": {
+          "ar": "استئجار سيارات في جميع الوجهات",
+          "en": "Car rental in all destinations",
+          "fr": "Location de voitures dans toutes les destinations"
+        }
+      },
+      {
+        "id": "11",
+        "text": {
+          "ar": "عروض خاصة وحصرية كل أسبوع",
+          "en": "Special and exclusive offers every week",
+          "fr": "Offres spéciales et exclusives chaque semaine"
+        }
+      },
+      {
+        "id": "12",
+        "text": {
+          "ar": "خطط رحلتك مع خبراء السياحة",
+          "en": "Plan your trip with travel experts",
+          "fr": "Planifiez votre voyage avec des experts en voyage"
+        }
+      },
+      {
+        "id": "13",
+        "text": {
+          "ar": "تجربة سفر لا تُنسى",
+          "en": "An unforgettable travel experience",
+          "fr": "Une expérience de voyage inoubliable"
+        }
+      },
+      {
+        "id": "14",
+        "text": {
+          "ar": "مكاتبنا منتشرة في جميع أنحاء العالم",
+          "en": "Our offices are spread all over the world",
+          "fr": "Nos bureaux sont répartis dans le monde entier"
+        }
+      },
+      {
+        "id": "15",
+        "text": {
+          "ar": "احجز الآن واحصل على خصم خاص",
+          "en": "Book now and get a special discount",
+          "fr": "Réservez maintenant et obtenez une réduction spéciale"
+        }
+      },
+      {
+        "id": "16",
+        "text": {
+          "ar": "رحلات جماعية وفردية",
+          "en": "Group and individual trips",
+          "fr": "Voyages en groupe et individuels"
+        }
+      },
+      {
+        "id": "17",
+        "text": {
+          "ar": "خدمة استقبال في المطار",
+          "en": "Airport pickup service",
+          "fr": "Service de transfert aéroport"
+        }
+      },
+      {
+        "id": "18",
+        "text": {
+          "ar": "دليل سياحي متخصص لجميع الوجهات",
+          "en": "Specialized tourist guide for all destinations",
+          "fr": "Guide touristique spécialisé pour toutes les destinations"
+        }
+      },
+      {
+        "id": "19",
+        "text": {
+          "ar": "تذاكر طيران بأفضل الأسعار",
+          "en": "Flight tickets at the best prices",
+          "fr": "Billets d'avion aux meilleurs prix"
+        }
+      },
+      {
+        "id": "20",
+        "text": {
+          "ar": "شاهد آراء عملائنا المميزة",
+          "en": "See our distinguished customer reviews",
+          "fr": "Découvrez les avis distingués de nos clients"
+        }
+      }
+    ],
+    "speed": 30,
+    "fontSize": 13,
+    "textColor": "#ffffff",
+    "backgroundFrom": "#1e3a5f",
+    "backgroundTo": "#0f2744",
+    "accentColor": "#f97316"
+  },
+  "contactEmail": "azasnaa628@gmail.com",
+  "contactPhone": "00963993153333",
+  "contactWhatsapp": "00963993153333",
+  "socialLinks": {
+    "whatsapp": "00963993153333",
+    "telegram": "",
+    "facebook": "https://facebook.com",
+    "instagram": "https://instagram.com",
+    "twitter": "https://twitter.com",
+    "linkedin": "https://linkedin.com",
+    "youtube": "https://youtube.com",
+    "tiktok": "",
+    "snapchat": "",
+    "pinterest": "",
+    "threads": ""
+  },
+  "siteTitle": "منصة ciar للسياحة",
+  "metaDescription": "",
+  "defaultLanguage": "ar",
+  "autoDetectLanguage": true,
+  "dateFormat": "DD/MM/YYYY",
+  "emailNotifications": true,
+  "dailyDigest": false,
+  "alertsEmail": "admin@ciar.com",
+  "enable2FA": false,
+  "autoLockMinutes": 30,
+  "failedLoginAlerts": true,
+  "dailyAutoBackup": false
+}

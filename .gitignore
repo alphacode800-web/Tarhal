@@ -17,18 +17,18 @@ dist-ssr
 .env.*
 !.env.example
 
-# Uploaded images (keep directory but ignore files)
-public/uploads/*
-!public/uploads/.gitkeep
+# Uploaded media — project assets are tracked; only ignore stray temp files
+public/uploads/*.tmp
 
-# Server data files (keep directory but ignore files)
-server/data/*
-!server/data/.gitkeep
+# Server data & seed catalogs are tracked for full project deploy
+# (see server/data/ and server/seed/)
 
-# Large seed data & local database (generated at runtime)
-data/*.json
-server/database/*.db
-server/database/*.db-*
+# Root data/ duplicate exceeds GitHub 100MB limit — canonical copy lives in server/data/
+data/car-vehicles.json
+
+# SQLite WAL sidecar files (regenerated at runtime)
+server/database/*.db-shm
+server/database/*.db-wal
 node_modules.lnk
 
 # Editor directories and files

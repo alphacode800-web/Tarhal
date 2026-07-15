@@ -1,0 +1,3217 @@
+[
+  {
+    "countryId": "sudan",
+    "name": {
+      "ar": "مكتب السودان",
+      "en": "Sudan Office",
+      "fr": "Bureau Soudan"
+    },
+    "address": {
+      "ar": "الخرطوم",
+      "en": "Khartoum",
+      "fr": "Khartoum"
+    },
+    "phone": "+118852030",
+    "email": "office1@tarhal.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير السودان",
+      "en": "Sudan Manager",
+      "fr": "Gestionnaire Soudan"
+    },
+    "services": {
+      "ar": [
+        "حجوزات طيران",
+        "حجوزات فنادق",
+        "جولات سياحية"
+      ],
+      "en": [
+        "Flight bookings",
+        "Hotel bookings",
+        "Tour packages"
+      ],
+      "fr": [
+        "Réservations de vol",
+        "Réservations d'hôtel",
+        "Forfaits touristiques"
+      ]
+    },
+    "workingHours": {
+      "ar": "9:00 ص - 6:00 م",
+      "en": "9:00 AM - 6:00 PM",
+      "fr": "9h00 - 18h00"
+    },
+    "rating": 4.264144329425772,
+    "reviews": 42,
+    "isActive": true,
+    "id": "office_1771398444754_1mbr252rp",
+    "createdAt": "2026-02-18T07:07:24.754Z",
+    "updatedAt": "2026-02-18T07:07:24.754Z"
+  },
+  {
+    "countryId": "country_1769453246309_6xm9xfvto",
+    "name": {
+      "ar": "مكتب المملكة العربية السعودية",
+      "en": "Saudi Arabia Office",
+      "fr": "Bureau Arabie Saoudite"
+    },
+    "address": {
+      "ar": "الرياض",
+      "en": "Riyadh",
+      "fr": "Riyad"
+    },
+    "phone": "+828741069",
+    "email": "office2@tarhal.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير المملكة العربية السعودية",
+      "en": "Saudi Arabia Manager",
+      "fr": "Gestionnaire Arabie Saoudite"
+    },
+    "services": {
+      "ar": [
+        "حجوزات طيران",
+        "حجوزات فنادق",
+        "جولات سياحية"
+      ],
+      "en": [
+        "Flight bookings",
+        "Hotel bookings",
+        "Tour packages"
+      ],
+      "fr": [
+        "Réservations de vol",
+        "Réservations d'hôtel",
+        "Forfaits touristiques"
+      ]
+    },
+    "workingHours": {
+      "ar": "9:00 ص - 6:00 م",
+      "en": "9:00 AM - 6:00 PM",
+      "fr": "9h00 - 18h00"
+    },
+    "rating": 4.236812058392308,
+    "reviews": 69,
+    "isActive": true,
+    "id": "office_1771398444830_6gmhtwv4q",
+    "createdAt": "2026-02-18T07:07:24.830Z",
+    "updatedAt": "2026-02-18T07:07:24.830Z"
+  },
+  {
+    "countryId": "country_1769453246314_gg1a1gj8u",
+    "name": {
+      "ar": "مكتب الإمارات العربية المتحدة",
+      "en": "United Arab Emirates Office",
+      "fr": "Bureau Émirats Arabes Unis"
+    },
+    "address": {
+      "ar": "أبوظبي",
+      "en": "Abu Dhabi",
+      "fr": "Abu Dhabi"
+    },
+    "phone": "+374906981",
+    "email": "office3@tarhal.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير الإمارات العربية المتحدة",
+      "en": "United Arab Emirates Manager",
+      "fr": "Gestionnaire Émirats Arabes Unis"
+    },
+    "services": {
+      "ar": [
+        "حجوزات طيران",
+        "حجوزات فنادق",
+        "جولات سياحية"
+      ],
+      "en": [
+        "Flight bookings",
+        "Hotel bookings",
+        "Tour packages"
+      ],
+      "fr": [
+        "Réservations de vol",
+        "Réservations d'hôtel",
+        "Forfaits touristiques"
+      ]
+    },
+    "workingHours": {
+      "ar": "9:00 ص - 6:00 م",
+      "en": "9:00 AM - 6:00 PM",
+      "fr": "9h00 - 18h00"
+    },
+    "rating": 4.394203691124254,
+    "reviews": 87,
+    "isActive": true,
+    "id": "office_1771398444881_p94pxvsig",
+    "createdAt": "2026-02-18T07:07:24.881Z",
+    "updatedAt": "2026-02-18T07:07:24.881Z"
+  },
+  {
+    "countryId": "country_1769453246318_7fpbzya2v",
+    "name": {
+      "ar": "مكتب مصر",
+      "en": "Egypt Office",
+      "fr": "Bureau Égypte"
+    },
+    "address": {
+      "ar": "القاهرة",
+      "en": "Cairo",
+      "fr": "Le Caire"
+    },
+    "phone": "+253094365",
+    "email": "office4@tarhal.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مصر",
+      "en": "Egypt Manager",
+      "fr": "Gestionnaire Égypte"
+    },
+    "services": {
+      "ar": [
+        "حجوزات طيران",
+        "حجوزات فنادق",
+        "جولات سياحية"
+      ],
+      "en": [
+        "Flight bookings",
+        "Hotel bookings",
+        "Tour packages"
+      ],
+      "fr": [
+        "Réservations de vol",
+        "Réservations d'hôtel",
+        "Forfaits touristiques"
+      ]
+    },
+    "workingHours": {
+      "ar": "9:00 ص - 6:00 م",
+      "en": "9:00 AM - 6:00 PM",
+      "fr": "9h00 - 18h00"
+    },
+    "rating": 4.118212596302491,
+    "reviews": 71,
+    "isActive": true,
+    "id": "office_1771398444947_2u7zqg93c",
+    "createdAt": "2026-02-18T07:07:24.947Z",
+    "updatedAt": "2026-02-18T07:07:24.947Z"
+  },
+  {
+    "countryId": "country_1769453246324_2qoybss9l",
+    "name": {
+      "ar": "مكتب المغرب",
+      "en": "Morocco Office",
+      "fr": "Bureau Maroc"
+    },
+    "address": {
+      "ar": "الرباط",
+      "en": "Rabat",
+      "fr": "Rabat"
+    },
+    "phone": "+812317230",
+    "email": "office5@tarhal.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير المغرب",
+      "en": "Morocco Manager",
+      "fr": "Gestionnaire Maroc"
+    },
+    "services": {
+      "ar": [
+        "حجوزات طيران",
+        "حجوزات فنادق",
+        "جولات سياحية"
+      ],
+      "en": [
+        "Flight bookings",
+        "Hotel bookings",
+        "Tour packages"
+      ],
+      "fr": [
+        "Réservations de vol",
+        "Réservations d'hôtel",
+        "Forfaits touristiques"
+      ]
+    },
+    "workingHours": {
+      "ar": "9:00 ص - 6:00 م",
+      "en": "9:00 AM - 6:00 PM",
+      "fr": "9h00 - 18h00"
+    },
+    "rating": 4.988308700941355,
+    "reviews": 28,
+    "isActive": true,
+    "id": "office_1771398444997_ujwlghezt",
+    "createdAt": "2026-02-18T07:07:24.997Z",
+    "updatedAt": "2026-02-18T07:07:24.997Z"
+  },
+  {
+    "id": "office_country_1769453246327_6woeptmoi_1782678424314",
+    "countryId": "country_1769453246327_6woeptmoi",
+    "name": {
+      "ar": "مكتب الأردن",
+      "en": "Jordan Office",
+      "fr": "Bureau Jordanie"
+    },
+    "address": {
+      "ar": "عمان",
+      "en": "Amman",
+      "fr": "Amman"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب الأردن",
+      "en": "Jordan Office Manager",
+      "fr": "Gestionnaire du Bureau Jordanie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.7,
+    "reviews": 674,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246334_uwa8gaqai_1782678424314",
+    "countryId": "country_1769453246334_uwa8gaqai",
+    "name": {
+      "ar": "مكتب لبنان",
+      "en": "Lebanon Office",
+      "fr": "Bureau Liban"
+    },
+    "address": {
+      "ar": "بيروت",
+      "en": "Beirut",
+      "fr": "Beyrouth"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب لبنان",
+      "en": "Lebanon Office Manager",
+      "fr": "Gestionnaire du Bureau Liban"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.5,
+    "reviews": 458,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246342_zdhswztak_1782678424314",
+    "countryId": "country_1769453246342_zdhswztak",
+    "name": {
+      "ar": "مكتب سوريا",
+      "en": "Syria Office",
+      "fr": "Bureau Syrie"
+    },
+    "address": {
+      "ar": "دمشق",
+      "en": "Damascus",
+      "fr": "Damas"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب سوريا",
+      "en": "Syria Office Manager",
+      "fr": "Gestionnaire du Bureau Syrie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.3,
+    "reviews": 289,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246346_ypmaz059j_1782678424314",
+    "countryId": "country_1769453246346_ypmaz059j",
+    "name": {
+      "ar": "مكتب العراق",
+      "en": "Iraq Office",
+      "fr": "Bureau Irak"
+    },
+    "address": {
+      "ar": "بغداد",
+      "en": "Baghdad",
+      "fr": "Bagdad"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب العراق",
+      "en": "Iraq Office Manager",
+      "fr": "Gestionnaire du Bureau Irak"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4,
+    "reviews": 189,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246357_5spgi247g_1782678424314",
+    "countryId": "country_1769453246357_5spgi247g",
+    "name": {
+      "ar": "مكتب الكويت",
+      "en": "Kuwait Office",
+      "fr": "Bureau Koweït"
+    },
+    "address": {
+      "ar": "مدينة الكويت",
+      "en": "Kuwait City",
+      "fr": "Ville de Koweït"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب الكويت",
+      "en": "Kuwait Office Manager",
+      "fr": "Gestionnaire du Bureau Koweït"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.3,
+    "reviews": 320,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246365_f64ktw1ro_1782678424314",
+    "countryId": "country_1769453246365_f64ktw1ro",
+    "name": {
+      "ar": "مكتب البحرين",
+      "en": "Bahrain Office",
+      "fr": "Bureau Bahreïn"
+    },
+    "address": {
+      "ar": "المنامة",
+      "en": "Manama",
+      "fr": "Manama"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب البحرين",
+      "en": "Bahrain Office Manager",
+      "fr": "Gestionnaire du Bureau Bahreïn"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.4,
+    "reviews": 289,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246371_qjcancmyg_1782678424314",
+    "countryId": "country_1769453246371_qjcancmyg",
+    "name": {
+      "ar": "مكتب قطر",
+      "en": "Qatar Office",
+      "fr": "Bureau Qatar"
+    },
+    "address": {
+      "ar": "الدو��ة",
+      "en": "Doha",
+      "fr": "Doha"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب قطر",
+      "en": "Qatar Office Manager",
+      "fr": "Gestionnaire du Bureau Qatar"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.6,
+    "reviews": 478,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246389_s1pxjs59h_1782678424314",
+    "countryId": "country_1769453246389_s1pxjs59h",
+    "name": {
+      "ar": "مكتب عُمان",
+      "en": "Oman Office",
+      "fr": "Bureau Oman"
+    },
+    "address": {
+      "ar": "مسقط",
+      "en": "Muscat",
+      "fr": "Mascate"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب عُمان",
+      "en": "Oman Office Manager",
+      "fr": "Gestionnaire du Bureau Oman"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.7,
+    "reviews": 542,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246397_ys9pdyo5o_1782678424314",
+    "countryId": "country_1769453246397_ys9pdyo5o",
+    "name": {
+      "ar": "مكتب اليمن",
+      "en": "Yemen Office",
+      "fr": "Bureau Yémen"
+    },
+    "address": {
+      "ar": "صنعاء",
+      "en": "Sanaa",
+      "fr": "Sanaa"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب اليمن",
+      "en": "Yemen Office Manager",
+      "fr": "Gestionnaire du Bureau Yémen"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.1,
+    "reviews": 189,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246410_kk5tubo06_1782678424314",
+    "countryId": "country_1769453246410_kk5tubo06",
+    "name": {
+      "ar": "مكتب فلسطين",
+      "en": "Palestine Office",
+      "fr": "Bureau Palestine"
+    },
+    "address": {
+      "ar": "القدس",
+      "en": "Jerusalem",
+      "fr": "Jérusalem"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب فلسطين",
+      "en": "Palestine Office Manager",
+      "fr": "Gestionnaire du Bureau Palestine"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.8,
+    "reviews": 678,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246426_wvb0zd9x6_1782678424314",
+    "countryId": "country_1769453246426_wvb0zd9x6",
+    "name": {
+      "ar": "مكتب تونس",
+      "en": "Tunisia Office",
+      "fr": "Bureau Tunisie"
+    },
+    "address": {
+      "ar": "تونس العاصمة",
+      "en": "Tunis",
+      "fr": "Tunis"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب تونس",
+      "en": "Tunisia Office Manager",
+      "fr": "Gestionnaire du Bureau Tunisie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.5,
+    "reviews": 789,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246441_2vddsebrn_1782678424314",
+    "countryId": "country_1769453246441_2vddsebrn",
+    "name": {
+      "ar": "مكتب الجزائر",
+      "en": "Algeria Office",
+      "fr": "Bureau Algérie"
+    },
+    "address": {
+      "ar": "الجزائر العاصمة",
+      "en": "Algiers",
+      "fr": "Alger"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب الجزائر",
+      "en": "Algeria Office Manager",
+      "fr": "Gestionnaire du Bureau Algérie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.3,
+    "reviews": 489,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246452_lgbqer9eg_1782678424314",
+    "countryId": "country_1769453246452_lgbqer9eg",
+    "name": {
+      "ar": "مكتب ليبيا",
+      "en": "Libya Office",
+      "fr": "Bureau Libye"
+    },
+    "address": {
+      "ar": "طرابلس",
+      "en": "Tripoli",
+      "fr": "Tripoli"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب ليبيا",
+      "en": "Libya Office Manager",
+      "fr": "Gestionnaire du Bureau Libye"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4,
+    "reviews": 145,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246460_qf39vo8ab_1782678424314",
+    "countryId": "country_1769453246460_qf39vo8ab",
+    "name": {
+      "ar": "مكتب موريتانيا",
+      "en": "Mauritania Office",
+      "fr": "Bureau Mauritanie"
+    },
+    "address": {
+      "ar": "نواكشوط",
+      "en": "Nouakchott",
+      "fr": "Nouakchott"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب موريتانيا",
+      "en": "Mauritania Office Manager",
+      "fr": "Gestionnaire du Bureau Mauritanie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.1,
+    "reviews": 89,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246480_th6x5x91b_1782678424314",
+    "countryId": "country_1769453246480_th6x5x91b",
+    "name": {
+      "ar": "مكتب الصومال",
+      "en": "Somalia Office",
+      "fr": "Bureau Somalie"
+    },
+    "address": {
+      "ar": "مقديشو",
+      "en": "Mogadishu",
+      "fr": "Mogadiscio"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب الصومال",
+      "en": "Somalia Office Manager",
+      "fr": "Gestionnaire du Bureau Somalie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 3.8,
+    "reviews": 68,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246495_ksaezo0k0_1782678424314",
+    "countryId": "country_1769453246495_ksaezo0k0",
+    "name": {
+      "ar": "مكتب جيبوتي",
+      "en": "Djibouti Office",
+      "fr": "Bureau Djibouti"
+    },
+    "address": {
+      "ar": "مدينة جيبوتي",
+      "en": "Djibouti City",
+      "fr": "Ville de Djibouti"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب جيبوتي",
+      "en": "Djibouti Office Manager",
+      "fr": "Gestionnaire du Bureau Djibouti"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.2,
+    "reviews": 72,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246519_zbf4eyrby_1782678424314",
+    "countryId": "country_1769453246519_zbf4eyrby",
+    "name": {
+      "ar": "مكتب جزر القمر",
+      "en": "Comoros Office",
+      "fr": "Bureau Comores"
+    },
+    "address": {
+      "ar": "موروني",
+      "en": "Moroni",
+      "fr": "Moroni"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب جزر القمر",
+      "en": "Comoros Office Manager",
+      "fr": "Gestionnaire du Bureau Comores"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.4,
+    "reviews": 58,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246549_h6pz7u4tg_1782678424314",
+    "countryId": "country_1769453246549_h6pz7u4tg",
+    "name": {
+      "ar": "مكتب تركيا",
+      "en": "Turkey Office",
+      "fr": "Bureau Turquie"
+    },
+    "address": {
+      "ar": "أنقرة",
+      "en": "Ankara",
+      "fr": "Ankara"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب تركيا",
+      "en": "Turkey Office Manager",
+      "fr": "Gestionnaire du Bureau Turquie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.7,
+    "reviews": 1845,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246563_h0jwkxasp_1782678424314",
+    "countryId": "country_1769453246563_h0jwkxasp",
+    "name": {
+      "ar": "مكتب إيران",
+      "en": "Iran Office",
+      "fr": "Bureau Iran"
+    },
+    "address": {
+      "ar": "طهران",
+      "en": "Tehran",
+      "fr": "Téhéran"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب إيران",
+      "en": "Iran Office Manager",
+      "fr": "Gestionnaire du Bureau Iran"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.5,
+    "reviews": 568,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246578_i5bgodfn6_1782678424314",
+    "countryId": "country_1769453246578_i5bgodfn6",
+    "name": {
+      "ar": "مكتب أفغانستان",
+      "en": "Afghanistan Office",
+      "fr": "Bureau Afghanistan"
+    },
+    "address": {
+      "ar": "كابول",
+      "en": "Kabul",
+      "fr": "Kaboul"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب أفغانستان",
+      "en": "Afghanistan Office Manager",
+      "fr": "Gestionnaire du Bureau Afghanistan"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 3.5,
+    "reviews": 45,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246612_i9tqgftyu_1782678424314",
+    "countryId": "country_1769453246612_i9tqgftyu",
+    "name": {
+      "ar": "مكتب باكستان",
+      "en": "Pakistan Office",
+      "fr": "Bureau Pakistan"
+    },
+    "address": {
+      "ar": "إسلام آباد",
+      "en": "Islamabad",
+      "fr": "Islamabad"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب باكستان",
+      "en": "Pakistan Office Manager",
+      "fr": "Gestionnaire du Bureau Pakistan"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.3,
+    "reviews": 389,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246629_dfbkrcaud_1782678424314",
+    "countryId": "country_1769453246629_dfbkrcaud",
+    "name": {
+      "ar": "مكتب بنغلاديش",
+      "en": "Bangladesh Office",
+      "fr": "Bureau Bangladesh"
+    },
+    "address": {
+      "ar": "دكا",
+      "en": "Dhaka",
+      "fr": "Dhaka"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب بنغلاديش",
+      "en": "Bangladesh Office Manager",
+      "fr": "Gestionnaire du Bureau Bangladesh"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.1,
+    "reviews": 234,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246645_rnkphbccd_1782678424314",
+    "countryId": "country_1769453246645_rnkphbccd",
+    "name": {
+      "ar": "مكتب جزر المالديف",
+      "en": "Maldives Office",
+      "fr": "Bureau Maldives"
+    },
+    "address": {
+      "ar": "ماليه",
+      "en": "Male",
+      "fr": "Malé"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب جزر المالديف",
+      "en": "Maldives Office Manager",
+      "fr": "Gestionnaire du Bureau Maldives"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.9,
+    "reviews": 895,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246661_1rqja8qkz_1782678424314",
+    "countryId": "country_1769453246661_1rqja8qkz",
+    "name": {
+      "ar": "مكتب إندونيسيا",
+      "en": "Indonesia Office",
+      "fr": "Bureau Indonésie"
+    },
+    "address": {
+      "ar": "جاكرتا",
+      "en": "Jakarta",
+      "fr": "Jakarta"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب إندونيسيا",
+      "en": "Indonesia Office Manager",
+      "fr": "Gestionnaire du Bureau Indonésie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.6,
+    "reviews": 1245,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246679_z75rhed3i_1782678424314",
+    "countryId": "country_1769453246679_z75rhed3i",
+    "name": {
+      "ar": "مكتب ماليزيا",
+      "en": "Malaysia Office",
+      "fr": "Bureau Malaisie"
+    },
+    "address": {
+      "ar": "كوالالمبور",
+      "en": "Kuala Lumpur",
+      "fr": "Kuala Lumpur"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب ماليزيا",
+      "en": "Malaysia Office Manager",
+      "fr": "Gestionnaire du Bureau Malaisie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.5,
+    "reviews": 985,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246695_95apoqonp_1782678424314",
+    "countryId": "country_1769453246695_95apoqonp",
+    "name": {
+      "ar": "مكتب بروناي",
+      "en": "Brunei Office",
+      "fr": "Bureau Brunei"
+    },
+    "address": {
+      "ar": "بندر سري بكاوان",
+      "en": "Bandar Seri Begawan",
+      "fr": "Bandar Seri Begawan"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب بروناي",
+      "en": "Brunei Office Manager",
+      "fr": "Gestionnaire du Bureau Brunei"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.3,
+    "reviews": 145,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.314Z",
+    "updatedAt": "2026-06-28T20:27:04.314Z"
+  },
+  {
+    "id": "office_country_1769453246711_ur8uda4ul_1782678424315",
+    "countryId": "country_1769453246711_ur8uda4ul",
+    "name": {
+      "ar": "مكتب فرنسا",
+      "en": "France Office",
+      "fr": "Bureau France"
+    },
+    "address": {
+      "ar": "باريس",
+      "en": "Paris",
+      "fr": "Paris"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب فرنسا",
+      "en": "France Office Manager",
+      "fr": "Gestionnaire du Bureau France"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.8,
+    "reviews": 1250,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.315Z",
+    "updatedAt": "2026-06-28T20:27:04.315Z"
+  },
+  {
+    "id": "office_country_1769453246739_rpfhugxeg_1782678424316",
+    "countryId": "country_1769453246739_rpfhugxeg",
+    "name": {
+      "ar": "مكتب إسبانيا",
+      "en": "Spain Office",
+      "fr": "Bureau Espagne"
+    },
+    "address": {
+      "ar": "مدريد",
+      "en": "Madrid",
+      "fr": "Madrid"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب إسبانيا",
+      "en": "Spain Office Manager",
+      "fr": "Gestionnaire du Bureau Espagne"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.7,
+    "reviews": 980,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453246764_614yfrmtl_1782678424316",
+    "countryId": "country_1769453246764_614yfrmtl",
+    "name": {
+      "ar": "مكتب إيطاليا",
+      "en": "Italy Office",
+      "fr": "Bureau Italie"
+    },
+    "address": {
+      "ar": "روما",
+      "en": "Rome",
+      "fr": "Rome"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب إيطاليا",
+      "en": "Italy Office Manager",
+      "fr": "Gestionnaire du Bureau Italie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.9,
+    "reviews": 1520,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453246808_ezawth9hy_1782678424316",
+    "countryId": "country_1769453246808_ezawth9hy",
+    "name": {
+      "ar": "مكتب ألمانيا",
+      "en": "Germany Office",
+      "fr": "Bureau Allemagne"
+    },
+    "address": {
+      "ar": "برلين",
+      "en": "Berlin",
+      "fr": "Berlin"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب ألمانيا",
+      "en": "Germany Office Manager",
+      "fr": "Gestionnaire du Bureau Allemagne"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.6,
+    "reviews": 890,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453246843_pqi2or72z_1782678424316",
+    "countryId": "country_1769453246843_pqi2or72z",
+    "name": {
+      "ar": "مكتب اليونان",
+      "en": "Greece Office",
+      "fr": "Bureau Grèce"
+    },
+    "address": {
+      "ar": "أثينا",
+      "en": "Athens",
+      "fr": "Athènes"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب اليونان",
+      "en": "Greece Office Manager",
+      "fr": "Gestionnaire du Bureau Grèce"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.8,
+    "reviews": 1120,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453246875_upf4movah_1782678424316",
+    "countryId": "country_1769453246875_upf4movah",
+    "name": {
+      "ar": "مكتب البرتغال",
+      "en": "Portugal Office",
+      "fr": "Bureau Portugal"
+    },
+    "address": {
+      "ar": "لشبونة",
+      "en": "Lisbon",
+      "fr": "Lisbonne"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب البرتغال",
+      "en": "Portugal Office Manager",
+      "fr": "Gestionnaire du Bureau Portugal"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.7,
+    "reviews": 760,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453246910_eec0o70oa_1782678424316",
+    "countryId": "country_1769453246910_eec0o70oa",
+    "name": {
+      "ar": "مكتب هولندا",
+      "en": "Netherlands Office",
+      "fr": "Bureau Pays-Bas"
+    },
+    "address": {
+      "ar": "أمستردام",
+      "en": "Amsterdam",
+      "fr": "Amsterdam"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب هولندا",
+      "en": "Netherlands Office Manager",
+      "fr": "Gestionnaire du Bureau Pays-Bas"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.6,
+    "reviews": 680,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453246942_gbk87n5w2_1782678424316",
+    "countryId": "country_1769453246942_gbk87n5w2",
+    "name": {
+      "ar": "مكتب بلجيكا",
+      "en": "Belgium Office",
+      "fr": "Bureau Belgique"
+    },
+    "address": {
+      "ar": "بروكسل",
+      "en": "Brussels",
+      "fr": "Bruxelles"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب بلجيكا",
+      "en": "Belgium Office Manager",
+      "fr": "Gestionnaire du Bureau Belgique"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.5,
+    "reviews": 540,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453246973_rc1jysgf2_1782678424316",
+    "countryId": "country_1769453246973_rc1jysgf2",
+    "name": {
+      "ar": "مكتب سويسرا",
+      "en": "Switzerland Office",
+      "fr": "Bureau Suisse"
+    },
+    "address": {
+      "ar": "برن",
+      "en": "Bern",
+      "fr": "Berne"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب سويسرا",
+      "en": "Switzerland Office Manager",
+      "fr": "Gestionnaire du Bureau Suisse"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.9,
+    "reviews": 980,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453246996_hie9trq8d_1782678424316",
+    "countryId": "country_1769453246996_hie9trq8d",
+    "name": {
+      "ar": "مكتب النمسا",
+      "en": "Austria Office",
+      "fr": "Bureau Autriche"
+    },
+    "address": {
+      "ar": "فيينا",
+      "en": "Vienna",
+      "fr": "Vienne"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب النمسا",
+      "en": "Austria Office Manager",
+      "fr": "Gestionnaire du Bureau Autriche"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.7,
+    "reviews": 720,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247034_ypsawk3br_1782678424316",
+    "countryId": "country_1769453247034_ypsawk3br",
+    "name": {
+      "ar": "مكتب المملكة المتحدة",
+      "en": "United Kingdom Office",
+      "fr": "Bureau Royaume-Uni"
+    },
+    "address": {
+      "ar": "لندن",
+      "en": "London",
+      "fr": "Londres"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب المملكة المتحدة",
+      "en": "United Kingdom Office Manager",
+      "fr": "Gestionnaire du Bureau Royaume-Uni"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.6,
+    "reviews": 1120,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247062_l3o4uqpng_1782678424316",
+    "countryId": "country_1769453247062_l3o4uqpng",
+    "name": {
+      "ar": "مكتب أيرلندا",
+      "en": "Ireland Office",
+      "fr": "Bureau Irlande"
+    },
+    "address": {
+      "ar": "دبلن",
+      "en": "Dublin",
+      "fr": "Dublin"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب أيرلندا",
+      "en": "Ireland Office Manager",
+      "fr": "Gestionnaire du Bureau Irlande"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.6,
+    "reviews": 580,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247093_c17go899e_1782678424316",
+    "countryId": "country_1769453247093_c17go899e",
+    "name": {
+      "ar": "مكتب بولندا",
+      "en": "Poland Office",
+      "fr": "Bureau Pologne"
+    },
+    "address": {
+      "ar": "وارسو",
+      "en": "Warsaw",
+      "fr": "Varsovie"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب بولندا",
+      "en": "Poland Office Manager",
+      "fr": "Gestionnaire du Bureau Pologne"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.5,
+    "reviews": 640,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247128_c69bxkctz_1782678424316",
+    "countryId": "country_1769453247128_c69bxkctz",
+    "name": {
+      "ar": "مكتب جمهورية التشيك",
+      "en": "Czech Republic Office",
+      "fr": "Bureau République tchèque"
+    },
+    "address": {
+      "ar": "براغ",
+      "en": "Prague",
+      "fr": "Prague"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب جمهورية التشيك",
+      "en": "Czech Republic Office Manager",
+      "fr": "Gestionnaire du Bureau République tchèque"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.6,
+    "reviews": 720,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247163_fxu3a4ueo_1782678424316",
+    "countryId": "country_1769453247163_fxu3a4ueo",
+    "name": {
+      "ar": "مكتب المجر",
+      "en": "Hungary Office",
+      "fr": "Bureau Hongrie"
+    },
+    "address": {
+      "ar": "بودابست",
+      "en": "Budapest",
+      "fr": "Budapest"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب المجر",
+      "en": "Hungary Office Manager",
+      "fr": "Gestionnaire du Bureau Hongrie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.5,
+    "reviews": 580,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247207_dtb4sa9k1_1782678424316",
+    "countryId": "country_1769453247207_dtb4sa9k1",
+    "name": {
+      "ar": "مكتب رومانيا",
+      "en": "Romania Office",
+      "fr": "Bureau Roumanie"
+    },
+    "address": {
+      "ar": "بوخارست",
+      "en": "Bucharest",
+      "fr": "Bucarest"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب رومانيا",
+      "en": "Romania Office Manager",
+      "fr": "Gestionnaire du Bureau Roumanie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.4,
+    "reviews": 520,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247278_99e1sgom5_1782678424316",
+    "countryId": "country_1769453247278_99e1sgom5",
+    "name": {
+      "ar": "مكتب بلغاريا",
+      "en": "Bulgaria Office",
+      "fr": "Bureau Bulgarie"
+    },
+    "address": {
+      "ar": "صوفيا",
+      "en": "Sofia",
+      "fr": "Sofia"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب بلغاريا",
+      "en": "Bulgaria Office Manager",
+      "fr": "Gestionnaire du Bureau Bulgarie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.3,
+    "reviews": 480,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247312_fo6sr0vrh_1782678424316",
+    "countryId": "country_1769453247312_fo6sr0vrh",
+    "name": {
+      "ar": "مكتب كرواتيا",
+      "en": "Croatia Office",
+      "fr": "Bureau Croatie"
+    },
+    "address": {
+      "ar": "زغرب",
+      "en": "Zagreb",
+      "fr": "Zagreb"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب كرواتيا",
+      "en": "Croatia Office Manager",
+      "fr": "Gestionnaire du Bureau Croatie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.7,
+    "reviews": 820,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247348_9nuaj6b3m_1782678424316",
+    "countryId": "country_1769453247348_9nuaj6b3m",
+    "name": {
+      "ar": "مكتب النرويج",
+      "en": "Norway Office",
+      "fr": "Bureau Norvège"
+    },
+    "address": {
+      "ar": "أوسلو",
+      "en": "Oslo",
+      "fr": "Oslo"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب النرويج",
+      "en": "Norway Office Manager",
+      "fr": "Gestionnaire du Bureau Norvège"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.8,
+    "reviews": 760,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247394_iajryb0rw_1782678424316",
+    "countryId": "country_1769453247394_iajryb0rw",
+    "name": {
+      "ar": "مكتب السويد",
+      "en": "Sweden Office",
+      "fr": "Bureau Suède"
+    },
+    "address": {
+      "ar": "ستوكهولم",
+      "en": "Stockholm",
+      "fr": "Stockholm"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب السويد",
+      "en": "Sweden Office Manager",
+      "fr": "Gestionnaire du Bureau Suède"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.7,
+    "reviews": 680,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247427_ncwinbi7b_1782678424316",
+    "countryId": "country_1769453247427_ncwinbi7b",
+    "name": {
+      "ar": "مكتب الدنمارك",
+      "en": "Denmark Office",
+      "fr": "Bureau Danemark"
+    },
+    "address": {
+      "ar": "كوبنهاغن",
+      "en": "Copenhagen",
+      "fr": "Copenhague"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب الدنمارك",
+      "en": "Denmark Office Manager",
+      "fr": "Gestionnaire du Bureau Danemark"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.6,
+    "reviews": 620,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247454_f9dn3kwjy_1782678424316",
+    "countryId": "country_1769453247454_f9dn3kwjy",
+    "name": {
+      "ar": "مكتب فنلندا",
+      "en": "Finland Office",
+      "fr": "Bureau Finlande"
+    },
+    "address": {
+      "ar": "هلسنكي",
+      "en": "Helsinki",
+      "fr": "Helsinki"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب فنلندا",
+      "en": "Finland Office Manager",
+      "fr": "Gestionnaire du Bureau Finlande"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.6,
+    "reviews": 580,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1782663703528_xkke4gduc_1782678424316",
+    "countryId": "country_1782663703528_xkke4gduc",
+    "name": {
+      "ar": "مكتب آيسلندا",
+      "en": "Iceland Office",
+      "fr": "Bureau Islande"
+    },
+    "address": {
+      "ar": "ريكيافيك",
+      "en": "Reykjavik",
+      "fr": "Reykjavik"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب آيسلندا",
+      "en": "Iceland Office Manager",
+      "fr": "Gestionnaire du Bureau Islande"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.8,
+    "reviews": 720,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247509_ylfc1osq7_1782678424316",
+    "countryId": "country_1769453247509_ylfc1osq7",
+    "name": {
+      "ar": "مكتب روسيا",
+      "en": "Russia Office",
+      "fr": "Bureau Russie"
+    },
+    "address": {
+      "ar": "موسكو",
+      "en": "Moscow",
+      "fr": "Moscou"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب روسيا",
+      "en": "Russia Office Manager",
+      "fr": "Gestionnaire du Bureau Russie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.5,
+    "reviews": 980,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247540_muw79gowe_1782678424316",
+    "countryId": "country_1769453247540_muw79gowe",
+    "name": {
+      "ar": "مكتب أوكرانيا",
+      "en": "Ukraine Office",
+      "fr": "Bureau Ukraine"
+    },
+    "address": {
+      "ar": "كييف",
+      "en": "Kyiv",
+      "fr": "Kiev"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب أوكرانيا",
+      "en": "Ukraine Office Manager",
+      "fr": "Gestionnaire du Bureau Ukraine"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.4,
+    "reviews": 560,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453247563_zxighxaw6_1782678424316",
+    "countryId": "country_1769453247563_zxighxaw6",
+    "name": {
+      "ar": "مكتب صربيا",
+      "en": "Serbia Office",
+      "fr": "Bureau Serbie"
+    },
+    "address": {
+      "ar": "بلغراد",
+      "en": "Belgrade",
+      "fr": "Belgrade"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب صربيا",
+      "en": "Serbia Office Manager",
+      "fr": "Gestionnaire du Bureau Serbie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.3,
+    "reviews": 480,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1769453262536_0kdimrlhf_1782678424316",
+    "countryId": "country_1769453262536_0kdimrlhf",
+    "name": {
+      "ar": "مكتب سلوفينيا",
+      "en": "Slovenia Office",
+      "fr": "Bureau Slovénie"
+    },
+    "address": {
+      "ar": "ليوبليانا",
+      "en": "Ljubljana",
+      "fr": "Ljubljana"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب سلوفينيا",
+      "en": "Slovenia Office Manager",
+      "fr": "Gestionnaire du Bureau Slovénie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.5,
+    "reviews": 520,
+    "isActive": true,
+    "createdAt": "2026-06-28T20:27:04.316Z",
+    "updatedAt": "2026-06-28T20:27:04.316Z"
+  },
+  {
+    "id": "office_country_1782737390505_hz84pinyz_1782737405284",
+    "countryId": "country_1782737390505_hz84pinyz",
+    "name": {
+      "ar": "مكتب سلوفينيا",
+      "en": "Slovenia Office",
+      "fr": "Bureau Slovénie"
+    },
+    "address": {
+      "ar": "ليوبليانا",
+      "en": "Ljubljana",
+      "fr": "Ljubljana"
+    },
+    "phone": "+1 234 567 8900",
+    "email": "office@ciar.com",
+    "website": "",
+    "manager": {
+      "ar": "مدير مكتب سلوفينيا",
+      "en": "Slovenia Office Manager",
+      "fr": "Gestionnaire du Bureau Slovénie"
+    },
+    "services": {
+      "ar": [
+        "حجز الفنادق",
+        "تنظيم الرحلات",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "الاستقبال في المطار"
+      ],
+      "en": [
+        "Hotel Booking",
+        "Tour Organization",
+        "Flight Tickets",
+        "Visas",
+        "Airport Pickup"
+      ],
+      "fr": [
+        "Réservation d'Hôtels",
+        "Organisation de Circuits",
+        "Billets d'Avion",
+        "Visas",
+        "Transfert Aéroport"
+      ]
+    },
+    "workingHours": {
+      "ar": "السبت - الخميس: 9:00 صباحاً - 6:00 مساءً",
+      "en": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "fr": "Samedi - Jeudi: 9h00 - 18h00"
+    },
+    "rating": 4.5,
+    "reviews": 520,
+    "isActive": true,
+    "createdAt": "2026-06-29T12:50:05.288Z",
+    "updatedAt": "2026-06-29T12:50:05.288Z"
+  }
+]
