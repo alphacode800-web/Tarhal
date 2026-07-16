@@ -71,6 +71,26 @@ export interface AdminSettings {
   autoLockMinutes: 15 | 30 | 60;
   failedLoginAlerts: boolean;
   dailyAutoBackup: boolean;
+  aiAssistant?: {
+    enabled: boolean;
+    showWidget: boolean;
+    apiKey?: string;
+    model: string;
+    temperature: number;
+    maxTokens: number;
+    rateLimitPerMinute: number;
+    welcomeMessage: {
+      ar: string;
+      en: string;
+      fr: string;
+    };
+    quickPrompts: {
+      ar: string[];
+      en: string[];
+      fr: string[];
+    };
+    systemPromptExtra: string;
+  };
 }
 
 export interface HeroContent {
@@ -1508,6 +1528,41 @@ class DataManager {
       autoLockMinutes: 30,
       failedLoginAlerts: true,
       dailyAutoBackup: false,
+      aiAssistant: {
+        enabled: true,
+        showWidget: true,
+        apiKey: '',
+        model: 'gpt-4o-mini',
+        temperature: 0.6,
+        maxTokens: 600,
+        rateLimitPerMinute: 20,
+        welcomeMessage: {
+          ar: 'مرحباً! أنا مساعدك الذكي في CIAR Tourism. كيف يمكنني مساعدتك في تخطيط رحلتك؟',
+          en: "Hello! I'm CIAR Tourism's AI assistant. How can I help you plan your trip?",
+          fr: 'Bonjour ! Je suis l\'assistant IA de CIAR Tourism. Comment puis-je vous aider à planifier votre voyage ?',
+        },
+        quickPrompts: {
+          ar: [
+            'ما أفضل العروض السياحية المتاحة؟',
+            'كيف أحجز فندق أو رحلة؟',
+            'ما الوجهات التي تغطونها؟',
+            'هل تقدمون خدمات التأشيرات والطيران؟',
+          ],
+          en: [
+            'What tour offers do you have?',
+            'How do I book a hotel or trip?',
+            'Which destinations do you cover?',
+            'Do you offer visas and flights?',
+          ],
+          fr: [
+            'Quelles offres touristiques proposez-vous ?',
+            'Comment réserver un hôtel ou un voyage ?',
+            'Quelles destinations couvrez-vous ?',
+            'Proposez-vous des visas et des vols ?',
+          ],
+        },
+        systemPromptExtra: '',
+      },
     };
   }
 
@@ -1529,6 +1584,25 @@ class DataManager {
         ...defaults.announcementBar,
         ...(saved.announcementBar || {}),
         texts: savedTexts.length > 0 ? savedTexts : defaultTexts,
+      },
+      aiAssistant: {
+        ...defaults.aiAssistant!,
+        ...(saved.aiAssistant || {}),
+        welcomeMessage: {
+          ...defaults.aiAssistant!.welcomeMessage,
+          ...(saved.aiAssistant?.welcomeMessage || {}),
+        },
+        quickPrompts: {
+          ar: saved.aiAssistant?.quickPrompts?.ar?.length
+            ? saved.aiAssistant.quickPrompts.ar
+            : defaults.aiAssistant!.quickPrompts.ar,
+          en: saved.aiAssistant?.quickPrompts?.en?.length
+            ? saved.aiAssistant.quickPrompts.en
+            : defaults.aiAssistant!.quickPrompts.en,
+          fr: saved.aiAssistant?.quickPrompts?.fr?.length
+            ? saved.aiAssistant.quickPrompts.fr
+            : defaults.aiAssistant!.quickPrompts.fr,
+        },
       },
     };
   }

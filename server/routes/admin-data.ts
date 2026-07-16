@@ -2,6 +2,8 @@ import express, { RequestHandler } from 'express';
 import fs from 'fs/promises';
 import path from 'path';
 import { getAdminData, setAdminData, ADMIN_KEYS } from '../database/admin-store.js';
+import { invalidateAiConfigCache } from '../utils/ai-config.js';
+import { invalidateAiContextCache } from '../utils/ai-context.js';
 import { serverDataDir } from '../utils/paths.js';
 
 const DATA_DIR = serverDataDir();
@@ -218,9 +220,18 @@ export const getSettings: RequestHandler = async (req, res) => {
 
 export const saveSettings: RequestHandler = async (req, res) => {
   try {
-    const settings = req.body;
-    const success = await saveToDbAndFile(ADMIN_KEYS.settings, SETTINGS_FILE, settings);
+    const incoming = req.body;
+    const existing = await readFromDbOrFile(ADMIN_KEYS.settings, SETTINGS_FILE, null);
+
+    // Preserve API key if admin left the field empty
+    if (incoming?.aiAssistant && !incoming.aiAssistant.apiKey?.trim() && existing?.aiAssistant?.apiKey) {
+      incoming.aiAssistant.apiKey = existing.aiAssistant.apiKey;
+    }
+
+    const success = await saveToDbAndFile(ADMIN_KEYS.settings, SETTINGS_FILE, incoming);
     if (success) {
+      invalidateAiConfigCache();
+      invalidateAiContextCache();
       res.json({ success: true, message: 'Settings saved successfully' });
     } else {
       res.status(500).json({ success: false, error: 'Failed to save settings' });

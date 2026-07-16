@@ -6,6 +6,7 @@ import fs from "fs/promises";
 import { handleDemo } from "./routes/demo";
 import paymentsRouter from "./routes/payments";
 import adminDataRouter from "./routes/admin-data";
+import aiChatRouter from "./routes/ai-chat";
 import { handleImageUpload, handleMultipleImageUpload, handleVideoUpload } from "./routes/upload";
 import { resolveDir, uploadsDir } from "./utils/paths.js";
 
@@ -13,6 +14,7 @@ const __dirname = resolveDir(import.meta.url, ["server"]);
 
 export function createServer() {
   const app = express();
+  app.set('trust proxy', 1);
 
   // Middleware with increased limits
   app.use(cors());
@@ -38,6 +40,7 @@ export function createServer() {
   app.get("/api/demo", handleDemo);
   app.use("/api/payments", paymentsRouter);
   app.use("/api/admin-data", adminDataRouter);
+  app.use("/api/ai", aiChatRouter);
 
   // Image upload routes
   app.post("/api/upload/image", handleImageUpload);

@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Edit, Trash2, Save, X, Upload, Eye, Users, MapPin, Calendar, BarChart3, Settings, LogOut, Search, Filter, Star, Image, Globe, Globe2, TrendingUp, Activity, DollarSign, UserCheck, Bell, Menu, ChevronDown, Download, RefreshCw, Heart, ThumbsUp, MessageSquare, Zap, Award, Shield, Building2, Briefcase, Phone, Mail, Clock, CheckCircle, AlertCircle, FileText, Database, RotateCcw, Hotel as HotelIcon, Film, Plane, ShieldCheck } from 'lucide-react';
+import { Plus, Edit, Trash2, Save, X, Upload, Eye, Users, MapPin, Calendar, BarChart3, Settings, LogOut, Search, Filter, Star, Image, Globe, Globe2, TrendingUp, Activity, DollarSign, UserCheck, Bell, Menu, ChevronDown, Download, RefreshCw, Heart, ThumbsUp, MessageSquare, Zap, Award, Shield, Building2, Briefcase, Phone, Mail, Clock, CheckCircle, AlertCircle, FileText, Database, RotateCcw, Hotel as HotelIcon, Film, Plane, ShieldCheck, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -26,6 +26,7 @@ import VideoUploadField from '@/components/VideoUploadField';
 import OfferDetailsEditor from '@/components/OfferDetailsEditor';
 import AdminSupervisorManagement from './AdminSupervisorManagement';
 import AdminPayments from './AdminPayments';
+import AdminAiManagement from './AdminAiManagement';
 
 interface Notification {
   id: string;
@@ -1048,6 +1049,7 @@ export default function AdminDashboard() {
     { id: 'analytics', label: getLocalizedText('التحليلات', 'Analytics', 'Analytiques'), icon: TrendingUp, color: 'text-purple-500' },
     { id: 'users', label: getLocalizedText('المستخدمين', 'Users', 'Utilisateurs'), icon: Users, color: 'text-indigo-500' },
     { id: 'hero', label: getLocalizedText('إدارة الهيدر', 'Hero Management', 'Gestion du Hero'), icon: Image, color: 'text-cyan-500' },
+    { id: 'ai', label: getLocalizedText('الذكاء الاصطناعي', 'AI Management', 'Gestion IA'), icon: Sparkles, color: 'text-violet-500' },
     { id: 'settings', label: getLocalizedText('الإعدادات', 'Settings', 'Paramètres'), icon: Settings, color: 'text-gray-500' }
   ];
 
@@ -3511,6 +3513,14 @@ export default function AdminDashboard() {
                 </div>
               )}
             </div>
+          )}
+
+          {activeTab === 'ai' && settings && (
+            <AdminAiManagement
+              settings={settings}
+              setSettings={setSettings}
+              getLocalizedText={getLocalizedText}
+            />
           )}
 
           {activeTab === 'settings' && (
