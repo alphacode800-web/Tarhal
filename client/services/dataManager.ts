@@ -562,6 +562,69 @@ export interface TravelVisa {
   updatedAt: string;
 }
 
+export type AdPlacement =
+  | 'home_after_services'
+  | 'home_before_why'
+  | 'offices_top'
+  | 'offers_mid'
+  | 'country_mid'
+  | 'listing';
+
+export type AdStatus = 'pending' | 'approved' | 'rejected';
+
+export type AdvertiserType =
+  | 'person'
+  | 'company'
+  | 'institution'
+  | 'government'
+  | 'ngo'
+  | 'investor'
+  | 'partner'
+  | 'other';
+
+export type AdContentType =
+  | 'general'
+  | 'fashion'
+  | 'real_estate'
+  | 'electronics'
+  | 'services'
+  | 'travel'
+  | 'other';
+
+export interface Advertisement {
+  id: string;
+  title: { ar: string; en: string; fr: string };
+  description: { ar: string; en: string; fr: string };
+  advertiserName: string;
+  advertiserType?: AdvertiserType;
+  advertiserPhone?: string;
+  advertiserEmail?: string;
+  imageUrl?: string;
+  linkUrl?: string;
+  videoUrl?: string;
+  category?: { ar: string; en: string; fr: string };
+  adType?: AdContentType;
+  tags?: string[];
+  specifications?: string;
+  remainingQty?: number;
+  productPrice?: number;
+  currency?: string;
+  discountPercent?: number;
+  whatsappLink?: string;
+  shipping?: string;
+  placement: AdPlacement;
+  positionLabel?: string;
+  durationDays?: number;
+  adFee?: number;
+  adFeeCurrency?: string;
+  submitVia?: 'email' | 'whatsapp';
+  status: AdStatus;
+  isActive: boolean;
+  isFeatured?: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
 class DataManager {
   private readonly COUNTRIES_KEY = 'admin_countries_data';
   private readonly OFFICES_KEY = 'admin_travel_offices';
@@ -576,6 +639,7 @@ class DataManager {
   private readonly TAXI_DELIVERY_KEY = 'tarhal_taxi_delivery_services';
   private readonly FLIGHT_TICKETS_KEY = 'admin_flight_tickets';
   private readonly TRAVEL_VISAS_KEY = 'admin_travel_visas';
+  private readonly ADS_KEY = 'admin_advertisements';
   private readonly API_BASE = '/api/admin-data';
   private useServerStorage = true; // Enable server storage by default
 
@@ -3929,6 +3993,133 @@ class DataManager {
     } catch (error) {
       console.error('Error ensuring travel visas:', error);
       return this.getTravelVisas();
+    }
+  }
+
+  // ===== Advertisements =====
+  private async loadAdsFromServer(): Promise<Advertisement[] | null> {
+    try {
+      const response = await fetch(`${this.API_BASE}/ads`);
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success && Array.isArray(result.data)) {
+          return result.data as Advertisement[];
+        }
+      }
+    } catch (error) {
+      console.error('Error loading ads from server:', error);
+    }
+    return null;
+  }
+
+  private async saveAdsToServer(ads: Advertisement[]): Promise<boolean> {
+    try {
+      const response = await fetch(`${this.API_BASE}/ads`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(ads),
+      });
+      if (response.ok) {
+        const result = await response.json();
+        return result.success === true;
+      }
+    } catch (error) {
+      console.error('Error saving ads to server:', error);
+    }
+    return false;
+  }
+
+  getAds(): Advertisement[] {
+    try {
+      const data = localStorage.getItem(this.ADS_KEY);
+      return this.safeJsonParse<Advertisement[]>(data, this.ADS_KEY, []);
+    } catch {
+      return [];
+    }
+  }
+
+  async getAdsAsync(): Promise<Advertisement[]> {
+    if (this.useServerStorage) {
+      const serverData = await this.loadAdsFromServer();
+      if (serverData) {
+        try {
+          localStorage.setItem(this.ADS_KEY, JSON.stringify(serverData));
+        } catch {
+          /* ignore */
+        }
+        return serverData;
+      }
+    }
+    return this.getAds();
+  }
+
+  saveAds(ads: Advertisement[]): boolean {
+    try {
+      localStorage.setItem(this.ADS_KEY, JSON.stringify(ads));
+      return true;
+    } catch (error) {
+      console.error('Error saving ads:', error);
+      return false;
+    }
+  }
+
+  async saveAdsAsync(ads: Advertisement[]): Promise<boolean> {
+    if (this.useServerStorage) {
+      await this.saveAdsToServer(ads);
+    }
+    return this.saveAds(ads);
+  }
+
+  getActiveAds(placement?: AdPlacement): Advertisement[] {
+    return this.getAds().filter((ad) => {
+      if (!ad.isActive || ad.status !== 'approved') return false;
+      if (!placement) return true;
+      return ad.placement === placement;
+    });
+  }
+
+  async addAdAsync(
+    ad: Omit<Advertisement, 'id' | 'createdAt' | 'updatedAt'>
+  ): Promise<Advertisement | null> {
+    try {
+      const ads = await this.getAdsAsync();
+      const newAd: Advertisement = {
+        ...ad,
+        id: `ad_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      };
+      ads.unshift(newAd);
+      if (await this.saveAdsAsync(ads)) return newAd;
+      return null;
+    } catch (error) {
+      console.error('Error adding ad:', error);
+      return null;
+    }
+  }
+
+  async updateAdAsync(id: string, updates: Partial<Advertisement>): Promise<boolean> {
+    try {
+      const ads = await this.getAdsAsync();
+      const index = ads.findIndex((a) => a.id === id);
+      if (index === -1) return false;
+      ads[index] = { ...ads[index], ...updates, updatedAt: new Date().toISOString() };
+      return this.saveAdsAsync(ads);
+    } catch (error) {
+      console.error('Error updating ad:', error);
+      return false;
+    }
+  }
+
+  async deleteAdAsync(id: string): Promise<boolean> {
+    try {
+      const ads = await this.getAdsAsync();
+      const filtered = ads.filter((a) => a.id !== id);
+      if (filtered.length === ads.length) return false;
+      return this.saveAdsAsync(filtered);
+    } catch (error) {
+      console.error('Error deleting ad:', error);
+      return false;
     }
   }
 }

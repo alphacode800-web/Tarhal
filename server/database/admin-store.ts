@@ -18,6 +18,7 @@ export const ADMIN_KEYS = {
   flightTickets: 'flight_tickets',
   travelVisas: 'travel_visas',
   visitorStats: 'visitor_stats',
+  ads: 'ads',
 } as const;
 
 let dbAvailable: boolean | null = null;

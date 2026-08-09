@@ -13,6 +13,7 @@ import GoogleMap from '@/components/GoogleMap';
 import { resolveOfficeCoordinates } from '@/data/countryCoordinates';
 import { fetchVisitorCount } from '@/services/visitorStats';
 import AiRecommendedOffers from '@/components/AiRecommendedOffers';
+import AdSlot from '@/components/AdSlot';
 import {
   heroButtonStyleToCss,
   heroTextStyleToCss,
@@ -519,6 +520,8 @@ export default function Index() {
         </div>
       </section>
 
+      <AdSlot placement="home_before_why" />
+
       {/* Features Section */}
       <section className="py-20 bg-gradient-to-br from-tarhal-blue-dark to-tarhal-navy">
         <div className="container mx-auto px-4">
@@ -962,9 +965,23 @@ export default function Index() {
                 color: 'from-cyan-500 to-cyan-600',
                 href: '/contact',
               },
+              {
+                icon: '📢',
+                title: 'أضف إعلانك معنا',
+                description: 'روّج لعرضك أو خدمتك أمام آلاف المسافرين على منصة CIAR',
+                color: 'from-amber-500 to-orange-600',
+                href: '/advertise',
+              },
+              {
+                icon: '📣',
+                title: 'جميع الإعلانات',
+                description: 'استكشف إعلانات الشركاء والعروض المميزة على المنصة',
+                color: 'from-yellow-500 to-amber-600',
+                href: '/ads',
+              },
             ].map((service, index) => (
               <Link
-                key={service.href}
+                key={`${service.href}-${service.title}`}
                 to={service.href}
                 className="group bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 animate-scale-in hover:-translate-y-2 border border-transparent dark:border-slate-800"
                 style={{ animationDelay: `${index * 100}ms` }}
@@ -983,6 +1000,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <AdSlot placement="home_after_services" />
 
       {/* Maps Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">

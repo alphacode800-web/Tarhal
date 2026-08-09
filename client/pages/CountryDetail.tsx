@@ -9,6 +9,7 @@ import type { CountryData } from '@/data/countries';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { dataManager, type AdminCountryData, type TourOffer } from '@/services/dataManager';
 import { optimizeImageUrl, preloadImage } from '@/utils/imageUtils';
+import AdSlot from '@/components/AdSlot';
 
 export default function CountryDetail() {
   const { countryId } = useParams<{ countryId: string }>();
@@ -280,6 +281,8 @@ export default function CountryDetail() {
           </nav>
         </div>
       </section>
+
+      <AdSlot placement="country_mid" />
 
       {/* Tab Content */}
       <section className="py-16 bg-white dark:bg-slate-950">

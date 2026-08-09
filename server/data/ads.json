@@ -1,0 +1,166 @@
+[
+  {
+    "id": "ad_demo_istanbul",
+    "title": {
+      "ar": "عرض اسطنبول الفاخر",
+      "en": "Luxury Istanbul Package",
+      "fr": "Offre Luxe Istanbul"
+    },
+    "description": {
+      "ar": "رحلة 5 أيام في اسطنبول مع فندق 5 نجوم وجولات يومية.",
+      "en": "5-day Istanbul trip with 5-star hotel and daily tours.",
+      "fr": "Voyage 5 jours à Istanbul avec hôtel 5 étoiles."
+    },
+    "advertiserName": "CIAR Tourism",
+    "advertiserPhone": "+963993153333",
+    "imageUrl": "https://images.pexels.com/photos/1549326/pexels-photo-1549326.jpeg",
+    "linkUrl": "/offers",
+    "category": { "ar": "عروض / تركيا", "en": "Offers / Turkey", "fr": "Offres / Turquie" },
+    "tags": ["فندق 5 نجوم", "شامل الإفطار"],
+    "placement": "listing",
+    "status": "approved",
+    "isActive": true,
+    "isFeatured": true,
+    "createdAt": "2026-08-01T10:00:00.000Z",
+    "updatedAt": "2026-08-01T10:00:00.000Z"
+  },
+  {
+    "id": "ad_demo_dubai",
+    "title": {
+      "ar": "عطلة دبي للعائلات",
+      "en": "Dubai Family Holiday",
+      "fr": "Vacances famille Dubaï"
+    },
+    "description": {
+      "ar": "باقة عائلية مميزة تشمل الطيران والفندق ومدينة الألعاب.",
+      "en": "Family package with flights, hotel, and theme parks.",
+      "fr": "Forfait famille avec vols, hôtel et parcs."
+    },
+    "advertiserName": "CIAR Partners",
+    "imageUrl": "https://images.pexels.com/photos/162031/dubai-tower-architecture-travel-162031.jpeg",
+    "linkUrl": "/offers",
+    "category": { "ar": "عائلات / الإمارات", "en": "Families / UAE", "fr": "Familles / Émirats" },
+    "tags": ["عائلي", "طيران"],
+    "placement": "home_after_services",
+    "status": "approved",
+    "isActive": true,
+    "isFeatured": true,
+    "createdAt": "2026-08-01T10:00:00.000Z",
+    "updatedAt": "2026-08-01T10:00:00.000Z"
+  },
+  {
+    "id": "ad_demo_visa",
+    "title": {
+      "ar": "تأشيرات شنغن بسرعة",
+      "en": "Fast Schengen Visas",
+      "fr": "Visas Schengen rapides"
+    },
+    "description": {
+      "ar": "نساعدك في تجهيز ملف التأشيرة ومتابعته حتى الإصدار.",
+      "en": "We prepare and follow your visa file until issuance.",
+      "fr": "Nous préparons et suivons votre dossier visa."
+    },
+    "advertiserName": "CIAR Visas",
+    "imageUrl": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg",
+    "linkUrl": "/travel-visa",
+    "category": { "ar": "تأشيرات / أوروبا", "en": "Visas / Europe", "fr": "Visas / Europe" },
+    "tags": ["شنغن", "استشارة"],
+    "placement": "home_before_why",
+    "status": "approved",
+    "isActive": true,
+    "createdAt": "2026-08-01T10:00:00.000Z",
+    "updatedAt": "2026-08-01T10:00:00.000Z"
+  },
+  {
+    "id": "ad_demo_car",
+    "title": {
+      "ar": "تأجير سيارات بأسعار منافسة",
+      "en": "Competitive Car Rentals",
+      "fr": "Location de voitures compétitive"
+    },
+    "description": {
+      "ar": "أسطول حديث مع توصيل للمطار في أهم الوجهات.",
+      "en": "Modern fleet with airport delivery in top destinations.",
+      "fr": "Flotte moderne avec livraison aéroport."
+    },
+    "advertiserName": "CIAR Cars",
+    "imageUrl": "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
+    "linkUrl": "/car-rentals",
+    "category": { "ar": "سيارات / سفر", "en": "Cars / Travel", "fr": "Voitures / Voyage" },
+    "tags": ["مطار", "تأمين"],
+    "placement": "offices_top",
+    "status": "approved",
+    "isActive": true,
+    "createdAt": "2026-08-01T10:00:00.000Z",
+    "updatedAt": "2026-08-01T10:00:00.000Z"
+  },
+  {
+    "id": "ad_demo_maldives",
+    "title": {
+      "ar": "جزر المالديف – عرض خاص",
+      "en": "Maldives – Special Offer",
+      "fr": "Maldives – Offre spéciale"
+    },
+    "description": {
+      "ar": "منتجع شاطئي فاخر مع إفطار وعشاء لمدة 4 ليالٍ.",
+      "en": "Luxury beach resort with breakfast & dinner for 4 nights.",
+      "fr": "Resort plage de luxe avec petits-déjeuners et dîners."
+    },
+    "advertiserName": "CIAR Luxury",
+    "imageUrl": "https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg",
+    "linkUrl": "/offers",
+    "category": { "ar": "شواطئ / المالديف", "en": "Beaches / Maldives", "fr": "Plages / Maldives" },
+    "tags": ["شهر عسل", "منتجع"],
+    "placement": "offers_mid",
+    "status": "approved",
+    "isActive": true,
+    "isFeatured": true,
+    "createdAt": "2026-08-01T10:00:00.000Z",
+    "updatedAt": "2026-08-01T10:00:00.000Z"
+  },
+  {
+    "id": "ad_demo_country",
+    "title": {
+      "ar": "اكتشف وجهتك مع مكاتبنا المحلية",
+      "en": "Discover your destination with local offices",
+      "fr": "Découvrez votre destination avec nos bureaux"
+    },
+    "description": {
+      "ar": "فريق محلي جاهز لتنظيم رحلتك من الاستقبال حتى المغادرة.",
+      "en": "A local team ready to organize your trip from arrival to departure.",
+      "fr": "Une équipe locale prête à organiser votre voyage."
+    },
+    "advertiserName": "CIAR Local",
+    "imageUrl": "https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg",
+    "linkUrl": "/offices",
+    "category": { "ar": "مكاتب / محلي", "en": "Offices / Local", "fr": "Bureaux / Local" },
+    "tags": ["محلي", "استقبال"],
+    "placement": "country_mid",
+    "status": "approved",
+    "isActive": true,
+    "createdAt": "2026-08-01T10:00:00.000Z",
+    "updatedAt": "2026-08-01T10:00:00.000Z"
+  },
+  {
+    "id": "ad_demo_pending",
+    "title": {
+      "ar": "إعلان قيد المراجعة",
+      "en": "Ad pending review",
+      "fr": "Annonce en attente"
+    },
+    "description": {
+      "ar": "هذا إعلان تجريبي بانتظار موافقة الإدارة.",
+      "en": "Demo ad awaiting admin approval.",
+      "fr": "Annonce démo en attente d’approbation."
+    },
+    "advertiserName": "Partner Demo",
+    "advertiserPhone": "+963900000000",
+    "advertiserEmail": "partner@example.com",
+    "imageUrl": "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+    "placement": "listing",
+    "status": "pending",
+    "isActive": false,
+    "createdAt": "2026-08-09T10:00:00.000Z",
+    "updatedAt": "2026-08-09T10:00:00.000Z"
+  }
+]

@@ -21,6 +21,7 @@ const SETTINGS_FILE = path.join(DATA_DIR, 'settings.json');
 const HERO_CONTENT_FILE = path.join(DATA_DIR, 'hero-content.json');
 const SUPERVISORS_FILE = path.join(DATA_DIR, 'supervisors.json');
 const VISITOR_STATS_FILE = path.join(DATA_DIR, 'visitor-stats.json');
+const ADS_FILE = path.join(DATA_DIR, 'ads.json');
 
 const DEFAULT_VISITOR_STATS = { baseCount: 10000, visits: 0 };
 
@@ -558,6 +559,38 @@ router.post('/supervisors', saveSupervisors);
 // Visitor statistics
 router.get('/visitor-count', getVisitorCount);
 router.post('/visitor-count/record', recordVisitor);
+
+// Ads / advertisements
+export const getAds: RequestHandler = async (_req, res) => {
+  try {
+    const ads = await readFromDbOrFile(ADMIN_KEYS.ads, ADS_FILE, []);
+    res.json({ success: true, data: ads });
+  } catch (error) {
+    console.error('Error fetching ads:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch ads' });
+  }
+};
+
+export const saveAds: RequestHandler = async (req, res) => {
+  try {
+    const ads = req.body;
+    if (!Array.isArray(ads)) {
+      return res.status(400).json({ success: false, error: 'Ads must be an array' });
+    }
+    const success = await saveToDbAndFile(ADMIN_KEYS.ads, ADS_FILE, ads);
+    if (success) {
+      res.json({ success: true, message: `Saved ${ads.length} ads` });
+    } else {
+      res.status(500).json({ success: false, error: 'Failed to save ads' });
+    }
+  } catch (error) {
+    console.error('Error saving ads:', error);
+    res.status(500).json({ success: false, error: 'Failed to save ads' });
+  }
+};
+
+router.get('/ads', getAds);
+router.post('/ads', saveAds);
 
 export default router;
 

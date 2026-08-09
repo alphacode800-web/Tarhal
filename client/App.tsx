@@ -35,6 +35,8 @@ import TaxiDelivery from "./pages/TaxiDelivery";
 import TaxiDeliveryBooking from "./pages/TaxiDeliveryBooking";
 import HotelBooking from "./pages/HotelBooking";
 import HotelDetails from "./pages/HotelDetails";
+import Ads from "./pages/Ads";
+import Advertise from "./pages/Advertise";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import SupervisorLogin from "./pages/SupervisorLogin";
@@ -77,6 +79,8 @@ const App = () => (
             <Route path="/travel-insurance" element={<TravelInsurance />} />
             <Route path="/taxi-delivery" element={<TaxiDelivery />} />
             <Route path="/taxi-delivery/book/:serviceId" element={<TaxiDeliveryBooking />} />
+            <Route path="/ads" element={<Ads />} />
+            <Route path="/advertise" element={<Advertise />} />
             <Route path="/offices/:countryId" element={<CountryDetail />} />
             <Route path="/offices/:countryId/hotels" element={<Hotels />} />
             <Route path="/offices/:countryId/hotels/:hotelId" element={<HotelDetails />} />

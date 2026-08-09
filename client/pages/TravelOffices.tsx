@@ -9,6 +9,7 @@ import { dataManager, type TravelOffice } from '@/services/dataManager';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { optimizeImageUrl } from '@/utils/imageUtils';
 import OptimizedImage from '@/components/OptimizedImage';
+import AdSlot from '@/components/AdSlot';
 
 type OfficeCard = TravelOffice & {
   countryName: string;
@@ -263,6 +264,8 @@ export default function TravelOffices() {
           </div>
         </div>
       </section>
+
+      <AdSlot placement="offices_top" />
 
       <section className="py-8 bg-white border-b border-tarhal-gray-light">
         <div className="container mx-auto px-4">

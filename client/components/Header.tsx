@@ -98,6 +98,8 @@ export default function Header() {
     { label: 'التأمين السياحي', labelEn: 'Travel Insurance', labelFr: 'Assurance Voyage', icon: '🛡️', href: '/travel-insurance' },
     { label: 'تاكسي وديليفري', labelEn: 'Taxi & Delivery', labelFr: 'Taxi et Livraison', icon: '🚕', href: '/taxi-delivery' },
     { label: 'جولات سياحية', labelEn: 'Tourist Tours', labelFr: 'Circuits Touristiques', icon: '🗺️', href: '/offers' },
+    { label: 'جميع الإعلانات', labelEn: 'All Ads', labelFr: 'Toutes les annonces', icon: '📣', href: '/ads' },
+    { label: 'أضف إعلانك معنا', labelEn: 'Advertise with us', labelFr: 'Annoncez avec nous', icon: '📢', href: '/advertise' },
   ];
 
   const getLocalizedText = (ar: string, en: string, fr: string) => {

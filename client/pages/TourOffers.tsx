@@ -10,6 +10,7 @@ import { detectUserCountry, mapCountryCodeToId } from '@/services/geoLocation';
 import { offerMatchesCountry, resolveCountryIdInCatalog } from '@/data/countries';
 import { Switch } from '@/components/ui/switch';
 import OfferVideo from '@/components/OfferVideo';
+import AdSlot from '@/components/AdSlot';
 
 type TourFilterType = 'local' | 'international' | 'all';
 
@@ -381,6 +382,8 @@ export default function TourOffers() {
           </div>
         </div>
       </section>
+
+      <AdSlot placement="offers_mid" />
 
       {/* Countries Dropdown Section */}
       <section className="py-12 bg-gradient-to-b from-white via-gray-50 to-white">
