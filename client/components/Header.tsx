@@ -136,22 +136,27 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 flex flex-col gap-0 transition-all duration-300 ${
       isScrolled 
         ? 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-lg border-b border-tarhal-gray-light dark:border-slate-800' 
-        : 'bg-transparent border-b border-white/10 dark:border-slate-800/40'
+        : 'bg-transparent'
     }`}>
       {/* Main Navigation */}
-      <nav className="container mx-auto px-4 py-4">
+      <nav className={`relative w-full border-b ${
+        isScrolled
+          ? 'border-transparent'
+          : 'border-white/10 dark:border-slate-800/40'
+      }`}>
+        <div className="container mx-auto px-4 py-2 md:py-2.5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <span className="flex flex-col leading-none transition-all duration-300 group-hover:scale-[1.03]">
-              <span className="logo-ciar text-3xl md:text-4xl">
+              <span className="logo-ciar text-2xl md:text-3xl">
                 CIAR
               </span>
               <span
-                className={`logo-tourism text-[10px] md:text-xs font-light uppercase mt-1 ${
+                className={`logo-tourism text-[9px] md:text-[10px] font-light uppercase mt-0.5 ${
                   isScrolled
                     ? 'text-tarhal-blue-dark dark:text-white/85'
                     : 'text-white/85'
@@ -360,7 +365,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         <div className={`lg:hidden absolute top-full left-0 right-0 backdrop-blur-md border-b border-tarhal-gray-light dark:border-slate-800 transition-all duration-500 overflow-hidden ${
-          isMenuOpen ? 'max-h-[32rem] opacity-100 bg-white/95 dark:bg-slate-950/95' : 'max-h-0 opacity-0'
+          isMenuOpen ? 'max-h-[32rem] opacity-100 bg-white/95 dark:bg-slate-950/95 pointer-events-auto' : 'max-h-0 opacity-0 pointer-events-none'
         }`}>
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col gap-4">
@@ -450,9 +455,10 @@ export default function Header() {
             </div>
           </div>
         </div>
+        </div>
       </nav>
 
-      {/* Announcement Bar - Below navigation */}
+      {/* Announcement Bar — flush under navigation */}
       <AnnouncementBar />
 
       {/* Search Modal */}

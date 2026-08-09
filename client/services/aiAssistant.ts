@@ -16,6 +16,59 @@ export interface AiStatus {
   welcomeMessage?: { ar: string; en: string; fr: string };
   quickPrompts?: { ar: string[]; en: string[]; fr: string[] };
   apiKeyHint?: string | null;
+  features?: {
+    smartChat: boolean;
+    sentimentAnalysis: boolean;
+    seoSuggestions: boolean;
+    productRecommendations: boolean;
+    smartInventory: boolean;
+    fraudDetection: boolean;
+  };
+  productRecommendations?: boolean;
+}
+
+export interface AiInsights {
+  features: NonNullable<AiStatus['features']>;
+  chatReady: boolean;
+  insights: {
+    monthMessages: number;
+    sentiment: { positive: number; negative: number; neutral: number };
+    platformViews: number;
+    orderActivity: number;
+    pendingOrders: number;
+    activeOffers: number;
+    activeHotels: number;
+    summary: { ar: string; en: string; fr: string };
+  };
+  inventory: {
+    critical: number;
+    low: number;
+    missingOfferImage: number;
+    missingHotelImage: number;
+    inactiveOffers: number;
+    officesWithoutPhone: number;
+  };
+  fraud: {
+    checked: number;
+    suspiciousCount: number;
+    items: Array<{ id: string; reason: string; amount?: number; status?: string }>;
+  };
+  seoSuggestions: Array<{ severity: 'info' | 'warn' | 'good'; ar: string; en: string; fr: string }>;
+  recommendedOffers: Array<{
+    id: string;
+    title: { ar?: string; en?: string; fr?: string };
+    price?: number;
+    imageUrl?: string;
+    countryId?: string;
+    durationDays?: number;
+  }>;
+}
+
+export async function fetchAiInsights(): Promise<AiInsights> {
+  const res = await fetch('/api/ai/insights');
+  const json = await res.json();
+  if (!res.ok) throw new Error(json.error ?? 'Failed to load insights');
+  return json.data;
 }
 
 export interface AiStats {

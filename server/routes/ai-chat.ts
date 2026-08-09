@@ -4,12 +4,15 @@ import { buildSystemPrompt, getCachedPlatformContext } from '../utils/ai-context
 import {
   getAiConfig,
   isAiChatReady,
+  getAiProvider,
   sanitizeUserMessage,
   invalidateAiConfigCache,
   maskApiKey,
 } from '../utils/ai-config.js';
 import { checkRateLimit } from '../utils/ai-rate-limit.js';
 import { getAiChatStats, recordAiChatSuccess, recordAiChatError } from '../utils/ai-stats.js';
+import { generateLocalReply } from '../utils/ai-local.js';
+import { buildAiInsights } from '../utils/ai-insights.js';
 
 const router = Router();
 
@@ -74,6 +77,7 @@ async function callOpenAI(
 export const getAiStatus: RequestHandler = async (_req, res) => {
   const config = await getAiConfig();
   const chatReady = isAiChatReady(config);
+  const provider = getAiProvider(config);
 
   res.json({
     success: true,
@@ -82,24 +86,28 @@ export const getAiStatus: RequestHandler = async (_req, res) => {
       enabled: config.enabled,
       chatReady,
       configured: Boolean(config.apiKey),
-      provider: config.apiKey ? 'openai' : null,
-      model: config.model,
+      provider,
+      model: provider === 'openai' ? config.model : 'local',
       welcomeMessage: config.welcomeMessage,
       quickPrompts: config.quickPrompts,
       apiKeyHint: config.apiKey ? maskApiKey(config.apiKey) : null,
+      features: config.features,
+      productRecommendations: config.features.productRecommendations,
     },
   });
 };
 
 export const getAiStats: RequestHandler = async (_req, res) => {
   const [stats, config] = await Promise.all([getAiChatStats(), getAiConfig()]);
+  const provider = getAiProvider(config);
   res.json({
     success: true,
     data: {
       ...stats,
       configured: Boolean(config.apiKey),
       chatReady: isAiChatReady(config),
-      model: config.model,
+      provider,
+      model: provider === 'openai' ? config.model : 'local',
       apiKeyHint: config.apiKey ? maskApiKey(config.apiKey) : null,
     },
   });
@@ -108,13 +116,46 @@ export const getAiStats: RequestHandler = async (_req, res) => {
 router.get('/status', getAiStatus);
 router.get('/stats', getAiStats);
 
+router.get('/insights', async (_req, res) => {
+  try {
+    const data = await buildAiInsights();
+    res.json({ success: true, data });
+  } catch (error: any) {
+    console.error('[ai-chat] insights failed:', error?.message ?? error);
+    res.status(500).json({ success: false, error: 'Failed to build AI insights' });
+  }
+});
+
+router.get('/recommendations', async (_req, res) => {
+  try {
+    const config = await getAiConfig();
+    if (!config.features.productRecommendations) {
+      return res.json({ success: true, data: { enabled: false, offers: [] } });
+    }
+    const data = await buildAiInsights();
+    res.json({
+      success: true,
+      data: { enabled: true, offers: data.recommendedOffers },
+    });
+  } catch (error: any) {
+    console.error('[ai-chat] recommendations failed:', error?.message ?? error);
+    res.status(500).json({ success: false, error: 'Failed to load recommendations' });
+  }
+});
+
 router.post('/test', async (req, res) => {
   try {
     const config = await getAiConfig();
     const testKey = (req.body?.apiKey as string)?.trim() || config.apiKey;
 
+    // Without OpenAI key, verify local assistant responds
     if (!testKey) {
-      return res.status(400).json({ success: false, error: 'No API key provided' });
+      const reply = await generateLocalReply('hello', 'en');
+      invalidateAiConfigCache();
+      return res.json({
+        success: true,
+        data: { ok: Boolean(reply?.trim()), model: 'local', reply: reply.slice(0, 50), provider: 'local' },
+      });
     }
 
     const model = config.model;
@@ -130,7 +171,10 @@ router.post('/test', async (req, res) => {
     );
 
     invalidateAiConfigCache();
-    res.json({ success: true, data: { ok: reply.includes('OK'), model, reply: reply.slice(0, 50) } });
+    res.json({
+      success: true,
+      data: { ok: reply.includes('OK'), model, reply: reply.slice(0, 50), provider: 'openai' },
+    });
   } catch (error: any) {
     console.error('[ai-chat] test failed:', error?.message);
     await recordAiChatError();
@@ -150,7 +194,7 @@ router.post('/chat', async (req, res) => {
     if (!isAiChatReady(config)) {
       return res.status(503).json({
         success: false,
-        error: 'AI assistant is not configured',
+        error: 'AI assistant is disabled',
         code: 'AI_NOT_CONFIGURED',
       });
     }
@@ -172,10 +216,24 @@ router.post('/chat', async (req, res) => {
       content: m.role === 'user' ? sanitizeUserMessage(m.content) : m.content,
     }));
 
+    const lastUser = [...sanitized].reverse().find((m) => m.role === 'user')?.content ?? '';
+    const provider = getAiProvider(config);
+
+    // Local catalog assistant when no OpenAI key
+    if (provider === 'local') {
+      const reply = await generateLocalReply(lastUser, language, userCountry);
+      await recordAiChatSuccess();
+      return res.json({ success: true, data: { reply, model: 'local', provider: 'local' } });
+    }
+
     const context = await getCachedPlatformContext(language);
     let systemPrompt = buildSystemPrompt(language, context);
     if (config.systemPromptExtra) {
       systemPrompt += `\n\nAdditional instructions:\n${config.systemPromptExtra}`;
+    }
+    if (config.features.productRecommendations) {
+      systemPrompt +=
+        '\n\nProduct recommendations are enabled: when helpful, suggest 1–2 concrete offers with paths like /offers.';
     }
     if (userCountry) {
       systemPrompt += `\n\nUser's detected country code: ${userCountry}. Prefer local offers when relevant.`;
@@ -186,16 +244,24 @@ router.post('/chat', async (req, res) => {
       ...sanitized.map((m) => ({ role: m.role, content: m.content })),
     ];
 
-    const reply = await callOpenAI(
-      config.apiKey,
-      config.model,
-      openaiMessages,
-      config.maxTokens,
-      config.temperature
-    );
+    try {
+      const reply = await callOpenAI(
+        config.apiKey,
+        config.model,
+        openaiMessages,
+        config.maxTokens,
+        config.temperature
+      );
 
-    await recordAiChatSuccess();
-    res.json({ success: true, data: { reply, model: config.model } });
+      await recordAiChatSuccess();
+      return res.json({ success: true, data: { reply, model: config.model, provider: 'openai' } });
+    } catch (openaiError: any) {
+      // Graceful fallback if OpenAI fails
+      console.error('[ai-chat] OpenAI failed, falling back to local:', openaiError?.message ?? openaiError);
+      const reply = await generateLocalReply(lastUser, language, userCountry);
+      await recordAiChatSuccess();
+      return res.json({ success: true, data: { reply, model: 'local', provider: 'local' } });
+    }
   } catch (error: any) {
     await recordAiChatError();
     if (error?.name === 'AbortError') {

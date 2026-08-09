@@ -21,19 +21,37 @@
     },
     "services": {
       "ar": [
-        "حجوزات طيران",
-        "حجوزات فنادق",
-        "جولات سياحية"
+        "الجولات والعروض السياحية",
+        "حجوزات الفنادق",
+        "تذاكر الطيران",
+        "التأشيرات",
+        "تأجير السيارات",
+        "تأمين السفر",
+        "التاكسي والتوصيل",
+        "السياحة العلاجية",
+        "السياحة التعليمية"
       ],
       "en": [
-        "Flight bookings",
+        "Tours & Offers",
         "Hotel bookings",
-        "Tour packages"
+        "Flight tickets",
+        "Travel visas",
+        "Car rentals",
+        "Travel insurance",
+        "Taxi & delivery",
+        "Medical tourism",
+        "Educational tourism"
       ],
       "fr": [
-        "Réservations de vol",
-        "Réservations d'hôtel",
-        "Forfaits touristiques"
+        "Circuits et offres",
+        "Réservations hôtels",
+        "Billets d'avion",
+        "Visas",
+        "Location de voitures",
+        "Assurance voyage",
+        "Taxi et livraison",
+        "Tourisme médical",
+        "Tourisme éducatif"
       ]
     },
     "workingHours": {
@@ -46,7 +64,18 @@
     "isActive": true,
     "id": "office_1771398444754_1mbr252rp",
     "createdAt": "2026-02-18T07:07:24.754Z",
-    "updatedAt": "2026-02-18T07:07:24.754Z"
+    "updatedAt": "2026-08-09T14:02:51.544Z",
+    "permissions": {
+      "tours": true,
+      "hotels": true,
+      "flights": true,
+      "visas": true,
+      "carRentals": true,
+      "insurance": true,
+      "taxiDelivery": true,
+      "medicalTourism": true,
+      "educationalTourism": true
+    }
   },
   {
     "countryId": "country_1769453246309_6xm9xfvto",

@@ -1,4 +1,5 @@
 import { getAdminData, ADMIN_KEYS } from '../database/admin-store.js';
+import { mergeAiFeatures, type AiFeatureFlags } from './ai-insights.js';
 
 export interface AiAssistantConfig {
   enabled: boolean;
@@ -11,6 +12,7 @@ export interface AiAssistantConfig {
   welcomeMessage: { ar: string; en: string; fr: string };
   quickPrompts: { ar: string[]; en: string[]; fr: string[] };
   systemPromptExtra: string;
+  features: AiFeatureFlags;
 }
 
 const DEFAULT_WELCOME = {
@@ -61,15 +63,16 @@ export async function getAiConfig(): Promise<AiAssistantConfig> {
   }
 
   const settings = await getAdminData<{
-    aiAssistant?: Partial<AiAssistantConfig>;
+    aiAssistant?: Partial<AiAssistantConfig> & { features?: Partial<AiFeatureFlags> };
   }>(ADMIN_KEYS.settings);
 
   const ai = settings?.aiAssistant ?? {};
   const model = ai.model || process.env.OPENAI_MODEL || 'gpt-4o-mini';
+  const features = mergeAiFeatures(ai.features);
 
   const config: AiAssistantConfig = {
-    enabled: ai.enabled ?? process.env.AI_ASSISTANT_ENABLED !== 'false',
-    showWidget: ai.showWidget ?? true,
+    enabled: (ai.enabled ?? process.env.AI_ASSISTANT_ENABLED !== 'false') && features.smartChat,
+    showWidget: (ai.showWidget ?? true) && features.smartChat,
     apiKey: ai.apiKey?.trim() || process.env.OPENAI_API_KEY?.trim() || '',
     model: ALLOWED_MODELS.has(model) ? model : 'gpt-4o-mini',
     temperature: Math.min(1, Math.max(0, ai.temperature ?? 0.6)),
@@ -86,14 +89,21 @@ export async function getAiConfig(): Promise<AiAssistantConfig> {
       fr: ai.quickPrompts?.fr?.length ? ai.quickPrompts.fr.slice(0, 6) : DEFAULT_QUICK_PROMPTS.fr,
     },
     systemPromptExtra: (ai.systemPromptExtra ?? '').slice(0, 1000),
+    features,
   };
 
   configCache = { config, at: now };
   return config;
 }
 
+/** Ready when enabled — OpenAI if keyed, otherwise local catalog assistant */
 export function isAiChatReady(config: AiAssistantConfig): boolean {
-  return config.enabled && Boolean(config.apiKey);
+  return config.enabled;
+}
+
+export function getAiProvider(config: AiAssistantConfig): 'openai' | 'local' | null {
+  if (!config.enabled) return null;
+  return config.apiKey ? 'openai' : 'local';
 }
 
 export function maskApiKey(key: string): string {

@@ -90,7 +90,31 @@ export interface AdminSettings {
       fr: string[];
     };
     systemPromptExtra: string;
+    /** AI feature modules controllable from admin */
+    features?: AiFeatureFlags;
   };
+}
+
+export interface AiFeatureFlags {
+  smartChat: boolean;
+  sentimentAnalysis: boolean;
+  seoSuggestions: boolean;
+  productRecommendations: boolean;
+  smartInventory: boolean;
+  fraudDetection: boolean;
+}
+
+export const DEFAULT_AI_FEATURES: AiFeatureFlags = {
+  smartChat: true,
+  sentimentAnalysis: true,
+  seoSuggestions: true,
+  productRecommendations: true,
+  smartInventory: false,
+  fraudDetection: false,
+};
+
+export function mergeAiFeatures(features?: Partial<AiFeatureFlags> | null): AiFeatureFlags {
+  return { ...DEFAULT_AI_FEATURES, ...(features || {}) };
 }
 
 export interface HeroContent {
@@ -163,6 +187,8 @@ export interface TravelOffice {
     en: string[];
     fr: string[];
   };
+  /** Structured service capabilities for this office */
+  permissions?: OfficePermissions;
   workingHours: {
     ar: string;
     en: string;
@@ -177,6 +203,97 @@ export interface TravelOffice {
   isActive: boolean;
   createdAt: string;
   updatedAt: string;
+}
+
+export type OfficePermissionKey =
+  | 'tours'
+  | 'hotels'
+  | 'flights'
+  | 'visas'
+  | 'carRentals'
+  | 'insurance'
+  | 'taxiDelivery'
+  | 'medicalTourism'
+  | 'educationalTourism';
+
+export interface OfficePermissions {
+  tours: boolean;
+  hotels: boolean;
+  flights: boolean;
+  visas: boolean;
+  carRentals: boolean;
+  insurance: boolean;
+  taxiDelivery: boolean;
+  medicalTourism: boolean;
+  educationalTourism: boolean;
+}
+
+export const DEFAULT_OFFICE_PERMISSIONS: OfficePermissions = {
+  tours: true,
+  hotels: true,
+  flights: true,
+  visas: true,
+  carRentals: true,
+  insurance: true,
+  taxiDelivery: true,
+  medicalTourism: false,
+  educationalTourism: false,
+};
+
+export const OFFICE_PERMISSION_KEYS: OfficePermissionKey[] = [
+  'tours',
+  'hotels',
+  'flights',
+  'visas',
+  'carRentals',
+  'insurance',
+  'taxiDelivery',
+  'medicalTourism',
+  'educationalTourism',
+];
+
+export const OFFICE_PERMISSION_LABELS: Record<
+  OfficePermissionKey,
+  { ar: string; en: string; fr: string }
+> = {
+  tours: { ar: 'الجولات والعروض السياحية', en: 'Tours & Offers', fr: 'Circuits et offres' },
+  hotels: { ar: 'حجوزات الفنادق', en: 'Hotel bookings', fr: 'Réservations hôtels' },
+  flights: { ar: 'تذاكر الطيران', en: 'Flight tickets', fr: 'Billets d\'avion' },
+  visas: { ar: 'التأشيرات', en: 'Travel visas', fr: 'Visas' },
+  carRentals: { ar: 'تأجير السيارات', en: 'Car rentals', fr: 'Location de voitures' },
+  insurance: { ar: 'تأمين السفر', en: 'Travel insurance', fr: 'Assurance voyage' },
+  taxiDelivery: { ar: 'التاكسي والتوصيل', en: 'Taxi & delivery', fr: 'Taxi et livraison' },
+  medicalTourism: { ar: 'السياحة العلاجية', en: 'Medical tourism', fr: 'Tourisme médical' },
+  educationalTourism: { ar: 'السياحة التعليمية', en: 'Educational tourism', fr: 'Tourisme éducatif' },
+};
+
+export function mergeOfficePermissions(
+  permissions?: Partial<OfficePermissions> | null
+): OfficePermissions {
+  return { ...DEFAULT_OFFICE_PERMISSIONS, ...(permissions || {}) };
+}
+
+export function servicesFromPermissions(permissions: OfficePermissions): {
+  ar: string[];
+  en: string[];
+  fr: string[];
+} {
+  const enabled = OFFICE_PERMISSION_KEYS.filter((key) => permissions[key]);
+  return {
+    ar: enabled.map((key) => OFFICE_PERMISSION_LABELS[key].ar),
+    en: enabled.map((key) => OFFICE_PERMISSION_LABELS[key].en),
+    fr: enabled.map((key) => OFFICE_PERMISSION_LABELS[key].fr),
+  };
+}
+
+export function getOfficeDisplayServices(
+  office: Pick<TravelOffice, 'services' | 'permissions'>,
+  lang: 'ar' | 'en' | 'fr'
+): string[] {
+  if (office.permissions) {
+    return servicesFromPermissions(mergeOfficePermissions(office.permissions))[lang];
+  }
+  return office.services?.[lang] ?? [];
 }
 
 export interface TourOffer {
@@ -912,8 +1029,13 @@ class DataManager {
   async addOfficeAsync(office: Omit<TravelOffice, 'id' | 'createdAt' | 'updatedAt'>): Promise<TravelOffice | null> {
     try {
       const offices = await this.getOfficesAsync();
+      const permissions = mergeOfficePermissions(office.permissions);
       const newOffice: TravelOffice = {
         ...office,
+        permissions,
+        services: office.services?.ar?.length || office.services?.en?.length
+          ? office.services
+          : servicesFromPermissions(permissions),
         id: `office_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
@@ -962,12 +1084,19 @@ class DataManager {
       const index = offices.findIndex(o => o.id === id);
       
       if (index === -1) return false;
-      
-      offices[index] = {
+
+      const merged = {
         ...offices[index],
         ...updates,
         updatedAt: new Date().toISOString()
       };
+
+      if (updates.permissions) {
+        merged.permissions = mergeOfficePermissions(updates.permissions);
+        merged.services = servicesFromPermissions(merged.permissions);
+      }
+      
+      offices[index] = merged;
       
       return await this.saveOfficesAsync(offices);
     } catch (error) {
@@ -1562,6 +1691,7 @@ class DataManager {
           ],
         },
         systemPromptExtra: '',
+        features: { ...DEFAULT_AI_FEATURES },
       },
     };
   }
@@ -1603,6 +1733,7 @@ class DataManager {
             ? saved.aiAssistant.quickPrompts.fr
             : defaults.aiAssistant!.quickPrompts.fr,
         },
+        features: mergeAiFeatures(saved.aiAssistant?.features),
       },
     };
   }

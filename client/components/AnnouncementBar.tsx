@@ -151,13 +151,13 @@ export default function AnnouncementBar() {
 
   return (
     <div
-      className="py-1.5 overflow-hidden relative w-full border-t border-white/10"
+      className="py-1 overflow-hidden relative w-full leading-none"
       style={{
         background: `linear-gradient(to right, ${barStyle.backgroundFrom}, ${barStyle.backgroundTo})`,
         color: barStyle.textColor,
       }}
     >
-      <div ref={viewportRef} className="relative w-full min-h-[1.35rem] flex items-center overflow-hidden">
+      <div ref={viewportRef} className="relative w-full min-h-[1.25rem] flex items-center overflow-hidden">
         <div
           ref={trackRef}
           className="flex items-center gap-6 whitespace-nowrap"

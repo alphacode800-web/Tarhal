@@ -12,6 +12,7 @@ import OptimizedImage from '@/components/OptimizedImage';
 import GoogleMap from '@/components/GoogleMap';
 import { resolveOfficeCoordinates } from '@/data/countryCoordinates';
 import { fetchVisitorCount } from '@/services/visitorStats';
+import AiRecommendedOffers from '@/components/AiRecommendedOffers';
 import {
   heroButtonStyleToCss,
   heroTextStyleToCss,
@@ -888,6 +889,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <AiRecommendedOffers />
 
       {/* Services Grid */}
       <section id="services" className="py-20 bg-gradient-to-br from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">

@@ -27,9 +27,9 @@ function uid() {
 }
 
 function renderMessageContent(text: string) {
-  const parts = text.split(/(\/[a-z0-9-]+)/gi);
+  const parts = text.split(/(\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+)/g);
   return parts.map((part, i) => {
-    if (part.match(/^\/[a-z0-9-]+$/i)) {
+    if (part.match(/^\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+$/)) {
       return (
         <Link key={i} to={part} className="underline font-medium hover:opacity-80" onClick={() => {}}>
           {part}
@@ -171,8 +171,29 @@ export default function AIChatWidget() {
   }, [status?.chatReady, welcomeText, labels.notConfigured]);
 
   useEffect(() => {
-    if (open && messages.length === 0) initWelcome();
-  }, [open, messages.length, initWelcome]);
+    if (!status?.chatReady) return;
+    const stale = messages.some(
+      (m) =>
+        m.role === 'assistant' &&
+        (m.content.includes('قيد الإعداد') ||
+          m.content.includes('being set up') ||
+          m.content.includes('en cours de configuration'))
+    );
+    if (stale || (open && messages.length === 0)) {
+      clearChatSession();
+      setMessages([
+        {
+          id: uid(),
+          role: 'assistant',
+          content: welcomeText,
+        },
+      ]);
+    }
+  }, [status?.chatReady, welcomeText]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (open && messages.length === 0 && status) initWelcome();
+  }, [open, messages.length, initWelcome, status]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });

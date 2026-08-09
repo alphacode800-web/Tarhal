@@ -5,7 +5,7 @@ import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { dataManager, type TravelOffice } from '@/services/dataManager';
+import { dataManager, type TravelOffice, getOfficeDisplayServices } from '@/services/dataManager';
 import { getCountryDataWithDynamic, getCountryName, getAllCountriesWithDynamic, syncStaticWithDynamic } from '@/data/countries';
 import { useLanguage } from '@/contexts/LanguageContext';
 import GoogleMap from '@/components/GoogleMap';
@@ -398,13 +398,13 @@ export default function OfficeContact() {
               </div>
 
               {/* Services */}
-              {office.services[language].length > 0 && (
+              {getOfficeDisplayServices(office, language).length > 0 && (
                 <div>
                   <h2 className="text-3xl font-bold text-tarhal-blue-dark mb-6">
                     {language === 'ar' ? 'الخدمات المتاحة' : language === 'fr' ? 'Services Disponibles' : 'Available Services'}
                   </h2>
                   <div className="grid md:grid-cols-2 gap-4">
-                    {office.services[language].map((service, index) => (
+                    {getOfficeDisplayServices(office, language).map((service, index) => (
                       <div
                         key={index}
                         className="flex items-center gap-3 p-4 bg-gradient-to-br from-tarhal-blue/5 to-tarhal-orange/5 dark:from-slate-900 dark:to-slate-800 rounded-xl border border-tarhal-orange/20 dark:border-slate-700 hover:shadow-md transition-shadow duration-300"

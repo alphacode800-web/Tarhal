@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { supervisorManager } from '@/services/supervisorManager';
-import { dataManager } from '@/services/dataManager';
+import { dataManager, DEFAULT_OFFICE_PERMISSIONS, type OfficePermissions, type TravelOffice } from '@/services/dataManager';
+import OfficePermissionsEditor, { withSyncedOfficePermissions } from '@/components/OfficePermissionsEditor';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -40,6 +41,7 @@ interface OfficeFormData {
   images?: string[];
   manager: { ar: string; en: string; fr: string };
   services: { ar: string[]; en: string[]; fr: string[] };
+  permissions?: OfficePermissions;
   workingHours: { ar: string; en: string; fr: string };
   coordinates?: { lat: number; lng: number };
   rating: number;
@@ -66,6 +68,7 @@ const SupervisorOfficeManager: React.FC = () => {
     images: [],
     manager: { ar: '', en: '', fr: '' },
     services: { ar: [], en: [], fr: [] },
+    permissions: { ...DEFAULT_OFFICE_PERMISSIONS },
     workingHours: { ar: '', en: '', fr: '' },
     coordinates: { lat: 0, lng: 0 },
     rating: 0,
@@ -101,7 +104,12 @@ const SupervisorOfficeManager: React.FC = () => {
         const offices = dataManager.getOfficesByCountry(supervisor.countryId);
         const existingOffice = offices.find(o => o.id === officeId);
         if (existingOffice) {
-          setFormData(existingOffice);
+          setFormData({
+            ...existingOffice,
+            permissions: existingOffice.permissions
+              ? { ...DEFAULT_OFFICE_PERMISSIONS, ...existingOffice.permissions }
+              : { ...DEFAULT_OFFICE_PERMISSIONS },
+          });
         } else {
           setError('Office not found');
         }
@@ -315,20 +323,20 @@ const SupervisorOfficeManager: React.FC = () => {
     setError('');
     
     try {
-      const officeData = {
+      const officeData = withSyncedOfficePermissions({
         ...formData,
         id: mode === 'edit' ? officeId : `office_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
         countryId: supervisor.countryId,
-        createdAt: mode === 'edit' ? formData.createdAt : new Date().toISOString(),
+        createdAt: mode === 'edit' ? (formData as any).createdAt : new Date().toISOString(),
         updatedAt: new Date().toISOString()
-      };
+      });
 
       let success: boolean | TravelOffice | null = false;
       if (mode === 'add') {
         const created = await dataManager.addOfficeAsync(officeData as Omit<import('@/services/dataManager').TravelOffice, 'id' | 'createdAt' | 'updatedAt'>);
         success = created != null;
       } else {
-        success = await dataManager.updateOfficeAsync(officeId, officeData);
+        success = await dataManager.updateOfficeAsync(officeId!, officeData);
       }
       
       if (success) {
@@ -793,6 +801,11 @@ const SupervisorOfficeManager: React.FC = () => {
 
             {/* Services Tab */}
             <TabsContent value="services" className="space-y-6">
+              <OfficePermissionsEditor
+                value={formData.permissions}
+                onChange={(permissions) => setFormData((prev) => ({ ...prev, permissions }))}
+              />
+
               <Card>
                 <CardHeader>
                   <CardTitle>{text.officeServices}</CardTitle>

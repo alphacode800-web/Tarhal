@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { getAllCountriesWithDynamic, getCountriesStatistics, syncStaticWithDynamic } from '@/data/countries';
 import HeroTypographyEditor from '@/components/HeroTypographyEditor';
 import { normalizeHeroContent } from '@/data/heroTypography';
-import { dataManager, type AdminCountryData, type TravelOffice, type TourOffer, type Hotel, type AdminUser, type AdminSettings, type HeroContent, type FlightTicket, type TravelVisa } from '@/services/dataManager';
+import { dataManager, type AdminCountryData, type TravelOffice, type TourOffer, type Hotel, type AdminUser, type AdminSettings, type HeroContent, type FlightTicket, type TravelVisa, DEFAULT_OFFICE_PERMISSIONS } from '@/services/dataManager';
 import { supervisorManager } from '@/services/supervisorManager';
 import type { City } from '@/data/countries';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -24,6 +24,7 @@ import {
 import FriendlyColorPicker from '@/components/admin/FriendlyColorPicker';
 import VideoUploadField from '@/components/VideoUploadField';
 import OfferDetailsEditor from '@/components/OfferDetailsEditor';
+import OfficePermissionsEditor, { withSyncedOfficePermissions } from '@/components/OfficePermissionsEditor';
 import AdminSupervisorManagement from './AdminSupervisorManagement';
 import AdminPayments from './AdminPayments';
 import AdminAiManagement from './AdminAiManagement';
@@ -115,6 +116,7 @@ export default function AdminDashboard() {
     images: [],
     manager: { ar: '', en: '', fr: '' },
     services: { ar: [], en: [], fr: [] },
+    permissions: { ...DEFAULT_OFFICE_PERMISSIONS },
     workingHours: { ar: '', en: '', fr: '' },
     rating: 4.5,
     reviews: 0,
@@ -749,7 +751,9 @@ export default function AdminDashboard() {
       return;
     }
 
-    const office = await dataManager.addOfficeAsync(newOffice as Omit<TravelOffice, 'id' | 'createdAt' | 'updatedAt'>);
+    const office = await dataManager.addOfficeAsync(
+      withSyncedOfficePermissions(newOffice) as Omit<TravelOffice, 'id' | 'createdAt' | 'updatedAt'>
+    );
     if (office) {
       await loadData();
       setNewOffice({
@@ -763,6 +767,7 @@ export default function AdminDashboard() {
         images: [],
         manager: { ar: '', en: '', fr: '' },
         services: { ar: [], en: [], fr: [] },
+        permissions: { ...DEFAULT_OFFICE_PERMISSIONS },
         workingHours: { ar: '', en: '', fr: '' },
         rating: 4.5,
         reviews: 0,
@@ -776,7 +781,7 @@ export default function AdminDashboard() {
   const handleUpdateOffice = async () => {
     if (!editingOffice) return;
 
-    if (await dataManager.updateOfficeAsync(editingOffice.id, editingOffice)) {
+    if (await dataManager.updateOfficeAsync(editingOffice.id, withSyncedOfficePermissions(editingOffice))) {
       await loadData();
       setEditingOffice(null);
       alert(getLocalizedText('تم تحديث المكتب بنجاح!', 'Office updated successfully!', 'Bureau mis à jour avec succès!'));
@@ -5112,6 +5117,11 @@ export default function AdminDashboard() {
                   <span className="text-sm font-medium text-gray-700">{getLocalizedText('مكتب نشط', 'Active Office', 'Bureau Actif')}</span>
                 </label>
               </div>
+
+              <OfficePermissionsEditor
+                value={newOffice.permissions}
+                onChange={(permissions) => setNewOffice({ ...newOffice, permissions })}
+              />
             </div>
             <div className="p-6 bg-gray-50 border-t border-gray-200 flex gap-3">
               <Button
@@ -5876,6 +5886,11 @@ export default function AdminDashboard() {
                   <span className="text-sm font-medium text-gray-700">{getLocalizedText('مكتب نشط', 'Active Office', 'Bureau Actif')}</span>
                 </label>
               </div>
+
+              <OfficePermissionsEditor
+                value={editingOffice.permissions}
+                onChange={(permissions) => setEditingOffice({ ...editingOffice, permissions })}
+              />
             </div>
             <div className="p-6 bg-gray-50 border-t border-gray-200 flex gap-3">
               <Button
