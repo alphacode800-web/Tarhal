@@ -15,6 +15,7 @@ const files = [
   'offices.json',
   'flight-tickets.json',
   'travel-visas.json',
+  'ads.json',
 ];
 
 await fs.mkdir(seedDir, { recursive: true });
